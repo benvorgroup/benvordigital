@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: benvorgroup/benvordigital
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "content/homepage.json"
+        format: "json"
+
+        fields:
+          - label: "Hero Heading"
+            name: "hero_heading"
+            widget: "string"
+
+          - label: "Hero Description"
+            name: "hero_description"
+            widget: "text"
+
+          - label: "Button Text"
+            name: "button_text"
+            widget: "string"
+
+          - label: "Button Link"
+            name: "button_link"
+            widget: "string"
