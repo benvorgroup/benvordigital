@@ -70,8 +70,8 @@
       "contact_cards": [
         {
           "label": "Email",
-          "value": "hello@benvordigital.com",
-          "link": "mailto:hello@benvordigital.com"
+          "value": "info@benvordigital.com",
+          "link": "mailto:info@benvordigital.com"
         },
         {
           "label": "Typical response",
@@ -81,6 +81,11 @@
         {
           "label": "Working model",
           "value": "Remote-first, global client base",
+          "link": ""
+        },
+        {
+          "label": "Office",
+          "value": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
           "link": ""
         }
       ]
@@ -121,7 +126,7 @@
       "text": "Book a consultation and we'll walk through your priorities together.",
       "button": {
         "label": "Get a Free Consultation",
-        "url": "mailto:hello@benvordigital.com"
+        "url": "mailto:info@benvordigital.com"
       }
     }
   ]

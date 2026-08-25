@@ -71,7 +71,7 @@
   },
   "footer": {
     "description": "We help ambitious brands grow with data-driven strategies and world-class digital solutions.",
-    "email": "hello@benvordigital.com",
+    "email": "info@benvordigital.com",
     "groups": [
       {
         "heading": "Company",
@@ -172,7 +172,8 @@
         "url": "https://www.facebook.com"
       }
     ],
-    "copyright": "© 2026 Benvor Digital. All rights reserved."
+    "copyright": "© 2026 Benvor Digital. All rights reserved.",
+    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
   },
   "seo_defaults": {
     "title_suffix": " | Benvor Digital",
@@ -183,5 +184,9 @@
     "action": "",
     "method": "POST",
     "success_message": "Thanks. Your message has been received and our team will be in touch shortly."
+  },
+  "business": {
+    "email": "info@benvordigital.com",
+    "office_address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
   }
 }

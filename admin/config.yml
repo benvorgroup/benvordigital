@@ -935,6 +935,16 @@ collections:
     file: content/settings.json
     format: json
     fields:
+    - label: Business Information
+      name: business
+      widget: object
+      fields:
+      - label: Business Email
+        name: email
+        widget: string
+      - label: Office Address
+        name: office_address
+        widget: text
     - label: Branding
       name: brand
       widget: object
@@ -1095,6 +1105,9 @@ collections:
       - label: Email
         name: email
         widget: string
+      - label: Office Address
+        name: address
+        widget: text
       - label: Link Groups
         name: groups
         widget: list
