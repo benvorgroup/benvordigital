@@ -1,0 +1,44 @@
+{
+  "title": "Portfolio",
+  "slug": "portfolio",
+  "published": true,
+  "show_header": true,
+  "show_footer": true,
+  "seo": {
+    "title": "Selected Work | Benvor Digital",
+    "description": "See digital growth work across SaaS, ecommerce, fintech, and service businesses."
+  },
+  "sections": [
+    {
+      "type": "page_hero",
+      "enabled": true,
+      "eyebrow": "Selected Work",
+      "heading": "Real growth systems. Real business outcomes.",
+      "text": "Explore websites, campaigns, positioning, and acquisition programs designed to move measurable metrics."
+    },
+    {
+      "type": "portfolio_grid",
+      "enabled": true,
+      "heading": "Case Studies",
+      "text": "Filter the work by category and explore the outcome behind each project.",
+      "projects": [
+        "nexora-saas",
+        "purely-skincare",
+        "levelup-financial",
+        "cloudix",
+        "brightline",
+        "flowua"
+      ]
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Have a similar growth challenge?",
+      "text": "Let's build the strategy, experience, and measurement system around it.",
+      "button": {
+        "label": "Start a Project",
+        "url": "/contact/"
+      }
+    }
+  ]
+}

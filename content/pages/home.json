@@ -1,25 +1,224 @@
 {
   "title": "Home",
   "slug": "home",
-  "navigation_label": "Home",
   "published": true,
-  "mode": "default",
-  "header_visible": true,
-  "footer_visible": true,
-  "theme": "inherit",
-  "page_background": "",
-  "container_width": "inherit",
+  "show_header": true,
+  "show_footer": true,
   "seo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "canonical_url": "",
-    "og_title": "",
-    "og_description": "",
-    "og_image": "",
-    "og_image_external": "",
-    "robots_index": true,
-    "robots_follow": true
+    "title": "Benvor Digital — Data-Driven Digital Growth Agency",
+    "description": "We drive digital growth that delivers real results through SEO, paid media, social, email, web design, and analytics."
   },
-  "sections": []
+  "sections": [
+    {
+      "type": "hero_dashboard",
+      "enabled": true,
+      "eyebrow": "Digital Growth Agency",
+      "heading": "We drive digital growth that delivers",
+      "highlight": "real results.",
+      "text": "Benvor Digital is a data-driven growth agency helping ambitious brands attract more customers, increase conversions, and scale with confidence.",
+      "primary_button": {
+        "label": "Get a Free Consultation",
+        "url": "/contact/"
+      },
+      "secondary_button": {
+        "label": "Explore Our Services",
+        "url": "/services/"
+      },
+      "stats": [
+        {
+          "icon": "trend",
+          "value": "150+",
+          "label": "Projects Delivered"
+        },
+        {
+          "icon": "users",
+          "value": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "icon": "trophy",
+          "value": "5+",
+          "label": "Years of Growth"
+        }
+      ],
+      "dashboard": {
+        "period": "Last 6 Months",
+        "label": "Growth Overview",
+        "metric_label": "Revenue",
+        "metric_value": "$2.45M",
+        "metric_change": "+28.6%",
+        "chart_values": [
+          22,
+          28,
+          26,
+          39,
+          45,
+          40,
+          51,
+          66,
+          65,
+          78,
+          82,
+          96
+        ],
+        "conversions": "12,875",
+        "conversion_change": "+35.4%",
+        "channels": [
+          {
+            "label": "Organic Search",
+            "value": 72
+          },
+          {
+            "label": "Paid Search",
+            "value": 18
+          },
+          {
+            "label": "Social Media",
+            "value": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "trust_stats",
+      "enabled": true,
+      "label": "Trusted by growing brands worldwide",
+      "brands": [
+        {
+          "name": "NEXORA",
+          "image": ""
+        },
+        {
+          "name": "LevelUp",
+          "image": ""
+        },
+        {
+          "name": "purely.",
+          "image": ""
+        },
+        {
+          "name": "Cloudix",
+          "image": ""
+        },
+        {
+          "name": "Brightline",
+          "image": ""
+        }
+      ],
+      "metrics": [
+        {
+          "value": "250M+",
+          "label": "Revenue Generated"
+        },
+        {
+          "value": "10M+",
+          "label": "Leads Driven"
+        }
+      ]
+    },
+    {
+      "type": "services_grid",
+      "enabled": true,
+      "eyebrow": "",
+      "heading": "Our Services",
+      "text": "End-to-end digital solutions designed to accelerate your growth.",
+      "services": [
+        "seo",
+        "ppc",
+        "social",
+        "email",
+        "web",
+        "analytics"
+      ]
+    },
+    {
+      "type": "why_benvor",
+      "enabled": true,
+      "heading": "Why Benvor Digital?",
+      "items": [
+        {
+          "icon": "target",
+          "title": "Results-Driven Approach",
+          "text": "We focus on metrics that matter — more traffic, better leads, and measurable revenue growth."
+        },
+        {
+          "icon": "database",
+          "title": "Data-Backed Strategies",
+          "text": "Every decision is powered by data, insights, and proven frameworks that drive performance."
+        },
+        {
+          "icon": "users",
+          "title": "Transparent Partnership",
+          "text": "Clear communication, honest reporting, and a true partner invested in your long-term success."
+        }
+      ]
+    },
+    {
+      "type": "selected_work",
+      "enabled": true,
+      "eyebrow": "",
+      "heading": "Selected Work",
+      "text": "Real results for real businesses.",
+      "button": {
+        "label": "View All Projects",
+        "url": "/portfolio/"
+      },
+      "projects": [
+        "nexora-saas",
+        "purely-skincare",
+        "levelup-financial"
+      ]
+    },
+    {
+      "type": "testimonials",
+      "enabled": true,
+      "heading": "What Our Clients Say",
+      "testimonials": [
+        "sarah-thompson",
+        "david-chen",
+        "james-carter",
+        "maya-patel"
+      ]
+    },
+    {
+      "type": "about_preview",
+      "enabled": true,
+      "image": "/assets/images/site/office.svg",
+      "image_alt": "Benvor Digital office and team environment",
+      "eyebrow": "About Benvor Digital",
+      "heading": "We're a team of strategists, creatives, and analysts who love solving problems.",
+      "text": "We partner with forward-thinking businesses to build powerful digital experiences and growth engines that scale.",
+      "button": {
+        "label": "Learn More About Us",
+        "url": "/about/"
+      },
+      "stats": [
+        {
+          "icon": "shield",
+          "value": "5+",
+          "label": "Years in Business"
+        },
+        {
+          "icon": "users",
+          "value": "30+",
+          "label": "Team Experts"
+        },
+        {
+          "icon": "globe",
+          "value": "Global",
+          "label": "Client Base"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Ready to Accelerate Your Growth?",
+      "text": "Let's build a strategy that drives real results for your business.",
+      "button": {
+        "label": "Get a Free Consultation",
+        "url": "/contact/"
+      }
+    }
+  ]
 }

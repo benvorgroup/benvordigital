@@ -1,0 +1,25 @@
+{
+  "slug": "flowua",
+  "title": "Flowua Digital",
+  "client": "Flowua",
+  "category": "Services",
+  "services": "Website & Conversion",
+  "description": "A modular website system for a scaling professional-services team.",
+  "image": "/assets/images/projects/flowua.svg",
+  "image_alt": "Flowua website system",
+  "featured": false,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "+82%",
+      "label": "Conversion Rate"
+    },
+    {
+      "value": "+34%",
+      "label": "Qualified Leads"
+    }
+  ],
+  "challenge": "Their previous site could not support new offers or campaign landing pages quickly.",
+  "solution": "We created a flexible component system and simplified the lead-generation journey.",
+  "result": "The team can now launch new campaign experiences quickly with stronger conversion."
+}

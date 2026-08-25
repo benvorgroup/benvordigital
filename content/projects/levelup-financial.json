@@ -1,0 +1,25 @@
+{
+  "slug": "levelup-financial",
+  "title": "LevelUp Financial",
+  "client": "LevelUp",
+  "category": "Fintech",
+  "services": "Web Design & SEO",
+  "description": "A new digital acquisition experience for a financial technology platform.",
+  "image": "/assets/images/projects/levelup.svg",
+  "image_alt": "LevelUp financial analytics dashboard",
+  "featured": true,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "+210%",
+      "label": "Leads Generated"
+    },
+    {
+      "value": "+60%",
+      "label": "Keyword Rankings"
+    }
+  ],
+  "challenge": "The old experience made a complex product difficult to understand and discover.",
+  "solution": "We paired a new information architecture with conversion design and an SEO-led content system.",
+  "result": "Lead volume and organic visibility increased across priority product categories."
+}

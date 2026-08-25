@@ -1,25 +1,100 @@
 {
   "title": "About",
   "slug": "about",
-  "navigation_label": "About",
   "published": true,
-  "mode": "default",
-  "header_visible": true,
-  "footer_visible": true,
-  "theme": "inherit",
-  "page_background": "",
-  "container_width": "inherit",
+  "show_header": true,
+  "show_footer": true,
   "seo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "canonical_url": "",
-    "og_title": "",
-    "og_description": "",
-    "og_image": "",
-    "og_image_external": "",
-    "robots_index": true,
-    "robots_follow": true
+    "title": "About Benvor Digital",
+    "description": "Meet the strategy, creative, and analytics team behind Benvor Digital."
   },
-  "sections": []
+  "sections": [
+    {
+      "type": "page_hero",
+      "enabled": true,
+      "eyebrow": "About Benvor Digital",
+      "heading": "Built for brands that expect marketing to perform.",
+      "text": "We combine strategy, creative, technology, and analytics to build growth systems designed around measurable business outcomes."
+    },
+    {
+      "type": "image_text",
+      "enabled": true,
+      "image": "/assets/images/site/office.svg",
+      "image_alt": "Benvor Digital workspace",
+      "eyebrow": "Our Story",
+      "heading": "A growth agency designed to connect the whole customer journey.",
+      "text": "Benvor Digital was built around a simple belief: marketing works better when strategy, creative, media, technology, and measurement operate as one system. We bring those disciplines together so clients can move faster, learn faster, and scale what works.",
+      "image_position": "left",
+      "button": {
+        "label": "Talk to Our Team",
+        "url": "/contact/"
+      }
+    },
+    {
+      "type": "stats",
+      "enabled": true,
+      "items": [
+        {
+          "value": "150+",
+          "label": "Projects Delivered"
+        },
+        {
+          "value": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "30+",
+          "label": "Specialists"
+        },
+        {
+          "value": "Global",
+          "label": "Client Base"
+        }
+      ]
+    },
+    {
+      "type": "why_benvor",
+      "enabled": true,
+      "heading": "What guides our work",
+      "items": [
+        {
+          "icon": "target",
+          "title": "Outcome First",
+          "text": "Every engagement starts with a commercial goal and a way to measure progress."
+        },
+        {
+          "icon": "spark",
+          "title": "Clarity Over Complexity",
+          "text": "We make sophisticated growth programs easier to understand, manage, and improve."
+        },
+        {
+          "icon": "users",
+          "title": "One Connected Team",
+          "text": "Strategy, creative, media, and measurement work together instead of in silos."
+        }
+      ]
+    },
+    {
+      "type": "team",
+      "enabled": true,
+      "eyebrow": "Our Team",
+      "heading": "Specialists who think beyond their channel.",
+      "text": "A multidisciplinary team built to solve growth problems together.",
+      "team": [
+        "alex-morgan",
+        "rina-lee",
+        "omar-rahman"
+      ]
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Let's solve the next growth problem together.",
+      "text": "Tell us where you want to go. We'll help map the fastest route.",
+      "button": {
+        "label": "Start a Conversation",
+        "url": "/contact/"
+      }
+    }
+  ]
 }

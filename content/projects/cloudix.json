@@ -1,0 +1,25 @@
+{
+  "slug": "cloudix",
+  "title": "Cloudix Platform",
+  "client": "Cloudix",
+  "category": "SaaS",
+  "services": "Brand & Web",
+  "description": "A cleaner product story and launch website for an infrastructure platform.",
+  "image": "/assets/images/projects/cloudix.svg",
+  "image_alt": "Cloudix product website",
+  "featured": false,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "+71%",
+      "label": "Product Engagement"
+    },
+    {
+      "value": "+43%",
+      "label": "Trial Starts"
+    }
+  ],
+  "challenge": "The product was powerful but difficult to explain quickly.",
+  "solution": "We simplified the positioning, visual system, and product storytelling.",
+  "result": "More visitors progressed from product exploration to trial."
+}

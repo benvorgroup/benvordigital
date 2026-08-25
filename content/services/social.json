@@ -1,0 +1,9 @@
+{
+  "slug": "social",
+  "title": "Social Media Marketing",
+  "description": "Build brand awareness and engage your audience.",
+  "icon": "chat",
+  "custom_icon": "",
+  "link": "/services/",
+  "enabled": true
+}

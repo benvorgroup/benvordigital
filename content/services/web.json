@@ -1,0 +1,9 @@
+{
+  "slug": "web",
+  "title": "Website Design & Development",
+  "description": "Modern, fast, and conversion-focused websites.",
+  "icon": "window",
+  "custom_icon": "",
+  "link": "/services/",
+  "enabled": true
+}

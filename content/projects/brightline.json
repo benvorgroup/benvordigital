@@ -1,0 +1,25 @@
+{
+  "slug": "brightline",
+  "title": "Brightline Performance",
+  "client": "Brightline",
+  "category": "Growth",
+  "services": "Paid Media & Analytics",
+  "description": "A measurement-first growth program for a multi-channel service business.",
+  "image": "/assets/images/projects/brightline.svg",
+  "image_alt": "Brightline growth performance visual",
+  "featured": false,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "4.8x",
+      "label": "ROAS"
+    },
+    {
+      "value": "-29%",
+      "label": "Cost Per Lead"
+    }
+  ],
+  "challenge": "Marketing data was fragmented across platforms.",
+  "solution": "We consolidated measurement and rebuilt campaigns around profitability targets.",
+  "result": "Spend became more efficient while qualified lead volume increased."
+}

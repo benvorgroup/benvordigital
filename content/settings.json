@@ -1,0 +1,187 @@
+{
+  "brand": {
+    "company_name": "Benvor Digital",
+    "logo_light": "/assets/branding/benvor-horizontal-light.png",
+    "logo_dark": "/assets/branding/benvor-horizontal-dark.png",
+    "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
+    "footer_logo_dark": "/assets/branding/benvor-stacked-dark.png",
+    "logo_alt": "Benvor Digital"
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "/",
+      "enabled": true
+    },
+    {
+      "label": "About",
+      "url": "/about/",
+      "enabled": true
+    },
+    {
+      "label": "Services",
+      "url": "/services/",
+      "enabled": true
+    },
+    {
+      "label": "Portfolio",
+      "url": "/portfolio/",
+      "enabled": true
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/",
+      "enabled": true
+    }
+  ],
+  "header_cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/",
+    "enabled": true
+  },
+  "theme": {
+    "default_mode": "system",
+    "allow_visitor_toggle": true,
+    "light": {
+      "background": "#FFFFFF",
+      "surface": "#F5F7FA",
+      "card": "#FFFFFF",
+      "heading": "#0A1F33",
+      "body": "#405266",
+      "muted": "#718096",
+      "border": "#E4E8EE",
+      "primary": "#2563EB",
+      "navy": "#0A1F33"
+    },
+    "dark": {
+      "background": "#071625",
+      "surface": "#0A1F33",
+      "card": "#102A42",
+      "heading": "#FFFFFF",
+      "body": "#D6E0E8",
+      "muted": "#AAB8C5",
+      "border": "#254158",
+      "primary": "#4D83F7",
+      "navy": "#061421"
+    },
+    "radius": 14,
+    "container_width": 1240,
+    "heading_font": "Manrope",
+    "body_font": "Inter"
+  },
+  "footer": {
+    "description": "We help ambitious brands grow with data-driven strategies and world-class digital solutions.",
+    "email": "hello@benvordigital.com",
+    "groups": [
+      {
+        "heading": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "url": "/about/"
+          },
+          {
+            "label": "Careers",
+            "url": "#"
+          },
+          {
+            "label": "Blog",
+            "url": "#"
+          },
+          {
+            "label": "Contact",
+            "url": "/contact/"
+          }
+        ]
+      },
+      {
+        "heading": "Services",
+        "links": [
+          {
+            "label": "SEO",
+            "url": "/services/"
+          },
+          {
+            "label": "PPC Advertising",
+            "url": "/services/"
+          },
+          {
+            "label": "Social Media Marketing",
+            "url": "/services/"
+          },
+          {
+            "label": "Email Marketing",
+            "url": "/services/"
+          }
+        ]
+      },
+      {
+        "heading": "Resources",
+        "links": [
+          {
+            "label": "Case Studies",
+            "url": "/portfolio/"
+          },
+          {
+            "label": "Guides",
+            "url": "#"
+          },
+          {
+            "label": "FAQs",
+            "url": "/services/"
+          },
+          {
+            "label": "Glossary",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "heading": "Legal",
+        "links": [
+          {
+            "label": "Privacy Policy",
+            "url": "#"
+          },
+          {
+            "label": "Terms of Service",
+            "url": "#"
+          },
+          {
+            "label": "Cookie Policy",
+            "url": "#"
+          }
+        ]
+      }
+    ],
+    "social": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com"
+      },
+      {
+        "label": "X",
+        "url": "https://twitter.com"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com"
+      }
+    ],
+    "copyright": "© 2026 Benvor Digital. All rights reserved."
+  },
+  "seo_defaults": {
+    "title_suffix": " | Benvor Digital",
+    "description": "Benvor Digital is a data-driven digital growth agency helping ambitious brands attract more customers, increase conversions, and scale with confidence.",
+    "social_image": ""
+  },
+  "contact_form": {
+    "action": "",
+    "method": "POST",
+    "success_message": "Thanks. Your message has been received and our team will be in touch shortly."
+  }
+}

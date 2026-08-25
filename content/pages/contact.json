@@ -1,25 +1,128 @@
 {
   "title": "Contact",
   "slug": "contact",
-  "navigation_label": "Contact",
   "published": true,
-  "mode": "default",
-  "header_visible": true,
-  "footer_visible": true,
-  "theme": "inherit",
-  "page_background": "",
-  "container_width": "inherit",
+  "show_header": true,
+  "show_footer": true,
   "seo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "canonical_url": "",
-    "og_title": "",
-    "og_description": "",
-    "og_image": "",
-    "og_image_external": "",
-    "robots_index": true,
-    "robots_follow": true
+    "title": "Contact Benvor Digital",
+    "description": "Tell Benvor Digital what you want to grow and we'll help identify the next best move."
   },
-  "sections": []
+  "sections": [
+    {
+      "type": "page_hero",
+      "enabled": true,
+      "eyebrow": "Let's Talk",
+      "heading": "Tell us what you want to grow.",
+      "text": "Share your goals, challenges, and current marketing setup. We'll respond with the next best step."
+    },
+    {
+      "type": "contact_split",
+      "enabled": true,
+      "heading": "Get a Free Consultation",
+      "text": "Tell us a little about your business. We typically respond within one business day.",
+      "fields": [
+        {
+          "type": "text",
+          "name": "name",
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "label": "Work Email",
+          "placeholder": "you@company.com",
+          "required": true
+        },
+        {
+          "type": "text",
+          "name": "company",
+          "label": "Company",
+          "placeholder": "Company name",
+          "required": false
+        },
+        {
+          "type": "select",
+          "name": "service",
+          "label": "What can we help with?",
+          "required": true,
+          "options": [
+            "SEO",
+            "Paid Advertising",
+            "Social Media",
+            "Email Marketing",
+            "Website Design & Development",
+            "Analytics & Reporting",
+            "Not sure yet"
+          ]
+        },
+        {
+          "type": "textarea",
+          "name": "message",
+          "label": "Tell us about your goals",
+          "placeholder": "What would you like to improve?",
+          "required": true
+        }
+      ],
+      "submit_label": "Send Inquiry",
+      "contact_cards": [
+        {
+          "label": "Email",
+          "value": "hello@benvordigital.com",
+          "link": "mailto:hello@benvordigital.com"
+        },
+        {
+          "label": "Typical response",
+          "value": "Within one business day",
+          "link": ""
+        },
+        {
+          "label": "Working model",
+          "value": "Remote-first, global client base",
+          "link": ""
+        }
+      ]
+    },
+    {
+      "type": "trust_stats",
+      "enabled": true,
+      "label": "A partner for ambitious growth teams",
+      "brands": [
+        {
+          "name": "NEXORA"
+        },
+        {
+          "name": "LevelUp"
+        },
+        {
+          "name": "purely."
+        },
+        {
+          "name": "Cloudix"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "98%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "value": "150+",
+          "label": "Projects Delivered"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Prefer a direct conversation?",
+      "text": "Book a consultation and we'll walk through your priorities together.",
+      "button": {
+        "label": "Get a Free Consultation",
+        "url": "mailto:hello@benvordigital.com"
+      }
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+{
+  "slug": "email",
+  "title": "Email Marketing Automation",
+  "description": "Nurture leads and drive repeat business.",
+  "icon": "mail",
+  "custom_icon": "",
+  "link": "/services/",
+  "enabled": true
+}

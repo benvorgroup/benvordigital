@@ -1,0 +1,25 @@
+{
+  "slug": "purely-skincare",
+  "title": "Purely Skincare",
+  "client": "Purely",
+  "category": "E-commerce",
+  "services": "Paid Search & CRO",
+  "description": "A conversion-focused paid media and landing-page program for a fast-growing skincare brand.",
+  "image": "/assets/images/projects/purely.svg",
+  "image_alt": "Purely skincare product visual",
+  "featured": true,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "+156%",
+      "label": "Revenue"
+    },
+    {
+      "value": "-36%",
+      "label": "Cost Per Acquisition"
+    }
+  ],
+  "challenge": "Purely was scaling media spend faster than landing-page conversion.",
+  "solution": "We rebuilt campaign structure, offer messaging, and key product landing pages around high-intent traffic.",
+  "result": "Revenue scaled while acquisition efficiency improved."
+}

@@ -1,25 +1,118 @@
 {
   "title": "Services",
   "slug": "services",
-  "navigation_label": "Services",
   "published": true,
-  "mode": "default",
-  "header_visible": true,
-  "footer_visible": true,
-  "theme": "inherit",
-  "page_background": "",
-  "container_width": "inherit",
+  "show_header": true,
+  "show_footer": true,
   "seo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "canonical_url": "",
-    "og_title": "",
-    "og_description": "",
-    "og_image": "",
-    "og_image_external": "",
-    "robots_index": true,
-    "robots_follow": true
+    "title": "Digital Marketing Services | Benvor Digital",
+    "description": "SEO, paid media, social, email, web design, and analytics services designed to work together."
   },
-  "sections": []
+  "sections": [
+    {
+      "type": "page_hero",
+      "enabled": true,
+      "eyebrow": "Our Services",
+      "heading": "End-to-end digital growth, built as one connected system.",
+      "text": "Choose a focused engagement or bring the full growth engine together. Every service is designed to connect strategy, execution, and measurement."
+    },
+    {
+      "type": "services_grid",
+      "enabled": true,
+      "heading": "Capabilities built to work together",
+      "text": "From discovery to conversion and retention, we connect the channels that drive sustainable growth.",
+      "services": [
+        "seo",
+        "ppc",
+        "social",
+        "email",
+        "web",
+        "analytics"
+      ]
+    },
+    {
+      "type": "process",
+      "enabled": true,
+      "eyebrow": "How We Work",
+      "heading": "A clear process from opportunity to growth.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Discover",
+          "text": "We audit your market, funnel, data, and current performance."
+        },
+        {
+          "number": "02",
+          "title": "Prioritize",
+          "text": "We identify the highest-value opportunities and build the roadmap."
+        },
+        {
+          "number": "03",
+          "title": "Launch",
+          "text": "Strategy, creative, tracking, and campaigns move into market quickly."
+        },
+        {
+          "number": "04",
+          "title": "Optimize",
+          "text": "We test, learn, report, and compound what works."
+        }
+      ]
+    },
+    {
+      "type": "why_benvor",
+      "enabled": true,
+      "heading": "Built differently from a channel-only agency",
+      "items": [
+        {
+          "icon": "database",
+          "title": "One Measurement Layer",
+          "text": "Every channel reports against the same business outcomes."
+        },
+        {
+          "icon": "window",
+          "title": "Connected Experiences",
+          "text": "Campaigns and landing experiences are designed together."
+        },
+        {
+          "icon": "trend",
+          "title": "Continuous Optimization",
+          "text": "Insights move quickly from reporting into the next test."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "enabled": true,
+      "eyebrow": "FAQ",
+      "heading": "Common questions",
+      "items": [
+        {
+          "question": "Can we start with one service?",
+          "answer": "Yes. Many clients begin with a focused engagement and expand as the growth roadmap becomes clearer."
+        },
+        {
+          "question": "How quickly can you launch?",
+          "answer": "Most focused campaigns or optimization programs can begin within a few weeks, depending on scope and access."
+        },
+        {
+          "question": "How do you report results?",
+          "answer": "We focus reporting on business outcomes first, supported by channel-level metrics and clear next actions."
+        },
+        {
+          "question": "Do you work with in-house teams?",
+          "answer": "Yes. We often operate as an extension of internal marketing, product, creative, or sales teams."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Not sure where to start?",
+      "text": "We'll identify the highest-leverage opportunities and recommend a focused first step.",
+      "button": {
+        "label": "Get a Free Consultation",
+        "url": "/contact/"
+      }
+    }
+  ]
 }

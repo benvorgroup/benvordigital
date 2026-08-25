@@ -1,0 +1,25 @@
+{
+  "slug": "nexora-saas",
+  "title": "Nexora SaaS Platform",
+  "client": "Nexora",
+  "category": "SaaS",
+  "services": "SEO & Content Strategy",
+  "description": "A search-led growth system designed to turn product education into qualified pipeline.",
+  "image": "/assets/images/projects/nexora.svg",
+  "image_alt": "Nexora SaaS analytics interface",
+  "featured": true,
+  "enabled": true,
+  "metrics": [
+    {
+      "value": "+172%",
+      "label": "Organic Traffic"
+    },
+    {
+      "value": "+48%",
+      "label": "Demo Requests"
+    }
+  ],
+  "challenge": "Nexora needed to turn strong product-market fit into predictable inbound demand.",
+  "solution": "We rebuilt the content architecture, technical SEO foundation, and conversion paths around high-intent use cases.",
+  "result": "Organic traffic and qualified demo demand increased significantly within the first growth cycle."
+}

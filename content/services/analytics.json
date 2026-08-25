@@ -1,0 +1,9 @@
+{
+  "slug": "analytics",
+  "title": "Analytics & Reporting",
+  "description": "Data-driven insights for smarter decisions.",
+  "icon": "chart",
+  "custom_icon": "",
+  "link": "/services/",
+  "enabled": true
+}
