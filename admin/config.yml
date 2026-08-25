@@ -2,173 +2,389 @@ backend:
   name: github
   repo: benvorgroup/benvordigital
   branch: main
-  base_url: https://benvor-cms-auth.benvorgroup.workers.dev
+  base_url: https://benvor-cms-auth.benvorgroup.workers.dev/
   auth_endpoint: auth
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "cms"
+    label: "Website CMS"
     files:
+      - label: "Site Settings"
+        name: "site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - {label: "Company Name", name: "company_name", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Logo Alt Text", name: "logo_alt", widget: "string"}
+          - {label: "Header CTA Text", name: "header_cta_text", widget: "string"}
+          - {label: "Header CTA Link", name: "header_cta_link", widget: "string"}
+          - label: "Navigation"
+            name: "navigation"
+            widget: "list"
+            min: 5
+            max: 5
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Target", name: "target", widget: "select", options: ["#home", "#about", "#services", "#listings", "#contact"]}
+          - {label: "Footer Description", name: "footer_description", widget: "text"}
+          - {label: "Footer Quick Links Heading", name: "footer_quick_links_heading", widget: "string"}
+          - {label: "Footer Services Heading", name: "footer_services_heading", widget: "string"}
+          - label: "Footer Service Links"
+            name: "footer_services_links"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Target", name: "target", widget: "string"}
+          - {label: "Footer Contact Heading", name: "footer_contact_heading", widget: "string"}
+          - {label: "Copyright", name: "copyright", widget: "string"}
+          - {label: "Footer Tagline", name: "footer_tagline", widget: "string"}
+          - label: "Social Links"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
+              - {label: "Instagram URL", name: "instagram", widget: "string"}
+              - {label: "X URL", name: "x", widget: "string"}
+              - {label: "Facebook URL", name: "facebook", widget: "string"}
+
       - label: "Homepage"
         name: "homepage"
         file: "content/homepage.json"
         format: "json"
         fields:
-          - {label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string"}
-          - {label: "Hero Heading", name: "hero_heading", widget: "string"}
-          - {label: "Hero Description", name: "hero_description", widget: "text"}
-          - {label: "Primary CTA Text", name: "hero_primary_cta_text", widget: "string"}
-          - {label: "Primary CTA Link", name: "hero_primary_cta_link", widget: "string"}
-          - {label: "Secondary CTA Text", name: "hero_secondary_cta_text", widget: "string"}
-          - {label: "Secondary CTA Link", name: "hero_secondary_cta_link", widget: "string"}
-          - label: "Hero Stats"
-            name: "stats"
-            widget: "list"
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
             fields:
-              - {label: "Value", name: "value", widget: "string"}
-              - {label: "Label", name: "label", widget: "string"}
-          - {label: "Services Heading", name: "services_heading", widget: "string"}
-          - label: "Homepage Services"
-            name: "services"
-            widget: "list"
-            fields:
-              - {label: "Tag", name: "tag", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-          - {label: "Testimonials Heading", name: "testimonials_heading", widget: "string"}
-          - label: "Testimonials"
-            name: "testimonials"
-            widget: "list"
+              - {label: "Primary CTA Text", name: "primary_cta_text", widget: "string"}
+              - {label: "Primary CTA Link", name: "primary_cta_link", widget: "string"}
+              - {label: "Secondary CTA Text", name: "secondary_cta_text", widget: "string"}
+              - {label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string"}
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+              - {label: "Chart Label", name: "chart_label", widget: "string"}
+              - {label: "Chart Value", name: "chart_value", widget: "string"}
+              - {label: "Chart Description", name: "chart_description", widget: "text"}
+          - label: "Trust Strip"
+            name: "trust"
+            widget: "object"
             fields:
-              - {label: "Quote", name: "quote", widget: "text"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Role", name: "role", widget: "string"}
-              - {label: "Image URL", name: "image", widget: "string"}
-          - {label: "About Preview Eyebrow", name: "about_preview_eyebrow", widget: "string"}
-          - {label: "About Preview Heading", name: "about_preview_heading", widget: "string"}
-          - {label: "About Preview Text", name: "about_preview_text", widget: "text"}
-          - {label: "About Preview Button", name: "about_preview_button", widget: "string"}
-          - {label: "About Preview Link", name: "about_preview_link", widget: "string"}
-          - {label: "Final CTA Heading", name: "final_cta_heading", widget: "string"}
-          - {label: "Final CTA Text", name: "final_cta_text", widget: "text"}
-          - {label: "Final CTA Primary Text", name: "final_cta_primary_text", widget: "string"}
-          - {label: "Final CTA Primary Link", name: "final_cta_primary_link", widget: "string"}
-          - {label: "Final CTA Secondary Text", name: "final_cta_secondary_text", widget: "string"}
-          - {label: "Final CTA Secondary Link", name: "final_cta_secondary_link", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Industries / Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+          - label: "Benefits Section"
+            name: "benefits_section"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Benefits"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Kicker / Number", name: "kicker", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          - label: "Services Preview"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Services"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "image"}
+                  - {label: "Icon Alt Text", name: "icon_alt", widget: "string"}
+                  - {label: "Tag", name: "tag", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
+          - label: "Testimonials"
+            name: "testimonials_section"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Testimonials"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
+                  - {label: "Quote", name: "quote", widget: "text"}
+                  - {label: "Photo", name: "image", widget: "image"}
+                  - {label: "Photo Alt Text", name: "image_alt", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role / Company", name: "role", widget: "string"}
+          - label: "About Preview"
+            name: "about_preview"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
+          - label: "Final CTA"
+            name: "final_cta"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Primary Button Text", name: "primary_text", widget: "string"}
+              - {label: "Primary Button Link", name: "primary_link", widget: "string"}
+              - {label: "Secondary Button Text", name: "secondary_text", widget: "string"}
+              - {label: "Secondary Button Link", name: "secondary_link", widget: "string"}
 
-      - label: "About"
+      - label: "About Page"
         name: "about"
         file: "content/about.json"
         format: "json"
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Story Heading", name: "story_heading", widget: "string"}
-          - {label: "Story Paragraph 1", name: "story_paragraph_1", widget: "text"}
-          - {label: "Story Paragraph 2", name: "story_paragraph_2", widget: "text"}
-          - {label: "Mission Heading", name: "mission_heading", widget: "string"}
-          - {label: "Mission Text", name: "mission_text", widget: "text"}
-          - {label: "Difference Heading", name: "difference_heading", widget: "string"}
-          - {label: "Differences", name: "differences", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-          - {label: "Values Heading", name: "values_heading", widget: "string"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Story"
+            name: "story"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+              - {label: "Story Heading", name: "story_heading", widget: "string"}
+              - {label: "Story Paragraph 1", name: "story_paragraph_1", widget: "text"}
+              - {label: "Story Paragraph 2", name: "story_paragraph_2", widget: "text"}
+              - {label: "Mission Heading", name: "mission_heading", widget: "string"}
+              - {label: "Mission Text", name: "mission_text", widget: "text"}
+              - {label: "Difference Heading", name: "difference_heading", widget: "string"}
+              - {label: "Difference Points", name: "differences", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
           - label: "Values"
             name: "values"
-            widget: "list"
+            widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-          - {label: "CTA Heading", name: "cta_heading", widget: "string"}
-          - {label: "CTA Text", name: "cta_text", widget: "text"}
-          - {label: "CTA Button", name: "cta_button", widget: "string"}
-          - {label: "CTA Link", name: "cta_link", widget: "string"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Value Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
 
-      - label: "Services"
+      - label: "Services Page"
         name: "services"
         file: "content/services.json"
         format: "json"
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
           - label: "Services"
-            name: "items"
+            name: "services"
             widget: "list"
             fields:
+              - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Icon Alt Text", name: "icon_alt", widget: "string"}
               - {label: "Tag", name: "tag", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-          - {label: "Process Heading", name: "process_heading", widget: "string"}
           - label: "Process"
             name: "process"
-            widget: "list"
+            widget: "object"
             fields:
-              - {label: "Number", name: "number", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-          - {label: "FAQ Heading", name: "faq_heading", widget: "string"}
-          - label: "FAQs"
-            name: "faqs"
-            widget: "list"
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Steps"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Number", name: "number", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+          - label: "FAQ"
+            name: "faq"
+            widget: "object"
             fields:
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "text"}
-          - {label: "CTA Heading", name: "cta_heading", widget: "string"}
-          - {label: "CTA Text", name: "cta_text", widget: "text"}
-          - {label: "CTA Button", name: "cta_button", widget: "string"}
-          - {label: "CTA Link", name: "cta_link", widget: "string"}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Question", name: "question", widget: "string"}
+                  - {label: "Answer", name: "answer", widget: "text"}
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
 
       - label: "Portfolio"
         name: "portfolio"
         file: "content/portfolio.json"
         format: "json"
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Filters"
+            name: "filters"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Code", name: "code", widget: "select", options: ["all", "web", "seo", "ads", "brand", "social"]}
           - label: "Projects"
             name: "projects"
             widget: "list"
             fields:
-              - {label: "Category Code", name: "category", widget: "select", options: ["web", "seo", "ads", "brand", "social"]}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["web", "seo", "ads", "brand", "social"]}
               - {label: "Category Label", name: "category_label", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Project Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Result", name: "result", widget: "string"}
-              - {label: "Image URL", name: "image", widget: "string"}
-          - {label: "CTA Heading", name: "cta_heading", widget: "string"}
-          - {label: "CTA Text", name: "cta_text", widget: "text"}
-          - {label: "CTA Button", name: "cta_button", widget: "string"}
-          - {label: "CTA Link", name: "cta_link", widget: "string"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Button Text", name: "button_text", widget: "string"}
+              - {label: "Button Link", name: "button_link", widget: "string"}
 
-      - label: "Contact"
+      - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
         format: "json"
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Success Message", name: "success_message", widget: "text"}
-          - {label: "Phone", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Address", name: "address", widget: "text"}
-          - {label: "Hours", name: "hours", widget: "string"}
-          - {label: "Google Map Embed URL", name: "map_url", widget: "string"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Form"
+            name: "form"
+            widget: "object"
+            fields:
+              - {label: "Success Message", name: "success_message", widget: "text"}
+              - label: "Fields"
+                name: "fields"
+                widget: "list"
+                min: 4
+                max: 4
+                fields:
+                  - {label: "Internal Name", name: "name", widget: "hidden"}
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Placeholder", name: "placeholder", widget: "string"}
+              - {label: "Submit Button", name: "submit_button", widget: "string"}
+          - label: "Contact Details"
+            name: "details"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+              - {label: "Hours", name: "hours", widget: "string"}
+          - label: "Map"
+            name: "map"
+            widget: "object"
+            fields:
+              - {label: "Google Maps Embed URL", name: "url", widget: "string"}
+              - {label: "Map Title", name: "title", widget: "string"}
+          - {label: "Social Section Heading", name: "social_heading", widget: "string"}
+          - label: "Social Button Labels"
+            name: "social_labels"
+            widget: "object"
+            fields:
+              - {label: "LinkedIn Label", name: "linkedin", widget: "string"}
+              - {label: "Instagram Label", name: "instagram", widget: "string"}
+              - {label: "X Label", name: "x", widget: "string"}
+              - {label: "Facebook Label", name: "facebook", widget: "string"}
 
-      - label: "Site Settings"
-        name: "settings"
-        file: "content/settings.json"
+      - label: "SEO"
+        name: "seo"
+        file: "content/seo.json"
         format: "json"
         fields:
-          - {label: "Header CTA Text", name: "header_cta_text", widget: "string"}
-          - {label: "Header CTA Link", name: "header_cta_link", widget: "string"}
-          - {label: "Footer Description", name: "footer_description", widget: "text"}
-          - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
-          - {label: "Instagram URL", name: "instagram", widget: "string"}
-          - {label: "X URL", name: "x", widget: "string"}
-          - {label: "Copyright", name: "copyright", widget: "string"}
-          - {label: "Footer Keywords", name: "footer_keywords", widget: "string"}
+          - label: "Global SEO"
+            name: "global"
+            widget: "object"
+            fields:
+              - {label: "Site Title", name: "site_title", widget: "string"}
+              - {label: "Default Meta Description", name: "default_description", widget: "text"}
+              - {label: "Keywords", name: "keywords", widget: "text"}
+              - {label: "Favicon", name: "favicon", widget: "image"}
+              - {label: "Social Share Image", name: "social_share_image", widget: "image", required: false}
+          - label: "Homepage SEO"
+            name: "home"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+          - label: "About SEO"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+          - label: "Services SEO"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+          - label: "Portfolio SEO"
+            name: "listings"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}
+          - label: "Contact SEO"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text"}

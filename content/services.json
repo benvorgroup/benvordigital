@@ -1,91 +1,113 @@
 {
-  "eyebrow": "Services",
-  "heading": "One agency, every channel your growth plan needs",
-  "intro": "Hire us for a single service or hand us the whole funnel — the systems are built to work together either way.",
-  "items": [
+  "hero": {
+    "eyebrow": "Services",
+    "heading": "One agency, every channel your growth plan needs",
+    "description": "Hire us for a single service or hand us the whole funnel — the systems are built to work together either way."
+  },
+  "services": [
     {
+      "icon": "/assets/icons/service-1.svg",
+      "icon_alt": "Website Design & Development icon",
       "tag": "Web",
       "title": "Website Design & Development",
       "description": "Custom, mobile‑first websites engineered around one goal: turning visitors into inquiries. Includes UX strategy, copywriting, and ongoing performance tuning."
     },
     {
+      "icon": "/assets/icons/service-2.svg",
+      "icon_alt": "Online Advertising icon",
       "tag": "Paid Media",
       "title": "Online Advertising",
       "description": "Search, paid social, display, and marketplace ads, built around a cost‑per‑lead target and optimized weekly against it."
     },
     {
+      "icon": "/assets/icons/service-3.svg",
+      "icon_alt": "Search Engine Optimization icon",
       "tag": "SEO",
       "title": "Search Engine Optimization",
       "description": "Technical audits, content strategy, and link building focused on the keywords your actual buyers use to search."
     },
     {
+      "icon": "/assets/icons/service-4.svg",
+      "icon_alt": "Social Media Management icon",
       "tag": "Social",
       "title": "Social Media Management",
       "description": "Content calendars, community management, and short‑form video built to grow a following that actually converts."
     },
     {
+      "icon": "/assets/icons/service-5.svg",
+      "icon_alt": "Creative & Branding icon",
       "tag": "Brand",
       "title": "Creative & Branding",
       "description": "Logo systems, brand guidelines, and campaign creative that keep every channel looking like one brand."
     },
     {
+      "icon": "/assets/icons/service-6.svg",
+      "icon_alt": "Growth Analytics & CRO icon",
       "tag": "Analytics",
       "title": "Growth Analytics & CRO",
       "description": "Heatmaps, A/B testing, and funnel analysis that steadily raises your conversion rate, not just your traffic."
     }
   ],
-  "process_heading": "How an engagement actually runs",
-  "process": [
-    {
-      "number": "01",
-      "title": "Audit",
-      "text": "We review your site, funnel, and current channels to find where leads are being lost."
-    },
-    {
-      "number": "02",
-      "title": "Plan",
-      "text": "You get a written roadmap with channels, targets, and timelines — before any contract is signed."
-    },
-    {
-      "number": "03",
-      "title": "Build & Launch",
-      "text": "Our team builds the assets and campaigns, and gets everything live within the agreed sprint."
-    },
-    {
-      "number": "04",
-      "title": "Optimize",
-      "text": "Weekly testing and reporting keep performance climbing, with full access to live data."
-    }
-  ],
-  "faq_heading": "Common questions",
-  "faqs": [
-    {
-      "question": "How quickly will I see results?",
-      "answer": "Paid channels typically show movement within 2–4 weeks. SEO and organic social are longer plays — most clients see meaningful traffic gains by month 3–4, with compounding growth after that."
-    },
-    {
-      "question": "Do you work with businesses outside my industry?",
-      "answer": "Yes. We work across retail, healthcare, technology, finance, non‑profits, and more. The channels and tactics shift by industry, but our process for finding what works stays the same."
-    },
-    {
-      "question": "Is there a minimum contract length?",
-      "answer": "No long lock‑ins. Engagements run quarter‑to‑quarter so we have enough runway to show results, but you're never stuck in a multi‑year agreement."
-    },
-    {
-      "question": "Can you just manage one channel, like SEO or ads?",
-      "answer": "Absolutely. Many clients start with a single service and expand once they see results. Others hand us the full funnel from day one — it's entirely up to you."
-    },
-    {
-      "question": "How do you report on performance?",
-      "answer": "You get access to a live dashboard tracking spend, leads, and cost‑per‑lead, plus a monthly strategy call to walk through what's working and what we're changing next."
-    },
-    {
-      "question": "What size businesses do you work with?",
-      "answer": "Everything from single‑location local shops to global brands running multi‑market campaigns. We scale the strategy and budget to fit, not the other way around."
-    }
-  ],
-  "cta_heading": "Not sure which service you need?",
-  "cta_text": "Tell us your goal and we'll recommend where to start.",
-  "cta_button": "Get a Free Audit",
-  "cta_link": "#contact"
+  "process": {
+    "eyebrow": "Process",
+    "heading": "How an engagement actually runs",
+    "items": [
+      {
+        "number": "01",
+        "title": "Audit",
+        "description": "We review your site, funnel, and current channels to find where leads are being lost."
+      },
+      {
+        "number": "02",
+        "title": "Plan",
+        "description": "You get a written roadmap with channels, targets, and timelines — before any contract is signed."
+      },
+      {
+        "number": "03",
+        "title": "Build & Launch",
+        "description": "Our team builds the assets and campaigns, and gets everything live within the agreed sprint."
+      },
+      {
+        "number": "04",
+        "title": "Optimize",
+        "description": "Weekly testing and reporting keep performance climbing, with full access to live data."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Common questions",
+    "items": [
+      {
+        "question": "How quickly will I see results?",
+        "answer": "Paid channels typically show movement within 2–4 weeks. SEO and organic social are longer plays — most clients see meaningful traffic gains by month 3–4, with compounding growth after that."
+      },
+      {
+        "question": "Do you work with businesses outside my industry?",
+        "answer": "Yes. We work across retail, healthcare, technology, finance, non‑profits, and more. The channels and tactics shift by industry, but our process for finding what works stays the same."
+      },
+      {
+        "question": "Is there a minimum contract length?",
+        "answer": "No long lock‑ins. Engagements run quarter‑to‑quarter so we have enough runway to show results, but you're never stuck in a multi‑year agreement."
+      },
+      {
+        "question": "Can you just manage one channel, like SEO or ads?",
+        "answer": "Absolutely. Many clients start with a single service and expand once they see results. Others hand us the full funnel from day one — it's entirely up to you."
+      },
+      {
+        "question": "How do you report on performance?",
+        "answer": "You get access to a live dashboard tracking spend, leads, and cost‑per‑lead, plus a monthly strategy call to walk through what's working and what we're changing next."
+      },
+      {
+        "question": "What size businesses do you work with?",
+        "answer": "Everything from single‑location local shops to global brands running multi‑market campaigns. We scale the strategy and budget to fit, not the other way around."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Not sure which service you need?",
+    "description": "Tell us your goal and we'll recommend where to start.",
+    "button_text": "Get a Free Audit",
+    "button_link": "#contact"
+  }
 }
