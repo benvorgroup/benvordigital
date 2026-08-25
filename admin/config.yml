@@ -9,382 +9,928 @@ media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-  - name: "cms"
-    label: "Website CMS"
-    files:
-      - label: "Site Settings"
-        name: "site"
-        file: "content/site.json"
-        format: "json"
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "content/pages"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "title"
+    summary: "{{title}} — #{{slug}}"
+    fields:
+      - {label: "Page Name", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", hint: "Use lowercase letters, numbers and hyphens only."}
+      - {label: "Navigation Label", name: "navigation_label", widget: "string", required: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - label: "Page SEO"
+        name: "seo"
+        widget: "object"
         fields:
-          - {label: "Company Name", name: "company_name", widget: "string"}
-          - {label: "Logo", name: "logo", widget: "image"}
-          - {label: "Logo Alt Text", name: "logo_alt", widget: "string"}
-          - {label: "Header CTA Text", name: "header_cta_text", widget: "string"}
-          - {label: "Header CTA Link", name: "header_cta_link", widget: "string"}
-          - label: "Navigation"
-            name: "navigation"
-            widget: "list"
-            min: 5
-            max: 5
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Target", name: "target", widget: "select", options: ["#home", "#about", "#services", "#listings", "#contact"]}
-          - {label: "Footer Description", name: "footer_description", widget: "text"}
-          - {label: "Footer Quick Links Heading", name: "footer_quick_links_heading", widget: "string"}
-          - {label: "Footer Services Heading", name: "footer_services_heading", widget: "string"}
-          - label: "Footer Service Links"
-            name: "footer_services_links"
-            widget: "list"
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Target", name: "target", widget: "string"}
-          - {label: "Footer Contact Heading", name: "footer_contact_heading", widget: "string"}
-          - {label: "Copyright", name: "copyright", widget: "string"}
-          - {label: "Footer Tagline", name: "footer_tagline", widget: "string"}
-          - label: "Social Links"
-            name: "social_links"
-            widget: "object"
-            fields:
-              - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
-              - {label: "Instagram URL", name: "instagram", widget: "string"}
-              - {label: "X URL", name: "x", widget: "string"}
-              - {label: "Facebook URL", name: "facebook", widget: "string"}
+          - {label: "SEO Title", name: "title", widget: "string", required: false}
+          - {label: "Meta Description", name: "description", widget: "text", required: false}
+          - {label: "Keywords", name: "keywords", widget: "string", required: false}
+          - {label: "Canonical URL", name: "canonical_url", widget: "string", required: false}
+          - {label: "Open Graph Title", name: "og_title", widget: "string", required: false}
+          - {label: "Open Graph Description", name: "og_description", widget: "text", required: false}
+          - {label: "Open Graph Image Upload", name: "og_image", widget: "image", required: false}
+          - {label: "Open Graph Image External URL", name: "og_image_external", widget: "string", required: false}
+          - {label: "Allow Indexing", name: "robots_index", widget: "boolean", default: true}
+          - {label: "Allow Link Following", name: "robots_follow", widget: "boolean", default: true}
+      - label: "Page Sections"
+        name: "sections"
+        widget: "list"
+        collapsed: true
+        summary: "{{fields.type}} — {{fields.heading}}"
 
-      - label: "Homepage"
-        name: "homepage"
-        file: "content/homepage.json"
-        format: "json"
-        fields:
+        types:
           - label: "Hero"
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
               - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Primary CTA Text", name: "primary_cta_text", widget: "string"}
-              - {label: "Primary CTA Link", name: "primary_cta_link", widget: "string"}
-              - {label: "Secondary CTA Text", name: "secondary_cta_text", widget: "string"}
-              - {label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string"}
-              - label: "Stats"
-                name: "stats"
+              - {label: "Text", name: "text", widget: "text", required: false}
+
+              - {label: "Hero Image Upload / Media Library", name: "image", widget: "image", required: false}
+              - {label: "Hero Image External URL", name: "image_external", widget: "string", required: false}
+              - {label: "Hero Image Alt Text", name: "image_alt", widget: "string", required: false}
+              - {label: "Image Position", name: "image_position", widget: "select", options: ["left","right"], default: "right"}
+              - label: "Primary Button"
+                name: "primary_button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", required: false}
+                  - {label: "URL", name: "url", widget: "string", required: false}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+              - label: "Secondary Button"
+                name: "secondary_button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", required: false}
+                  - {label: "URL", name: "url", widget: "string", required: false}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
+          - label: "Page Hero"
+            name: "page_hero"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Text", name: "text", widget: "text", required: false}
+
+          - label: "Text"
+            name: "text"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text"}
+
+          - label: "Rich Text"
+            name: "rich_text"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Body", name: "body", widget: "markdown"}
+
+          - label: "Image"
+            name: "image"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+
+              - {label: "Image Upload / Media Library", name: "image", widget: "image", required: false}
+              - {label: "Image External URL", name: "image_external", widget: "string", required: false}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+              - {label: "Caption", name: "image_caption", widget: "string", required: false}
+              - {label: "Image Link", name: "image_link", widget: "string", required: false}
+
+          - label: "Image + Text"
+            name: "image_text"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string"}
+              - {label: "Text", name: "text", widget: "text", required: false}
+
+              - {label: "Image Upload / Media Library", name: "image", widget: "image", required: false}
+              - {label: "Image External URL", name: "image_external", widget: "string", required: false}
+              - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+              - {label: "Image Position", name: "image_position", widget: "select", options: ["left","right"], default: "left"}
+              - label: "Button"
+                name: "button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", required: false}
+                  - {label: "URL", name: "url", widget: "string", required: false}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
+          - label: "Columns / Custom Content"
+            name: "columns"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - {label: "Columns", name: "columns", widget: "select", options: ["1","2","3","4"], default: "2"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+                  - {label: "Title", name: "title", widget: "string", required: false}
+                  - {label: "Text", name: "text", widget: "text", required: false}
+
+                  - {label: "Image Upload / Media Library", name: "image", widget: "image", required: false}
+                  - {label: "Image External URL", name: "image_external", widget: "string", required: false}
+                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+
+                  - {label: "Icon Upload / Media Library", name: "icon", widget: "image", required: false}
+                  - {label: "Icon External URL", name: "icon_external", widget: "string", required: false}
+                  - {label: "Icon Alt Text", name: "icon_alt", widget: "string", required: false}
+                  - label: "Button"
+                    name: "button"
+                    widget: "object"
+                    fields:
+                      - {label: "Label", name: "label", widget: "string", required: false}
+                      - {label: "URL", name: "url", widget: "string", required: false}
+                      - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
+          - label: "Feature Grid"
+            name: "features"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - {label: "Columns", name: "columns", widget: "select", options: ["1","2","3","4"], default: "3"}
+              - label: "Features"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Small Label", name: "label", widget: "string", required: false}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text", required: false}
+
+                  - {label: "Icon Upload / Media Library", name: "icon", widget: "image", required: false}
+                  - {label: "Icon External URL", name: "icon_external", widget: "string", required: false}
+                  - {label: "Icon Alt Text", name: "icon_alt", widget: "string", required: false}
+
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - {label: "Use Short Description", name: "use_short_description", widget: "boolean", default: true}
+              - label: "Services to Show"
+                name: "items"
+                widget: "relation"
+                collection: "services"
+                search_fields: ["title", "tag"]
+                value_field: "{{slug}}"
+                display_fields: ["title"]
+                multiple: true
+
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - label: "Testimonials to Show"
+                name: "items"
+                widget: "relation"
+                collection: "testimonials"
+                search_fields: ["name", "company"]
+                value_field: "{{slug}}"
+                display_fields: ["name", "company"]
+                multiple: true
+
+          - label: "Portfolio / Projects"
+            name: "portfolio"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - {label: "Show Filters", name: "show_filters", widget: "boolean", default: true}
+              - label: "Filter Buttons"
+                name: "filters"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Category Value", name: "value", widget: "string"}
+              - label: "Projects to Show"
+                name: "items"
+                widget: "relation"
+                collection: "portfolio"
+                search_fields: ["title","category_label"]
+                value_field: "{{slug}}"
+                display_fields: ["title"]
+                multiple: true
+
+          - label: "Stats"
+            name: "stats"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - label: "Statistics"
+                name: "items"
                 widget: "list"
                 fields:
                   - {label: "Value", name: "value", widget: "string"}
                   - {label: "Label", name: "label", widget: "string"}
-              - {label: "Chart Label", name: "chart_label", widget: "string"}
-              - {label: "Chart Value", name: "chart_value", widget: "string"}
-              - {label: "Chart Description", name: "chart_description", widget: "text"}
-          - label: "Trust Strip"
+
+          - label: "Trust / Logo Strip"
             name: "trust"
             widget: "object"
             fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Industries / Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-          - label: "Benefits Section"
-            name: "benefits_section"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - label: "Benefits"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Kicker / Number", name: "kicker", widget: "string"}
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-          - label: "Services Preview"
-            name: "services_section"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - label: "Services"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Icon", name: "icon", widget: "image"}
-                  - {label: "Icon Alt Text", name: "icon_alt", widget: "string"}
-                  - {label: "Tag", name: "tag", widget: "string"}
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-          - label: "Testimonials"
-            name: "testimonials_section"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - label: "Testimonials"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5}
-                  - {label: "Quote", name: "quote", widget: "text"}
-                  - {label: "Photo", name: "image", widget: "image"}
-                  - {label: "Photo Alt Text", name: "image_alt", widget: "string"}
-                  - {label: "Name", name: "name", widget: "string"}
-                  - {label: "Role / Company", name: "role", widget: "string"}
-          - label: "About Preview"
-            name: "about_preview"
-            widget: "object"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-          - label: "Final CTA"
-            name: "final_cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Primary Button Text", name: "primary_text", widget: "string"}
-              - {label: "Primary Button Link", name: "primary_link", widget: "string"}
-              - {label: "Secondary Button Text", name: "secondary_text", widget: "string"}
-              - {label: "Secondary Button Link", name: "secondary_link", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Label", name: "label", widget: "string", required: false}
+              - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
 
-      - label: "About Page"
-        name: "about"
-        file: "content/about.json"
-        format: "json"
-        fields:
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Story"
-            name: "story"
-            widget: "object"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
-              - {label: "Story Heading", name: "story_heading", widget: "string"}
-              - {label: "Story Paragraph 1", name: "story_paragraph_1", widget: "text"}
-              - {label: "Story Paragraph 2", name: "story_paragraph_2", widget: "text"}
-              - {label: "Mission Heading", name: "mission_heading", widget: "string"}
-              - {label: "Mission Text", name: "mission_text", widget: "text"}
-              - {label: "Difference Heading", name: "difference_heading", widget: "string"}
-              - {label: "Difference Points", name: "differences", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
-          - label: "Values"
-            name: "values"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - label: "Value Cards"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
           - label: "CTA"
             name: "cta"
             widget: "object"
             fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
               - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-
-      - label: "Services Page"
-        name: "services"
-        file: "content/services.json"
-        format: "json"
-        fields:
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            fields:
-              - {label: "Icon", name: "icon", widget: "image"}
-              - {label: "Icon Alt Text", name: "icon_alt", widget: "string"}
-              - {label: "Tag", name: "tag", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Process"
-            name: "process"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - label: "Steps"
-                name: "items"
-                widget: "list"
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - label: "Primary Button"
+                name: "primary_button"
+                widget: "object"
                 fields:
-                  - {label: "Number", name: "number", widget: "string"}
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Label", name: "label", widget: "string", required: false}
+                  - {label: "URL", name: "url", widget: "string", required: false}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+              - label: "Secondary Button"
+                name: "secondary_button"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", required: false}
+                  - {label: "URL", name: "url", widget: "string", required: false}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
           - label: "FAQ"
             name: "faq"
             widget: "object"
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - label: "Questions"
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - label: "FAQs to Show"
+                name: "items"
+                widget: "relation"
+                collection: "faq"
+                search_fields: ["question","category"]
+                value_field: "{{slug}}"
+                display_fields: ["question"]
+                multiple: true
+
+          - label: "Process / Steps"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - label: "Steps"
                 name: "items"
                 widget: "list"
                 fields:
-                  - {label: "Question", name: "question", widget: "string"}
-                  - {label: "Answer", name: "answer", widget: "text"}
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
+                  - {label: "Number", name: "number", widget: "string", required: false}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Text", name: "text", widget: "text"}
 
-      - label: "Portfolio"
-        name: "portfolio"
-        file: "content/portfolio.json"
-        format: "json"
-        fields:
-          - label: "Hero"
-            name: "hero"
+          - label: "Team"
+            name: "team"
             widget: "object"
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Filters"
-            name: "filters"
-            widget: "list"
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Code", name: "code", widget: "select", options: ["all", "web", "seo", "ads", "brand", "social"]}
-          - label: "Projects"
-            name: "projects"
-            widget: "list"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Image Alt Text", name: "image_alt", widget: "string"}
-              - {label: "Category", name: "category", widget: "select", options: ["web", "seo", "ads", "brand", "social"]}
-              - {label: "Category Label", name: "category_label", widget: "string"}
-              - {label: "Project Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Result", name: "result", widget: "string"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - label: "Team Members to Show"
+                name: "items"
+                widget: "relation"
+                collection: "team"
+                search_fields: ["name","position"]
+                value_field: "{{slug}}"
+                display_fields: ["name","position"]
+                multiple: true
 
-      - label: "Contact Page"
-        name: "contact"
-        file: "content/contact.json"
-        format: "json"
-        fields:
-          - label: "Hero"
-            name: "hero"
+          - label: "Gallery"
+            name: "gallery"
             widget: "object"
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Form"
-            name: "form"
-            widget: "object"
-            fields:
-              - {label: "Success Message", name: "success_message", widget: "text"}
-              - label: "Fields"
-                name: "fields"
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - label: "Images"
+                name: "images"
                 widget: "list"
-                min: 4
-                max: 4
                 fields:
-                  - {label: "Internal Name", name: "name", widget: "hidden"}
-                  - {label: "Label", name: "label", widget: "string"}
-                  - {label: "Placeholder", name: "placeholder", widget: "string"}
-              - {label: "Submit Button", name: "submit_button", widget: "string"}
-          - label: "Contact Details"
-            name: "details"
+                  - {label: "Upload / Media Library", name: "image", widget: "image", required: false}
+                  - {label: "External URL", name: "external_url", widget: "string", required: false}
+                  - {label: "Alt Text", name: "alt", widget: "string", required: false}
+                  - {label: "Caption", name: "caption", widget: "string", required: false}
+
+          - label: "Video / Embed"
+            name: "embed"
             widget: "object"
             fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Phone", name: "phone", widget: "string"}
-              - {label: "Email", name: "email", widget: "string"}
-              - {label: "Address", name: "address", widget: "text"}
-              - {label: "Hours", name: "hours", widget: "string"}
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Embed URL", name: "url", widget: "string"}
+              - {label: "Accessible Title", name: "title", widget: "string", required: false}
+
+          - label: "Contact Details"
+            name: "contact_details"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Heading", name: "heading", widget: "string", default: "Contact Details"}
+
+          - label: "Contact Form"
+            name: "contact_form"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Show Contact Details", name: "show_contact_details", widget: "boolean", default: true}
+              - {label: "Show Social Links", name: "show_social", widget: "boolean", default: true}
+              - {label: "Show Map", name: "show_map", widget: "boolean", default: true}
+
           - label: "Map"
             name: "map"
             widget: "object"
             fields:
-              - {label: "Google Maps Embed URL", name: "url", widget: "string"}
-              - {label: "Map Title", name: "title", widget: "string"}
-          - {label: "Social Section Heading", name: "social_heading", widget: "string"}
-          - label: "Social Button Labels"
-            name: "social_labels"
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Map Embed URL", name: "map_url", widget: "string", required: false}
+              - {label: "Accessible Title", name: "title", widget: "string", required: false}
+
+          - label: "Spacer"
+            name: "spacer"
             widget: "object"
             fields:
-              - {label: "LinkedIn Label", name: "linkedin", widget: "string"}
-              - {label: "Instagram Label", name: "instagram", widget: "string"}
-              - {label: "X Label", name: "x", widget: "string"}
-              - {label: "Facebook Label", name: "facebook", widget: "string"}
+              - {label: "Height (px)", name: "height", widget: "number", min: 0, max: 300, default: 48}
 
-      - label: "SEO"
+          - label: "Divider"
+            name: "divider"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+
+          - label: "Flexible Custom Section"
+            name: "custom_content"
+            widget: "object"
+            fields:
+              - {label: "Visible", name: "visible", widget: "boolean", default: true}
+              - {label: "Section ID", name: "section_id", widget: "string", required: false}
+              - {label: "Background Color", name: "background_color", widget: "color", required: false}
+              - {label: "Text Color", name: "text_color", widget: "color", required: false}
+              - {label: "Content Width", name: "content_width", widget: "select", options: ["narrow", "wide", "full"], default: "wide"}
+              - {label: "Alignment", name: "alignment", widget: "select", options: ["left", "center", "right"], default: "left"}
+              - {label: "Vertical Spacing", name: "padding", widget: "select", options: ["compact", "normal", "spacious"], default: "normal"}
+              - {label: "Show on Mobile", name: "mobile_visible", widget: "boolean", default: true}
+              - {label: "Show on Desktop", name: "desktop_visible", widget: "boolean", default: true}
+              - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Text", name: "text", widget: "text", required: false}
+              - {label: "Columns", name: "columns", widget: "select", options: ["1","2","3","4"], default: "2"}
+              - label: "Content Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+                  - {label: "Title", name: "title", widget: "string", required: false}
+                  - {label: "Text", name: "text", widget: "text", required: false}
+
+                  - {label: "Image Upload / Media Library", name: "image", widget: "image", required: false}
+                  - {label: "Image External URL", name: "image_external", widget: "string", required: false}
+                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+
+                  - {label: "Icon Upload / Media Library", name: "icon", widget: "image", required: false}
+                  - {label: "Icon External URL", name: "icon_external", widget: "string", required: false}
+                  - {label: "Icon Alt Text", name: "icon_alt", widget: "string", required: false}
+                  - label: "Button"
+                    name: "button"
+                    widget: "object"
+                    fields:
+                      - {label: "Label", name: "label", widget: "string", required: false}
+                      - {label: "URL", name: "url", widget: "string", required: false}
+                      - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
+
+  - name: "services"
+    label: "Reusable Content / Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "title"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+      - {label: "Tag / Category", name: "tag", widget: "string", required: false}
+      - {label: "Service Name", name: "title", widget: "string"}
+      - {label: "Short Description", name: "short_description", widget: "text", required: false}
+      - {label: "Full Description", name: "full_description", widget: "text", required: false}
+
+      - {label: "Icon Upload / Media Library", name: "icon", widget: "image", required: false}
+      - {label: "Icon External URL", name: "icon_external", widget: "string", required: false}
+      - {label: "Icon Alt Text", name: "icon_alt", widget: "string", required: false}
+
+      - {label: "Image Upload / Media Library", name: "image", widget: "image", required: false}
+      - {label: "Image External URL", name: "image_external", widget: "string", required: false}
+      - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
+      - {label: "CTA Text", name: "cta_text", widget: "string", required: false}
+      - {label: "CTA Link", name: "cta_link", widget: "string", required: false}
+
+  - name: "testimonials"
+    label: "Reusable Content / Testimonials"
+    label_singular: "Testimonial"
+    folder: "content/testimonials"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "name"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "job_title", widget: "string", required: false}
+      - {label: "Company", name: "company", widget: "string", required: false}
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Rating", name: "rating", widget: "number", min: 0, max: 5, default: 5}
+
+      - {label: "Photo Upload / Media Library", name: "photo", widget: "image", required: false}
+      - {label: "Photo External URL", name: "photo_external", widget: "string", required: false}
+      - {label: "Photo Alt Text", name: "photo_alt", widget: "string", required: false}
+      - {label: "Optional Link", name: "link", widget: "string", required: false}
+
+  - name: "portfolio"
+    label: "Reusable Content / Portfolio Projects"
+    label_singular: "Project"
+    folder: "content/portfolio"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "title"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Category Code", name: "category", widget: "string"}
+      - {label: "Category Label", name: "category_label", widget: "string"}
+      - {label: "Industry", name: "industry", widget: "string", required: false}
+      - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Challenge", name: "challenge", widget: "text", required: false}
+      - {label: "Solution", name: "solution", widget: "text", required: false}
+      - {label: "Results", name: "results", widget: "text", required: false}
+      - {label: "Result Metric", name: "result_metric", widget: "string", required: false}
+
+      - {label: "Main Image Upload / Media Library", name: "main_image", widget: "image", required: false}
+      - {label: "Main Image External URL", name: "main_image_external", widget: "string", required: false}
+      - {label: "Main Image Alt Text", name: "main_image_alt", widget: "string", required: false}
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "External URL", name: "external_url", widget: "string", required: false}
+          - {label: "Alt Text", name: "alt", widget: "string", required: false}
+          - {label: "Caption", name: "caption", widget: "string", required: false}
+      - {label: "CTA Text", name: "cta_text", widget: "string", required: false}
+      - {label: "CTA Link", name: "cta_link", widget: "string", required: false}
+
+  - name: "faq"
+    label: "Reusable Content / FAQs"
+    label_singular: "FAQ"
+    folder: "content/faq"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "question"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+      - {label: "Category", name: "category", widget: "string", required: false}
+      - {label: "Question", name: "question", widget: "string"}
+      - {label: "Answer", name: "answer", widget: "text"}
+
+  - name: "team"
+    label: "Reusable Content / Team"
+    label_singular: "Team Member"
+    folder: "content/team"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.slug}}"
+    identifier_field: "name"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Position", name: "position", widget: "string", required: false}
+      - {label: "Bio", name: "bio", widget: "text", required: false}
+
+      - {label: "Photo Upload / Media Library", name: "photo", widget: "image", required: false}
+      - {label: "Photo External URL", name: "photo_external", widget: "string", required: false}
+      - {label: "Photo Alt Text", name: "photo_alt", widget: "string", required: false}
+      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+      - {label: "Other Social Link", name: "other_link", widget: "string", required: false}
+
+  - name: "website"
+    label: "Website Settings"
+    files:
+      - label: "Branding"
+        name: "branding"
+        file: "content/branding.json"
+        format: "json"
+        fields:
+          - {label: "Company Name", name: "company_name", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image", required: false}
+          - {label: "Logo External URL", name: "logo_external", widget: "string", required: false}
+          - {label: "Alternate Logo", name: "alternate_logo", widget: "image", required: false}
+          - {label: "Alternate Logo External URL", name: "alternate_logo_external", widget: "string", required: false}
+          - {label: "Favicon", name: "favicon", widget: "image", required: false}
+          - {label: "Favicon External URL", name: "favicon_external", widget: "string", required: false}
+          - label: "Colors"
+            name: "colors"
+            widget: "object"
+            fields:
+              - {label: "Primary", name: "primary", widget: "color"}
+              - {label: "Primary Dark", name: "primary_deep", widget: "color"}
+              - {label: "Secondary", name: "secondary", widget: "color"}
+              - {label: "Secondary Dark", name: "secondary_deep", widget: "color"}
+              - {label: "Background", name: "background", widget: "color"}
+              - {label: "Surface / Card", name: "surface", widget: "color"}
+              - {label: "Heading Text", name: "heading", widget: "color"}
+              - {label: "Body Text", name: "body", widget: "color"}
+              - {label: "Muted Text", name: "muted", widget: "color"}
+              - {label: "Border", name: "border", widget: "color"}
+              - {label: "Dark Surface", name: "night", widget: "color"}
+              - {label: "Success", name: "success", widget: "color"}
+              - {label: "Error", name: "error", widget: "color"}
+          - label: "Typography"
+            name: "typography"
+            widget: "object"
+            fields:
+              - {label: "Heading Font", name: "heading_font", widget: "select", options: ["Space Grotesk","Inter","Roboto","Montserrat","Poppins","Lato","Playfair Display","Merriweather"]}
+              - {label: "Body Font", name: "body_font", widget: "select", options: ["Inter","Roboto","Montserrat","Poppins","Lato","Merriweather"]}
+              - {label: "Accent Font", name: "accent_font", widget: "select", options: ["IBM Plex Mono","Inter","Roboto"]}
+              - {label: "Heading Weight", name: "heading_weight", widget: "select", options: ["400","500","600","700"]}
+              - {label: "Body Weight", name: "body_weight", widget: "select", options: ["400","500","600","700"]}
+              - {label: "Base Font Size", name: "base_font_size", widget: "number", min: 12, max: 22}
+          - label: "Buttons"
+            name: "buttons"
+            widget: "object"
+            fields:
+              - {label: "Button Radius", name: "radius", widget: "number", min: 0, max: 100}
+              - {label: "Vertical Padding", name: "padding_y", widget: "number", min: 6, max: 30}
+              - {label: "Horizontal Padding", name: "padding_x", widget: "number", min: 10, max: 50}
+          - label: "General Layout"
+            name: "layout"
+            widget: "object"
+            fields:
+              - {label: "Container Width", name: "container_width", widget: "number", min: 800, max: 1600}
+              - {label: "Default Section Spacing", name: "section_spacing", widget: "number", min: 40, max: 180}
+              - {label: "Card Radius", name: "card_radius", widget: "number", min: 0, max: 50}
+              - {label: "Shadow Level", name: "shadow_level", widget: "select", options: ["none","soft","medium","strong"]}
+              - {label: "Appearance", name: "appearance", widget: "select", options: ["light","dark"]}
+
+      - label: "Navigation"
+        name: "navigation"
+        file: "content/navigation.json"
+        format: "json"
+        fields:
+          - label: "Header CTA"
+            name: "header_cta"
+            widget: "object"
+            fields:
+              - {label: "Label", name: "label", widget: "string", required: false}
+              - {label: "URL", name: "url", widget: "string", required: false}
+              - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+          - label: "Header / Mobile Navigation"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+              - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+              - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+          - label: "Footer Navigation Groups"
+            name: "footer_groups"
+            widget: "list"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string"}
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+                  - {label: "Open in New Tab", name: "new_tab", widget: "boolean", default: false}
+
+      - label: "Business / Contact / Footer"
+        name: "site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Business Details"
+            name: "business"
+            widget: "object"
+            fields:
+              - {label: "Business Name", name: "name", widget: "string"}
+              - {label: "Website URL", name: "website_url", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Address Line 1", name: "address_line_1", widget: "string", required: false}
+              - {label: "Address Line 2", name: "address_line_2", widget: "string", required: false}
+              - {label: "Business Hours", name: "hours", widget: "string", required: false}
+              - {label: "Map Embed URL", name: "map_url", widget: "string", required: false}
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Instagram", name: "instagram", widget: "string", required: false}
+              - {label: "X", name: "x", widget: "string", required: false}
+              - {label: "Facebook", name: "facebook", widget: "string", required: false}
+              - {label: "YouTube", name: "youtube", widget: "string", required: false}
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Services Heading", name: "services_heading", widget: "string", required: false}
+              - {label: "Contact Heading", name: "contact_heading", widget: "string", required: false}
+              - {label: "Copyright", name: "copyright", widget: "string"}
+              - {label: "Secondary Text", name: "secondary_text", widget: "string", required: false}
+          - label: "Contact Form"
+            name: "contact_form"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "heading", widget: "string", required: false}
+              - {label: "Name Label", name: "name_label", widget: "string"}
+              - {label: "Name Placeholder", name: "name_placeholder", widget: "string", required: false}
+              - {label: "Email Label", name: "email_label", widget: "string"}
+              - {label: "Email Placeholder", name: "email_placeholder", widget: "string", required: false}
+              - {label: "Phone Label", name: "phone_label", widget: "string"}
+              - {label: "Phone Placeholder", name: "phone_placeholder", widget: "string", required: false}
+              - {label: "Message Label", name: "message_label", widget: "string"}
+              - {label: "Message Placeholder", name: "message_placeholder", widget: "string", required: false}
+              - {label: "Submit Button Text", name: "submit_text", widget: "string"}
+              - {label: "Success Message", name: "success_message", widget: "text"}
+
+      - label: "Global SEO"
         name: "seo"
         file: "content/seo.json"
         format: "json"
         fields:
-          - label: "Global SEO"
-            name: "global"
+          - label: "SEO Defaults"
+            name: "defaults"
             widget: "object"
             fields:
-              - {label: "Site Title", name: "site_title", widget: "string"}
-              - {label: "Default Meta Description", name: "default_description", widget: "text"}
-              - {label: "Keywords", name: "keywords", widget: "text"}
-              - {label: "Favicon", name: "favicon", widget: "image"}
-              - {label: "Social Share Image", name: "social_share_image", widget: "image", required: false}
-          - label: "Homepage SEO"
-            name: "home"
+              - {label: "Title Suffix", name: "title_suffix", widget: "string", required: false}
+              - {label: "Default Description", name: "description", widget: "text", required: false}
+              - {label: "Default Keywords", name: "keywords", widget: "string", required: false}
+              - {label: "Canonical Base URL", name: "canonical_base", widget: "string", required: false}
+              - {label: "Default Open Graph Image", name: "og_image", widget: "image", required: false}
+              - {label: "Default Open Graph External URL", name: "og_image_external", widget: "string", required: false}
+              - {label: "Index by Default", name: "robots_index", widget: "boolean", default: true}
+              - {label: "Follow by Default", name: "robots_follow", widget: "boolean", default: true}
+          - label: "Organization Structured Data"
+            name: "organization"
             widget: "object"
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
-          - label: "About SEO"
-            name: "about"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
-          - label: "Services SEO"
-            name: "services"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
-          - label: "Portfolio SEO"
-            name: "listings"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
-          - label: "Contact SEO"
-            name: "contact"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
+              - {label: "Enabled", name: "enabled", widget: "boolean", default: true}
+              - {label: "Business Name", name: "business_name", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+              - {label: "Logo External URL", name: "logo_external", widget: "string", required: false}
+              - {label: "Website URL", name: "website_url", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string", required: false}
+              - {label: "Email", name: "email", widget: "string", required: false}
+              - {label: "Street Address", name: "street_address", widget: "string", required: false}
+              - {label: "City", name: "address_locality", widget: "string", required: false}
+              - {label: "State / Region", name: "address_region", widget: "string", required: false}
+              - {label: "Postal Code", name: "postal_code", widget: "string", required: false}
+              - {label: "Country", name: "country", widget: "string", required: false}

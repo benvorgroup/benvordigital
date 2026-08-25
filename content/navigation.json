@@ -1,0 +1,96 @@
+{
+  "header_cta": {
+    "label": "Book a Call",
+    "url": "#contact",
+    "new_tab": false
+  },
+  "items": [
+    {
+      "label": "Home",
+      "url": "#home",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "About",
+      "url": "#about",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Services",
+      "url": "#services",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Portfolio",
+      "url": "#portfolio",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Contact",
+      "url": "#contact",
+      "new_tab": false,
+      "enabled": true
+    }
+  ],
+  "footer_groups": [
+    {
+      "heading": "Quick Links",
+      "links": [
+        {
+          "label": "Home",
+          "url": "#home",
+          "new_tab": false
+        },
+        {
+          "label": "About",
+          "url": "#about",
+          "new_tab": false
+        },
+        {
+          "label": "Services",
+          "url": "#services",
+          "new_tab": false
+        },
+        {
+          "label": "Portfolio",
+          "url": "#portfolio",
+          "new_tab": false
+        },
+        {
+          "label": "Contact",
+          "url": "#contact",
+          "new_tab": false
+        }
+      ]
+    },
+    {
+      "heading": "Services",
+      "links": [
+        {
+          "label": "Web Design",
+          "url": "#services",
+          "new_tab": false
+        },
+        {
+          "label": "Paid Advertising",
+          "url": "#services",
+          "new_tab": false
+        },
+        {
+          "label": "SEO",
+          "url": "#services",
+          "new_tab": false
+        },
+        {
+          "label": "Social Media",
+          "url": "#services",
+          "new_tab": false
+        }
+      ]
+    }
+  ]
+}

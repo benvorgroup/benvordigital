@@ -1,0 +1,112 @@
+{
+  "title": "Portfolio",
+  "slug": "portfolio",
+  "navigation_label": "Portfolio",
+  "published": true,
+  "seo": {
+    "title": "Portfolio | Benvor Digital",
+    "description": "See examples of Benvor Digital website, SEO, advertising, social media and branding work.",
+    "keywords": "",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "og_image_external": "",
+    "robots_index": true,
+    "robots_follow": true
+  },
+  "sections": [
+    {
+      "type": "page_hero",
+      "visible": true,
+      "section_id": "portfolio-hero",
+      "eyebrow": "Our Work",
+      "heading": "Proof, not promises",
+      "text": "A sample of the websites, campaigns, and brand systems we've built across industries.",
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "portfolio",
+      "visible": true,
+      "section_id": "portfolio-grid",
+      "eyebrow": "",
+      "heading": "",
+      "text": "",
+      "items": [
+        "northfield-home-goods",
+        "larkspur-finance",
+        "cedarview-clinics",
+        "fielder-co",
+        "marlowe-hotels",
+        "ledgerly",
+        "harlow-james",
+        "riverbend-trust",
+        "vector-robotics"
+      ],
+      "show_filters": true,
+      "filters": [
+        {
+          "label": "All Work",
+          "value": "all"
+        },
+        {
+          "label": "Web Design",
+          "value": "web"
+        },
+        {
+          "label": "SEO",
+          "value": "seo"
+        },
+        {
+          "label": "Paid Ads",
+          "value": "ads"
+        },
+        {
+          "label": "Branding",
+          "value": "brand"
+        },
+        {
+          "label": "Social",
+          "value": "social"
+        }
+      ],
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "cta",
+      "visible": true,
+      "section_id": "portfolio-cta",
+      "heading": "Like what you see?",
+      "text": "Let's talk about what a similar system could do for your business.",
+      "primary_button": {
+        "label": "Start a Project",
+        "url": "#contact",
+        "new_tab": false
+      },
+      "secondary_button": {
+        "label": "",
+        "url": "",
+        "new_tab": false
+      },
+      "background_color": "#3730e0",
+      "text_color": "#ffffff",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    }
+  ]
+}

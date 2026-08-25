@@ -1,0 +1,15 @@
+{
+  "slug": "seo",
+  "enabled": true,
+  "tag": "SEO",
+  "title": "Search Engine Optimization",
+  "short_description": "Rank where buyers are already searching and stay there.",
+  "full_description": "Technical audits, content strategy, and link building focused on the keywords your actual buyers use to search.",
+  "icon": "/assets/icons/seo.svg",
+  "icon_external": "",
+  "image": "",
+  "image_external": "",
+  "image_alt": "Search Engine Optimization illustration",
+  "cta_text": "Learn more",
+  "cta_link": "#contact"
+}

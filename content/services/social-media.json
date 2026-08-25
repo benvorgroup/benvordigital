@@ -1,0 +1,15 @@
+{
+  "slug": "social-media",
+  "enabled": true,
+  "tag": "Social",
+  "title": "Social Media Management",
+  "short_description": "Content and community that builds a brand people follow.",
+  "full_description": "Content calendars, community management, and short‑form video built to grow a following that actually converts.",
+  "icon": "/assets/icons/social.svg",
+  "icon_external": "",
+  "image": "",
+  "image_external": "",
+  "image_alt": "Social Media Management illustration",
+  "cta_text": "Learn more",
+  "cta_link": "#contact"
+}

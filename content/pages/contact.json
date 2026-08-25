@@ -1,0 +1,51 @@
+{
+  "title": "Contact",
+  "slug": "contact",
+  "navigation_label": "Contact",
+  "published": true,
+  "seo": {
+    "title": "Contact Benvor Digital",
+    "description": "Contact Benvor Digital to discuss your website, SEO, paid advertising or digital growth goals.",
+    "keywords": "",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "og_image_external": "",
+    "robots_index": true,
+    "robots_follow": true
+  },
+  "sections": [
+    {
+      "type": "page_hero",
+      "visible": true,
+      "section_id": "contact-hero",
+      "eyebrow": "Contact",
+      "heading": "Let's build your growth plan",
+      "text": "Tell us a bit about your business. We'll reply within one business day with next steps.",
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "contact_form",
+      "visible": true,
+      "section_id": "contact-form",
+      "heading": "Send us a message",
+      "show_contact_details": true,
+      "show_social": true,
+      "show_map": true,
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    }
+  ]
+}

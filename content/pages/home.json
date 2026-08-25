@@ -1,0 +1,229 @@
+{
+  "title": "Home",
+  "slug": "home",
+  "navigation_label": "Home",
+  "published": true,
+  "seo": {
+    "title": "Benvor Digital — Full-Service Digital Marketing Agency",
+    "description": "Benvor Digital helps businesses grow with websites, SEO, paid ads, social media, branding and conversion optimization.",
+    "keywords": "",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "og_image_external": "",
+    "robots_index": true,
+    "robots_follow": true
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "visible": true,
+      "section_id": "hero",
+      "eyebrow": "Full‑Service Digital Marketing Agency",
+      "heading": "We turn traffic into pipeline, not just impressions.",
+      "text": "Benvor Digital builds the websites, ads, SEO, and social systems that take a business from \"we should try marketing\" to a predictable stream of qualified leads.",
+      "primary_button": {
+        "label": "Get a free growth audit",
+        "url": "#contact",
+        "new_tab": false
+      },
+      "secondary_button": {
+        "label": "See our work",
+        "url": "#portfolio",
+        "new_tab": false
+      },
+      "image": "",
+      "image_external": "",
+      "image_alt": "",
+      "image_position": "right",
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "stats",
+      "visible": true,
+      "section_id": "results",
+      "eyebrow": "",
+      "heading": "",
+      "items": [
+        {
+          "value": "187%",
+          "label": "Avg. lead lift"
+        },
+        {
+          "value": "4.6x",
+          "label": "Avg. ROAS"
+        },
+        {
+          "value": "120+",
+          "label": "Brands grown"
+        }
+      ],
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "trust",
+      "visible": true,
+      "section_id": "trust",
+      "label": "Trusted by growing teams in",
+      "items": [
+        "Retail",
+        "Healthcare",
+        "Fintech",
+        "SaaS",
+        "Non‑Profit",
+        "Hospitality"
+      ],
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "center",
+      "padding": "compact",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "features",
+      "visible": true,
+      "section_id": "why-benvor",
+      "eyebrow": "Why Benvor",
+      "heading": "Marketing that's built to be measured",
+      "text": "No vanity metrics, no black boxes. Every engagement is tied back to pipeline and revenue.",
+      "items": [
+        {
+          "icon": "",
+          "icon_external": "",
+          "title": "Plans built on your numbers",
+          "text": "We start with your funnel and unit economics, not a template. Every channel we recommend has a reason tied to your CAC and LTV.",
+          "label": "01 / Strategy first"
+        },
+        {
+          "icon": "",
+          "icon_external": "",
+          "title": "Design, dev, and media in sync",
+          "text": "Your web team and your ad team are the same team. No handoffs, no mismatched messaging between the site and the campaigns driving to it.",
+          "label": "02 / One connected team"
+        },
+        {
+          "icon": "",
+          "icon_external": "",
+          "title": "Live reporting, not monthly PDFs",
+          "text": "A shared dashboard shows spend, leads, and cost‑per‑lead in real time, so you're never waiting on us to know how it's going.",
+          "label": "03 / Full visibility"
+        }
+      ],
+      "columns": "3",
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "services",
+      "visible": true,
+      "section_id": "home-services",
+      "eyebrow": "What we do",
+      "heading": "Everything your online growth engine needs",
+      "text": "",
+      "items": [
+        "web-design",
+        "paid-advertising",
+        "seo",
+        "social-media",
+        "branding",
+        "analytics-cro"
+      ],
+      "use_short_description": true,
+      "background_color": "#eef0fa",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "testimonials",
+      "visible": true,
+      "section_id": "testimonials",
+      "eyebrow": "Client results",
+      "heading": "What it's like to work with Benvor",
+      "text": "",
+      "items": [
+        "maren-oyelaran",
+        "daniel-osei",
+        "priya-nair"
+      ],
+      "background_color": "",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "image_text",
+      "visible": true,
+      "section_id": "about-preview",
+      "eyebrow": "About Benvor",
+      "heading": "A digital agency built by operators, not just marketers",
+      "text": "We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.",
+      "image": "",
+      "image_external": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      "image_alt": "The Benvor Digital team collaborating around a laptop in a bright studio office",
+      "image_position": "left",
+      "button": {
+        "label": "Our story",
+        "url": "#about",
+        "new_tab": false
+      },
+      "background_color": "#eef0fa",
+      "text_color": "",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    },
+    {
+      "type": "cta",
+      "visible": true,
+      "section_id": "home-cta",
+      "heading": "Ready to see what your growth engine could look like?",
+      "text": "Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.",
+      "primary_button": {
+        "label": "Book a Free Audit",
+        "url": "#contact",
+        "new_tab": false
+      },
+      "secondary_button": {
+        "label": "View our work",
+        "url": "#portfolio",
+        "new_tab": false
+      },
+      "background_color": "#3730e0",
+      "text_color": "#ffffff",
+      "content_width": "wide",
+      "alignment": "left",
+      "padding": "normal",
+      "mobile_visible": true,
+      "desktop_visible": true
+    }
+  ]
+}

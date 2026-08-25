@@ -1,0 +1,12 @@
+{
+  "slug": "example-team-member",
+  "enabled": false,
+  "name": "Example Team Member",
+  "position": "Strategist",
+  "bio": "Enable this item when you are ready to publish team profiles.",
+  "photo": "",
+  "photo_external": "",
+  "photo_alt": "Team member",
+  "linkedin": "",
+  "other_link": ""
+}

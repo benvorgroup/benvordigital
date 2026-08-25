@@ -1,0 +1,20 @@
+{
+  "slug": "ledgerly",
+  "enabled": true,
+  "featured": false,
+  "category": "web",
+  "category_label": "Web Design · SaaS",
+  "industry": "SaaS",
+  "title": "Ledgerly",
+  "description": "Marketing site rebuild with a self‑serve trial funnel.",
+  "challenge": "",
+  "solution": "",
+  "results": "+58% trial signups",
+  "result_metric": "+58% trial signups",
+  "main_image": "",
+  "main_image_external": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80",
+  "main_image_alt": "Ledgerly",
+  "gallery": [],
+  "cta_text": "Discuss a project like this →",
+  "cta_link": "#contact"
+}

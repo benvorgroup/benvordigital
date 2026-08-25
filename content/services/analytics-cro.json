@@ -1,0 +1,15 @@
+{
+  "slug": "analytics-cro",
+  "enabled": true,
+  "tag": "Analytics",
+  "title": "Growth Analytics & CRO",
+  "short_description": "Continuous testing that lifts conversion rate month over month.",
+  "full_description": "Heatmaps, A/B testing, and funnel analysis that steadily raises your conversion rate, not just your traffic.",
+  "icon": "/assets/icons/analytics.svg",
+  "icon_external": "",
+  "image": "",
+  "image_external": "",
+  "image_alt": "Growth Analytics & CRO illustration",
+  "cta_text": "Learn more",
+  "cta_link": "#contact"
+}
