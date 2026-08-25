@@ -464,3 +464,12 @@ iframe,video,canvas,svg{max-width:100%}
   .service-card > .icon-line{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important}
   .why-item > .icon-line{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important}
 }
+
+
+/* LOGO HARD-FAIL VISUAL SAFETY */
+.brand-logo{min-width:168px;min-height:28px}
+.brand-logo img{font-size:0!important;color:transparent!important}
+.footer-brand img{font-size:0!important;color:transparent!important}
+@media(max-width:600px){
+  .brand-logo{min-width:145px;min-height:22px}
+}
