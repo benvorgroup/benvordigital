@@ -1,0 +1,132 @@
+{
+  "active_theme": "benvor-default",
+  "header": {
+    "enabled": true,
+    "sticky": true,
+    "transparent": false,
+    "show_company_name": true,
+    "company_name": "Benvor Digital",
+    "logo": "",
+    "logo_external": "",
+    "logo_alt": "Benvor Digital",
+    "logo_width": 30,
+    "header_height": 72,
+    "background": "#ffffff",
+    "text_color": "#12131c",
+    "border": true,
+    "shadow": "none",
+    "cta": {
+      "enabled": true,
+      "label": "Book a Call",
+      "url": "#contact",
+      "new_tab": false
+    }
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "#home",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "About",
+      "url": "#about",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Services",
+      "url": "#services",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Portfolio",
+      "url": "#listings",
+      "new_tab": false,
+      "enabled": true
+    },
+    {
+      "label": "Contact",
+      "url": "#contact",
+      "new_tab": false,
+      "enabled": true
+    }
+  ],
+  "footer": {
+    "enabled": true,
+    "background": "#0e0f17",
+    "text_color": "#ffffff",
+    "logo": "",
+    "logo_external": "",
+    "logo_alt": "Benvor Digital",
+    "description": "A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.",
+    "copyright": "© 2026 Benvor Digital. All rights reserved.",
+    "secondary_text": "Digital marketing agency · Full‑service marketing agency · Growth marketing firm",
+    "groups": [
+      {
+        "heading": "Quick Links",
+        "links": [
+          {
+            "label": "Home",
+            "url": "#home",
+            "new_tab": false
+          },
+          {
+            "label": "About",
+            "url": "#about",
+            "new_tab": false
+          },
+          {
+            "label": "Services",
+            "url": "#services",
+            "new_tab": false
+          },
+          {
+            "label": "Portfolio",
+            "url": "#listings",
+            "new_tab": false
+          },
+          {
+            "label": "Contact",
+            "url": "#contact",
+            "new_tab": false
+          }
+        ]
+      },
+      {
+        "heading": "Services",
+        "links": [
+          {
+            "label": "Web Design",
+            "url": "#services",
+            "new_tab": false
+          },
+          {
+            "label": "Paid Advertising",
+            "url": "#services",
+            "new_tab": false
+          },
+          {
+            "label": "SEO",
+            "url": "#services",
+            "new_tab": false
+          },
+          {
+            "label": "Social Media",
+            "url": "#services",
+            "new_tab": false
+          }
+        ]
+      }
+    ]
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com",
+    "instagram": "https://www.instagram.com",
+    "x": "https://twitter.com",
+    "facebook": "",
+    "youtube": ""
+  }
+}

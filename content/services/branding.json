@@ -1,0 +1,15 @@
+{
+  "slug": "branding",
+  "enabled": true,
+  "tag": "Brand",
+  "title": "Creative & Branding",
+  "short_description": "Identity systems and campaign creative that stop the scroll.",
+  "full_description": "Logo systems, brand guidelines, and campaign creative that keep every channel looking like one brand.",
+  "icon": "/assets/icons/brand.svg",
+  "icon_external": "",
+  "image": "",
+  "image_external": "",
+  "image_alt": "Creative & Branding illustration",
+  "cta_text": "Learn more",
+  "cta_link": "#contact"
+}

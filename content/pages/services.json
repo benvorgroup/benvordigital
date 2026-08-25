@@ -1,0 +1,25 @@
+{
+  "title": "Services",
+  "slug": "services",
+  "navigation_label": "Services",
+  "published": true,
+  "mode": "default",
+  "header_visible": true,
+  "footer_visible": true,
+  "theme": "inherit",
+  "page_background": "",
+  "container_width": "inherit",
+  "seo": {
+    "title": "",
+    "description": "",
+    "keywords": "",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "og_image_external": "",
+    "robots_index": true,
+    "robots_follow": true
+  },
+  "sections": []
+}

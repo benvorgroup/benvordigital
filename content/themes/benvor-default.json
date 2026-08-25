@@ -1,0 +1,51 @@
+{
+  "name": "Benvor Default",
+  "slug": "benvor-default",
+  "colors": {
+    "primary": "#3730e0",
+    "primary_dark": "#231ba8",
+    "secondary": "#ff5b3d",
+    "secondary_dark": "#e8481f",
+    "background": "#ffffff",
+    "surface": "#eef0fa",
+    "card": "#ffffff",
+    "heading": "#12131c",
+    "body": "#12131c",
+    "muted": "#5c5f70",
+    "border": "#dcdfe8",
+    "dark": "#0e0f17",
+    "success": "#17b26a",
+    "warning": "#f79009",
+    "error": "#b42318"
+  },
+  "typography": {
+    "heading_font": "Space Grotesk",
+    "body_font": "Inter",
+    "accent_font": "IBM Plex Mono",
+    "base_size": 16,
+    "heading_weight": "600",
+    "body_weight": "400",
+    "line_height": "1.6"
+  },
+  "buttons": {
+    "radius": 100,
+    "padding_y": 14,
+    "padding_x": 26,
+    "primary_background": "#3730e0",
+    "primary_text": "#ffffff",
+    "secondary_background": "#ffffff",
+    "secondary_text": "#12131c",
+    "secondary_border": "#dcdfe8"
+  },
+  "cards": {
+    "radius": 14,
+    "border": "#dcdfe8",
+    "shadow": "soft",
+    "padding": 26
+  },
+  "layout": {
+    "container_width": 1180,
+    "section_spacing": 96,
+    "grid_gap": 24
+  }
+}

@@ -4,516 +4,4468 @@ backend:
   branch: main
   base_url: https://benvor-cms-auth.benvorgroup.workers.dev/
   auth_endpoint: auth
-
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
-
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Homepage"
-        name: "homepage"
-        file: "content/homepage.json"
-        format: "json"
+- name: builder_pages
+  label: Page Builder
+  label_singular: Page
+  folder: content/pages
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  fields:
+  - label: Page Name
+    name: title
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Navigation Label
+    name: navigation_label
+    widget: string
+    required: false
+  - label: Published
+    name: published
+    widget: boolean
+    default: true
+  - label: Page Mode
+    name: mode
+    widget: select
+    options:
+    - label: Default Existing Theme
+      value: default
+    - label: Builder Mode
+      value: builder
+    default: default
+    hint: Default keeps your original HTML. Builder hides it and uses the sections below. Empty builder sections = blank page.
+  - label: Show Header
+    name: header_visible
+    widget: boolean
+    default: true
+  - label: Show Footer
+    name: footer_visible
+    widget: boolean
+    default: true
+  - label: Theme
+    name: theme
+    widget: relation
+    collection: themes
+    search_fields:
+    - name
+    - slug
+    value_field: '{{slug}}'
+    display_fields:
+    - name
+    required: false
+    hint: Leave as inherit to use the global theme.
+  - label: Page Background
+    name: page_background
+    widget: color
+    required: false
+  - label: SEO
+    name: seo
+    widget: object
+    fields:
+    - label: SEO Title
+      name: title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: description
+      widget: text
+      required: false
+    - label: Keywords
+      name: keywords
+      widget: string
+      required: false
+    - label: Canonical URL
+      name: canonical_url
+      widget: string
+      required: false
+    - label: Open Graph Title
+      name: og_title
+      widget: string
+      required: false
+    - label: Open Graph Description
+      name: og_description
+      widget: text
+      required: false
+    - label: Open Graph Image
+      name: og_image
+      widget: image
+      required: false
+    - label: Open Graph External URL
+      name: og_image_external
+      widget: string
+      required: false
+    - label: Allow Indexing
+      name: robots_index
+      widget: boolean
+      default: true
+    - label: Allow Following
+      name: robots_follow
+      widget: boolean
+      default: true
+  - label: Builder Sections
+    name: sections
+    widget: list
+    collapsed: true
+    summary: '{{fields.type}} — {{fields.heading}}'
+    types:
+    - label: Hero
+      name: hero
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Image Upload / Media
+        name: image
+        widget: image
+        required: false
+      - label: External Image URL
+        name: image_external
+        widget: string
+        required: false
+      - label: Mobile Image Upload
+        name: mobile_image
+        widget: image
+        required: false
+      - label: Mobile External URL
+        name: mobile_image_external
+        widget: string
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Object Fit
+        name: object_fit
+        widget: select
+        options:
+        - cover
+        - contain
+        - fill
+        default: cover
+      - label: Object Position
+        name: object_position
+        widget: select
+        options:
+        - center
+        - top
+        - bottom
+        - left
+        - right
+        default: center
+      - label: Border Radius
+        name: radius
+        widget: number
+        min: 0
+        max: 100
+        required: false
+      - label: Primary Button
+        name: primary_button
+        widget: object
         fields:
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Primary Button Text", name: "primary_text", widget: "string"}
-              - {label: "Primary Button Link", name: "primary_link", widget: "string"}
-              - {label: "Secondary Button Text", name: "secondary_text", widget: "string"}
-              - {label: "Secondary Button Link", name: "secondary_link", widget: "string"}
-              - label: "Stats"
-                name: "stats"
-                widget: "list"
-                fields:
-                  - {label: "Value", name: "value", widget: "string"}
-                  - {label: "Label", name: "label", widget: "string"}
-          - label: "Trust Strip"
-            name: "trust"
-            widget: "object"
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-          - label: "Benefits"
-            name: "benefits"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - label: "Benefit Cards"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Number / Label", name: "number", widget: "string"}
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text"}
-          - label: "Services Heading"
-            name: "services"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-          - label: "Testimonials Heading"
-            name: "testimonials"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-          - label: "About Preview"
-            name: "about_preview"
-            widget: "object"
-            fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-          - label: "Final CTA"
-            name: "final_cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Primary Button Text", name: "primary_text", widget: "string"}
-              - {label: "Primary Button Link", name: "primary_link", widget: "string"}
-              - {label: "Secondary Button Text", name: "secondary_text", widget: "string"}
-              - {label: "Secondary Button Link", name: "secondary_link", widget: "string"}
-
-          - label: "Custom Sections"
-            name: "custom_sections"
-            widget: "list"
-            required: false
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+      - label: Secondary Button
+        name: secondary_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+    - label: Nested Rows / Columns
+      name: rows
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Rows
+        name: rows
+        widget: list
+        fields:
+        - label: Layout
+          name: layout
+          widget: select
+          options:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - 25-75
+          - 33-67
+          - 40-60
+          - 50-50
+          - 60-40
+          - 67-33
+          - 75-25
+          default: '2'
+        - label: Columns
+          name: columns
+          widget: list
+          fields:
+          - label: Elements
+            name: elements
+            widget: list
             types:
-              - label: "Text Section"
-                name: "text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image + Text"
-                name: "image_text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Image", name: "image", widget: "image", required: false}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-
-
-      - label: "About"
-        name: "about"
-        file: "content/about.json"
-        format: "json"
+            - label: Heading
+              name: heading
+              widget: object
+              fields:
+              - label: Text
+                name: text
+                widget: string
+              - label: Level
+                name: level
+                widget: select
+                options:
+                - h1
+                - h2
+                - h3
+                - h4
+                default: h2
+              - label: Animation
+                name: animation
+                widget: select
+                options:
+                - none
+                - fade
+                - fade-up
+                - slide-left
+                - slide-right
+                - scale
+                default: none
+            - label: Text
+              name: text
+              widget: object
+              fields:
+              - label: Text
+                name: text
+                widget: text
+            - label: Restricted Rich HTML
+              name: rich_text
+              widget: object
+              fields:
+              - label: HTML
+                name: html
+                widget: text
+                hint: Only safe headings, paragraphs, links, lists, blockquotes and images are retained.
+            - label: Image
+              name: image
+              widget: object
+              fields:
+              - label: Image Upload / Media
+                name: image
+                widget: image
+                required: false
+              - label: External Image URL
+                name: image_external
+                widget: string
+                required: false
+              - label: Mobile Image Upload
+                name: mobile_image
+                widget: image
+                required: false
+              - label: Mobile External URL
+                name: mobile_image_external
+                widget: string
+                required: false
+              - label: Alt Text
+                name: alt
+                widget: string
+                required: false
+              - label: Object Fit
+                name: object_fit
+                widget: select
+                options:
+                - cover
+                - contain
+                - fill
+                default: cover
+              - label: Object Position
+                name: object_position
+                widget: select
+                options:
+                - center
+                - top
+                - bottom
+                - left
+                - right
+                default: center
+              - label: Border Radius
+                name: radius
+                widget: number
+                min: 0
+                max: 100
+                required: false
+            - label: Button
+              name: button
+              widget: object
+              fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+              - label: Style
+                name: style
+                widget: select
+                options:
+                - primary
+                - secondary
+                default: primary
+              - label: Open New Tab
+                name: new_tab
+                widget: boolean
+                default: false
+            - label: Icon
+              name: icon
+              widget: object
+              fields:
+              - label: Icon Upload
+                name: icon
+                widget: image
+                required: false
+              - label: External Icon URL
+                name: icon_external
+                widget: string
+                required: false
+              - label: Alt Text
+                name: alt
+                widget: string
+                required: false
+              - label: Size
+                name: size
+                widget: number
+                min: 16
+                max: 160
+                default: 48
+            - label: Spacer
+              name: spacer
+              widget: object
+              fields:
+              - label: Height
+                name: height
+                widget: number
+                min: 0
+                max: 300
+                default: 40
+            - label: Divider
+              name: divider
+              widget: object
+              fields: []
+    - label: Text
+      name: text
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Text
+        name: text
+        widget: text
+        required: false
+    - label: Image
+      name: image
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Image Upload / Media
+        name: image
+        widget: image
+        required: false
+      - label: External Image URL
+        name: image_external
+        widget: string
+        required: false
+      - label: Mobile Image Upload
+        name: mobile_image
+        widget: image
+        required: false
+      - label: Mobile External URL
+        name: mobile_image_external
+        widget: string
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Object Fit
+        name: object_fit
+        widget: select
+        options:
+        - cover
+        - contain
+        - fill
+        default: cover
+      - label: Object Position
+        name: object_position
+        widget: select
+        options:
+        - center
+        - top
+        - bottom
+        - left
+        - right
+        default: center
+      - label: Border Radius
+        name: radius
+        widget: number
+        min: 0
+        max: 100
+        required: false
+    - label: Image + Text
+      name: image_text
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Image Upload / Media
+        name: image
+        widget: image
+        required: false
+      - label: External Image URL
+        name: image_external
+        widget: string
+        required: false
+      - label: Mobile Image Upload
+        name: mobile_image
+        widget: image
+        required: false
+      - label: Mobile External URL
+        name: mobile_image_external
+        widget: string
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Object Fit
+        name: object_fit
+        widget: select
+        options:
+        - cover
+        - contain
+        - fill
+        default: cover
+      - label: Object Position
+        name: object_position
+        widget: select
+        options:
+        - center
+        - top
+        - bottom
+        - left
+        - right
+        default: center
+      - label: Border Radius
+        name: radius
+        widget: number
+        min: 0
+        max: 100
+        required: false
+      - label: Image Position
+        name: image_position
+        widget: select
+        options:
+        - left
+        - right
+        default: left
+      - label: Button
+        name: button
+        widget: object
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - label: "Story"
-            name: "story"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Paragraphs", name: "paragraphs", widget: "list", field: {label: "Paragraph", name: "paragraph", widget: "text"}}
-              - {label: "Mission Heading", name: "mission_heading", widget: "string"}
-              - {label: "Mission Text", name: "mission_text", widget: "text"}
-              - {label: "Difference Heading", name: "difference_heading", widget: "string"}
-              - {label: "Differences", name: "differences", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-          - {label: "Values Heading", name: "values_heading", widget: "string"}
-          - label: "Values"
-            name: "values"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-
-          - label: "Custom Sections"
-            name: "custom_sections"
-            widget: "list"
-            required: false
-            types:
-              - label: "Text Section"
-                name: "text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image + Text"
-                name: "image_text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Image", name: "image", widget: "image", required: false}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-
-
-      - label: "Services"
-        name: "services"
-        file: "content/services.json"
-        format: "json"
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+    - label: CTA
+      name: cta
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Primary Button
+        name: primary_button
+        widget: object
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - label: "Service Cards"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Tag", name: "tag", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Icon", name: "icon", widget: "image", required: false}
-          - {label: "Process Heading", name: "process_heading", widget: "string"}
-          - label: "Process Steps"
-            name: "process"
-            widget: "list"
-            fields:
-              - {label: "Number", name: "number", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-          - {label: "FAQ Heading", name: "faq_heading", widget: "string"}
-          - label: "FAQs"
-            name: "faqs"
-            widget: "list"
-            fields:
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Answer", name: "answer", widget: "text"}
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-
-          - label: "Custom Sections"
-            name: "custom_sections"
-            widget: "list"
-            required: false
-            types:
-              - label: "Text Section"
-                name: "text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image + Text"
-                name: "image_text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Image", name: "image", widget: "image", required: false}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-
-
-      - label: "Portfolio"
-        name: "portfolio"
-        file: "content/portfolio.json"
-        format: "json"
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+      - label: Secondary Button
+        name: secondary_button
+        widget: object
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - label: "Filter Buttons"
-            name: "filters"
-            widget: "list"
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Value", name: "value", widget: "string"}
-          - label: "Projects"
-            name: "projects"
-            widget: "list"
-            fields:
-              - {label: "Category Code", name: "category", widget: "string"}
-              - {label: "Category Label", name: "category_label", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Result", name: "result", widget: "string"}
-              - {label: "Image", name: "image", widget: "image", required: false}
-              - {label: "Alt Text", name: "alt", widget: "string", required: false}
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - {label: "Heading", name: "heading", widget: "string"}
-              - {label: "Text", name: "text", widget: "text"}
-              - {label: "Button Text", name: "button_text", widget: "string"}
-              - {label: "Button Link", name: "button_link", widget: "string"}
-
-          - label: "Custom Sections"
-            name: "custom_sections"
-            widget: "list"
-            required: false
-            types:
-              - label: "Text Section"
-                name: "text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image + Text"
-                name: "image_text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Image", name: "image", widget: "image", required: false}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-
-
-      - label: "Contact"
-        name: "contact"
-        file: "content/contact.json"
-        format: "json"
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+    - label: Gallery
+      name: gallery
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Images
+        name: images
+        widget: list
         fields:
-          - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-          - {label: "Heading", name: "heading", widget: "string"}
-          - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Phone", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Address", name: "address", widget: "text"}
-          - {label: "Hours", name: "hours", widget: "string"}
-          - {label: "Map Embed URL", name: "map_url", widget: "string"}
-
-          - label: "Custom Sections"
-            name: "custom_sections"
-            widget: "list"
-            required: false
-            types:
-              - label: "Text Section"
-                name: "text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image + Text"
-                name: "image_text"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Image", name: "image", widget: "image", required: false}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "Image"
-                name: "image"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string", required: false}
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Image Alt Text", name: "image_alt", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-              - label: "CTA"
-                name: "cta"
-                widget: "object"
-                fields:
-                  - {label: "Visible", name: "visible", widget: "boolean", default: true}
-                  - {label: "Heading", name: "heading", widget: "string"}
-                  - {label: "Text", name: "text", widget: "text", required: false}
-                  - {label: "Button Text", name: "button_text", widget: "string", required: false}
-                  - {label: "Button Link", name: "button_link", widget: "string", required: false}
-                  - {label: "Background Color", name: "background_color", widget: "color", required: false}
-
-
-  - name: "content"
-    label: "Reusable Content"
-    files:
-      - label: "Testimonials"
-        name: "testimonials"
-        file: "content/testimonials.json"
-        format: "json"
+        - label: Image Upload / Media
+          name: image
+          widget: image
+          required: false
+        - label: External Image URL
+          name: image_external
+          widget: string
+          required: false
+        - label: Mobile Image Upload
+          name: mobile_image
+          widget: image
+          required: false
+        - label: Mobile External URL
+          name: mobile_image_external
+          widget: string
+          required: false
+        - label: Alt Text
+          name: alt
+          widget: string
+          required: false
+        - label: Object Fit
+          name: object_fit
+          widget: select
+          options:
+          - cover
+          - contain
+          - fill
+          default: cover
+        - label: Object Position
+          name: object_position
+          widget: select
+          options:
+          - center
+          - top
+          - bottom
+          - left
+          - right
+          default: center
+        - label: Border Radius
+          name: radius
+          widget: number
+          min: 0
+          max: 100
+          required: false
+    - label: Safe Embed
+      name: embed
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Embed URL
+        name: url
+        widget: string
+      - label: Accessible Title
+        name: embed_title
+        widget: string
+        required: false
+    - label: Restricted HTML
+      name: restricted_html
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Safe HTML
+        name: html
+        widget: text
+    - label: Services
+      name: services
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Services
+        name: items
+        widget: relation
+        collection: services
+        search_fields:
+        - title
+        - tag
+        value_field: '{{slug}}'
+        display_fields:
+        - title
+        multiple: true
+    - label: Testimonials
+      name: testimonials
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Testimonials
+        name: items
+        widget: relation
+        collection: testimonials
+        search_fields:
+        - name
+        - company
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        multiple: true
+    - label: Portfolio
+      name: portfolio
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Projects
+        name: items
+        widget: relation
+        collection: portfolio
+        search_fields:
+        - title
+        - category_label
+        value_field: '{{slug}}'
+        display_fields:
+        - title
+        multiple: true
+    - label: FAQ
+      name: faq
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: FAQs
+        name: items
+        widget: relation
+        collection: faq
+        search_fields:
+        - question
+        - category
+        value_field: '{{slug}}'
+        display_fields:
+        - question
+        multiple: true
+    - label: Pricing
+      name: pricing
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Pricing Cards
+        name: items
+        widget: relation
+        collection: pricing
+        search_fields:
+        - name
+        - price
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        multiple: true
+    - label: Logo Wall
+      name: logos
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Logos
+        name: items
+        widget: relation
+        collection: logos
+        search_fields:
+        - name
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        multiple: true
+    - label: Team
+      name: team
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Team Members
+        name: items
+        widget: relation
+        collection: team
+        search_fields:
+        - name
+        - role
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        multiple: true
+    - label: Tabs
+      name: tabs
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Tabs
+        name: tabs
+        widget: list
         fields:
-          - label: "Testimonials"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Quote", name: "quote", widget: "text"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Role / Company", name: "role", widget: "string"}
-              - {label: "Photo", name: "image", widget: "image", required: false}
-              - {label: "Alt Text", name: "alt", widget: "string", required: false}
-
-  - name: "settings"
-    label: "Website Settings"
-    files:
-      - label: "Site, Branding & SEO"
-        name: "site"
-        file: "content/site.json"
-        format: "json"
+        - label: Label
+          name: label
+          widget: string
+        - label: Restricted HTML
+          name: html
+          widget: text
+    - label: Accordion
+      name: accordion
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Items
+        name: items
+        widget: list
         fields:
-          - {label: "Company Name", name: "company_name", widget: "string"}
-          - {label: "Header CTA Text", name: "header_cta_text", widget: "string"}
-          - {label: "Header CTA Link", name: "header_cta_link", widget: "string"}
-          - {label: "Footer Description", name: "footer_description", widget: "text"}
-          - {label: "Footer Email", name: "footer_email", widget: "string"}
-          - {label: "Footer Phone", name: "footer_phone", widget: "string"}
-          - {label: "Footer Address", name: "footer_address", widget: "text"}
-          - {label: "Copyright", name: "copyright", widget: "string"}
-          - {label: "Footer Secondary Text", name: "footer_secondary", widget: "string"}
-          - label: "Branding"
-            name: "branding"
-            widget: "object"
-            fields:
-              - {label: "Primary", name: "primary", widget: "color"}
-              - {label: "Primary Dark", name: "primary_dark", widget: "color"}
-              - {label: "Accent", name: "accent", widget: "color"}
-              - {label: "Accent Dark", name: "accent_dark", widget: "color"}
-              - {label: "Background", name: "background", widget: "color"}
-              - {label: "Surface", name: "surface", widget: "color"}
-              - {label: "Text", name: "text", widget: "color"}
-              - {label: "Muted", name: "muted", widget: "color"}
-              - {label: "Border", name: "border", widget: "color"}
-              - {label: "Dark", name: "dark", widget: "color"}
-              - {label: "Success", name: "success", widget: "color"}
-              - {label: "Card Radius", name: "radius", widget: "number"}
-              - {label: "Container Width", name: "container_width", widget: "number"}
-          - label: "SEO"
-            name: "seo"
-            widget: "object"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text"}
-              - {label: "Keywords", name: "keywords", widget: "string"}
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+    - label: Carousel
+      name: carousel
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Slides
+        name: items
+        widget: list
+        fields:
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image Upload / Media
+          name: image
+          widget: image
+          required: false
+        - label: External Image URL
+          name: image_external
+          widget: string
+          required: false
+        - label: Mobile Image Upload
+          name: mobile_image
+          widget: image
+          required: false
+        - label: Mobile External URL
+          name: mobile_image_external
+          widget: string
+          required: false
+        - label: Alt Text
+          name: alt
+          widget: string
+          required: false
+        - label: Object Fit
+          name: object_fit
+          widget: select
+          options:
+          - cover
+          - contain
+          - fill
+          default: cover
+        - label: Object Position
+          name: object_position
+          widget: select
+          options:
+          - center
+          - top
+          - bottom
+          - left
+          - right
+          default: center
+        - label: Border Radius
+          name: radius
+          widget: number
+          min: 0
+          max: 100
+          required: false
+    - label: Announcement Bar
+      name: announcement
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Text
+        name: text
+        widget: string
+      - label: Button
+        name: button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+    - label: Custom Form
+      name: form
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Form Name
+        name: form_name
+        widget: string
+        required: false
+      - label: Fields
+        name: fields
+        widget: list
+        fields:
+        - label: Type
+          name: type
+          widget: select
+          options:
+          - text
+          - email
+          - tel
+          - number
+          - textarea
+          - select
+          - checkbox
+          - radio
+          - date
+          - url
+          default: text
+        - label: Label
+          name: label
+          widget: string
+        - label: Name
+          name: name
+          widget: string
+        - label: Placeholder
+          name: placeholder
+          widget: string
+          required: false
+        - label: Help Text
+          name: help_text
+          widget: string
+          required: false
+        - label: Required
+          name: required
+          widget: boolean
+          default: false
+        - label: Options
+          name: options
+          widget: list
+          required: false
+          fields:
+          - label: Label
+            name: label
+            widget: string
+          - label: Value
+            name: value
+            widget: string
+      - label: Submit Text
+        name: submit_text
+        widget: string
+        default: Submit
+      - label: Success Message
+        name: success_message
+        widget: text
+        required: false
+    - label: Divider
+      name: divider
+      widget: object
+      fields:
+      - label: Visible
+        name: visible
+        widget: boolean
+        default: true
+      - label: Width
+        name: width
+        widget: select
+        options:
+        - narrow
+        - wide
+        - full
+        default: wide
+      - label: Alignment
+        name: alignment
+        widget: select
+        options:
+        - left
+        - center
+        - right
+        default: left
+      - label: Spacing
+        name: spacing
+        widget: select
+        options:
+        - compact
+        - normal
+        - spacious
+        default: normal
+      - label: Background Color
+        name: background_color
+        widget: color
+        required: false
+      - label: Text Color
+        name: text_color
+        widget: color
+        required: false
+      - label: Show on Mobile
+        name: mobile_visible
+        widget: boolean
+        default: true
+      - label: Show on Desktop
+        name: desktop_visible
+        widget: boolean
+        default: true
+      - label: Animation
+        name: animation
+        widget: select
+        options:
+        - none
+        - fade
+        - fade-up
+        - slide-left
+        - slide-right
+        - scale
+        default: none
+      - label: Safe Style Classes
+        name: classes
+        widget: select
+        multiple: true
+        required: false
+        options:
+        - narrow
+        - wide
+        - centered
+        - rounded
+        - shadow
+        - no-shadow
+        - muted
+        - dark-section
+        - compact
+        - spacious
+    - label: Spacer
+      name: spacer
+      widget: object
+      fields:
+      - label: Height
+        name: height
+        widget: number
+        min: 0
+        max: 300
+        default: 48
+- name: themes
+  label: Design / Themes
+  label_singular: Theme
+  folder: content/themes
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: name
+  fields:
+  - label: Theme Name
+    name: name
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Colors
+    name: colors
+    widget: object
+    fields:
+    - label: Primary
+      name: primary
+      widget: color
+    - label: Primary Dark
+      name: primary_dark
+      widget: color
+    - label: Secondary
+      name: secondary
+      widget: color
+    - label: Secondary Dark
+      name: secondary_dark
+      widget: color
+    - label: Background
+      name: background
+      widget: color
+    - label: Surface
+      name: surface
+      widget: color
+    - label: Card
+      name: card
+      widget: color
+    - label: Heading
+      name: heading
+      widget: color
+    - label: Body
+      name: body
+      widget: color
+    - label: Muted
+      name: muted
+      widget: color
+    - label: Border
+      name: border
+      widget: color
+    - label: Dark Surface
+      name: dark
+      widget: color
+    - label: Success
+      name: success
+      widget: color
+    - label: Warning
+      name: warning
+      widget: color
+    - label: Error
+      name: error
+      widget: color
+  - label: Typography
+    name: typography
+    widget: object
+    fields:
+    - label: Heading Font
+      name: heading_font
+      widget: select
+      options:
+      - Space Grotesk
+      - Inter
+      - Roboto
+      - Montserrat
+      - Poppins
+      - Lato
+      - Playfair Display
+      - Merriweather
+    - label: Body Font
+      name: body_font
+      widget: select
+      options:
+      - Inter
+      - Roboto
+      - Montserrat
+      - Poppins
+      - Lato
+      - Merriweather
+    - label: Accent Font
+      name: accent_font
+      widget: select
+      options:
+      - IBM Plex Mono
+      - Inter
+      - Roboto
+    - label: Base Size
+      name: base_size
+      widget: number
+      min: 12
+      max: 24
+    - label: Heading Weight
+      name: heading_weight
+      widget: select
+      options:
+      - '400'
+      - '500'
+      - '600'
+      - '700'
+    - label: Body Weight
+      name: body_weight
+      widget: select
+      options:
+      - '400'
+      - '500'
+      - '600'
+      - '700'
+    - label: Line Height
+      name: line_height
+      widget: string
+  - label: Buttons
+    name: buttons
+    widget: object
+    fields:
+    - label: Radius
+      name: radius
+      widget: number
+      min: 0
+      max: 100
+    - label: Vertical Padding
+      name: padding_y
+      widget: number
+      min: 6
+      max: 30
+    - label: Horizontal Padding
+      name: padding_x
+      widget: number
+      min: 10
+      max: 50
+    - label: Primary Background
+      name: primary_background
+      widget: color
+    - label: Primary Text
+      name: primary_text
+      widget: color
+    - label: Secondary Background
+      name: secondary_background
+      widget: color
+    - label: Secondary Text
+      name: secondary_text
+      widget: color
+    - label: Secondary Border
+      name: secondary_border
+      widget: color
+  - label: Cards
+    name: cards
+    widget: object
+    fields:
+    - label: Radius
+      name: radius
+      widget: number
+      min: 0
+      max: 60
+    - label: Border
+      name: border
+      widget: color
+    - label: Shadow
+      name: shadow
+      widget: select
+      options:
+      - none
+      - soft
+      - medium
+      - strong
+    - label: Padding
+      name: padding
+      widget: number
+      min: 8
+      max: 60
+  - label: Layout
+    name: layout
+    widget: object
+    fields:
+    - label: Container Width
+      name: container_width
+      widget: number
+      min: 760
+      max: 1700
+    - label: Section Spacing
+      name: section_spacing
+      widget: number
+      min: 30
+      max: 200
+    - label: Grid Gap
+      name: grid_gap
+      widget: number
+      min: 8
+      max: 80
+- name: builder_settings
+  label: Website / Header Footer Navigation
+  files:
+  - label: Builder Settings
+    name: builder_settings
+    file: content/builder-settings.json
+    format: json
+    fields:
+    - label: Active Global Theme
+      name: active_theme
+      widget: relation
+      collection: themes
+      search_fields:
+      - name
+      - slug
+      value_field: '{{slug}}'
+      display_fields:
+      - name
+    - label: Header
+      name: header
+      widget: object
+      fields:
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Sticky
+        name: sticky
+        widget: boolean
+        default: true
+      - label: Transparent
+        name: transparent
+        widget: boolean
+        default: false
+      - label: Show Company Name
+        name: show_company_name
+        widget: boolean
+        default: true
+      - label: Company Name
+        name: company_name
+        widget: string
+      - label: Logo
+        name: logo
+        widget: image
+        required: false
+      - label: External Logo URL
+        name: logo_external
+        widget: string
+        required: false
+      - label: Logo Alt
+        name: logo_alt
+        widget: string
+        required: false
+      - label: Logo Width
+        name: logo_width
+        widget: number
+        min: 16
+        max: 120
+      - label: Header Height
+        name: header_height
+        widget: number
+        min: 48
+        max: 140
+      - label: Background
+        name: background
+        widget: color
+      - label: Text Color
+        name: text_color
+        widget: color
+      - label: Border
+        name: border
+        widget: boolean
+        default: true
+      - label: Shadow
+        name: shadow
+        widget: select
+        options:
+        - none
+        - soft
+        - medium
+        - strong
+      - label: Header CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Enabled
+          name: enabled
+          widget: boolean
+          default: true
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+        - label: Open New Tab
+          name: new_tab
+          widget: boolean
+          default: false
+    - label: Navigation
+      name: navigation
+      widget: list
+      fields:
+      - label: Label
+        name: label
+        widget: string
+      - label: URL
+        name: url
+        widget: string
+      - label: Open New Tab
+        name: new_tab
+        widget: boolean
+        default: false
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+    - label: Footer
+      name: footer
+      widget: object
+      fields:
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Background
+        name: background
+        widget: color
+      - label: Text Color
+        name: text_color
+        widget: color
+      - label: Logo
+        name: logo
+        widget: image
+        required: false
+      - label: External Logo URL
+        name: logo_external
+        widget: string
+        required: false
+      - label: Logo Alt
+        name: logo_alt
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+      - label: Copyright
+        name: copyright
+        widget: string
+      - label: Secondary Text
+        name: secondary_text
+        widget: string
+        required: false
+      - label: Link Groups
+        name: groups
+        widget: list
+        fields:
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Links
+          name: links
+          widget: list
+          fields:
+          - label: Label
+            name: label
+            widget: string
+          - label: URL
+            name: url
+            widget: string
+          - label: Open New Tab
+            name: new_tab
+            widget: boolean
+            default: false
+    - label: Social Links
+      name: social
+      widget: object
+      fields:
+      - label: LinkedIn
+        name: linkedin
+        widget: string
+        required: false
+      - label: Instagram
+        name: instagram
+        widget: string
+        required: false
+      - label: X
+        name: x
+        widget: string
+        required: false
+      - label: Facebook
+        name: facebook
+        widget: string
+        required: false
+      - label: YouTube
+        name: youtube
+        widget: string
+        required: false
+- name: services
+  label: Reusable / Services
+  folder: content/services
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Tag
+    name: tag
+    widget: string
+    required: false
+  - label: Title
+    name: title
+    widget: string
+  - label: Short Description
+    name: short_description
+    widget: text
+    required: false
+  - label: Full Description
+    name: full_description
+    widget: text
+    required: false
+  - label: Icon
+    name: icon
+    widget: image
+    required: false
+  - label: External Icon URL
+    name: icon_external
+    widget: string
+    required: false
+  - label: Image
+    name: image
+    widget: image
+    required: false
+  - label: External Image URL
+    name: image_external
+    widget: string
+    required: false
+  - label: CTA Text
+    name: cta_text
+    widget: string
+    required: false
+  - label: CTA Link
+    name: cta_link
+    widget: string
+    required: false
+- name: testimonials
+  label: Reusable / Testimonials
+  folder: content/testimonials
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: name
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Name
+    name: name
+    widget: string
+  - label: Job Title
+    name: job_title
+    widget: string
+    required: false
+  - label: Company
+    name: company
+    widget: string
+    required: false
+  - label: Quote
+    name: quote
+    widget: text
+  - label: Rating
+    name: rating
+    widget: number
+    min: 0
+    max: 5
+    default: 5
+  - label: Photo
+    name: photo
+    widget: image
+    required: false
+  - label: External Photo URL
+    name: photo_external
+    widget: string
+    required: false
+  - label: Photo Alt
+    name: photo_alt
+    widget: string
+    required: false
+- name: portfolio
+  label: Reusable / Portfolio
+  folder: content/portfolio
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Featured
+    name: featured
+    widget: boolean
+    default: false
+  - label: Category
+    name: category
+    widget: string
+  - label: Category Label
+    name: category_label
+    widget: string
+  - label: Industry
+    name: industry
+    widget: string
+    required: false
+  - label: Title
+    name: title
+    widget: string
+  - label: Description
+    name: description
+    widget: text
+  - label: Challenge
+    name: challenge
+    widget: text
+    required: false
+  - label: Solution
+    name: solution
+    widget: text
+    required: false
+  - label: Results
+    name: results
+    widget: text
+    required: false
+  - label: Result Metric
+    name: result_metric
+    widget: string
+    required: false
+  - label: Main Image
+    name: main_image
+    widget: image
+    required: false
+  - label: External Image URL
+    name: main_image_external
+    widget: string
+    required: false
+  - label: Image Alt
+    name: main_image_alt
+    widget: string
+    required: false
+- name: faq
+  label: Reusable / FAQs
+  folder: content/faq
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: question
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Category
+    name: category
+    widget: string
+    required: false
+  - label: Question
+    name: question
+    widget: string
+  - label: Answer
+    name: answer
+    widget: text
+- name: pricing
+  label: Reusable / Pricing
+  folder: content/pricing
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: name
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Name
+    name: name
+    widget: string
+  - label: Price
+    name: price
+    widget: string
+  - label: Billing Period
+    name: billing_period
+    widget: string
+    required: false
+  - label: Description
+    name: description
+    widget: text
+    required: false
+  - label: Features
+    name: features
+    widget: list
+    field:
+      label: Feature
+      name: feature
+      widget: string
+  - label: CTA Text
+    name: cta_text
+    widget: string
+    required: false
+  - label: CTA Link
+    name: cta_link
+    widget: string
+    required: false
+  - label: Highlighted
+    name: highlighted
+    widget: boolean
+    default: false
+- name: logos
+  label: Reusable / Logos
+  folder: content/logos
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: name
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Name
+    name: name
+    widget: string
+  - label: Logo
+    name: logo
+    widget: image
+    required: false
+  - label: External Logo URL
+    name: logo_external
+    widget: string
+    required: false
+  - label: Alt Text
+    name: alt
+    widget: string
+    required: false
+  - label: URL
+    name: url
+    widget: string
+    required: false
+- name: team
+  label: Reusable / Team
+  folder: content/team
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: name
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Name
+    name: name
+    widget: string
+  - label: Role
+    name: role
+    widget: string
+    required: false
+  - label: Bio
+    name: bio
+    widget: text
+    required: false
+  - label: Photo
+    name: photo
+    widget: image
+    required: false
+  - label: External Photo URL
+    name: photo_external
+    widget: string
+    required: false
+  - label: Alt Text
+    name: alt
+    widget: string
+    required: false
+  - label: Email
+    name: email
+    widget: string
+    required: false
+  - label: LinkedIn
+    name: linkedin
+    widget: string
+    required: false
+  - label: Other Link
+    name: other_link
+    widget: string
+    required: false
+- name: default_theme_pages
+  label: Default Theme / Page Content
+  files:
+  - label: Homepage
+    name: homepage
+    file: content/homepage.json
+    format: json
+    fields:
+    - label: Hero
+      name: hero
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Primary Button Text
+        name: primary_text
+        widget: string
+      - label: Primary Button Link
+        name: primary_link
+        widget: string
+      - label: Secondary Button Text
+        name: secondary_text
+        widget: string
+      - label: Secondary Button Link
+        name: secondary_link
+        widget: string
+      - label: Stats
+        name: stats
+        widget: list
+        fields:
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+    - label: Trust Strip
+      name: trust
+      widget: object
+      fields:
+      - label: Label
+        name: label
+        widget: string
+      - label: Items
+        name: items
+        widget: list
+        field:
+          label: Item
+          name: item
+          widget: string
+    - label: Benefits
+      name: benefits
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Benefit Cards
+        name: items
+        widget: list
+        fields:
+        - label: Number / Label
+          name: number
+          widget: string
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+    - label: Services Heading
+      name: services
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+    - label: Testimonials Heading
+      name: testimonials
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+    - label: About Preview
+      name: about_preview
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Text
+        name: button_text
+        widget: string
+      - label: Button Link
+        name: button_link
+        widget: string
+    - label: Final CTA
+      name: final_cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Primary Button Text
+        name: primary_text
+        widget: string
+      - label: Primary Button Link
+        name: primary_link
+        widget: string
+      - label: Secondary Button Text
+        name: secondary_text
+        widget: string
+      - label: Secondary Button Link
+        name: secondary_link
+        widget: string
+    - label: Custom Sections
+      name: custom_sections
+      widget: list
+      required: false
+      types:
+      - label: Text Section
+        name: text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image + Text
+        name: image_text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image
+        name: image
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Image
+          name: image
+          widget: image
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+  - label: About
+    name: about
+    file: content/about.json
+    format: json
+    fields:
+    - label: Eyebrow
+      name: eyebrow
+      widget: string
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro
+      name: intro
+      widget: text
+    - label: Story
+      name: story
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Paragraphs
+        name: paragraphs
+        widget: list
+        field:
+          label: Paragraph
+          name: paragraph
+          widget: text
+      - label: Mission Heading
+        name: mission_heading
+        widget: string
+      - label: Mission Text
+        name: mission_text
+        widget: text
+      - label: Difference Heading
+        name: difference_heading
+        widget: string
+      - label: Differences
+        name: differences
+        widget: list
+        field:
+          label: Item
+          name: item
+          widget: string
+    - label: Values Heading
+      name: values_heading
+      widget: string
+    - label: Values
+      name: values
+      widget: list
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: CTA
+      name: cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Text
+        name: button_text
+        widget: string
+      - label: Button Link
+        name: button_link
+        widget: string
+    - label: Custom Sections
+      name: custom_sections
+      widget: list
+      required: false
+      types:
+      - label: Text Section
+        name: text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image + Text
+        name: image_text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image
+        name: image
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Image
+          name: image
+          widget: image
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+  - label: Services
+    name: services
+    file: content/services.json
+    format: json
+    fields:
+    - label: Eyebrow
+      name: eyebrow
+      widget: string
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro
+      name: intro
+      widget: text
+    - label: Service Cards
+      name: items
+      widget: list
+      fields:
+      - label: Tag
+        name: tag
+        widget: string
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Icon
+        name: icon
+        widget: image
+        required: false
+    - label: Process Heading
+      name: process_heading
+      widget: string
+    - label: Process Steps
+      name: process
+      widget: list
+      fields:
+      - label: Number
+        name: number
+        widget: string
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+    - label: FAQ Heading
+      name: faq_heading
+      widget: string
+    - label: FAQs
+      name: faqs
+      widget: list
+      fields:
+      - label: Question
+        name: question
+        widget: string
+      - label: Answer
+        name: answer
+        widget: text
+    - label: CTA
+      name: cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Text
+        name: button_text
+        widget: string
+      - label: Button Link
+        name: button_link
+        widget: string
+    - label: Custom Sections
+      name: custom_sections
+      widget: list
+      required: false
+      types:
+      - label: Text Section
+        name: text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image + Text
+        name: image_text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image
+        name: image
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Image
+          name: image
+          widget: image
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+  - label: Portfolio
+    name: portfolio
+    file: content/portfolio.json
+    format: json
+    fields:
+    - label: Eyebrow
+      name: eyebrow
+      widget: string
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro
+      name: intro
+      widget: text
+    - label: Filter Buttons
+      name: filters
+      widget: list
+      fields:
+      - label: Label
+        name: label
+        widget: string
+      - label: Value
+        name: value
+        widget: string
+    - label: Projects
+      name: projects
+      widget: list
+      fields:
+      - label: Category Code
+        name: category
+        widget: string
+      - label: Category Label
+        name: category_label
+        widget: string
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Result
+        name: result
+        widget: string
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+    - label: CTA
+      name: cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Text
+        name: button_text
+        widget: string
+      - label: Button Link
+        name: button_link
+        widget: string
+    - label: Custom Sections
+      name: custom_sections
+      widget: list
+      required: false
+      types:
+      - label: Text Section
+        name: text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image + Text
+        name: image_text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image
+        name: image
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Image
+          name: image
+          widget: image
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+  - label: Contact
+    name: contact
+    file: content/contact.json
+    format: json
+    fields:
+    - label: Eyebrow
+      name: eyebrow
+      widget: string
+    - label: Heading
+      name: heading
+      widget: string
+    - label: Intro
+      name: intro
+      widget: text
+    - label: Phone
+      name: phone
+      widget: string
+    - label: Email
+      name: email
+      widget: string
+    - label: Address
+      name: address
+      widget: text
+    - label: Hours
+      name: hours
+      widget: string
+    - label: Map Embed URL
+      name: map_url
+      widget: string
+    - label: Custom Sections
+      name: custom_sections
+      widget: list
+      required: false
+      types:
+      - label: Text Section
+        name: text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image + Text
+        name: image_text
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+          required: false
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: Image
+        name: image
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+          required: false
+        - label: Image
+          name: image
+          widget: image
+        - label: Image Alt Text
+          name: image_alt
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+      - label: CTA
+        name: cta
+        widget: object
+        fields:
+        - label: Visible
+          name: visible
+          widget: boolean
+          default: true
+        - label: Heading
+          name: heading
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Text
+          name: button_text
+          widget: string
+          required: false
+        - label: Button Link
+          name: button_link
+          widget: string
+          required: false
+        - label: Background Color
+          name: background_color
+          widget: color
+          required: false
+- name: default_theme_reusable
+  label: Default Theme / Reusable Content
+  files:
+  - label: Testimonials
+    name: testimonials
+    file: content/testimonials.json
+    format: json
+    fields:
+    - label: Testimonials
+      name: items
+      widget: list
+      fields:
+      - label: Quote
+        name: quote
+        widget: text
+      - label: Name
+        name: name
+        widget: string
+      - label: Role / Company
+        name: role
+        widget: string
+      - label: Photo
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+- name: default_theme_settings
+  label: Default Theme / Site Branding & SEO
+  files:
+  - label: Site, Branding & SEO
+    name: site
+    file: content/site.json
+    format: json
+    fields:
+    - label: Company Name
+      name: company_name
+      widget: string
+    - label: Header CTA Text
+      name: header_cta_text
+      widget: string
+    - label: Header CTA Link
+      name: header_cta_link
+      widget: string
+    - label: Footer Description
+      name: footer_description
+      widget: text
+    - label: Footer Email
+      name: footer_email
+      widget: string
+    - label: Footer Phone
+      name: footer_phone
+      widget: string
+    - label: Footer Address
+      name: footer_address
+      widget: text
+    - label: Copyright
+      name: copyright
+      widget: string
+    - label: Footer Secondary Text
+      name: footer_secondary
+      widget: string
+    - label: Branding
+      name: branding
+      widget: object
+      fields:
+      - label: Primary
+        name: primary
+        widget: color
+      - label: Primary Dark
+        name: primary_dark
+        widget: color
+      - label: Accent
+        name: accent
+        widget: color
+      - label: Accent Dark
+        name: accent_dark
+        widget: color
+      - label: Background
+        name: background
+        widget: color
+      - label: Surface
+        name: surface
+        widget: color
+      - label: Text
+        name: text
+        widget: color
+      - label: Muted
+        name: muted
+        widget: color
+      - label: Border
+        name: border
+        widget: color
+      - label: Dark
+        name: dark
+        widget: color
+      - label: Success
+        name: success
+        widget: color
+      - label: Card Radius
+        name: radius
+        widget: number
+      - label: Container Width
+        name: container_width
+        widget: number
+    - label: SEO
+      name: seo
+      widget: object
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Meta Description
+        name: description
+        widget: text
+      - label: Keywords
+        name: keywords
+        widget: string

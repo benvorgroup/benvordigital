@@ -1,0 +1,13 @@
+{
+  "name": "Example Team Member",
+  "slug": "example",
+  "enabled": false,
+  "role": "Strategist",
+  "bio": "Example team profile.",
+  "photo": "",
+  "photo_external": "",
+  "alt": "Team member",
+  "email": "",
+  "linkedin": "",
+  "other_link": ""
+}

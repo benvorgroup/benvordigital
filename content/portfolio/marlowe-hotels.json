@@ -1,0 +1,20 @@
+{
+  "slug": "marlowe-hotels",
+  "enabled": true,
+  "featured": false,
+  "category": "social",
+  "category_label": "Social · Hospitality",
+  "industry": "Hospitality",
+  "title": "Marlowe Hotels",
+  "description": "Short‑form content system driving direct bookings.",
+  "challenge": "",
+  "solution": "",
+  "results": "+41k followers in 6 mo",
+  "result_metric": "+41k followers in 6 mo",
+  "main_image": "",
+  "main_image_external": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=700&q=80",
+  "main_image_alt": "Marlowe Hotels",
+  "gallery": [],
+  "cta_text": "Discuss a project like this →",
+  "cta_link": "#contact"
+}

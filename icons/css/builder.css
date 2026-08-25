@@ -1,0 +1,73 @@
+
+/* Protected hybrid page-builder layer. Existing Benvor CSS remains the default theme. */
+:root{
+  --builder-container:1180px;
+  --builder-section-space:96px;
+  --builder-grid-gap:24px;
+}
+.builder-mount{display:none;}
+.page.builder-mode > .builder-mount{display:block;}
+.page.builder-mode > *:not(.builder-mount){display:none!important;}
+.page.builder-mode{display:none;}
+.page.builder-mode.active{display:block;}
+.builder-section{padding:var(--builder-section-space) 24px;}
+.builder-section.compact{padding-top:48px;padding-bottom:48px;}
+.builder-section.spacious{padding-top:132px;padding-bottom:132px;}
+.builder-inner{max-width:var(--builder-container);margin:0 auto;}
+.builder-inner.narrow{max-width:820px;}
+.builder-inner.full{max-width:none;}
+.builder-center{text-align:center}.builder-right{text-align:right}
+.builder-row{display:grid;gap:var(--builder-grid-gap);align-items:start;}
+.builder-row.cols-1{grid-template-columns:1fr}
+.builder-row.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.builder-row.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.builder-row.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.builder-row.ratio-25-75{grid-template-columns:1fr 3fr}
+.builder-row.ratio-33-67{grid-template-columns:1fr 2fr}
+.builder-row.ratio-40-60{grid-template-columns:2fr 3fr}
+.builder-row.ratio-50-50{grid-template-columns:1fr 1fr}
+.builder-row.ratio-60-40{grid-template-columns:3fr 2fr}
+.builder-row.ratio-67-33{grid-template-columns:2fr 1fr}
+.builder-row.ratio-75-25{grid-template-columns:3fr 1fr}
+.builder-column{min-width:0}
+.builder-element{margin-bottom:18px}
+.builder-element:last-child{margin-bottom:0}
+.builder-image{display:block;max-width:100%;height:auto}
+.builder-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--paper)}
+.builder-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.builder-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+.builder-pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.builder-pricing-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--paper)}
+.builder-pricing-card.highlighted{outline:2px solid var(--indigo)}
+.builder-logo-wall{display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center}
+.builder-logo-wall img{max-width:140px;max-height:56px;object-fit:contain}
+.builder-tabs-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.builder-tab-panel[hidden]{display:none}
+.builder-accordion-item{border-bottom:1px solid var(--line)}
+.builder-accordion-q{width:100%;text-align:left;padding:18px 0;font:inherit;font-weight:600}
+.builder-accordion-a{display:none;padding:0 0 18px}
+.builder-accordion-item.open .builder-accordion-a{display:block}
+.builder-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px}
+.builder-carousel > *{min-width:min(82vw,420px);scroll-snap-align:start}
+.builder-embed{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:var(--radius);background:#000}
+.builder-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.builder-divider{height:1px;background:var(--line)}
+.builder-hidden-mobile{display:block}.builder-hidden-desktop{display:none!important}
+.builder-anim{animation-duration:.55s;animation-fill-mode:both}
+@keyframes builderFade{from{opacity:0}to{opacity:1}}
+@keyframes builderUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes builderLeft{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes builderRight{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes builderScale{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.anim-fade{animation-name:builderFade}.anim-fade-up{animation-name:builderUp}.anim-slide-left{animation-name:builderLeft}
+.anim-slide-right{animation-name:builderRight}.anim-scale{animation-name:builderScale}
+@media(prefers-reduced-motion:reduce){.builder-anim{animation:none!important}}
+@media(max-width:900px){
+  .builder-row.cols-3,.builder-row.cols-4,.builder-gallery,.builder-pricing{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .builder-row.ratio-25-75,.builder-row.ratio-33-67,.builder-row.ratio-40-60,.builder-row.ratio-50-50,
+  .builder-row.ratio-60-40,.builder-row.ratio-67-33,.builder-row.ratio-75-25{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .builder-row.cols-2,.builder-row.cols-3,.builder-row.cols-4,.builder-gallery,.builder-pricing{grid-template-columns:1fr}
+  .builder-hidden-mobile{display:none!important}.builder-hidden-desktop{display:block!important}
+}
