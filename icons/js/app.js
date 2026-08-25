@@ -302,8 +302,8 @@
       $('#main').innerHTML=out.join('');
       bindInteractions(settings);
     }catch(e){
-      console.error(e);
-      $('#main').innerHTML='<section class="section"><div class="wrap"><h1>Website content could not load.</h1><p class="lead">Check that the /content files were uploaded with the site.</p></div></section>';
+      console.error('CMS enhancement could not load. Keeping the embedded fallback page visible.', e);
+      document.documentElement.classList.add('cms-fallback-active');
     }
   }
   document.addEventListener('DOMContentLoaded',init);
