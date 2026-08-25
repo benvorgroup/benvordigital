@@ -381,7 +381,7 @@
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
     <div class="header-actions">
-      <a href="#contact" data-nav="contact" class="btn btn-primary btn-sm desktop-only">Book a Call</a>
+      <a href="#contact" data-nav="contact" class="btn btn-primary btn-sm desktop-only" id="header-cta">Book a Call</a>
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
@@ -396,7 +396,7 @@
   <a href="#services" data-nav="services">Services</a>
   <a href="#listings" data-nav="listings">Listings</a>
   <a href="#contact" data-nav="contact">Contact</a>
-  <a href="#contact" data-nav="contact" class="btn btn-primary" style="margin-top:18px;justify-content:center;">Book a Call</a>
+  <a href="#contact" data-nav="contact" class="btn btn-primary" id="mobile-header-cta" style="margin-top:18px;justify-content:center;">Book a Call</a>
 </nav>
 
 <main id="main">
@@ -412,9 +412,9 @@
         <p class="lead" id="hero-description">Benvor Digital builds the websites, ads, SEO, and social systems that take a business from "we should try marketing" to a predictable stream of qualified leads.</p>
         <div class="cta-row">
           <a href="#contact" data-nav="contact" class="btn btn-primary" id="hero-primary-cta">Get a free growth audit</a>
-          <a href="#listings" data-nav="listings" class="btn btn-ghost">See our work</a>
+          <a href="#listings" data-nav="listings" class="btn btn-ghost" id="hero-secondary-cta">See our work</a>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats" id="hero-stats">
           <div><strong>187%</strong><span>Avg. lead lift</span></div>
           <div><strong>4.6x</strong><span>Avg. ROAS</span></div>
           <div><strong>120+</strong><span>Brands grown</span></div>
@@ -478,9 +478,9 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">What we do</span>
-        <h2>Everything your online growth engine needs</h2>
+        <h2 id="home-services-heading">Everything your online growth engine needs</h2>
       </div>
-      <div class="service-grid">
+      <div class="service-grid" id="home-service-grid">
         <div class="service-card">
           <div class="icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
@@ -540,9 +540,9 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Client results</span>
-        <h2>What it's like to work with Benvor</h2>
+        <h2 id="testimonials-heading">What it's like to work with Benvor</h2>
       </div>
-      <div class="testi-grid">
+      <div class="testi-grid" id="testimonials-grid">
         <div class="testi-card">
           <div class="stars">★★★★★</div>
           <p>"Benvor rebuilt our site and our ad accounts in the same month. Cost per lead dropped by half in the first 60 days and it hasn't crept back up."</p>
@@ -575,10 +575,10 @@
     <div class="wrap split">
       <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="The Benvor Digital team collaborating around a laptop in a bright studio office">
       <div>
-        <span class="eyebrow">About Benvor</span>
-        <h2 style="margin:14px 0 16px;">A digital agency built by operators, not just marketers</h2>
-        <p class="muted" style="max-width:52ch;">We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.</p>
-        <a href="#about" data-nav="about" class="btn btn-ghost" style="margin-top:24px;">Our story</a>
+        <span class="eyebrow" id="home-about-eyebrow">About Benvor</span>
+        <h2 id="home-about-heading" style="margin:14px 0 16px;">A digital agency built by operators, not just marketers</h2>
+        <p class="muted" id="home-about-text" style="max-width:52ch;">We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.</p>
+        <a href="#about" data-nav="about" class="btn btn-ghost" id="home-about-cta" style="margin-top:24px;">Our story</a>
       </div>
     </div>
   </section>
@@ -587,12 +587,12 @@
     <div class="wrap">
       <div class="cta-banner">
         <div>
-          <h2>Ready to see what your growth engine could look like?</h2>
-          <p>Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.</p>
+          <h2 id="home-final-cta-heading">Ready to see what your growth engine could look like?</h2>
+          <p id="home-final-cta-text">Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.</p>
         </div>
         <div class="cta-row">
-          <a href="#contact" data-nav="contact" class="btn btn-primary">Book a Free Audit</a>
-          <a href="#listings" data-nav="listings" class="btn btn-ghost on-dark">View our work</a>
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="home-final-cta-primary">Book a Free Audit</a>
+          <a href="#listings" data-nav="listings" class="btn btn-ghost on-dark" id="home-final-cta-secondary">View our work</a>
         </div>
       </div>
     </div>
@@ -605,9 +605,9 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">About Benvor Digital</span>
-      <h1>Growth marketing, run like a business — because we've run one</h1>
-      <p class="lead">We started Benvor Digital because too many agencies sell activity instead of outcomes. We built ours around the opposite idea.</p>
+      <span class="eyebrow" id="about-eyebrow">About Benvor Digital</span>
+      <h1 id="about-heading">Growth marketing, run like a business — because we've run one</h1>
+      <p class="lead" id="about-intro">We started Benvor Digital because too many agencies sell activity instead of outcomes. We built ours around the opposite idea.</p>
     </div>
   </section>
 
@@ -616,7 +616,7 @@
       <div class="figure">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Benvor Digital strategists reviewing campaign performance on a whiteboard">
       </div>
-      <div class="story-copy">
+      <div class="story-copy" id="about-story">
         <h3>How we started</h3>
         <p>Benvor Digital was founded by a small team of in‑house marketers who kept getting pulled into agency reviews for the wrong reasons — vague reporting, generic strategy decks, and campaigns that looked busy but didn't move revenue. We built the agency we wished we'd had: one that treats every client's budget like it's coming out of our own pocket.</p>
         <p>Today we work with local shops opening their first location and global brands running campaigns across a dozen markets. The size changes. The standard doesn't.</p>
@@ -639,9 +639,9 @@
     <div class="wrap">
       <div class="section-head" style="margin-bottom:8px;">
         <span class="eyebrow">What we value</span>
-        <h2>The principles behind every project</h2>
+        <h2 id="about-values-heading">The principles behind every project</h2>
       </div>
-      <div class="value-grid">
+      <div class="value-grid" id="about-values-grid">
         <div class="value-card">
           <h4>Transparency</h4>
           <p>Real numbers, shared in real time. No metric gets dressed up to look better than it is.</p>
@@ -666,11 +666,11 @@
     <div class="wrap">
       <div class="cta-banner">
         <div>
-          <h2>Want to know if we're the right fit?</h2>
-          <p>A 30‑minute call will tell you. No pitch deck required.</p>
+          <h2 id="about-cta-heading">Want to know if we're the right fit?</h2>
+          <p id="about-cta-text">A 30‑minute call will tell you. No pitch deck required.</p>
         </div>
         <div class="cta-row">
-          <a href="#contact" data-nav="contact" class="btn btn-primary">Talk to Our Team</a>
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="about-cta-button">Talk to Our Team</a>
         </div>
       </div>
     </div>
@@ -683,15 +683,15 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">Services</span>
-      <h1>One agency, every channel your growth plan needs</h1>
-      <p class="lead">Hire us for a single service or hand us the whole funnel — the systems are built to work together either way.</p>
+      <span class="eyebrow" id="services-eyebrow">Services</span>
+      <h1 id="services-heading">One agency, every channel your growth plan needs</h1>
+      <p class="lead" id="services-intro">Hire us for a single service or hand us the whole funnel — the systems are built to work together either way.</p>
     </div>
   </section>
 
   <section class="tight">
     <div class="wrap">
-      <div class="service-grid">
+      <div class="service-grid" id="services-grid">
         <div class="service-card">
           <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
           <span class="tag">Web</span>
@@ -736,9 +736,9 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Process</span>
-        <h2>How an engagement actually runs</h2>
+        <h2 id="process-heading">How an engagement actually runs</h2>
       </div>
-      <div class="steps">
+      <div class="steps" id="process-grid">
         <div class="step">
           <span class="step-num">01</span>
           <h4>Audit</h4>
@@ -767,9 +767,9 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">FAQ</span>
-        <h2>Common questions</h2>
+        <h2 id="faq-heading">Common questions</h2>
       </div>
-      <div class="faq">
+      <div class="faq" id="faq-list">
         <div class="faq-item open">
           <button class="faq-q" aria-expanded="true">How quickly will I see results? <span class="plus">+</span></button>
           <div class="faq-a" style="max-height:200px;"><p>Paid channels typically show movement within 2–4 weeks. SEO and organic social are longer plays — most clients see meaningful traffic gains by month 3–4, with compounding growth after that.</p></div>
@@ -802,11 +802,11 @@
     <div class="wrap">
       <div class="cta-banner">
         <div>
-          <h2>Not sure which service you need?</h2>
-          <p>Tell us your goal and we'll recommend where to start.</p>
+          <h2 id="services-cta-heading">Not sure which service you need?</h2>
+          <p id="services-cta-text">Tell us your goal and we'll recommend where to start.</p>
         </div>
         <div class="cta-row">
-          <a href="#contact" data-nav="contact" class="btn btn-primary">Get a Free Audit</a>
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="services-cta-button">Get a Free Audit</a>
         </div>
       </div>
     </div>
@@ -819,9 +819,9 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">Our Work</span>
-      <h1>Proof, not promises</h1>
-      <p class="lead">A sample of the websites, campaigns, and brand systems we've built across industries.</p>
+      <span class="eyebrow" id="portfolio-eyebrow">Our Work</span>
+      <h1 id="portfolio-heading">Proof, not promises</h1>
+      <p class="lead" id="portfolio-intro">A sample of the websites, campaigns, and brand systems we've built across industries.</p>
     </div>
   </section>
 
@@ -945,11 +945,11 @@
     <div class="wrap">
       <div class="cta-banner">
         <div>
-          <h2>Like what you see?</h2>
-          <p>Let's talk about what a similar system could do for your business.</p>
+          <h2 id="portfolio-cta-heading">Like what you see?</h2>
+          <p id="portfolio-cta-text">Let's talk about what a similar system could do for your business.</p>
         </div>
         <div class="cta-row">
-          <a href="#contact" data-nav="contact" class="btn btn-primary">Start a Project</a>
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="portfolio-cta-button">Start a Project</a>
         </div>
       </div>
     </div>
@@ -962,9 +962,9 @@
 
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">Contact</span>
-      <h1>Let's build your growth plan</h1>
-      <p class="lead">Tell us a bit about your business. We'll reply within one business day with next steps.</p>
+      <span class="eyebrow" id="contact-eyebrow">Contact</span>
+      <h1 id="contact-heading">Let's build your growth plan</h1>
+      <p class="lead" id="contact-intro">Tell us a bit about your business. We'll reply within one business day with next steps.</p>
     </div>
   </section>
 
@@ -996,14 +996,14 @@
       <div>
         <div class="info-card">
           <h4>Contact Details</h4>
-          <div class="info-row"><span class="ico">✆</span><span>(212) 555‑0148</span></div>
-          <div class="info-row"><span class="ico">✉</span><span>hello@benvordigital.com</span></div>
-          <div class="info-row"><span class="ico">⌂</span><span>142 Bowery Street, Suite 4B<br>New York, NY 10013</span></div>
-          <div class="info-row"><span class="ico">🕐</span><span>Mon–Fri, 9:00am–6:00pm ET</span></div>
+          <div class="info-row"><span class="ico">✆</span><span id="contact-phone">(212) 555‑0148</span></div>
+          <div class="info-row"><span class="ico">✉</span><span id="contact-email">hello@benvordigital.com</span></div>
+          <div class="info-row"><span class="ico">⌂</span><span id="contact-address">142 Bowery Street, Suite 4B<br>New York, NY 10013</span></div>
+          <div class="info-row"><span class="ico">🕐</span><span id="contact-hours">Mon–Fri, 9:00am–6:00pm ET</span></div>
         </div>
 
         <div class="map-frame">
-          <iframe src="https://www.google.com/maps?q=142+Bowery+St+New+York+NY&output=embed" title="Map showing Benvor Digital office location in New York" loading="lazy"></iframe>
+          <iframe id="contact-map" src="https://www.google.com/maps?q=142+Bowery+St+New+York+NY&output=embed" title="Map showing Benvor Digital office location" loading="lazy"></iframe>
         </div>
 
         <div class="info-card" style="margin-top:20px;">
@@ -1032,11 +1032,11 @@
           <svg width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#3730E0"/><path d="M6 20L11.5 13L16 17L24 8" stroke="#FF5B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="2.2" fill="#FF5B3D"/></svg>
           Benvor Digital
         </div>
-        <p>A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.</p>
+        <p id="footer-description">A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.</p>
         <div class="foot-social">
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X">X</a>
+          <a id="footer-linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a id="footer-instagram" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a id="footer-x" href="https://twitter.com" target="_blank" rel="noopener" aria-label="X">X</a>
         </div>
       </div>
       <div class="foot-col">
@@ -1056,14 +1056,14 @@
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
-        <span>hello@benvordigital.com</span>
-        <span>(212) 555‑0148</span>
-        <span>142 Bowery Street, Suite 4B<br>New York, NY 10013</span>
+        <span id="footer-email">hello@benvordigital.com</span>
+        <span id="footer-phone">(212) 555‑0148</span>
+        <span id="footer-address">142 Bowery Street, Suite 4B<br>New York, NY 10013</span>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Benvor Digital. All rights reserved.</span>
-      <span>Digital marketing agency · Full‑service marketing agency · Growth marketing firm</span>
+      <span id="footer-copyright">© 2026 Benvor Digital. All rights reserved.</span>
+      <span id="footer-keywords">Digital marketing agency · Full‑service marketing agency · Growth marketing firm</span>
     </div>
   </div>
 </footer>
@@ -1168,55 +1168,30 @@
     headerEl.style.boxShadow = window.scrollY > 8 ? '0 4px 20px rgba(18,19,28,.06)' : 'none';
   });
 </script>
-
 <script>
-  // ---------- CMS homepage content ----------
-  fetch('/content/homepage.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Could not load /content/homepage.json');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const eyebrow = document.getElementById('hero-eyebrow');
-      const heading = document.getElementById('hero-heading');
-      const description = document.getElementById('hero-description');
-      const primaryCta = document.getElementById('hero-primary-cta');
-
-      if (eyebrow && data.hero_eyebrow) {
-        eyebrow.textContent = data.hero_eyebrow;
-      }
-
-      if (heading && data.hero_heading) {
-        heading.textContent = data.hero_heading;
-      }
-
-      if (description && data.hero_description) {
-        description.textContent = data.hero_description;
-      }
-
-      if (primaryCta && data.button_text) {
-        primaryCta.textContent = data.button_text;
-      }
-
-      // Your site uses data-nav for its single-page routing.
-      // Only internal section links such as #contact are applied here.
-      if (
-        primaryCta &&
-        typeof data.button_link === 'string' &&
-        /^#(home|about|services|listings|contact)$/.test(data.button_link)
-      ) {
-        const sectionName = data.button_link.substring(1);
-        primaryCta.href = data.button_link;
-        primaryCta.dataset.nav = sectionName;
-      }
-    })
-    .catch(error => {
-      // The hard-coded HTML remains visible if CMS content cannot load.
-      console.warn('CMS homepage content not loaded:', error);
-    });
+(function(){
+const esc=(v='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+const setText=(id,v)=>{const e=document.getElementById(id); if(e&&v!=null)e.textContent=v;};
+function setNavLink(id,text,link){const e=document.getElementById(id);if(!e)return;if(text)e.textContent=text;if(typeof link==='string'&&/^#(home|about|services|listings|contact)$/.test(link)){e.href=link;e.dataset.nav=link.substring(1);}}
+async function loadJSON(p){const r=await fetch(p,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+p);return r.json();}
+Promise.all(['/content/homepage.json','/content/about.json','/content/services.json','/content/portfolio.json','/content/contact.json','/content/settings.json'].map(loadJSON)).then(([h,a,s,p,c,g])=>{
+setNavLink('header-cta',g.header_cta_text,g.header_cta_link);setNavLink('mobile-header-cta',g.header_cta_text,g.header_cta_link);
+setText('hero-eyebrow',h.hero_eyebrow);setText('hero-heading',h.hero_heading);setText('hero-description',h.hero_description);setNavLink('hero-primary-cta',h.hero_primary_cta_text,h.hero_primary_cta_link);setNavLink('hero-secondary-cta',h.hero_secondary_cta_text,h.hero_secondary_cta_link);
+let e=document.getElementById('hero-stats');if(e)e.innerHTML=(h.stats||[]).map(x=>`<div><strong>${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('');
+setText('home-services-heading',h.services_heading);e=document.getElementById('home-service-grid');if(e)e.innerHTML=(h.services||[]).map((x,i)=>`<div class="service-card"><div class="icon" aria-hidden="true"><span style="font-weight:700">${String(i+1).padStart(2,'0')}</span></div><span class="tag">${esc(x.tag)}</span><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p></div>`).join('');
+setText('testimonials-heading',h.testimonials_heading);e=document.getElementById('testimonials-grid');if(e)e.innerHTML=(h.testimonials||[]).map(x=>`<div class="testi-card"><div class="stars">★★★★★</div><p>"${esc(x.quote)}"</p><div class="testi-person"><img src="${esc(x.image)}" alt="Portrait of ${esc(x.name)}"><div><strong>${esc(x.name)}</strong><span>${esc(x.role)}</span></div></div></div>`).join('');
+setText('home-about-eyebrow',h.about_preview_eyebrow);setText('home-about-heading',h.about_preview_heading);setText('home-about-text',h.about_preview_text);setNavLink('home-about-cta',h.about_preview_button,h.about_preview_link);setText('home-final-cta-heading',h.final_cta_heading);setText('home-final-cta-text',h.final_cta_text);setNavLink('home-final-cta-primary',h.final_cta_primary_text,h.final_cta_primary_link);setNavLink('home-final-cta-secondary',h.final_cta_secondary_text,h.final_cta_secondary_link);
+setText('about-eyebrow',a.eyebrow);setText('about-heading',a.heading);setText('about-intro',a.intro);e=document.getElementById('about-story');if(e)e.innerHTML=`<h3>${esc(a.story_heading)}</h3><p>${esc(a.story_paragraph_1)}</p><p>${esc(a.story_paragraph_2)}</p><h3>${esc(a.mission_heading)}</h3><p>${esc(a.mission_text)}</p><h3>${esc(a.difference_heading)}</h3><ul class="mini-list">${(a.differences||[]).map(x=>`<li><span class="dot"></span> ${esc(x)}</li>`).join('')}</ul>`;setText('about-values-heading',a.values_heading);e=document.getElementById('about-values-grid');if(e)e.innerHTML=(a.values||[]).map(x=>`<div class="value-card"><h4>${esc(x.title)}</h4><p>${esc(x.text)}</p></div>`).join('');setText('about-cta-heading',a.cta_heading);setText('about-cta-text',a.cta_text);setNavLink('about-cta-button',a.cta_button,a.cta_link);
+setText('services-eyebrow',s.eyebrow);setText('services-heading',s.heading);setText('services-intro',s.intro);e=document.getElementById('services-grid');if(e)e.innerHTML=(s.items||[]).map((x,i)=>`<div class="service-card"><div class="icon" aria-hidden="true"><span style="font-weight:700">${String(i+1).padStart(2,'0')}</span></div><span class="tag">${esc(x.tag)}</span><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p></div>`).join('');setText('process-heading',s.process_heading);e=document.getElementById('process-grid');if(e)e.innerHTML=(s.process||[]).map(x=>`<div class="step"><span class="step-num">${esc(x.number)}</span><h4>${esc(x.title)}</h4><p>${esc(x.text)}</p></div>`).join('');setText('faq-heading',s.faq_heading);e=document.getElementById('faq-list');if(e)e.innerHTML=(s.faqs||[]).map((x,i)=>`<div class="faq-item${i===0?' open':''}"><button class="faq-q" aria-expanded="${i===0?'true':'false'}">${esc(x.question)} <span class="plus">+</span></button><div class="faq-a"${i===0?' style="max-height:200px;"':''}><p>${esc(x.answer)}</p></div></div>`).join('');setText('services-cta-heading',s.cta_heading);setText('services-cta-text',s.cta_text);setNavLink('services-cta-button',s.cta_button,s.cta_link);
+setText('portfolio-eyebrow',p.eyebrow);setText('portfolio-heading',p.heading);setText('portfolio-intro',p.intro);e=document.getElementById('cardGrid');if(e)e.innerHTML=(p.projects||[]).map(x=>`<div class="p-card" data-cat="${esc(x.category)}"><div class="thumb"><img src="${esc(x.image)}" alt="${esc(x.title)}"></div><div class="body"><span class="cat">${esc(x.category_label)}</span><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p><div class="card-foot"><span class="result">${esc(x.result)}</span></div><a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a></div></div>`).join('');setText('portfolio-cta-heading',p.cta_heading);setText('portfolio-cta-text',p.cta_text);setNavLink('portfolio-cta-button',p.cta_button,p.cta_link);
+setText('contact-eyebrow',c.eyebrow);setText('contact-heading',c.heading);setText('contact-intro',c.intro);setText('formMsg',c.success_message);setText('contact-phone',c.phone);setText('contact-email',c.email);e=document.getElementById('contact-address');if(e)e.innerHTML=esc(c.address).replace(/\n/g,'<br>');setText('contact-hours',c.hours);e=document.getElementById('contact-map');if(e&&c.map_url)e.src=c.map_url;
+setText('footer-description',g.footer_description);e=document.getElementById('footer-linkedin');if(e&&g.linkedin)e.href=g.linkedin;e=document.getElementById('footer-instagram');if(e&&g.instagram)e.href=g.instagram;e=document.getElementById('footer-x');if(e&&g.x)e.href=g.x;setText('footer-email',c.email);setText('footer-phone',c.phone);e=document.getElementById('footer-address');if(e)e.innerHTML=esc(c.address).replace(/\n/g,'<br>');setText('footer-copyright',g.copyright);setText('footer-keywords',g.footer_keywords);
+// rebind dynamic nav, FAQ, portfolio
+ document.querySelectorAll('[data-nav]').forEach(link=>{if(link.dataset.cmsBound)return;link.dataset.cmsBound='1';link.addEventListener('click',ev=>{ev.preventDefault();const n=link.dataset.nav;history.pushState(null,'','#'+n);showPage(n);});});
+ document.querySelectorAll('.faq-item').forEach(item=>{const q=item.querySelector('.faq-q'),ans=item.querySelector('.faq-a');q.addEventListener('click',()=>{const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');i.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');q.setAttribute('aria-expanded','true');ans.style.maxHeight=ans.scrollHeight+'px';}});});
+ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.onclick=()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.p-card').forEach(card=>card.classList.toggle('hide',f!=='all'&&card.dataset.cat!==f));};});
+}).catch(err=>console.warn('CMS content could not be loaded:',err));
+})();
 </script>
-
 </body>
 </html>

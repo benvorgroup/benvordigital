@@ -2,6 +2,87 @@
   "hero_eyebrow": "Full‑Service Digital Marketing Agency",
   "hero_heading": "We turn traffic into pipeline, not just impressions.",
   "hero_description": "Benvor Digital builds the websites, ads, SEO, and social systems that take a business from \"we should try marketing\" to a predictable stream of qualified leads.",
-  "button_text": "Get a free growth audit",
-  "button_link": "#contact"
+  "hero_primary_cta_text": "Get a free growth audit",
+  "hero_primary_cta_link": "#contact",
+  "hero_secondary_cta_text": "See our work",
+  "hero_secondary_cta_link": "#listings",
+  "stats": [
+    {
+      "value": "187%",
+      "label": "Avg. lead lift"
+    },
+    {
+      "value": "4.6x",
+      "label": "Avg. ROAS"
+    },
+    {
+      "value": "120+",
+      "label": "Brands grown"
+    }
+  ],
+  "services_heading": "Everything your online growth engine needs",
+  "services": [
+    {
+      "tag": "Web",
+      "title": "Website Design & Development",
+      "description": "Fast, conversion‑led websites built to sell while you sleep."
+    },
+    {
+      "tag": "Paid Media",
+      "title": "Online Advertising",
+      "description": "Search, social, and programmatic ads managed for return, not reach."
+    },
+    {
+      "tag": "SEO",
+      "title": "Search Engine Optimization",
+      "description": "Rank where buyers are already searching and stay there."
+    },
+    {
+      "tag": "Social",
+      "title": "Social Media Management",
+      "description": "Content and community that builds a brand people follow."
+    },
+    {
+      "tag": "Brand",
+      "title": "Creative & Branding",
+      "description": "Identity systems and campaign creative that stop the scroll."
+    },
+    {
+      "tag": "Analytics",
+      "title": "Growth Analytics & CRO",
+      "description": "Continuous testing that lifts conversion rate month over month."
+    }
+  ],
+  "testimonials_heading": "What it's like to work with Benvor",
+  "testimonials": [
+    {
+      "quote": "Benvor rebuilt our site and our ad accounts in the same month. Cost per lead dropped by half in the first 60 days and it hasn't crept back up.",
+      "name": "Maren Oyelaran",
+      "role": "VP Marketing, Retail",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+    },
+    {
+      "quote": "They treat our budget like it's their own. We finally have a marketing partner who explains the 'why' behind every dollar spent.",
+      "name": "Daniel Osei",
+      "role": "Founder, Healthcare Startup",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+    },
+    {
+      "quote": "Our organic traffic tripled in eight months. Benvor's SEO team is the most transparent agency we've hired in a decade.",
+      "name": "Priya Nair",
+      "role": "Head of Growth, Fintech",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
+    }
+  ],
+  "about_preview_eyebrow": "About Benvor",
+  "about_preview_heading": "A digital agency built by operators, not just marketers",
+  "about_preview_text": "We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.",
+  "about_preview_button": "Our story",
+  "about_preview_link": "#about",
+  "final_cta_heading": "Ready to see what your growth engine could look like?",
+  "final_cta_text": "Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.",
+  "final_cta_primary_text": "Book a Free Audit",
+  "final_cta_primary_link": "#contact",
+  "final_cta_secondary_text": "View our work",
+  "final_cta_secondary_link": "#listings"
 }
