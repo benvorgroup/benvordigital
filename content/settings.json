@@ -5,7 +5,9 @@
     "logo_dark": "/assets/branding/benvor-horizontal-dark.png",
     "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
     "footer_logo_dark": "/assets/branding/benvor-stacked-dark.png",
-    "logo_alt": "Benvor Digital"
+    "logo_alt": "Benvor Digital",
+    "favicon": "/assets/favicon/favicon.ico",
+    "apple_touch_icon": "/assets/favicon/apple-touch-icon.png"
   },
   "navigation": [
     {

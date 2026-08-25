@@ -967,6 +967,14 @@ collections:
       - label: Logo Alt Text
         name: logo_alt
         widget: string
+      - label: Favicon
+        name: favicon
+        widget: image
+        required: false
+      - label: Apple Touch Icon
+        name: apple_touch_icon
+        widget: image
+        required: false
     - label: Navigation
       name: navigation
       widget: list

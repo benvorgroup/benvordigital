@@ -390,7 +390,98 @@ iframe,video,canvas,svg{max-width:100%}
   .trust-metric{padding:12px 0!important;border-left:0;border-top:1px solid var(--border)}
   .trust-metric:first-child{border-top:0}
 }
+
+
+/* =========================================================
+   ICON RENDERING FIX
+   ========================================================= */
+.icon-line{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+  min-height:34px!important;
+  color:var(--primary)!important;
+  line-height:0!important;
+  vertical-align:middle;
+}
+.icon-line svg{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  overflow:visible!important;
+  fill:none;
+  stroke:currentColor!important;
+  stroke-width:1.65;
+  vector-effect:non-scaling-stroke;
+}
+.icon-line svg path,
+.icon-line svg circle,
+.icon-line svg rect,
+.icon-line svg ellipse,
+.icon-line svg line,
+.icon-line svg polyline,
+.icon-line svg polygon{
+  stroke:currentColor!important;
+}
+.icon-line svg circle[fill="currentColor"]{
+  fill:currentColor!important;
+  stroke:none!important;
+}
+.service-card > .icon-line{
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+  min-height:38px!important;
+  margin-bottom:4px;
+}
+.service-card > img.icon-line{
+  display:block!important;
+  width:38px!important;
+  height:38px!important;
+  object-fit:contain!important;
+}
+.hero-stat > .icon-line{
+  width:30px!important;
+  height:30px!important;
+  min-width:30px!important;
+  min-height:30px!important;
+  margin-bottom:12px!important;
+}
+.why-item > .icon-line{
+  width:42px!important;
+  height:42px!important;
+  min-width:42px!important;
+  min-height:42px!important;
+}
+.about-stat > .icon-line{
+  width:32px!important;
+  height:32px!important;
+  min-width:32px!important;
+  min-height:32px!important;
+}
+.theme-toggle svg{
+  display:block!important;
+  width:18px!important;
+  height:18px!important;
+  overflow:visible!important;
+}
+@media(max-width:600px){
+  .service-card > .icon-line{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important}
+  .why-item > .icon-line{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important}
+}
 </style>
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A1F33">
 </head>
 <body data-page="portfolio">
 <a class="skip-link" href="#main">Skip to content</a>
