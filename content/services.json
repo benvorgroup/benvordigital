@@ -7,37 +7,37 @@
       "tag": "Web",
       "title": "Website Design & Development",
       "text": "Custom, mobile‑first websites engineered around one goal: turning visitors into inquiries. Includes UX strategy, copywriting, and ongoing performance tuning.",
-      "icon": ""
+      "icon": "/assets/icons/web.svg"
     },
     {
       "tag": "Paid Media",
       "title": "Online Advertising",
       "text": "Search, paid social, display, and marketplace ads, built around a cost‑per‑lead target and optimized weekly against it.",
-      "icon": ""
+      "icon": "/assets/icons/ads.svg"
     },
     {
       "tag": "SEO",
       "title": "Search Engine Optimization",
       "text": "Technical audits, content strategy, and link building focused on the keywords your actual buyers use to search.",
-      "icon": ""
+      "icon": "/assets/icons/seo.svg"
     },
     {
       "tag": "Social",
       "title": "Social Media Management",
       "text": "Content calendars, community management, and short‑form video built to grow a following that actually converts.",
-      "icon": ""
+      "icon": "/assets/icons/social.svg"
     },
     {
       "tag": "Brand",
       "title": "Creative & Branding",
       "text": "Logo systems, brand guidelines, and campaign creative that keep every channel looking like one brand.",
-      "icon": ""
+      "icon": "/assets/icons/brand.svg"
     },
     {
       "tag": "Analytics",
       "title": "Growth Analytics & CRO",
       "text": "Heatmaps, A/B testing, and funnel analysis that steadily raises your conversion rate, not just your traffic.",
-      "icon": ""
+      "icon": "/assets/icons/analytics.svg"
     }
   ],
   "process_heading": "How an engagement actually runs",

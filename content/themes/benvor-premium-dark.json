@@ -1,0 +1,51 @@
+{
+  "name": "Benvor Premium Dark",
+  "slug": "benvor-premium-dark",
+  "colors": {
+    "primary": "#2563EB",
+    "primary_dark": "#2563EB",
+    "secondary": "#2563EB",
+    "secondary_dark": "#2563EB",
+    "background": "#0A1F33",
+    "surface": "#102A42",
+    "card": "#102A42",
+    "heading": "#FFFFFF",
+    "body": "#F5F7FA",
+    "muted": "#B9C4CE",
+    "border": "#284158",
+    "dark": "#061421",
+    "success": "#2563EB",
+    "warning": "#2563EB",
+    "error": "#FFFFFF"
+  },
+  "typography": {
+    "heading_font": "Manrope",
+    "body_font": "Inter",
+    "accent_font": "Inter",
+    "base_size": 16,
+    "heading_weight": "700",
+    "body_weight": "400",
+    "line_height": "1.65"
+  },
+  "buttons": {
+    "radius": 10,
+    "padding_y": 13,
+    "padding_x": 22,
+    "primary_background": "#2563EB",
+    "primary_text": "#FFFFFF",
+    "secondary_background": "#0A1F33",
+    "secondary_text": "#FFFFFF",
+    "secondary_border": "#466079"
+  },
+  "cards": {
+    "radius": 16,
+    "border": "#284158",
+    "shadow": "soft",
+    "padding": 28
+  },
+  "layout": {
+    "container_width": 1240,
+    "section_spacing": 112,
+    "grid_gap": 24
+  }
+}

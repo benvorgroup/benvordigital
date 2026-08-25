@@ -2676,6 +2676,7 @@ collections:
       name: heading_font
       widget: select
       options:
+      - Manrope
       - Space Grotesk
       - Inter
       - Roboto
@@ -2821,6 +2822,42 @@ collections:
       value_field: '{{slug}}'
       display_fields:
       - name
+    - label: Visitor Light / Dark Theme Toggle
+      name: visitor_theme_toggle
+      widget: object
+      fields:
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Default
+        name: default
+        widget: select
+        options:
+        - system
+        - light
+        - dark
+        default: system
+      - label: Light Theme
+        name: light_theme
+        widget: relation
+        collection: themes
+        search_fields:
+        - name
+        - slug
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+      - label: Dark Theme
+        name: dark_theme
+        widget: relation
+        collection: themes
+        search_fields:
+        - name
+        - slug
+        value_field: '{{slug}}'
+        display_fields:
+        - name
     - label: Header
       name: header
       widget: object
@@ -2848,6 +2885,14 @@ collections:
         name: logo
         widget: image
         required: false
+      - label: Dark Theme Logo
+        name: logo_dark
+        widget: image
+        required: false
+      - label: Dark Theme External Logo URL
+        name: logo_dark_external
+        widget: string
+        required: false
       - label: External Logo URL
         name: logo_external
         widget: string
@@ -2860,7 +2905,7 @@ collections:
         name: logo_width
         widget: number
         min: 16
-        max: 120
+        max: 240
       - label: Header Height
         name: header_height
         widget: number
@@ -3419,6 +3464,31 @@ collections:
         - label: Text
           name: text
           widget: text
+    - label: Selected Work
+      name: selected_work
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Text
+        name: button_text
+        widget: string
+      - label: Button Link
+        name: button_link
+        widget: string
+      - label: Number of Projects
+        name: project_count
+        widget: number
+        min: 1
+        max: 6
+        default: 3
     - label: Services Heading
       name: services
       widget: object

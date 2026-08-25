@@ -1,0 +1,51 @@
+{
+  "name": "Benvor Premium Light",
+  "slug": "benvor-premium-light",
+  "colors": {
+    "primary": "#2563EB",
+    "primary_dark": "#2563EB",
+    "secondary": "#2563EB",
+    "secondary_dark": "#2563EB",
+    "background": "#FFFFFF",
+    "surface": "#F5F7FA",
+    "card": "#FFFFFF",
+    "heading": "#0A1F33",
+    "body": "#0A1F33",
+    "muted": "#687789",
+    "border": "#E4E8EE",
+    "dark": "#0A1F33",
+    "success": "#2563EB",
+    "warning": "#2563EB",
+    "error": "#0A1F33"
+  },
+  "typography": {
+    "heading_font": "Manrope",
+    "body_font": "Inter",
+    "accent_font": "Inter",
+    "base_size": 16,
+    "heading_weight": "700",
+    "body_weight": "400",
+    "line_height": "1.65"
+  },
+  "buttons": {
+    "radius": 10,
+    "padding_y": 13,
+    "padding_x": 22,
+    "primary_background": "#2563EB",
+    "primary_text": "#FFFFFF",
+    "secondary_background": "#FFFFFF",
+    "secondary_text": "#0A1F33",
+    "secondary_border": "#D7DFE7"
+  },
+  "cards": {
+    "radius": 16,
+    "border": "#E4E8EE",
+    "shadow": "soft",
+    "padding": 28
+  },
+  "layout": {
+    "container_width": 1240,
+    "section_spacing": 112,
+    "grid_gap": 24
+  }
+}

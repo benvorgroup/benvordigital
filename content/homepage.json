@@ -78,5 +78,13 @@
     "secondary_text": "View our work",
     "secondary_link": "#listings"
   },
-  "custom_sections": []
+  "custom_sections": [],
+  "selected_work": {
+    "eyebrow": "Selected Work",
+    "heading": "Proof in the work.",
+    "text": "A selection of websites, campaigns, and growth systems built around measurable outcomes.",
+    "button_text": "View all projects",
+    "button_link": "#listings",
+    "project_count": 3
+  }
 }

@@ -57,7 +57,7 @@
     if(l.container_width)r.setProperty('--builder-container',`${Math.max(760,Math.min(1700,Number(l.container_width)||1180))}px`);
     if(l.section_spacing)r.setProperty('--builder-section-space',`${Math.max(30,Math.min(200,Number(l.section_spacing)||96))}px`);
     if(l.grid_gap)r.setProperty('--builder-grid-gap',`${Math.max(8,Math.min(80,Number(l.grid_gap)||24))}px`);
-    const fonts={'Space Grotesk':"'Space Grotesk',sans-serif",'Inter':"'Inter',sans-serif",'IBM Plex Mono':"'IBM Plex Mono',monospace",'Roboto':"'Roboto',sans-serif",'Montserrat':"'Montserrat',sans-serif",'Poppins':"'Poppins',sans-serif",'Lato':"'Lato',sans-serif",'Playfair Display':"'Playfair Display',serif",'Merriweather':"'Merriweather',serif"};
+    const fonts={'Space Grotesk':"'Space Grotesk',sans-serif",'Manrope':"'Manrope',sans-serif",'Inter':"'Inter',sans-serif",'IBM Plex Mono':"'IBM Plex Mono',monospace",'Roboto':"'Roboto',sans-serif",'Montserrat':"'Montserrat',sans-serif",'Poppins':"'Poppins',sans-serif",'Lato':"'Lato',sans-serif",'Playfair Display':"'Playfair Display',serif",'Merriweather':"'Merriweather',serif"};
     if(fonts[t.heading_font])r.setProperty('--display',fonts[t.heading_font]);
     if(fonts[t.body_font])r.setProperty('--body',fonts[t.body_font]);
     if(fonts[t.accent_font])r.setProperty('--mono',fonts[t.accent_font]);
@@ -183,15 +183,15 @@
     const {page,mount}=await ensureMount(slug);
     page.classList.toggle('builder-mode',cfg.mode==='builder');
     if(cfg.mode==='builder'){
-      let theme=ctx.theme;
-      if(cfg.theme&&cfg.theme!=='inherit')theme=await get(`/content/themes/${encodeURIComponent(cfg.theme)}.json`).catch(()=>ctx.theme);
+      let theme=ctx.currentTheme||ctx.theme;
+      if(cfg.theme&&cfg.theme!=='inherit')theme=await get(`/content/themes/${encodeURIComponent(cfg.theme)}.json`).catch(()=>ctx.currentTheme||ctx.theme);
       applyTheme(theme);
       const parts=[];
       for(const s of (cfg.sections||[]))parts.push(await renderSection(s,ctx));
       mount.innerHTML=parts.join(''); // empty sections => genuinely blank page body
     }else{
       mount.innerHTML='';
-      applyTheme(ctx.theme);
+      applyTheme(ctx.currentTheme||ctx.theme);
     }
     document.querySelector('header.site').style.display=cfg.header_visible===false?'none':'';
     document.querySelector('footer.site').style.display=cfg.footer_visible===false?'none':'';
@@ -211,11 +211,18 @@
     if(!header)return;
     header.style.display=h.enabled===false?'none':'';
     header.style.position=h.sticky===false?'relative':'sticky';
-    if(hex(h.background))header.style.background=h.background;
-    const logo=media(h.logo,h.logo_external);
+    header.style.background='var(--paper)';
+    header.style.color='var(--ink)';
+    const currentMode=(window.__HYBRID_CMS__&&window.__HYBRID_CMS__.themeMode)||'light';
+    const lightLogo=media(h.logo,h.logo_external);
+    const darkLogo=media(h.logo_dark,h.logo_dark_external)||lightLogo;
+    const logo=currentMode==='dark'?darkLogo:lightLogo;
     const nav=(settings.navigation||[]).filter(x=>x.enabled!==false).map(x=>`<a href="${esc(safeUrl(x.url)||'#home')}"${x.new_tab?' target="_blank" rel="noopener"':''}>${esc(x.label||'')}</a>`).join('');
-    const c=h.cta||{};
-    header.innerHTML=`<div class="nav-inner"><a href="#home" class="logo">${logo?`<img src="${esc(logo)}" alt="${esc(h.logo_alt||'')}" style="width:${Math.max(16,Math.min(120,Number(h.logo_width)||30))}px">`:''}${h.show_company_name===false?'':`<span>${esc(h.company_name||'')}</span>`}</a><nav class="primary">${nav}</nav><div class="header-actions">${c.enabled===false?'':button(c,'btn btn-primary btn-sm desktop-only')}<button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div>`;
+    const c=h.cta||{},toggle=settings.visitor_theme_toggle||{};
+    const toggleMarkup=toggle.enabled===false?'':`<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+      <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>`;
+    header.innerHTML=`<div class="nav-inner"><a href="#home" class="logo">${logo?`<img id="headerThemeLogo" data-light-src="${esc(lightLogo)}" data-dark-src="${esc(darkLogo)}" src="${esc(logo)}" alt="${esc(h.logo_alt||'')}" style="width:${Math.max(40,Math.min(240,Number(h.logo_width)||166))}px">`:''}${h.show_company_name===false?'':`<span>${esc(h.company_name||'')}</span>`}</a><nav class="primary">${nav}</nav><div class="header-actions">${toggleMarkup}${c.enabled===false?'':button(c,'btn btn-primary btn-sm desktop-only')}<button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div>`;
     const mobile=document.getElementById('mobileMenu');
     if(mobile)mobile.innerHTML=nav+(c.enabled===false?'':button(c,'btn btn-primary'));
   }
@@ -228,8 +235,46 @@
     footer.innerHTML=`<div class="wrap"><div class="foot-grid"><div><div class="foot-logo">${logo?`<img src="${esc(logo)}" alt="${esc(f.logo_alt||'')}">`:''}<span>${esc(settings.header?.company_name||site.company_name||'')}</span></div><p>${esc(f.description||'')}</p><div class="foot-social">${socials}</div></div>${groups}<div class="foot-col"><h5>Contact</h5><span>${esc(site.footer_email||'')}</span><span>${esc(site.footer_phone||'')}</span><span>${esc((site.footer_address||'').replace(/\n/g,' · '))}</span></div></div><div class="foot-bottom"><span>${esc(f.copyright||'')}</span><span>${esc(f.secondary_text||'')}</span></div></div>`;
   }
 
+
+  async function resolveVisitorTheme(settings){
+    const cfg=settings.visitor_theme_toggle||{};
+    if(cfg.enabled===false){
+      const theme=await get(`/content/themes/${encodeURIComponent(settings.active_theme||'benvor-premium-light')}.json`).catch(()=>null);
+      return {mode:'light',theme};
+    }
+    const stored=localStorage.getItem('benvor-theme');
+    const systemDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let mode=stored==='light'||stored==='dark'?stored:(cfg.default==='dark'?'dark':cfg.default==='light'?'light':(systemDark?'dark':'light'));
+    const slug=mode==='dark'?(cfg.dark_theme||'benvor-premium-dark'):(cfg.light_theme||'benvor-premium-light');
+    const theme=await get(`/content/themes/${encodeURIComponent(slug)}.json`).catch(()=>null);
+    return {mode,theme};
+  }
+  function updateThemeUI(mode){
+    document.documentElement.dataset.theme=mode;
+    const logo=document.getElementById('headerThemeLogo');
+    if(logo){
+      const src=mode==='dark'?logo.dataset.darkSrc:logo.dataset.lightSrc;
+      if(src)logo.src=src;
+    }
+    const btn=document.getElementById('themeToggle');
+    if(btn)btn.setAttribute('aria-label',mode==='dark'?'Switch to light theme':'Switch to dark theme');
+  }
+  async function toggleVisitorTheme(){
+    const ctx=window.__HYBRID_CMS__; if(!ctx)return;
+    const cfg=ctx.settings.visitor_theme_toggle||{};
+    const next=ctx.themeMode==='dark'?'light':'dark';
+    const slug=next==='dark'?(cfg.dark_theme||'benvor-premium-dark'):(cfg.light_theme||'benvor-premium-light');
+    const theme=await get(`/content/themes/${encodeURIComponent(slug)}.json`).catch(()=>null);
+    if(!theme)return;
+    ctx.themeMode=next;ctx.currentTheme=theme;ctx.theme=theme;
+    localStorage.setItem('benvor-theme',next);
+    applyTheme(theme);updateThemeUI(next);
+  }
+
   function bindDynamic(){
     const burger=document.getElementById('burgerBtn'),mobile=document.getElementById('mobileMenu'),scrim=document.getElementById('scrim');
+    const themeToggle=document.getElementById('themeToggle');
+    if(themeToggle)themeToggle.onclick=toggleVisitorTheme;
     if(burger&&mobile){burger.onclick=()=>{const o=mobile.classList.toggle('open');scrim.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}}
     if(scrim) scrim.onclick=()=>{mobile?.classList.remove('open');scrim.classList.remove('open')};
     document.querySelectorAll('a[href^="#"]').forEach(a=>{a.onclick=e=>{const s=a.getAttribute('href').slice(1);if(!s)return;e.preventDefault();history.pushState(null,'','#'+s);route()}});
@@ -251,9 +296,10 @@
   async function init(){
     try{
       const [settings,site]=await Promise.all([get('/content/builder-settings.json'),get('/content/site.json')]);
-      const theme=await get(`/content/themes/${encodeURIComponent(settings.active_theme||'benvor-default')}.json`).catch(()=>null);
-      window.__HYBRID_CMS__={settings,site,theme};
-      applyTheme(theme);renderHeader(settings);renderFooter(settings,site);
+      const resolved=await resolveVisitorTheme(settings);
+      const theme=resolved.theme||await get(`/content/themes/${encodeURIComponent(settings.active_theme||'benvor-premium-light')}.json`).catch(()=>null);
+      window.__HYBRID_CMS__={settings,site,theme,currentTheme:theme,themeMode:resolved.mode};
+      applyTheme(theme);updateThemeUI(resolved.mode);renderHeader(settings);renderFooter(settings,site);updateThemeUI(resolved.mode);
       await route();
       addEventListener('popstate',route);addEventListener('hashchange',route);
     }catch(err){console.warn('Hybrid builder did not initialize; original HTML remains available.',err)}
