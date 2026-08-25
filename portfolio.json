@@ -1,0 +1,140 @@
+{
+  "hero": {
+    "eyebrow": "Our Work",
+    "heading": "Proof, not promises",
+    "description": "A sample of the websites, campaigns, and brand systems we've built across industries."
+  },
+  "filters": [
+    {
+      "label": "All Work",
+      "code": "all"
+    },
+    {
+      "label": "Web Design",
+      "code": "web"
+    },
+    {
+      "label": "SEO",
+      "code": "seo"
+    },
+    {
+      "label": "Paid Ads",
+      "code": "ads"
+    },
+    {
+      "label": "Branding",
+      "code": "brand"
+    },
+    {
+      "label": "Social",
+      "code": "social"
+    }
+  ],
+  "projects": [
+    {
+      "category": "web",
+      "category_label": "Web Design · Retail",
+      "title": "Northfield Home Goods",
+      "description": "Full ecommerce rebuild focused on mobile checkout speed.",
+      "result": "+64% conversion rate",
+      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Redesigned ecommerce website homepage on a laptop screen",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "ads",
+      "category_label": "Paid Ads · Fintech",
+      "title": "Larkspur Finance",
+      "description": "Multi‑platform lead gen campaign across search and social.",
+      "result": "4.9x ROAS",
+      "image": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Marketing analytics dashboard showing rising ad performance charts",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "seo",
+      "category_label": "SEO · Healthcare",
+      "title": "Cedarview Clinics",
+      "description": "Local SEO overhaul across a 12‑location clinic network.",
+      "result": "3.2x organic traffic",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Team analyzing SEO ranking reports on a shared screen",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "brand",
+      "category_label": "Branding · Startup",
+      "title": "Fielder & Co.",
+      "description": "Full identity system for a Series A logistics startup.",
+      "result": "Launched in 3 weeks",
+      "image": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Brand identity moodboard with logo concepts and color swatches",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "social",
+      "category_label": "Social · Hospitality",
+      "title": "Marlowe Hotels",
+      "description": "Short‑form content system driving direct bookings.",
+      "result": "+41k followers in 6 mo",
+      "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Phone screen showing a social media content calendar and posts",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "web",
+      "category_label": "Web Design · SaaS",
+      "title": "Ledgerly",
+      "description": "Marketing site rebuild with a self‑serve trial funnel.",
+      "result": "+58% trial signups",
+      "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Modern SaaS product website displayed across desktop and mobile",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "ads",
+      "category_label": "Paid Ads · Retail",
+      "title": "Harlow & James",
+      "description": "Seasonal campaign strategy across search and marketplace ads.",
+      "result": "2.1x holiday revenue",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Retail storefront with a sale display and shoppers browsing",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "seo",
+      "category_label": "SEO · Non‑Profit",
+      "title": "Riverbend Trust",
+      "description": "Content strategy to rank for donor and grant‑related searches.",
+      "result": "+140% donor traffic",
+      "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Marketing team reviewing content strategy documents around a table",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    },
+    {
+      "category": "brand",
+      "category_label": "Branding · Technology",
+      "title": "Vector Robotics",
+      "description": "Repositioning and visual identity ahead of a product launch.",
+      "result": "Featured in 6 press outlets",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80",
+      "image_alt": "Startup team presenting a new brand campaign in a meeting room",
+      "button_text": "Discuss a project like this →",
+      "button_link": "#contact"
+    }
+  ],
+  "cta": {
+    "heading": "Like what you see?",
+    "description": "Let's talk about what a similar system could do for your business.",
+    "button_text": "Start a Project",
+    "button_link": "#contact"
+  }
+}

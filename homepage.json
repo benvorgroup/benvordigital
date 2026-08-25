@@ -1,0 +1,158 @@
+{
+  "hero": {
+    "eyebrow": "Full‑Service Digital Marketing Agency",
+    "heading": "We turn traffic into pipeline, not just impressions.",
+    "description": "Benvor Digital builds the websites, ads, SEO, and social systems that take a business from \"we should try marketing\" to a predictable stream of qualified leads.",
+    "primary_cta_text": "Get a free growth audit",
+    "primary_cta_link": "#contact",
+    "secondary_cta_text": "See our work",
+    "secondary_cta_link": "#listings",
+    "stats": [
+      {
+        "value": "187%",
+        "label": "Avg. lead lift"
+      },
+      {
+        "value": "4.6x",
+        "label": "Avg. ROAS"
+      },
+      {
+        "value": "120+",
+        "label": "Brands grown"
+      }
+    ],
+    "chart_label": "Qualified leads / mo",
+    "chart_value": "+212%",
+    "chart_description": "90 days after launch, Benvor client average"
+  },
+  "trust": {
+    "label": "Trusted by growing teams in",
+    "items": [
+      "Retail",
+      "Healthcare",
+      "Fintech",
+      "SaaS",
+      "Non‑Profit",
+      "Hospitality"
+    ]
+  },
+  "benefits_section": {
+    "eyebrow": "Why Benvor",
+    "heading": "Marketing that's built to be measured",
+    "description": "No vanity metrics, no black boxes. Every engagement is tied back to pipeline and revenue.",
+    "items": [
+      {
+        "kicker": "01 / Strategy first",
+        "title": "Plans built on your numbers",
+        "description": "We start with your funnel and unit economics, not a template. Every channel we recommend has a reason tied to your CAC and LTV."
+      },
+      {
+        "kicker": "02 / One connected team",
+        "title": "Design, dev, and media in sync",
+        "description": "Your web team and your ad team are the same team. No handoffs, no mismatched messaging between the site and the campaigns driving to it."
+      },
+      {
+        "kicker": "03 / Full visibility",
+        "title": "Live reporting, not monthly PDFs",
+        "description": "A shared dashboard shows spend, leads, and cost‑per‑lead in real time, so you're never waiting on us to know how it's going."
+      }
+    ]
+  },
+  "services_section": {
+    "eyebrow": "What we do",
+    "heading": "Everything your online growth engine needs",
+    "items": [
+      {
+        "icon": "/assets/icons/service-1.svg",
+        "icon_alt": "Website Design & Development icon",
+        "tag": "Web",
+        "title": "Website Design & Development",
+        "description": "Fast, conversion‑led websites built to sell while you sleep."
+      },
+      {
+        "icon": "/assets/icons/service-2.svg",
+        "icon_alt": "Online Advertising icon",
+        "tag": "Paid Media",
+        "title": "Online Advertising",
+        "description": "Search, social, and programmatic ads managed for return, not reach."
+      },
+      {
+        "icon": "/assets/icons/service-3.svg",
+        "icon_alt": "Search Engine Optimization icon",
+        "tag": "SEO",
+        "title": "Search Engine Optimization",
+        "description": "Rank where buyers are already searching and stay there."
+      },
+      {
+        "icon": "/assets/icons/service-4.svg",
+        "icon_alt": "Social Media Management icon",
+        "tag": "Social",
+        "title": "Social Media Management",
+        "description": "Content and community that builds a brand people follow."
+      },
+      {
+        "icon": "/assets/icons/service-5.svg",
+        "icon_alt": "Creative & Branding icon",
+        "tag": "Brand",
+        "title": "Creative & Branding",
+        "description": "Identity systems and campaign creative that stop the scroll."
+      },
+      {
+        "icon": "/assets/icons/service-6.svg",
+        "icon_alt": "Growth Analytics & CRO icon",
+        "tag": "Analytics",
+        "title": "Growth Analytics & CRO",
+        "description": "Continuous testing that lifts conversion rate month over month."
+      }
+    ],
+    "button_text": "See how each service works",
+    "button_link": "#services"
+  },
+  "testimonials_section": {
+    "eyebrow": "Client results",
+    "heading": "What it's like to work with Benvor",
+    "items": [
+      {
+        "rating": 5,
+        "quote": "Benvor rebuilt our site and our ad accounts in the same month. Cost per lead dropped by half in the first 60 days and it hasn't crept back up.",
+        "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
+        "image_alt": "Portrait of Maren Oyelaran, VP Marketing at a retail brand",
+        "name": "Maren Oyelaran",
+        "role": "VP Marketing, Retail"
+      },
+      {
+        "rating": 5,
+        "quote": "They treat our budget like it's their own. We finally have a marketing partner who explains the 'why' behind every dollar spent.",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80",
+        "image_alt": "Portrait of Daniel Osei, Founder of a healthcare startup",
+        "name": "Daniel Osei",
+        "role": "Founder, Healthcare Startup"
+      },
+      {
+        "rating": 5,
+        "quote": "Our organic traffic tripled in eight months. Benvor's SEO team is the most transparent agency we've hired in a decade.",
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80",
+        "image_alt": "Portrait of Priya Nair, Head of Growth at a fintech company",
+        "name": "Priya Nair",
+        "role": "Head of Growth, Fintech"
+      }
+    ]
+  },
+  "about_preview": {
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+    "image_alt": "The Benvor Digital team collaborating around a laptop in a bright studio office",
+    "eyebrow": "About Benvor",
+    "heading": "A digital agency built by operators, not just marketers",
+    "description": "We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.",
+    "button_text": "Our story",
+    "button_link": "#about"
+  },
+  "final_cta": {
+    "heading": "Ready to see what your growth engine could look like?",
+    "description": "Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.",
+    "primary_text": "Book a Free Audit",
+    "primary_link": "#contact",
+    "secondary_text": "View our work",
+    "secondary_link": "#listings"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "company_name": "Benvor Digital",
+  "logo": "/assets/icons/benvor-logo.svg",
+  "logo_alt": "Benvor Digital logo",
+  "header_cta_text": "Book a Call",
+  "header_cta_link": "#contact",
+  "navigation": [
+    {
+      "label": "Home",
+      "target": "#home"
+    },
+    {
+      "label": "About",
+      "target": "#about"
+    },
+    {
+      "label": "Services",
+      "target": "#services"
+    },
+    {
+      "label": "Listings",
+      "target": "#listings"
+    },
+    {
+      "label": "Contact",
+      "target": "#contact"
+    }
+  ],
+  "footer_description": "A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.",
+  "footer_quick_links_heading": "Quick Links",
+  "footer_services_heading": "Services",
+  "footer_services_links": [
+    {
+      "label": "Web Design",
+      "target": "#services"
+    },
+    {
+      "label": "Paid Advertising",
+      "target": "#services"
+    },
+    {
+      "label": "SEO",
+      "target": "#services"
+    },
+    {
+      "label": "Social Media",
+      "target": "#services"
+    }
+  ],
+  "footer_contact_heading": "Contact",
+  "copyright": "© 2026 Benvor Digital. All rights reserved.",
+  "footer_tagline": "Digital marketing agency · Full‑service marketing agency · Growth marketing firm",
+  "social_links": {
+    "linkedin": "https://www.linkedin.com",
+    "instagram": "https://www.instagram.com",
+    "x": "https://twitter.com",
+    "facebook": "https://www.facebook.com"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "global": {
+    "site_title": "Benvor Digital — Full-Service Digital Marketing Agency",
+    "default_description": "Benvor Digital is a full-service digital marketing agency helping businesses grow online with web design, SEO, paid ads, and social media management that turn visitors into customers.",
+    "keywords": "digital marketing agency, full-service marketing agency, online marketing company, creative digital agency, growth marketing firm",
+    "favicon": "/assets/icons/benvor-logo.svg",
+    "social_share_image": ""
+  },
+  "home": {
+    "title": "Benvor Digital — Full-Service Digital Marketing Agency",
+    "description": "Benvor Digital is a full-service digital marketing agency helping businesses grow online with web design, SEO, paid ads, and social media management that turn visitors into customers."
+  },
+  "about": {
+    "title": "About Benvor Digital",
+    "description": "We started Benvor Digital because too many agencies sell activity instead of outcomes. We built ours around the opposite idea."
+  },
+  "services": {
+    "title": "Services | Benvor Digital",
+    "description": "Hire us for a single service or hand us the whole funnel — the systems are built to work together either way."
+  },
+  "listings": {
+    "title": "Our Work | Benvor Digital",
+    "description": "A sample of the websites, campaigns, and brand systems we've built across industries."
+  },
+  "contact": {
+    "title": "Contact | Benvor Digital",
+    "description": "Tell us a bit about your business. We'll reply within one business day with next steps."
+  }
+}

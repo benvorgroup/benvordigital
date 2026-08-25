@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "eyebrow": "Contact",
+    "heading": "Let's build your growth plan",
+    "description": "Tell us a bit about your business. We'll reply within one business day with next steps."
+  },
+  "form": {
+    "success_message": "Thanks — your message is in. A Benvor strategist will reach out within one business day.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "placeholder": "Jordan Blake"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "placeholder": "jordan@yourcompany.com"
+      },
+      {
+        "name": "phone",
+        "label": "Phone",
+        "placeholder": "(555) 123‑4567"
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "placeholder": "Tell us about your business and what you're looking to grow."
+      }
+    ],
+    "submit_button": "Send Message"
+  },
+  "details": {
+    "heading": "Contact Details",
+    "phone": "(212) 555‑0148",
+    "email": "hello@benvordigital.com",
+    "address": "142 Bowery Street, Suite 4B\nNew York, NY 10013",
+    "hours": "Mon–Fri, 9:00am–6:00pm ET"
+  },
+  "map": {
+    "url": "https://www.google.com/maps?q=142+Bowery+St+New+York+NY&output=embed",
+    "title": "Map showing Benvor Digital office location in New York"
+  },
+  "social_heading": "Follow Along",
+  "social_labels": {
+    "linkedin": "in",
+    "instagram": "ig",
+    "x": "X",
+    "facebook": "fb"
+  }
+}
