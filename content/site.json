@@ -1,39 +1,31 @@
 {
-  "business": {
-    "name": "Benvor Digital",
-    "website_url": "https://benvordigital.com",
-    "email": "hello@benvordigital.com",
-    "phone": "(212) 555‑0148",
-    "address_line_1": "142 Bowery Street, Suite 4B",
-    "address_line_2": "New York, NY 10013",
-    "hours": "Mon–Fri, 9:00am–6:00pm ET",
-    "map_url": "https://www.google.com/maps?q=142+Bowery+St+New+York+NY&output=embed"
+  "company_name": "Benvor Digital",
+  "header_cta_text": "Book a Call",
+  "header_cta_link": "#contact",
+  "footer_description": "A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.",
+  "footer_email": "hello@benvordigital.com",
+  "footer_phone": "(212) 555‑0148",
+  "footer_address": "142 Bowery Street, Suite 4B\nNew York, NY 10013",
+  "copyright": "© 2026 Benvor Digital. All rights reserved.",
+  "footer_secondary": "Digital marketing agency · Full‑service marketing agency · Growth marketing firm",
+  "branding": {
+    "primary": "#3730e0",
+    "primary_dark": "#231ba8",
+    "accent": "#ff5b3d",
+    "accent_dark": "#e8481f",
+    "background": "#ffffff",
+    "surface": "#eef0fa",
+    "text": "#12131c",
+    "muted": "#5c5f70",
+    "border": "#dcdfe8",
+    "dark": "#0e0f17",
+    "success": "#17b26a",
+    "radius": "14",
+    "container_width": "1180"
   },
-  "social": {
-    "linkedin": "https://www.linkedin.com",
-    "instagram": "https://www.instagram.com",
-    "x": "https://twitter.com",
-    "facebook": "https://www.facebook.com",
-    "youtube": ""
-  },
-  "footer": {
-    "description": "A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.",
-    "services_heading": "Services",
-    "contact_heading": "Contact",
-    "copyright": "© 2026 Benvor Digital. All rights reserved.",
-    "secondary_text": "Digital marketing agency · Full‑service marketing agency · Growth marketing firm"
-  },
-  "contact_form": {
-    "heading": "Send us a message",
-    "name_label": "Name",
-    "name_placeholder": "Jordan Blake",
-    "email_label": "Email",
-    "email_placeholder": "jordan@yourcompany.com",
-    "phone_label": "Phone",
-    "phone_placeholder": "(555) 123‑4567",
-    "message_label": "Message",
-    "message_placeholder": "Tell us about your business and what you're looking to grow.",
-    "submit_text": "Send Message",
-    "success_message": "Thanks — your message is in. A Benvor strategist will reach out within one business day."
+  "seo": {
+    "title": "Benvor Digital — Full-Service Digital Marketing Agency",
+    "description": "Benvor Digital is a full-service digital marketing agency helping businesses grow online with web design, SEO, paid ads, and social media management that turn visitors into customers.",
+    "keywords": "digital marketing agency, full-service marketing agency, online marketing company, creative digital agency, growth marketing firm"
   }
 }

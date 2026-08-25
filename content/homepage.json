@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "eyebrow": "Full‑Service Digital Marketing Agency",
+    "heading": "We turn traffic into pipeline, not just impressions.",
+    "text": "Benvor Digital builds the websites, ads, SEO, and social systems that take a business from \"we should try marketing\" to a predictable stream of qualified leads.",
+    "primary_text": "Get a free growth audit",
+    "primary_link": "#contact",
+    "secondary_text": "See our work",
+    "secondary_link": "#listings",
+    "stats": [
+      {
+        "value": "187%",
+        "label": "Avg. lead lift"
+      },
+      {
+        "value": "4.6x",
+        "label": "Avg. ROAS"
+      },
+      {
+        "value": "120+",
+        "label": "Brands grown"
+      }
+    ]
+  },
+  "trust": {
+    "label": "Trusted by growing teams in",
+    "items": [
+      "Retail",
+      "Healthcare",
+      "Fintech",
+      "SaaS",
+      "Non‑Profit",
+      "Hospitality"
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Why Benvor",
+    "heading": "Marketing that's built to be measured",
+    "text": "No vanity metrics, no black boxes. Every engagement is tied back to pipeline and revenue.",
+    "items": [
+      {
+        "number": "01 / Strategy first",
+        "title": "Plans built on your numbers",
+        "text": "We start with your funnel and unit economics, not a template. Every channel we recommend has a reason tied to your CAC and LTV."
+      },
+      {
+        "number": "02 / One connected team",
+        "title": "Design, dev, and media in sync",
+        "text": "Your web team and your ad team are the same team. No handoffs, no mismatched messaging between the site and the campaigns driving to it."
+      },
+      {
+        "number": "03 / Full visibility",
+        "title": "Live reporting, not monthly PDFs",
+        "text": "A shared dashboard shows spend, leads, and cost‑per‑lead in real time, so you're never waiting on us to know how it's going."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "heading": "Everything your online growth engine needs"
+  },
+  "testimonials": {
+    "eyebrow": "Client results",
+    "heading": "What it's like to work with Benvor"
+  },
+  "about_preview": {
+    "eyebrow": "About Benvor",
+    "heading": "A digital agency built by operators, not just marketers",
+    "text": "We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.",
+    "button_text": "Our story",
+    "button_link": "#about"
+  },
+  "final_cta": {
+    "heading": "Ready to see what your growth engine could look like?",
+    "text": "Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.",
+    "primary_text": "Book a Free Audit",
+    "primary_link": "#contact",
+    "secondary_text": "View our work",
+    "secondary_link": "#listings"
+  },
+  "custom_sections": []
+}

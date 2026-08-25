@@ -3,22 +3,1269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benvor Digital</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="robots" content="index,follow">
+<title>Benvor Digital — Full-Service Digital Marketing Agency</title>
+<meta name="description" content="Benvor Digital is a full-service digital marketing agency helping businesses grow online with web design, SEO, paid ads, and social media management that turn visitors into customers.">
+<meta name="keywords" content="digital marketing agency, full-service marketing agency, online marketing company, creative digital agency, growth marketing firm">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#12131c;
+    --paper:#ffffff;
+    --band:#eef0fa;
+    --indigo:#3730e0;
+    --indigo-deep:#231ba8;
+    --coral:#ff5b3d;
+    --coral-deep:#e8481f;
+    --line:#dcdfe8;
+    --muted:#5c5f70;
+    --night:#0e0f17;
+    --ok:#17b26a;
+
+    --display:'Space Grotesk', sans-serif;
+    --body:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+
+    --maxw:1180px;
+    --radius:14px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  input,textarea{font-family:inherit;font-size:1rem;}
+
+  :focus-visible{outline:2px solid var(--indigo);outline-offset:3px;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--indigo);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight:500;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;background:var(--coral);border-radius:50%;display:inline-block;}
+
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+  h1{font-size:clamp(2.4rem,5vw,3.9rem);line-height:1.04;font-weight:700;letter-spacing:-.02em;}
+  h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;}
+  h3{font-size:1.24rem;}
+  p.lead{font-size:1.15rem;color:var(--muted);max-width:52ch;}
+  .muted{color:var(--muted);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 26px;border-radius:100px;font-weight:600;font-size:.96rem;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 6px 18px rgba(255,91,61,.28);}
+  .btn-primary:hover{background:var(--coral-deep);transform:translateY(-2px);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  .btn-dark:hover{background:var(--indigo-deep);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .btn-ghost.on-dark{color:#fff;border-color:rgba(255,255,255,.3);}
+  .btn-ghost.on-dark:hover{border-color:#fff;}
+  .btn-sm{padding:10px 18px;font-size:.85rem;}
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    position:sticky;top:0;z-index:200;
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.18rem;}
+  .logo .mark{width:30px;height:30px;flex:none;}
+  nav.primary{display:flex;align-items:center;gap:30px;}
+  nav.primary a{
+    font-size:.93rem;font-weight:500;color:var(--ink);position:relative;padding:6px 0;
+  }
+  nav.primary a::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--coral);
+    transition:width .2s ease;
+  }
+  nav.primary a:hover::after,nav.primary a.active::after{width:100%;}
+  nav.primary a.active{color:var(--indigo-deep);}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .burger{display:none;flex-direction:column;gap:5px;padding:10px;}
+  .burger span{width:22px;height:2px;background:var(--ink);display:block;transition:transform .2s ease, opacity .2s ease;}
+
+  .mobile-menu{
+    display:none;position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
+    background:#fff;z-index:300;box-shadow:-10px 0 40px rgba(0,0,0,.15);
+    padding:28px 24px;transform:translateX(100%);transition:transform .25s ease;
+    flex-direction:column;gap:6px;
+  }
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu a{padding:14px 4px;font-size:1.05rem;font-weight:600;border-bottom:1px solid var(--line);}
+  .scrim{display:none;position:fixed;inset:0;background:rgba(14,15,23,.4);z-index:250;}
+  .scrim.open{display:block;}
+
+  @media (max-width:900px){
+    nav.primary{display:none;}
+    .header-actions .btn-primary.desktop-only{display:none;}
+    .burger{display:flex;}
+    .mobile-menu{display:flex;}
+  }
+
+  /* ---------- SECTIONS / GENERIC ---------- */
+  .page{display:none;}
+  .page.active{display:block;}
+  section{padding:96px 0;}
+  section.band{background:var(--band);}
+  section.tight{padding:64px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{margin-top:10px;}
+
+  /* growth line divider */
+  .divider{height:46px;overflow:hidden;}
+  .divider svg{width:100%;height:100%;display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 90px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .hero h1{margin:18px 0 22px;}
+  .hero .cta-row{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .hero-stats{display:flex;gap:34px;margin-top:48px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--coral);padding-left:14px;}
+  .hero-stats strong{display:block;font-family:var(--display);font-size:1.7rem;}
+  .hero-stats span{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+
+  .chart-card{
+    background:var(--night);border-radius:22px;padding:34px 28px 28px;color:#fff;
+    box-shadow:0 24px 60px rgba(18,19,28,.28);
+  }
+  .chart-card .cc-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+  .chart-card .cc-top span:first-child{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#9a9cc9;}
+  .chart-card .cc-top strong{font-family:var(--display);font-size:1.9rem;color:var(--ok);}
+  .chart-card p{font-size:.82rem;color:#b7b8d6;margin-bottom:18px;}
+  .growth-path{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.8s ease forwards .3s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .growth-dot{opacity:0;animation:pop .4s ease forwards;}
+  @media (prefers-reduced-motion:reduce){
+    .growth-path{animation:none;stroke-dashoffset:0;}
+    .growth-dot{animation:none;opacity:1;}
+  }
+  @keyframes pop{to{opacity:1;}}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;}
+  .trust .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:space-between;}
+  .trust .label{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);white-space:nowrap;}
+  .trust .logos{display:flex;gap:38px;flex-wrap:wrap;align-items:center;}
+  .trust .logos span{font-family:var(--display);font-weight:700;font-size:1.1rem;color:#b7b9c9;letter-spacing:-.02em;}
+
+  /* ---------- BENEFITS ---------- */
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .benefit-card{background:var(--band);border-radius:var(--radius);padding:32px 28px;}
+  .benefit-card .num{font-family:var(--mono);color:var(--coral);font-size:.8rem;margin-bottom:18px;display:block;}
+  .benefit-card h3{margin-bottom:10px;}
+  .benefit-card p{color:var(--muted);font-size:.96rem;}
+  @media (max-width:900px){.benefits{grid-template-columns:1fr;}}
+
+  /* ---------- SERVICES GRID ---------- */
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    display:flex;flex-direction:column;height:100%;
+  }
+  .service-card:hover{border-color:var(--indigo);transform:translateY(-4px);box-shadow:0 18px 40px rgba(55,48,224,.1);}
+  .service-card .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--indigo);color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex:none;
+  }
+  .service-card h3{margin-bottom:10px;}
+  .service-card p{color:var(--muted);font-size:.95rem;margin-bottom:16px;flex:1;}
+  .service-card .tag{font-family:var(--mono);font-size:.72rem;color:var(--indigo-deep);text-transform:uppercase;letter-spacing:.06em;}
+  @media (max-width:900px){.service-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.service-grid{grid-template-columns:1fr;}}
+
+  .services-preview-foot{margin-top:40px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{background:var(--night);color:#fff;border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;}
+  .testi-card .stars{color:var(--coral);letter-spacing:2px;margin-bottom:16px;font-size:.9rem;}
+  .testi-card p{color:#d7d8ec;font-size:.96rem;margin-bottom:22px;flex:1;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-person img{width:42px;height:42px;border-radius:50%;object-fit:cover;}
+  .testi-person strong{display:block;font-size:.9rem;}
+  .testi-person span{display:block;font-size:.78rem;color:#9a9cc9;}
+  @media (max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ---------- ABOUT PREVIEW / ABOUT PAGE ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .split img{border-radius:18px;width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.2;}
+  @media (max-width:900px){.split{grid-template-columns:1fr;}}
+
+  .mini-list{margin-top:22px;display:flex;flex-direction:column;gap:14px;}
+  .mini-list li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:var(--ink);}
+  .mini-list .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);margin-top:8px;flex:none;}
+
+  /* ---------- FINAL CTA BANNER ---------- */
+  .cta-banner{
+    background:var(--indigo);color:#fff;border-radius:26px;padding:64px 48px;
+    display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+    position:relative;overflow:hidden;
+  }
+  .cta-banner h2{color:#fff;max-width:520px;}
+  .cta-banner p{color:#d7d8ec;margin-top:10px;max-width:480px;}
+  .cta-banner .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* ---------- ABOUT PAGE ---------- */
+  .page-hero{padding:60px 0 20px;}
+  .page-hero .eyebrow{margin-bottom:14px;}
+  .page-hero h1{margin-bottom:16px;}
+  .page-hero p.lead{max-width:60ch;}
+
+  .story-block{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;}
+  .story-block .figure{position:sticky;top:110px;}
+  .story-block .figure img{border-radius:18px;aspect-ratio:1/1.05;object-fit:cover;}
+  .story-copy p{margin-bottom:20px;color:var(--muted);font-size:1.02rem;max-width:60ch;}
+  .story-copy h3{margin:36px 0 12px;}
+  @media (max-width:900px){.story-block{grid-template-columns:1fr;}.story-block .figure{position:static;}}
+
+  .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:20px;}
+  .value-card{padding:24px 20px;border-top:2px solid var(--coral);}
+  .value-card h4{font-family:var(--display);font-size:1.05rem;margin-bottom:8px;}
+  .value-card p{font-size:.9rem;color:var(--muted);}
+  @media (max-width:900px){.value-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.value-grid{grid-template-columns:1fr;}}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;}
+  .step{padding:26px 22px;background:var(--band);border-radius:var(--radius);}
+  .step .step-num{font-family:var(--display);font-size:2.1rem;font-weight:700;color:var(--indigo);opacity:.35;display:block;margin-bottom:10px;}
+  .step h4{font-size:1.05rem;margin-bottom:8px;}
+  .step p{font-size:.9rem;color:var(--muted);}
+  @media (max-width:900px){.steps{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.steps{grid-template-columns:1fr;}}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:820px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;display:flex;justify-content:space-between;align-items:center;
+    padding:22px 4px;text-align:left;font-family:var(--display);font-size:1.04rem;font-weight:600;
+  }
+  .faq-q .plus{font-size:1.4rem;color:var(--coral);transition:transform .2s ease;flex:none;margin-left:20px;}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 22px;color:var(--muted);max-width:68ch;font-size:.96rem;}
+
+  /* ---------- LISTINGS / PORTFOLIO ---------- */
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .filter-btn{
+    padding:10px 20px;border-radius:100px;border:1.5px solid var(--line);font-size:.86rem;font-weight:600;
+    transition:all .15s ease;
+  }
+  .filter-btn.active,.filter-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .p-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;}
+  .p-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(18,19,28,.1);}
+  .p-card .thumb{aspect-ratio:4/3;overflow:hidden;}
+  .p-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .p-card:hover .thumb img{transform:scale(1.06);}
+  .p-card .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .p-card .cat{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--indigo-deep);}
+  .p-card h3{font-size:1.08rem;}
+  .p-card p{color:var(--muted);font-size:.9rem;flex:1;}
+  .p-card .card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+  .p-card .result{font-family:var(--mono);font-size:.78rem;color:var(--ok);font-weight:500;}
+  .p-card .view{font-size:.84rem;font-weight:600;color:var(--indigo);display:inline-flex;align-items:center;gap:6px;}
+  .p-card .view:hover{color:var(--indigo-deep);}
+  @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.card-grid{grid-template-columns:1fr;}}
+  .p-card.hide{display:none;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:.84rem;font-weight:600;margin-bottom:8px;}
+  .field input,.field textarea{
+    width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;
+    background:#fbfbfd;transition:border-color .15s ease;
+  }
+  .field input:focus,.field textarea:focus{border-color:var(--indigo);outline:none;background:#fff;}
+  .field textarea{min-height:130px;resize:vertical;}
+  .form-msg{display:none;background:#e9f9ef;border:1px solid var(--ok);color:#0c7a45;padding:14px 16px;border-radius:10px;margin-bottom:20px;font-size:.9rem;font-weight:500;}
+  .form-msg.show{display:block;}
+
+  .info-card{background:var(--band);border-radius:var(--radius);padding:30px 26px;margin-bottom:20px;}
+  .info-card h4{font-size:.95rem;margin-bottom:14px;}
+  .info-row{display:flex;gap:12px;margin-bottom:14px;font-size:.94rem;}
+  .info-row:last-child{margin-bottom:0;}
+  .info-row .ico{width:20px;flex:none;color:var(--coral);}
+  .map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;}
+  .map-frame iframe{width:100%;height:100%;border:0;}
+
+  .social-row{display:flex;gap:12px;margin-top:6px;}
+  .social-row a{
+    width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;transition:all .15s ease;
+  }
+  .social-row a:hover{background:var(--ink);border-color:var(--ink);color:#fff;transform:translateY(-3px);}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{background:var(--night);color:#c7c8dc;padding:70px 0 28px;margin-top:0;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px;}
+  .foot-logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;color:#fff;font-size:1.15rem;margin-bottom:14px;}
+  .foot-grid p{font-size:.88rem;color:#9a9cc9;max-width:34ch;}
+  .foot-col h5{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#7d7fa8;margin-bottom:18px;}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:12px;color:#c7c8dc;}
+  .foot-col a:hover{color:#fff;}
+  .foot-social{display:flex;gap:10px;margin-top:6px;}
+  .foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid #2c2d40;display:flex;align-items:center;justify-content:center;}
+  .foot-social a:hover{background:var(--coral);border-color:var(--coral);}
+  .foot-bottom{border-top:1px solid #22222f;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:#7d7fa8;}
+  @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.foot-grid{grid-template-columns:1fr;}}
+
+  .skip-link{position:absolute;left:-999px;top:0;background:#fff;padding:12px 18px;z-index:999;border-radius:8px;}
+  .skip-link:focus{left:16px;top:16px;}
+</style>
 </head>
 <body>
-<a href="#app-main" class="skip-link">Skip to content</a>
-<header class="site" id="siteHeader"></header>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site">
+  <div class="nav-inner">
+    <a href="#home" class="logo" data-nav="home" aria-label="Benvor Digital home">
+      <svg class="mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="30" height="30" rx="8" fill="#3730E0"/>
+        <path d="M6 20L11.5 13L16 17L24 8" stroke="#FF5B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="8" r="2.2" fill="#FF5B3D"/>
+      </svg>
+      <span id="site-company-name">Benvor Digital</span>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#home" data-nav="home" class="active">Home</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#services" data-nav="services">Services</a>
+      <a href="#listings" data-nav="listings">Listings</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" data-nav="contact" class="btn btn-primary btn-sm desktop-only" id="header-cta">Book a Call</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
 <div class="scrim" id="scrim"></div>
-<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"></nav>
-<main id="app-main"></main>
-<footer class="site" id="siteFooter"></footer>
-<script src="/assets/js/renderer.js" defer></script>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#home" data-nav="home">Home</a>
+  <a href="#about" data-nav="about">About</a>
+  <a href="#services" data-nav="services">Services</a>
+  <a href="#listings" data-nav="listings">Listings</a>
+  <a href="#contact" data-nav="contact">Contact</a>
+  <a href="#contact" data-nav="contact" class="btn btn-primary" id="mobile-header-cta" style="margin-top:18px;justify-content:center;">Book a Call</a>
+</nav>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" id="home-hero-eyebrow">Full‑Service Digital Marketing Agency</span>
+        <h1 id="home-hero-heading">We turn traffic into pipeline, not just impressions.</h1>
+        <p class="lead" id="home-hero-text">Benvor Digital builds the websites, ads, SEO, and social systems that take a business from "we should try marketing" to a predictable stream of qualified leads.</p>
+        <div class="cta-row">
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="home-hero-primary">Get a free growth audit</a>
+          <a href="#listings" data-nav="listings" class="btn btn-ghost" id="home-hero-secondary">See our work</a>
+        </div>
+        <div class="hero-stats" id="home-hero-stats">
+          <div><strong>187%</strong><span>Avg. lead lift</span></div>
+          <div><strong>4.6x</strong><span>Avg. ROAS</span></div>
+          <div><strong>120+</strong><span>Brands grown</span></div>
+        </div>
+      </div>
+
+      <div class="chart-card" aria-hidden="true">
+        <div class="cc-top"><span>Qualified leads / mo</span><strong>+212%</strong></div>
+        <p>90 days after launch, Benvor client average</p>
+        <svg viewBox="0 0 320 150" width="100%" height="150">
+          <line x1="0" y1="30" x2="320" y2="30" stroke="#23243a" stroke-width="1"/>
+          <line x1="0" y1="75" x2="320" y2="75" stroke="#23243a" stroke-width="1"/>
+          <line x1="0" y1="120" x2="320" y2="120" stroke="#23243a" stroke-width="1"/>
+          <path class="growth-path" d="M0,120 L45,108 L90,116 L135,84 L180,90 L225,52 L270,44 L320,12"
+                fill="none" stroke="#FF5B3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle class="growth-dot" style="animation-delay:1.9s" cx="320" cy="12" r="5" fill="#17B26A"/>
+          <circle class="growth-dot" style="animation-delay:1.6s" cx="225" cy="52" r="4" fill="#FF5B3D"/>
+          <circle class="growth-dot" style="animation-delay:1.2s" cx="135" cy="84" r="4" fill="#FF5B3D"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust tight">
+    <div class="wrap">
+      <span class="label" id="home-trust-label">Trusted by growing teams in</span>
+      <div class="logos" id="home-trust-items">
+        <span>Retail</span><span>Healthcare</span><span>Fintech</span><span>SaaS</span><span>Non‑Profit</span><span>Hospitality</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" id="home-benefits-eyebrow">Why Benvor</span>
+        <h2 id="home-benefits-heading">Marketing that's built to be measured</h2>
+        <p class="lead" id="home-benefits-text" style="margin-top:12px;">No vanity metrics, no black boxes. Every engagement is tied back to pipeline and revenue.</p>
+      </div>
+      <div class="benefits" id="home-benefits-grid">
+        <div class="benefit-card">
+          <span class="num">01 / Strategy first</span>
+          <h3>Plans built on your numbers</h3>
+          <p>We start with your funnel and unit economics, not a template. Every channel we recommend has a reason tied to your CAC and LTV.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="num">02 / One connected team</span>
+          <h3>Design, dev, and media in sync</h3>
+          <p>Your web team and your ad team are the same team. No handoffs, no mismatched messaging between the site and the campaigns driving to it.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="num">03 / Full visibility</span>
+          <h3>Live reporting, not monthly PDFs</h3>
+          <p>A shared dashboard shows spend, leads, and cost‑per‑lead in real time, so you're never waiting on us to know how it's going.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" id="home-services-eyebrow">What we do</span>
+        <h2 id="home-services-heading">Everything your online growth engine needs</h2>
+      </div>
+      <div class="service-grid" id="home-services-grid">
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">Web</span>
+          <h3>Website Design &amp; Development</h3>
+          <p>Fast, conversion‑led websites built to sell while you sleep.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-7-7 18-3-7-8-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="tag">Paid Media</span>
+          <h3>Online Advertising</h3>
+          <p>Search, social, and programmatic ads managed for return, not reach.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">SEO</span>
+          <h3>Search Engine Optimization</h3>
+          <p>Rank where buyers are already searching and stay there.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" stroke-width="2"/><circle cx="9" cy="9" r="1.5" fill="#fff"/></svg>
+          </div>
+          <span class="tag">Social</span>
+          <h3>Social Media Management</h3>
+          <p>Content and community that builds a brand people follow.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M12 20V4M20 20v-7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">Brand</span>
+          <h3>Creative &amp; Branding</h3>
+          <p>Identity systems and campaign creative that stop the scroll.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="tag">Analytics</span>
+          <h3>Growth Analytics &amp; CRO</h3>
+          <p>Continuous testing that lifts conversion rate month over month.</p>
+        </div>
+      </div>
+      <div class="services-preview-foot">
+        <a href="#services" data-nav="services" class="btn btn-dark">See how each service works</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" id="home-testimonials-eyebrow">Client results</span>
+        <h2 id="home-testimonials-heading">What it's like to work with Benvor</h2>
+      </div>
+      <div class="testi-grid" id="home-testimonials-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Benvor rebuilt our site and our ad accounts in the same month. Cost per lead dropped by half in the first 60 days and it hasn't crept back up."</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Portrait of Maren Oyelaran, VP Marketing at a retail brand">
+            <div><strong>Maren Oyelaran</strong><span>VP Marketing, Retail</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"They treat our budget like it's their own. We finally have a marketing partner who explains the 'why' behind every dollar spent."</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Portrait of Daniel Osei, Founder of a healthcare startup">
+            <div><strong>Daniel Osei</strong><span>Founder, Healthcare Startup</span></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Our organic traffic tripled in eight months. Benvor's SEO team is the most transparent agency we've hired in a decade."</p>
+          <div class="testi-person">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Portrait of Priya Nair, Head of Growth at a fintech company">
+            <div><strong>Priya Nair</strong><span>Head of Growth, Fintech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="The Benvor Digital team collaborating around a laptop in a bright studio office">
+      <div>
+        <span class="eyebrow" id="home-about-eyebrow">About Benvor</span>
+        <h2 id="home-about-heading" style="margin:14px 0 16px;">A digital agency built by operators, not just marketers</h2>
+        <p class="muted" id="home-about-text" style="max-width:52ch;">We've sat on the client side of the table — accountable for pipeline, not just impressions. That's the lens we bring to every website we build and every dollar of ad spend we manage.</p>
+        <a href="#about" data-nav="about" class="btn btn-ghost" id="home-about-cta" style="margin-top:24px;">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 id="home-final-cta-heading">Ready to see what your growth engine could look like?</h2>
+          <p id="home-final-cta-text">Book a free 30‑minute audit. We'll show you exactly where you're leaking leads.</p>
+        </div>
+        <div class="cta-row">
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="home-final-cta-primary">Book a Free Audit</a>
+          <a href="#listings" data-nav="listings" class="btn btn-ghost on-dark" id="home-final-cta-secondary">View our work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="custom-home-sections"></div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="page" id="page-about">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" id="about-eyebrow">About Benvor Digital</span>
+      <h1 id="about-heading">Growth marketing, run like a business — because we've run one</h1>
+      <p class="lead" id="about-intro">We started Benvor Digital because too many agencies sell activity instead of outcomes. We built ours around the opposite idea.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap story-block">
+      <div class="figure">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Benvor Digital strategists reviewing campaign performance on a whiteboard">
+      </div>
+      <div class="story-copy" id="about-story">
+        <h3>How we started</h3>
+        <p>Benvor Digital was founded by a small team of in‑house marketers who kept getting pulled into agency reviews for the wrong reasons — vague reporting, generic strategy decks, and campaigns that looked busy but didn't move revenue. We built the agency we wished we'd had: one that treats every client's budget like it's coming out of our own pocket.</p>
+        <p>Today we work with local shops opening their first location and global brands running campaigns across a dozen markets. The size changes. The standard doesn't.</p>
+
+        <h3>Our mission</h3>
+        <p>To make sophisticated, ROI‑driven marketing accessible to businesses of every size — not just the ones with enterprise budgets and in‑house data teams.</p>
+
+        <h3>What makes us different</h3>
+        <ul class="mini-list">
+          <li><span class="dot"></span> One team handles strategy, design, and media — nothing gets lost in a handoff between departments.</li>
+          <li><span class="dot"></span> You get access to the same live dashboard we use internally, not a curated monthly summary.</li>
+          <li><span class="dot"></span> Every contract is quarter‑to‑quarter. We keep clients with results, not paperwork.</li>
+          <li><span class="dot"></span> We say no to channels that won't work for your business, even if it means a smaller invoice.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:8px;">
+        <span class="eyebrow">What we value</span>
+        <h2 id="about-values-heading">The principles behind every project</h2>
+      </div>
+      <div class="value-grid" id="about-values-grid">
+        <div class="value-card">
+          <h4>Transparency</h4>
+          <p>Real numbers, shared in real time. No metric gets dressed up to look better than it is.</p>
+        </div>
+        <div class="value-card">
+          <h4>Craft</h4>
+          <p>Design and copy that respect the visitor's attention, not just the algorithm.</p>
+        </div>
+        <div class="value-card">
+          <h4>Accountability</h4>
+          <p>We set targets before a project starts and report against them, publicly, throughout.</p>
+        </div>
+        <div class="value-card">
+          <h4>Speed</h4>
+          <p>Campaigns launch in days, not months. Momentum compounds — so we protect it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 id="about-cta-heading">Want to know if we're the right fit?</h2>
+          <p id="about-cta-text">A 30‑minute call will tell you. No pitch deck required.</p>
+        </div>
+        <div class="cta-row">
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="about-cta-button">Talk to Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="custom-about-sections"></div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<div class="page" id="page-services">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" id="services-eyebrow">Services</span>
+      <h1 id="services-heading">One agency, every channel your growth plan needs</h1>
+      <p class="lead" id="services-intro">Hire us for a single service or hand us the whole funnel — the systems are built to work together either way.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="service-grid" id="services-grid">
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <span class="tag">Web</span>
+          <h3>Website Design &amp; Development</h3>
+          <p>Custom, mobile‑first websites engineered around one goal: turning visitors into inquiries. Includes UX strategy, copywriting, and ongoing performance tuning.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-7-7 18-3-7-8-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <span class="tag">Paid Media</span>
+          <h3>Online Advertising</h3>
+          <p>Search, paid social, display, and marketplace ads, built around a cost‑per‑lead target and optimized weekly against it.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <span class="tag">SEO</span>
+          <h3>Search Engine Optimization</h3>
+          <p>Technical audits, content strategy, and link building focused on the keywords your actual buyers use to search.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" stroke-width="2"/><circle cx="9" cy="9" r="1.5" fill="#fff"/></svg></div>
+          <span class="tag">Social</span>
+          <h3>Social Media Management</h3>
+          <p>Content calendars, community management, and short‑form video built to grow a following that actually converts.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M12 20V4M20 20v-7" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <span class="tag">Brand</span>
+          <h3>Creative &amp; Branding</h3>
+          <p>Logo systems, brand guidelines, and campaign creative that keep every channel looking like one brand.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <span class="tag">Analytics</span>
+          <h3>Growth Analytics &amp; CRO</h3>
+          <p>Heatmaps, A/B testing, and funnel analysis that steadily raises your conversion rate, not just your traffic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2 id="services-process-heading">How an engagement actually runs</h2>
+      </div>
+      <div class="steps" id="services-process-grid">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h4>Audit</h4>
+          <p>We review your site, funnel, and current channels to find where leads are being lost.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h4>Plan</h4>
+          <p>You get a written roadmap with channels, targets, and timelines — before any contract is signed.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h4>Build &amp; Launch</h4>
+          <p>Our team builds the assets and campaigns, and gets everything live within the agreed sprint.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <h4>Optimize</h4>
+          <p>Weekly testing and reporting keep performance climbing, with full access to live data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="services-faq-heading">Common questions</h2>
+      </div>
+      <div class="faq" id="services-faq-list">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true">How quickly will I see results? <span class="plus">+</span></button>
+          <div class="faq-a" style="max-height:200px;"><p>Paid channels typically show movement within 2–4 weeks. SEO and organic social are longer plays — most clients see meaningful traffic gains by month 3–4, with compounding growth after that.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do you work with businesses outside my industry?</button>
+          <div class="faq-a"><p>Yes. We work across retail, healthcare, technology, finance, non‑profits, and more. The channels and tactics shift by industry, but our process for finding what works stays the same.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is there a minimum contract length?</button>
+          <div class="faq-a"><p>No long lock‑ins. Engagements run quarter‑to‑quarter so we have enough runway to show results, but you're never stuck in a multi‑year agreement.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can you just manage one channel, like SEO or ads?</button>
+          <div class="faq-a"><p>Absolutely. Many clients start with a single service and expand once they see results. Others hand us the full funnel from day one — it's entirely up to you.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How do you report on performance?</button>
+          <div class="faq-a"><p>You get access to a live dashboard tracking spend, leads, and cost‑per‑lead, plus a monthly strategy call to walk through what's working and what we're changing next.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What size businesses do you work with?</button>
+          <div class="faq-a"><p>Everything from single‑location local shops to global brands running multi‑market campaigns. We scale the strategy and budget to fit, not the other way around.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 id="services-cta-heading">Not sure which service you need?</h2>
+          <p id="services-cta-text">Tell us your goal and we'll recommend where to start.</p>
+        </div>
+        <div class="cta-row">
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="services-cta-button">Get a Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="custom-services-sections"></div>
+</div>
+
+<!-- ================= LISTINGS / PORTFOLIO ================= -->
+<div class="page" id="page-listings">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" id="portfolio-eyebrow">Our Work</span>
+      <h1 id="portfolio-heading">Proof, not promises</h1>
+      <p class="lead" id="portfolio-intro">A sample of the websites, campaigns, and brand systems we've built across industries.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="filter-bar" role="tablist" aria-label="Filter portfolio by category">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="web">Web Design</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+        <button class="filter-btn" data-filter="ads">Paid Ads</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+      </div>
+
+      <div class="card-grid" id="cardGrid">
+
+        <div class="p-card" data-cat="web">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=700&q=80" alt="Redesigned ecommerce website homepage on a laptop screen"></div>
+          <div class="body">
+            <span class="cat">Web Design · Retail</span>
+            <h3>Northfield Home Goods</h3>
+            <p>Full ecommerce rebuild focused on mobile checkout speed.</p>
+            <div class="card-foot"><span class="result">+64% conversion rate</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="ads">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=700&q=80" alt="Marketing analytics dashboard showing rising ad performance charts"></div>
+          <div class="body">
+            <span class="cat">Paid Ads · Fintech</span>
+            <h3>Larkspur Finance</h3>
+            <p>Multi‑platform lead gen campaign across search and social.</p>
+            <div class="card-foot"><span class="result">4.9x ROAS</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="seo">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Team analyzing SEO ranking reports on a shared screen"></div>
+          <div class="body">
+            <span class="cat">SEO · Healthcare</span>
+            <h3>Cedarview Clinics</h3>
+            <p>Local SEO overhaul across a 12‑location clinic network.</p>
+            <div class="card-foot"><span class="result">3.2x organic traffic</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="brand">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=700&q=80" alt="Brand identity moodboard with logo concepts and color swatches"></div>
+          <div class="body">
+            <span class="cat">Branding · Startup</span>
+            <h3>Fielder & Co.</h3>
+            <p>Full identity system for a Series A logistics startup.</p>
+            <div class="card-foot"><span class="result">Launched in 3 weeks</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="social">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=700&q=80" alt="Phone screen showing a social media content calendar and posts"></div>
+          <div class="body">
+            <span class="cat">Social · Hospitality</span>
+            <h3>Marlowe Hotels</h3>
+            <p>Short‑form content system driving direct bookings.</p>
+            <div class="card-foot"><span class="result">+41k followers in 6 mo</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="web">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=700&q=80" alt="Modern SaaS product website displayed across desktop and mobile"></div>
+          <div class="body">
+            <span class="cat">Web Design · SaaS</span>
+            <h3>Ledgerly</h3>
+            <p>Marketing site rebuild with a self‑serve trial funnel.</p>
+            <div class="card-foot"><span class="result">+58% trial signups</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="ads">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=700&q=80" alt="Retail storefront with a sale display and shoppers browsing"></div>
+          <div class="body">
+            <span class="cat">Paid Ads · Retail</span>
+            <h3>Harlow & James</h3>
+            <p>Seasonal campaign strategy across search and marketplace ads.</p>
+            <div class="card-foot"><span class="result">2.1x holiday revenue</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="seo">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=80" alt="Marketing team reviewing content strategy documents around a table"></div>
+          <div class="body">
+            <span class="cat">SEO · Non‑Profit</span>
+            <h3>Riverbend Trust</h3>
+            <p>Content strategy to rank for donor and grant‑related searches.</p>
+            <div class="card-foot"><span class="result">+140% donor traffic</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+        <div class="p-card" data-cat="brand">
+          <div class="thumb"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80" alt="Startup team presenting a new brand campaign in a meeting room"></div>
+          <div class="body">
+            <span class="cat">Branding · Technology</span>
+            <h3>Vector Robotics</h3>
+            <p>Repositioning and visual identity ahead of a product launch.</p>
+            <div class="card-foot"><span class="result">Featured in 6 press outlets</span></div>
+            <a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 id="portfolio-cta-heading">Like what you see?</h2>
+          <p id="portfolio-cta-text">Let's talk about what a similar system could do for your business.</p>
+        </div>
+        <div class="cta-row">
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="portfolio-cta-button">Start a Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="custom-portfolio-sections"></div>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="page" id="page-contact">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" id="contact-eyebrow">Contact</span>
+      <h1 id="contact-heading">Let's build your growth plan</h1>
+      <p class="lead" id="contact-intro">Tell us a bit about your business. We'll reply within one business day with next steps.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="form-msg" id="formMsg">Thanks — your message is in. A Benvor strategist will reach out within one business day.</div>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Jordan Blake" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jordan@yourcompany.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123‑4567">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking to grow." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="info-card">
+          <h4>Contact Details</h4>
+          <div class="info-row"><span class="ico">✆</span><span id="contact-phone">(212) 555‑0148</span></div>
+          <div class="info-row"><span class="ico">✉</span><span id="contact-email">hello@benvordigital.com</span></div>
+          <div class="info-row"><span class="ico">⌂</span><span id="contact-address">142 Bowery Street, Suite 4B<br>New York, NY 10013</span></div>
+          <div class="info-row"><span class="ico">🕐</span><span id="contact-hours">Mon–Fri, 9:00am–6:00pm ET</span></div>
+        </div>
+
+        <div class="map-frame">
+          <iframe id="contact-map" src="https://www.google.com/maps?q=142+Bowery+St+New+York+NY&output=embed" title="Map showing Benvor Digital office location in New York" loading="lazy"></iframe>
+        </div>
+
+        <div class="info-card" style="margin-top:20px;">
+          <h4>Follow Along</h4>
+          <div class="social-row">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Benvor Digital on LinkedIn">in</a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Benvor Digital on Instagram">ig</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Benvor Digital on X">X</a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Benvor Digital on Facebook">fb</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div id="custom-contact-sections"></div>
+</div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <svg width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#3730E0"/><path d="M6 20L11.5 13L16 17L24 8" stroke="#FF5B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="8" r="2.2" fill="#FF5B3D"/></svg>
+          Benvor Digital
+        </div>
+        <p id="footer-description">A full‑service digital marketing agency helping businesses of every size turn online visibility into real, measurable growth.</p>
+        <div class="foot-social">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X">X</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Quick Links</h5>
+        <a href="#home" data-nav="home">Home</a>
+        <a href="#about" data-nav="about">About</a>
+        <a href="#services" data-nav="services">Services</a>
+        <a href="#listings" data-nav="listings">Listings</a>
+        <a href="#contact" data-nav="contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services" data-nav="services">Web Design</a>
+        <a href="#services" data-nav="services">Paid Advertising</a>
+        <a href="#services" data-nav="services">SEO</a>
+        <a href="#services" data-nav="services">Social Media</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <span id="footer-email">hello@benvordigital.com</span>
+        <span id="footer-phone">(212) 555‑0148</span>
+        <span id="footer-address">142 Bowery Street, Suite 4B<br>New York, NY 10013</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span id="footer-copyright">© 2026 Benvor Digital. All rights reserved.</span>
+      <span id="footer-secondary">Digital marketing agency · Full‑service marketing agency · Growth marketing firm</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Page routing ----------
+  const pages = document.querySelectorAll('.page');
+  const navLinks = document.querySelectorAll('[data-nav]');
+
+  function showPage(name){
+    pages.forEach(p => p.classList.toggle('active', p.id === 'page-' + name));
+    navLinks.forEach(l => l.classList.toggle('active', l.dataset.nav === name && l.closest('nav.primary')));
+    window.scrollTo({top:0, behavior:'instant' in document.documentElement.style ? 'instant' : 'auto'});
+    closeMobileMenu();
+  }
+
+  function routeFromHash(){
+    const valid = ['home','about','services','listings','contact'];
+    const hash = (location.hash || '#home').replace('#','');
+    showPage(valid.includes(hash) ? hash : 'home');
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = link.dataset.nav;
+      history.pushState(null, '', '#' + name);
+      showPage(name);
+    });
+  });
+
+  window.addEventListener('popstate', routeFromHash);
+  routeFromHash();
+
+  // ---------- Mobile menu ----------
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const scrim = document.getElementById('scrim');
+
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('open');
+    scrim.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded','false');
+  }
+  burgerBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    scrim.classList.toggle('open', open);
+    burgerBtn.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  scrim.addEventListener('click', closeMobileMenu);
+
+  // ---------- FAQ accordion ----------
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ---------- Portfolio filter ----------
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.p-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(card => {
+        card.classList.toggle('hide', f !== 'all' && card.dataset.cat !== f);
+      });
+    });
+  });
+
+  // ---------- Contact form ----------
+  const form = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    formMsg.classList.add('show');
+    form.reset();
+    formMsg.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // header shadow on scroll
+  const headerEl = document.querySelector('header.site');
+  window.addEventListener('scroll', () => {
+    headerEl.style.boxShadow = window.scrollY > 8 ? '0 4px 20px rgba(18,19,28,.06)' : 'none';
+  });
+</script>
+
+<script id="decap-content-overlay">
+(function(){
+  const esc = (v='') => String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  const byId = id => document.getElementById(id);
+  const setText = (id,v) => { const e=byId(id); if(e && v!==undefined && v!==null) e.textContent=v; };
+  const safeLink = v => typeof v==='string' && (/^#[a-z0-9_-]+$/i.test(v)||/^https?:\/\//i.test(v)||/^mailto:/i.test(v)||/^tel:/i.test(v)) ? v : '#';
+  const setLink=(id,text,url)=>{const e=byId(id); if(!e)return; if(text)e.textContent=text; if(url){e.href=safeLink(url); if(/^#/.test(url))e.dataset.nav=url.substring(1);}};
+  const imgSrc=v => typeof v==='string' && (/^https?:\/\//i.test(v)||/^\/[A-Za-z0-9_./%-]+$/.test(v)) ? v : '';
+  async function load(path){const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error(path); return r.json();}
+  function applyBrand(site){
+    const b=site.branding||{}, s=document.documentElement.style;
+    const vars={'--indigo':b.primary,'--indigo-deep':b.primary_dark,'--coral':b.accent,'--coral-deep':b.accent_dark,'--paper':b.background,'--band':b.surface,'--ink':b.text,'--muted':b.muted,'--line':b.border,'--night':b.dark,'--ok':b.success};
+    Object.entries(vars).forEach(([k,v])=>{if(/^#[0-9a-f]{6}$/i.test(v||''))s.setProperty(k,v)});
+    if(b.radius) s.setProperty('--radius',Math.max(0,Math.min(60,Number(b.radius)||14))+'px');
+    if(b.container_width) s.setProperty('--maxw',Math.max(800,Math.min(1600,Number(b.container_width)||1180))+'px');
+  }
+  function customSections(list){
+    return (list||[]).filter(x=>x && x.visible!==false).map(x=>{
+      const bg=/^#[0-9a-f]{6}$/i.test(x.background_color||'')?`background:${x.background_color};`:'';
+      const image=imgSrc(x.image);
+      const button=x.button_text?`<a class="btn btn-primary" href="${esc(safeLink(x.button_link||'#'))}">${esc(x.button_text)}</a>`:'';
+      if(x.type==='image_text') return `<section style="${bg}"><div class="wrap split">${image?`<img src="${esc(image)}" alt="${esc(x.image_alt||'')}">`:''}<div>${x.eyebrow?`<span class="eyebrow">${esc(x.eyebrow)}</span>`:''}<h2 style="margin:14px 0 16px">${esc(x.heading||'')}</h2><p class="muted">${esc(x.text||'')}</p>${button}</div></div></section>`;
+      if(x.type==='cta') return `<section><div class="wrap"><div class="cta-banner" style="${bg}"><div><h2>${esc(x.heading||'')}</h2><p>${esc(x.text||'')}</p></div><div class="cta-row">${button}</div></div></div></section>`;
+      if(x.type==='image') return `<section style="${bg}"><div class="wrap">${x.heading?`<div class="section-head"><h2>${esc(x.heading)}</h2></div>`:''}${image?`<img src="${esc(image)}" alt="${esc(x.image_alt||'')}" style="border-radius:var(--radius);width:100%">`:''}</div></section>`;
+      return `<section style="${bg}"><div class="wrap"><div class="section-head">${x.eyebrow?`<span class="eyebrow">${esc(x.eyebrow)}</span>`:''}<h2>${esc(x.heading||'')}</h2><p class="lead">${esc(x.text||'')}</p></div>${button}</div></section>`;
+    }).join('');
+  }
+  function rebind(){
+    document.querySelectorAll('[data-nav]').forEach(link=>{
+      if(link.dataset.cmsBound)return; link.dataset.cmsBound='1';
+      link.addEventListener('click',e=>{e.preventDefault();const name=link.dataset.nav;history.pushState(null,'','#'+name);showPage(name);});
+    });
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a'); if(!q||!a)return;
+      q.onclick=()=>{const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');const iq=i.querySelector('.faq-q'),ia=i.querySelector('.faq-a');if(iq)iq.setAttribute('aria-expanded','false');if(ia)ia.style.maxHeight=null});if(!open){item.classList.add('open');q.setAttribute('aria-expanded','true');a.style.maxHeight=a.scrollHeight+'px';}};
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.p-card').forEach(card=>card.classList.toggle('hide',f!=='all'&&card.dataset.cat!==f));});
+  }
+
+  Promise.all([
+    load('/content/site.json'),load('/content/homepage.json'),load('/content/about.json'),
+    load('/content/services.json'),load('/content/portfolio.json'),load('/content/contact.json'),
+    load('/content/testimonials.json')
+  ]).then(([site,home,about,services,portfolio,contact,testimonials])=>{
+    applyBrand(site);
+    setText('site-company-name',site.company_name);
+    setLink('header-cta',site.header_cta_text,site.header_cta_link);
+    setLink('mobile-header-cta',site.header_cta_text,site.header_cta_link);
+
+    setText('home-hero-eyebrow',home.hero.eyebrow); setText('home-hero-heading',home.hero.heading); setText('home-hero-text',home.hero.text);
+    setLink('home-hero-primary',home.hero.primary_text,home.hero.primary_link); setLink('home-hero-secondary',home.hero.secondary_text,home.hero.secondary_link);
+    const hs=byId('home-hero-stats'); if(hs) hs.innerHTML=(home.hero.stats||[]).map(x=>`<div><strong>${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('');
+    setText('home-trust-label',home.trust.label); const ht=byId('home-trust-items'); if(ht) ht.innerHTML=(home.trust.items||[]).map(x=>`<span>${esc(x)}</span>`).join('');
+    setText('home-benefits-eyebrow',home.benefits.eyebrow); setText('home-benefits-heading',home.benefits.heading); setText('home-benefits-text',home.benefits.text);
+    const bg=byId('home-benefits-grid'); if(bg) bg.innerHTML=(home.benefits.items||[]).map(x=>`<div class="benefit-card"><span class="num">${esc(x.number)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('');
+    setText('home-services-eyebrow',home.services.eyebrow); setText('home-services-heading',home.services.heading);
+    setText('home-testimonials-eyebrow',home.testimonials.eyebrow); setText('home-testimonials-heading',home.testimonials.heading);
+    const tg=byId('home-testimonials-grid'); if(tg) tg.innerHTML=(testimonials.items||[]).map(t=>`<div class="testi-card"><div class="stars">★★★★★</div><p>"${esc(t.quote)}"</p><div class="testi-person">${imgSrc(t.image)?`<img src="${esc(t.image)}" alt="${esc(t.alt||t.name)}">`:''}<div><strong>${esc(t.name)}</strong><span>${esc(t.role)}</span></div></div></div>`).join('');
+    setText('home-about-eyebrow',home.about_preview.eyebrow); setText('home-about-heading',home.about_preview.heading); setText('home-about-text',home.about_preview.text); setLink('home-about-cta',home.about_preview.button_text,home.about_preview.button_link);
+    setText('home-final-cta-heading',home.final_cta.heading); setText('home-final-cta-text',home.final_cta.text); setLink('home-final-cta-primary',home.final_cta.primary_text,home.final_cta.primary_link); setLink('home-final-cta-secondary',home.final_cta.secondary_text,home.final_cta.secondary_link);
+
+    setText('about-eyebrow',about.eyebrow); setText('about-heading',about.heading); setText('about-intro',about.intro);
+    const story=byId('about-story'); if(story) story.innerHTML=`<h3>${esc(about.story.heading)}</h3>${(about.story.paragraphs||[]).map(p=>`<p>${esc(p)}</p>`).join('')}<h3>${esc(about.story.mission_heading)}</h3><p>${esc(about.story.mission_text)}</p><h3>${esc(about.story.difference_heading)}</h3><ul class="mini-list">${(about.story.differences||[]).map(x=>`<li><span class="dot"></span> ${esc(x)}</li>`).join('')}</ul>`;
+    setText('about-values-heading',about.values_heading); const vg=byId('about-values-grid'); if(vg) vg.innerHTML=(about.values||[]).map(v=>`<div class="value-card"><h4>${esc(v.title)}</h4><p>${esc(v.text)}</p></div>`).join('');
+    setText('about-cta-heading',about.cta.heading); setText('about-cta-text',about.cta.text); setLink('about-cta-button',about.cta.button_text,about.cta.button_link);
+
+    setText('services-eyebrow',services.eyebrow); setText('services-heading',services.heading); setText('services-intro',services.intro);
+    const sg=byId('services-grid'); if(sg) sg.innerHTML=(services.items||[]).map((s,i)=>`<div class="service-card"><div class="icon" aria-hidden="true">${imgSrc(s.icon)?`<img src="${esc(s.icon)}" alt="" style="width:22px;height:22px">`:`<strong>${String(i+1).padStart(2,'0')}</strong>`}</div><span class="tag">${esc(s.tag)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join('');
+    setText('services-process-heading',services.process_heading); const pg=byId('services-process-grid'); if(pg) pg.innerHTML=(services.process||[]).map(p=>`<div class="step"><span class="step-num">${esc(p.number)}</span><h4>${esc(p.title)}</h4><p>${esc(p.text)}</p></div>`).join('');
+    setText('services-faq-heading',services.faq_heading); const fl=byId('services-faq-list'); if(fl) fl.innerHTML=(services.faqs||[]).map((f,i)=>`<div class="faq-item${i===0?' open':''}"><button class="faq-q" aria-expanded="${i===0?'true':'false'}">${esc(f.question)} <span class="plus">+</span></button><div class="faq-a"${i===0?' style="max-height:200px"':''}><p>${esc(f.answer)}</p></div></div>`).join('');
+    setText('services-cta-heading',services.cta.heading); setText('services-cta-text',services.cta.text); setLink('services-cta-button',services.cta.button_text,services.cta.button_link);
+
+    setText('portfolio-eyebrow',portfolio.eyebrow); setText('portfolio-heading',portfolio.heading); setText('portfolio-intro',portfolio.intro);
+    const fb=document.querySelector('.filter-bar'); if(fb) fb.innerHTML=(portfolio.filters||[]).map((f,i)=>`<button class="filter-btn${i===0?' active':''}" data-filter="${esc(f.value)}">${esc(f.label)}</button>`).join('');
+    const cg=byId('cardGrid'); if(cg) cg.innerHTML=(portfolio.projects||[]).map(p=>`<div class="p-card" data-cat="${esc(p.category)}"><div class="thumb">${imgSrc(p.image)?`<img src="${esc(p.image)}" alt="${esc(p.alt||p.title)}">`:''}</div><div class="body"><span class="cat">${esc(p.category_label)}</span><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><div class="card-foot"><span class="result">${esc(p.result)}</span></div><a href="#contact" data-nav="contact" class="view">Discuss a project like this →</a></div></div>`).join('');
+    setText('portfolio-cta-heading',portfolio.cta.heading); setText('portfolio-cta-text',portfolio.cta.text); setLink('portfolio-cta-button',portfolio.cta.button_text,portfolio.cta.button_link);
+
+    setText('contact-eyebrow',contact.eyebrow); setText('contact-heading',contact.heading); setText('contact-intro',contact.intro);
+    setText('contact-phone',contact.phone); setText('contact-email',contact.email); const ca=byId('contact-address'); if(ca)ca.innerHTML=esc(contact.address).replace(/\n/g,'<br>'); setText('contact-hours',contact.hours); const map=byId('contact-map'); if(map && /^https?:\/\//.test(contact.map_url||''))map.src=contact.map_url;
+
+    setText('footer-description',site.footer_description); setText('footer-email',site.footer_email); setText('footer-phone',site.footer_phone); const fa=byId('footer-address'); if(fa)fa.innerHTML=esc(site.footer_address).replace(/\n/g,'<br>'); setText('footer-copyright',site.copyright); setText('footer-secondary',site.footer_secondary);
+    document.title=site.seo?.title||document.title; const md=document.querySelector('meta[name="description"]'); if(md)md.content=site.seo?.description||''; const mk=document.querySelector('meta[name="keywords"]'); if(mk)mk.content=site.seo?.keywords||'';
+
+    const ch=byId('custom-home-sections'); if(ch)ch.innerHTML=customSections(home.custom_sections);
+    const ca2=byId('custom-about-sections'); if(ca2)ca2.innerHTML=customSections(about.custom_sections);
+    const cs=byId('custom-services-sections'); if(cs)cs.innerHTML=customSections(services.custom_sections);
+    const cp=byId('custom-portfolio-sections'); if(cp)cp.innerHTML=customSections(portfolio.custom_sections);
+    const cc=byId('custom-contact-sections'); if(cc)cc.innerHTML=customSections(contact.custom_sections);
+    rebind();
+  }).catch(err=>console.warn('CMS overlay not loaded; original HTML remains visible.',err));
+})();
+</script>
+
 </body>
 </html>
