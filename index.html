@@ -407,11 +407,11 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Full‑Service Digital Marketing Agency</span>
-        <h1>We turn traffic into pipeline, not just impressions.</h1>
-        <p class="lead">Benvor Digital builds the websites, ads, SEO, and social systems that take a business from "we should try marketing" to a predictable stream of qualified leads.</p>
+        <span class="eyebrow" id="hero-eyebrow">Full‑Service Digital Marketing Agency</span>
+        <h1 id="hero-heading">We turn traffic into pipeline, not just impressions.</h1>
+        <p class="lead" id="hero-description">Benvor Digital builds the websites, ads, SEO, and social systems that take a business from "we should try marketing" to a predictable stream of qualified leads.</p>
         <div class="cta-row">
-          <a href="#contact" data-nav="contact" class="btn btn-primary">Get a free growth audit</a>
+          <a href="#contact" data-nav="contact" class="btn btn-primary" id="hero-primary-cta">Get a free growth audit</a>
           <a href="#listings" data-nav="listings" class="btn btn-ghost">See our work</a>
         </div>
         <div class="hero-stats">
@@ -1167,6 +1167,55 @@
   window.addEventListener('scroll', () => {
     headerEl.style.boxShadow = window.scrollY > 8 ? '0 4px 20px rgba(18,19,28,.06)' : 'none';
   });
+</script>
+
+<script>
+  // ---------- CMS homepage content ----------
+  fetch('/content/homepage.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Could not load /content/homepage.json');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const eyebrow = document.getElementById('hero-eyebrow');
+      const heading = document.getElementById('hero-heading');
+      const description = document.getElementById('hero-description');
+      const primaryCta = document.getElementById('hero-primary-cta');
+
+      if (eyebrow && data.hero_eyebrow) {
+        eyebrow.textContent = data.hero_eyebrow;
+      }
+
+      if (heading && data.hero_heading) {
+        heading.textContent = data.hero_heading;
+      }
+
+      if (description && data.hero_description) {
+        description.textContent = data.hero_description;
+      }
+
+      if (primaryCta && data.button_text) {
+        primaryCta.textContent = data.button_text;
+      }
+
+      // Your site uses data-nav for its single-page routing.
+      // Only internal section links such as #contact are applied here.
+      if (
+        primaryCta &&
+        typeof data.button_link === 'string' &&
+        /^#(home|about|services|listings|contact)$/.test(data.button_link)
+      ) {
+        const sectionName = data.button_link.substring(1);
+        primaryCta.href = data.button_link;
+        primaryCta.dataset.nav = sectionName;
+      }
+    })
+    .catch(error => {
+      // The hard-coded HTML remains visible if CMS content cannot load.
+      console.warn('CMS homepage content not loaded:', error);
+    });
 </script>
 
 </body>
