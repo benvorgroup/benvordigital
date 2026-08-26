@@ -178,5 +178,67 @@
   "business": {
     "email": "info@benvordigital.com",
     "office_address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
+<<<<<<< HEAD
+  },
+  "project_detail_labels": {
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result"
+  },
+  "project_detail_cta": {
+    "heading": "Ready to build the next result?",
+    "text": "Let’s talk about the growth opportunity in front of your business.",
+    "button_label": "Start a Project",
+    "button_url": "/contact/"
+  },
+  "ui_labels": {
+    "mobile_menu": "Open menu",
+    "carousel_previous": "Previous",
+    "carousel_next": "Next"
+  },
+  "tracking": {
+    "ga4_measurement_id": "",
+    "gtm_container_id": "",
+    "meta_pixel_id": ""
+  },
+  "schema": {
+    "business_name": "Benvor Digital",
+    "business_type": "ProfessionalService",
+    "website": "https://benvordigital.com",
+    "email": "info@benvordigital.com",
+    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
+    "country": "AU",
+    "region": "NSW",
+    "locality": "Bondi Junction",
+    "postal_code": "2022"
+  },
+  "design": {
+    "button_radius": 10,
+    "card_radius": 14,
+    "section_spacing": 92,
+    "max_content_width": 1240,
+    "motion": "subtle"
+  },
+  "labels": {
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result",
+    "read_case_study": "View Case Study",
+    "read_article": "Read Article",
+    "back_to_blog": "Back to Insights"
+  },
+  "lead_generation": {
+    "sticky_cta_enabled": true,
+    "sticky_cta_label": "Get Free Growth Audit",
+    "sticky_cta_url": "#growth-audit",
+    "booking_enabled": true,
+    "booking_provider": "external",
+    "booking_url": "",
+    "booking_label": "Book a 15-Minute Strategy Call",
+    "lead_form_action": "",
+    "growth_audit_action": "",
+    "success_message": "Thanks. We’ll review your information and get back to you within one business day."
+=======
+>>>>>>> a21ba4708bb81dce1a63dd1310c93596046e750a
   }
 }
