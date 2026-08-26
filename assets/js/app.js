@@ -68,8 +68,6 @@
     const key=String(label||'').trim().toLowerCase();
     if(key.includes('linkedin')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5.35 3.5A1.85 1.85 0 1 1 5.34 7.2a1.85 1.85 0 0 1 .01-3.7ZM3.75 8.7h3.2V20h-3.2V8.7Zm5.2 0h3.07v1.55h.04c.43-.81 1.47-1.67 3.03-1.67 3.24 0 3.84 2.13 3.84 4.91V20h-3.2v-5.77c0-1.38-.03-3.15-1.92-3.15-1.92 0-2.22 1.5-2.22 3.05V20h-3.2V8.7h.56Z"/></svg>`;
     if(key.includes('facebook')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.55 21v-8.2h2.75l.41-3.2h-3.16V7.56c0-.93.26-1.56 1.59-1.56h1.7V3.14c-.29-.04-1.3-.14-2.47-.14-2.44 0-4.11 1.49-4.11 4.23V9.6H8.5v3.2h2.76V21h2.29Z"/></svg>`;
-    if(key==='x'||key.includes('twitter')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 4h3.7l4.02 5.37L17.35 4H19l-5.52 6.42L19.5 20h-3.7l-4.5-6.01L6.14 20H4.5l6.03-7.06L5 4Zm2.2 1.3 9.25 13.4h1.35L8.55 5.3H7.2Z"/></svg>`;
-    if(key.includes('instagram')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>`;
     return `<span class="social-fallback">${esc(String(label||'').slice(0,2))}</span>`;
   }
 
@@ -77,7 +75,7 @@
     const f=settings.footer||{}; const configuredFooterLogo=settings.brand.footer_logo_light; const defaultFooterPath='/assets/branding/benvor-stacked-light.png';
     const logo=(!configuredFooterLogo||configuredFooterLogo===defaultFooterPath)?EMBEDDED_LOGOS.footerLight:configuredFooterLogo;
     const groups=(f.groups||[]).map(g=>`<div class="footer-col"><h5>${esc(g.heading||'')}</h5>${(g.links||[]).map(x=>`<a href="${esc(safeUrl(x.url))}">${esc(x.label||'')}</a>`).join('')}</div>`).join('');
-    const socials=(f.social||[]).map(x=>`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener" aria-label="${esc(x.label||'Social media')}">${socialIcon(x.label)}</a>`).join('');
+    const socials=(f.social||[]).map(x=>{const disabled=x.disabled===true||!String(x.url||'').trim();return disabled?`<span class="social social-disabled" role="img" aria-label="${esc((x.label||'Social media')+' (link coming soon)')}" title="Link coming soon">${socialIcon(x.label)}</span>`:`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener" aria-label="${esc(x.label||'Social media')}">${socialIcon(x.label)}</a>`}).join('');
     $('#site-footer').className='site-footer'; $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid"><div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>${groups}<div class="footer-col"><h5>${esc(f.connect_heading||"Let's Connect")}</h5><div class="socials">${socials}</div><div class="footer-email">${esc(f.email||'')}</div><div class="footer-address">${esc(f.address||settings.business?.office_address||'')}</div></div></div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
     const footerLogo=$('#benvor-footer-logo'); if(footerLogo){footerLogo.addEventListener('error',()=>{footerLogo.src=EMBEDDED_LOGOS.footerLight;},{once:true});}
   }
@@ -299,6 +297,11 @@
     if(s.text_tone && s.text_tone!=='auto') classes.push(`cms-tone-${s.text_tone}`);
     if(s.overlay && s.overlay!=='none') classes.push(`cms-overlay-${s.overlay}`);
     if(s.disable_animation) classes.push('cms-no-animation');
+    const a=s.advanced||{}, d=s.design||{};
+    if(a.heading_size_px) classes.push('cms-custom-heading-size');
+    if(a.heading_weight) classes.push('cms-custom-heading-weight');
+    if(a.body_size_px) classes.push('cms-custom-body-size');
+    if(a.position_mode && a.position_mode!=='default') classes.push(`cms-position-${a.position_mode}`);
     if(s.custom_class) classes.push(...String(s.custom_class).split(/\s+/).filter(Boolean));
     return classes.join(' ');
   }
@@ -332,6 +335,29 @@
     if(s.columns_mobile && s.columns_mobile!=='auto') styles.push(`--cms-cols-mobile:${Number(s.columns_mobile)||1}`);
     if(s.z_index && s.z_index!=='auto') styles.push(`z-index:${Number(s.z_index)||1}`);
     if(valign) styles.push(`--cms-valign:${valign}`);
+    const a=s.advanced||{}, d=s.design||{};
+    const px=(v)=>String(v??'').trim()!=='' && Number.isFinite(Number(v)) ? Number(v) : null;
+    if(d.custom_background_color) styles.push(`--cms-bg:${d.custom_background_color}`);
+    if(d.custom_text_color) styles.push(`--body:${d.custom_text_color}`);
+    if(d.custom_heading_color) styles.push(`--heading:${d.custom_heading_color}`);
+    if(d.custom_primary_color) styles.push(`--primary:${d.custom_primary_color}`);
+    if(d.custom_border_color) styles.push(`border-color:${d.custom_border_color}`);
+    if(px(d.custom_border_width_px)!==null) styles.push(`border-width:${px(d.custom_border_width_px)}px`);
+    if(px(d.custom_radius_px)!==null) styles.push(`border-radius:${px(d.custom_radius_px)}px;overflow:hidden`);
+    if(d.custom_shadow) styles.push(`box-shadow:${d.custom_shadow}`);
+    if(px(a.max_width_px)!==null) styles.push(`max-width:${px(a.max_width_px)}px;margin-left:auto;margin-right:auto`);
+    if(px(a.margin_top_px)!==null) styles.push(`margin-top:${px(a.margin_top_px)}px`);
+    if(px(a.margin_bottom_px)!==null) styles.push(`margin-bottom:${px(a.margin_bottom_px)}px`);
+    if(px(a.margin_left_px)!==null) styles.push(`margin-left:${px(a.margin_left_px)}px`);
+    if(px(a.margin_right_px)!==null) styles.push(`margin-right:${px(a.margin_right_px)}px`);
+    if(px(a.padding_top_px)!==null) styles.push(`--cms-pt:${px(a.padding_top_px)}px`);
+    if(px(a.padding_bottom_px)!==null) styles.push(`--cms-pb:${px(a.padding_bottom_px)}px`);
+    if(px(a.heading_size_px)!==null) styles.push(`--cms-heading-size:${px(a.heading_size_px)}px`);
+    if(a.heading_weight) styles.push(`--cms-heading-weight:${Number(a.heading_weight)||700}`);
+    if(px(a.body_size_px)!==null) styles.push(`--cms-body-size:${px(a.body_size_px)}px`);
+    if(px(a.opacity_percent)!==null) styles.push(`opacity:${Math.max(0,Math.min(100,px(a.opacity_percent)))/100}`);
+    if(a.position_mode && a.position_mode!=='default') styles.push(`position:${a.position_mode}`);
+    for(const side of ['top','right','bottom','left']){const v=px(a[side+'_px']);if(v!==null)styles.push(`${side}:${v}px`)}
     return styles.join(';');
   }
   function applySectionControls(html,raw){
@@ -344,6 +370,83 @@
       s.aria_label?`aria-label="${esc(s.aria_label)}"`:''
     ].filter(Boolean).join(' ');
     return `<div class="${cls}" style="${st}" ${attrs}>${html}</div>`;
+  }
+
+  async function renderSection(s,settings){
+    const raw=s||{};
+    const normalized=normalizeSection(raw);
+    return applySectionControls(await renderSectionRaw(normalized,settings),raw);
+  }
+
+  const CMS_PREVIEW = new URLSearchParams(location.search).get('cmsPreview')==='1';
+  async function renderCmsPreview(payload){
+    if(!payload || payload.type!=='benvor-cms-preview') return;
+    const settings=payload.settings || await getJSON('/content/settings.json');
+    const page=payload.page || {};
+    applyTheme(settings);
+    const slug=page.slug||document.body.dataset.page||'home';
+    const header=$('#site-header'), footer=$('#site-footer');
+    if(page.show_header!==false){ header.style.display=''; renderHeader(settings,'light',slug); } else header.style.display='none';
+    if(page.show_footer!==false){ footer.style.display=''; renderFooter(settings,'light'); } else footer.style.display='none';
+    const out=[];
+    for(let index=0;index<(page.sections||[]).length;index++){
+      const html=await renderSection(page.sections[index],settings);
+      if(html) out.push(html.replace('<div class="visual-section',`<div data-cms-section-index="${index}" class="visual-section`));
+    }
+    $('#main').innerHTML=out.join('');
+    bindInteractions(settings);
+    $$('.visual-section[data-cms-section-index]').forEach(el=>{
+      const index=Number(el.dataset.cmsSectionIndex);
+      el.classList.add('cms-preview-selectable');
+      el.addEventListener('click',ev=>{
+        if(ev.target.closest('a,button,input,select,textarea,label')) ev.preventDefault();
+        ev.stopPropagation();
+        parent.postMessage({type:'benvor-cms-select-section',index},location.origin);
+      },true);
+    });
+    parent.postMessage({type:'benvor-cms-preview-ready'},location.origin);
+  }
+  if(CMS_PREVIEW){
+    window.addEventListener('message',ev=>{
+      if(ev.origin!==location.origin) return;
+      if(ev.data?.type==='benvor-cms-preview') renderCmsPreview(ev.data);
+      if(ev.data?.type==='benvor-cms-scroll-section'){
+        const el=document.querySelector(`[data-cms-section-index="${Number(ev.data.index)}"]`);
+        el?.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    });
+  }
+
+  function setHomeHeroViewport(){
+    const h=$('#site-header')?.getBoundingClientRect?.().height||74;
+    document.documentElement.style.setProperty('--benvor-vh', `${window.innerHeight}px`);
+    document.documentElement.style.setProperty('--benvor-header-height', `${Math.round(h)}px`);
+  }
+  window.setHomeHeroViewport=setHomeHeroViewport;
+
+  function bindLeadGeneration(settings){
+    $$('.quick-lead-form').forEach(form=>{
+      form.onsubmit=e=>{
+        const action=settings.lead_generation?.lead_form_action||settings.contact_form?.action||'';
+        if(!action){e.preventDefault();const msg=$('.form-message',form);if(msg){msg.classList.add('show');msg.textContent=settings.lead_generation?.success_message||'Thanks. We will be in touch shortly.'}form.reset()}
+      };
+    });
+    $$('.growth-score-form').forEach(form=>{
+      form.onsubmit=e=>{
+        e.preventDefault();
+        const result=$('.growth-score-result',form.closest('.growth-score-card'));
+        if(result){
+          const filled=[...form.querySelectorAll('input,select,textarea')].filter(x=>x.type!=='checkbox'?String(x.value||'').trim():x.checked).length;
+          const total=Math.max(1,form.querySelectorAll('input,select,textarea').length);
+          const score=Math.max(55,Math.min(95,Math.round(55+(filled/total)*40)));
+          const n=$('.score-number',result);if(n)n.textContent=String(score);
+          result.hidden=false;form.hidden=true;
+        }
+      };
+    });
+    if(settings.lead_generation?.sticky_cta_enabled && !$('.sticky-lead-cta') && !CMS_PREVIEW){
+      const a=document.createElement('a');a.className='sticky-lead-cta';a.href=safeUrl(settings.lead_generation?.sticky_cta_url||'#growth-audit');a.textContent=settings.lead_generation?.sticky_cta_label||'Get Free Growth Audit';document.body.appendChild(a);
+    }
   }
 
   function bindInteractions(settings){
@@ -487,6 +590,5 @@
     }
   }
   document.addEventListener('DOMContentLoaded',init);
+  window.addEventListener('resize',setHomeHeroViewport,{passive:true});
 })();
-
-window.addEventListener('resize',setHomeHeroViewport,{passive:true});

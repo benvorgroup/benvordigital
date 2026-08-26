@@ -142,19 +142,13 @@
     "social": [
       {
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com"
-      },
-      {
-        "label": "X",
-        "url": "https://twitter.com"
-      },
-      {
-        "label": "Instagram",
-        "url": "https://www.instagram.com"
+        "url": "",
+        "disabled": true
       },
       {
         "label": "Facebook",
-        "url": "https://www.facebook.com"
+        "url": "https://www.facebook.com/BenvorDigital",
+        "disabled": false
       }
     ],
     "copyright": "© 2026 Benvor Digital. All rights reserved.",

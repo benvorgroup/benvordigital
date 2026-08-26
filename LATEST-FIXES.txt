@@ -1,7 +1,16 @@
-BENVOR DIGITAL — LATEST FIXES
+BENVOR DIGITAL — CUSTOM CMS BUILD
 
-1. Homepage hero compacted for laptop/desktop viewport fit below the sticky header.
-2. Short-screen laptop breakpoint added. Tablet and mobile retain natural page height.
-3. LinkedIn and Facebook footer icons are inline SVG in both dynamic and fail-safe HTML.
-4. X and Instagram also use inline SVG for consistency.
-5. Paid advertising service renamed to Performance Advertising, including service data, SEO, and footer navigation.
+1. /admin/ replaced with a custom GitHub-powered visual CMS application.
+2. /admin/safe.html preserved as the pinned Decap 3.8.3 emergency editor.
+3. No global MutationObserver is used in the custom CMS.
+4. Clean page builder: page/section navigator, center live preview, right settings panel.
+5. Right panel uses Content, Layout, Design, Responsive, and Developer-only Advanced controls.
+6. Click-to-select preview bridge and drag/drop section reordering added.
+7. Visual section library, blank pages, page templates, reusable saved components, duplicate page/section controls added.
+8. Browser autosave drafts, named checkpoints, pre-publish snapshots, GitHub version history, restore, publish and unpublish flows added.
+9. Dedicated Global Components, Brand System, Media, SEO & AEO, Forms & Leads, Templates, Integrations, Version History, and Users & Roles areas added.
+10. Advanced media metadata and asset replacement support added.
+11. Instagram and X removed from public social contacts.
+12. Facebook now links to https://www.facebook.com/BenvorDigital.
+13. LinkedIn remains visible but disabled until a final URL is supplied.
+14. Existing public-facing design/content retained; dynamic JSON renderer and preview bridge are used for CMS changes.
