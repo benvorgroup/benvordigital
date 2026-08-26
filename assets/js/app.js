@@ -64,11 +64,20 @@
     const headerLogo=$('#benvor-header-logo'); if(headerLogo){headerLogo.addEventListener('error',()=>{headerLogo.src=EMBEDDED_LOGOS.headerLight;},{once:true});}
   }
 
+  function socialIcon(label){
+    const key=String(label||'').trim().toLowerCase();
+    if(key.includes('linkedin')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5.35 3.5A1.85 1.85 0 1 1 5.34 7.2a1.85 1.85 0 0 1 .01-3.7ZM3.75 8.7h3.2V20h-3.2V8.7Zm5.2 0h3.07v1.55h.04c.43-.81 1.47-1.67 3.03-1.67 3.24 0 3.84 2.13 3.84 4.91V20h-3.2v-5.77c0-1.38-.03-3.15-1.92-3.15-1.92 0-2.22 1.5-2.22 3.05V20h-3.2V8.7h.56Z"/></svg>`;
+    if(key.includes('facebook')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.55 21v-8.2h2.75l.41-3.2h-3.16V7.56c0-.93.26-1.56 1.59-1.56h1.7V3.14c-.29-.04-1.3-.14-2.47-.14-2.44 0-4.11 1.49-4.11 4.23V9.6H8.5v3.2h2.76V21h2.29Z"/></svg>`;
+    if(key==='x'||key.includes('twitter')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 4h3.7l4.02 5.37L17.35 4H19l-5.52 6.42L19.5 20h-3.7l-4.5-6.01L6.14 20H4.5l6.03-7.06L5 4Zm2.2 1.3 9.25 13.4h1.35L8.55 5.3H7.2Z"/></svg>`;
+    if(key.includes('instagram')) return `<svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.7" r="1" fill="currentColor"/></svg>`;
+    return `<span class="social-fallback">${esc(String(label||'').slice(0,2))}</span>`;
+  }
+
   function renderFooter(settings, mode){
     const f=settings.footer||{}; const configuredFooterLogo=settings.brand.footer_logo_light; const defaultFooterPath='/assets/branding/benvor-stacked-light.png';
     const logo=(!configuredFooterLogo||configuredFooterLogo===defaultFooterPath)?EMBEDDED_LOGOS.footerLight:configuredFooterLogo;
     const groups=(f.groups||[]).map(g=>`<div class="footer-col"><h5>${esc(g.heading||'')}</h5>${(g.links||[]).map(x=>`<a href="${esc(safeUrl(x.url))}">${esc(x.label||'')}</a>`).join('')}</div>`).join('');
-    const socials=(f.social||[]).map(x=>`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener">${esc((x.label||'').slice(0,2))}</a>`).join('');
+    const socials=(f.social||[]).map(x=>`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener" aria-label="${esc(x.label||'Social media')}">${socialIcon(x.label)}</a>`).join('');
     $('#site-footer').className='site-footer'; $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid"><div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>${groups}<div class="footer-col"><h5>${esc(f.connect_heading||"Let's Connect")}</h5><div class="socials">${socials}</div><div class="footer-email">${esc(f.email||'')}</div><div class="footer-address">${esc(f.address||settings.business?.office_address||'')}</div></div></div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
     const footerLogo=$('#benvor-footer-logo'); if(footerLogo){footerLogo.addEventListener('error',()=>{footerLogo.src=EMBEDDED_LOGOS.footerLight;},{once:true});}
   }

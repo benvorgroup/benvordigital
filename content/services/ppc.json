@@ -1,15 +1,15 @@
 {
-  "slug": "performance advertising",
+  "slug": "ppc",
   "title": "Performance Advertising",
-  "description": "Target the right audience and maximize ROI.",
+  "description": "Google, Meta, and LinkedIn advertising focused on qualified demand, efficient acquisition, and measurable return.",
   "icon": "cursor",
   "custom_icon": "",
   "link": "/services/",
   "enabled": true,
-  "short_title": "Performance Marketing",
+  "short_title": "Performance Advertising",
   "eyebrow": "Paid Growth",
-  "hero_heading": "Paid media managed around revenue, not vanity metrics.",
-  "hero_text": "Google, Meta, LinkedIn, and conversion tracking brought together in one measurable acquisition system.",
+  "hero_heading": "Performance advertising managed around revenue, not vanity metrics.",
+  "hero_text": "Google, Meta, LinkedIn, conversion tracking, creative testing, and optimisation brought together in one measurable acquisition system.",
   "problems": [
     "Rising acquisition costs",
     "Weak conversion tracking",
@@ -48,8 +48,8 @@
     }
   ],
   "seo": {
-    "title": "Pay-Per-Click Advertising | Benvor Digital",
-    "description": "Target the right audience and maximize ROI."
+    "title": "Performance Advertising | Benvor Digital",
+    "description": "Performance advertising across Google, Meta, and LinkedIn focused on qualified demand, efficient acquisition, and measurable return."
   },
   "cta": {
     "label": "Get a Free Consultation",

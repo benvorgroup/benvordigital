@@ -1,0 +1,7 @@
+BENVOR DIGITAL — LATEST FIXES
+
+1. Homepage hero compacted for laptop/desktop viewport fit below the sticky header.
+2. Short-screen laptop breakpoint added. Tablet and mobile retain natural page height.
+3. LinkedIn and Facebook footer icons are inline SVG in both dynamic and fail-safe HTML.
+4. X and Instagram also use inline SVG for consistency.
+5. Paid advertising service renamed to Performance Advertising, including service data, SEO, and footer navigation.

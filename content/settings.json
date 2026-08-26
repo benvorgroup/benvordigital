@@ -2,11 +2,9 @@
   "brand": {
     "company_name": "Benvor Digital",
     "logo_light": "/assets/branding/benvor-horizontal-light.png",
-    "logo_dark": "/assets/branding/benvor-horizontal-dark.png",
     "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
-    "footer_logo_dark": "/assets/branding/benvor-stacked-dark.png",
     "logo_alt": "Benvor Digital",
-    "favicon": "/assets/images/uploads/benvor-digital-logo-1.png",
+    "favicon": "/favicon.ico",
     "apple_touch_icon": "/assets/favicon/apple-touch-icon.png"
   },
   "navigation": [
@@ -42,30 +40,15 @@
     "enabled": true
   },
   "theme": {
-    "default_mode": "system",
-    "allow_visitor_toggle": true,
-    "light": {
-      "body": "#405266",
-      "primary": "#2563EB",
-      "heading": "#0A1F33",
-      "muted": "#718096",
-      "border": "#E4E8EE",
-      "surface": "#F5F7FA",
-      "background": "#FFFFFF",
-      "card": "#FFFFFF",
-      "navy": "#0A1F33"
-    },
-    "dark": {
-      "body": "#D6E0E8",
-      "primary": "#4D83F7",
-      "heading": "#FFFFFF",
-      "muted": "#AAB8C5",
-      "border": "#254158",
-      "surface": "#0A1F33",
-      "background": "#071625",
-      "card": "#102A42",
-      "navy": "#061421"
-    },
+    "background": "#FFFFFF",
+    "surface": "#F5F7FA",
+    "card": "#FFFFFF",
+    "heading": "#0A1F33",
+    "body": "#405266",
+    "muted": "#718096",
+    "border": "#E4E8EE",
+    "primary": "#2563EB",
+    "navy": "#0A1F33",
     "radius": 14,
     "container_width": 1240,
     "heading_font": "Manrope",
@@ -83,6 +66,10 @@
             "url": "/about/"
           },
           {
+            "label": "Careers",
+            "url": "#"
+          },
+          {
             "label": "Blog",
             "url": "#"
           },
@@ -96,7 +83,7 @@
         "heading": "Services",
         "links": [
           {
-            "label": "SEO/AEO",
+            "label": "SEO",
             "url": "/services/"
           },
           {
@@ -158,12 +145,21 @@
         "url": "https://www.linkedin.com"
       },
       {
+        "label": "X",
+        "url": "https://twitter.com"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com"
+      },
+      {
         "label": "Facebook",
         "url": "https://www.facebook.com"
       }
     ],
     "copyright": "© 2026 Benvor Digital. All rights reserved.",
-    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
+    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
+    "connect_heading": "Let's Connect"
   },
   "seo_defaults": {
     "title_suffix": " | Benvor Digital",
@@ -178,7 +174,6 @@
   "business": {
     "email": "info@benvordigital.com",
     "office_address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
-<<<<<<< HEAD
   },
   "project_detail_labels": {
     "challenge": "Challenge",
@@ -238,7 +233,5 @@
     "lead_form_action": "",
     "growth_audit_action": "",
     "success_message": "Thanks. We’ll review your information and get back to you within one business day."
-=======
->>>>>>> a21ba4708bb81dce1a63dd1310c93596046e750a
   }
 }
