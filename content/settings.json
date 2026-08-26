@@ -6,7 +6,7 @@
     "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
     "footer_logo_dark": "/assets/branding/benvor-stacked-dark.png",
     "logo_alt": "Benvor Digital",
-    "favicon": "/assets/favicon/favicon.ico",
+    "favicon": "/assets/images/uploads/benvor-digital-logo-1.png",
     "apple_touch_icon": "/assets/favicon/apple-touch-icon.png"
   },
   "navigation": [
@@ -45,25 +45,25 @@
     "default_mode": "system",
     "allow_visitor_toggle": true,
     "light": {
-      "background": "#FFFFFF",
-      "surface": "#F5F7FA",
-      "card": "#FFFFFF",
-      "heading": "#0A1F33",
       "body": "#405266",
+      "primary": "#2563EB",
+      "heading": "#0A1F33",
       "muted": "#718096",
       "border": "#E4E8EE",
-      "primary": "#2563EB",
+      "surface": "#F5F7FA",
+      "background": "#FFFFFF",
+      "card": "#FFFFFF",
       "navy": "#0A1F33"
     },
     "dark": {
-      "background": "#071625",
-      "surface": "#0A1F33",
-      "card": "#102A42",
-      "heading": "#FFFFFF",
       "body": "#D6E0E8",
+      "primary": "#4D83F7",
+      "heading": "#FFFFFF",
       "muted": "#AAB8C5",
       "border": "#254158",
-      "primary": "#4D83F7",
+      "surface": "#0A1F33",
+      "background": "#071625",
+      "card": "#102A42",
       "navy": "#061421"
     },
     "radius": 14,
@@ -83,10 +83,6 @@
             "url": "/about/"
           },
           {
-            "label": "Careers",
-            "url": "#"
-          },
-          {
             "label": "Blog",
             "url": "#"
           },
@@ -100,11 +96,11 @@
         "heading": "Services",
         "links": [
           {
-            "label": "SEO",
+            "label": "SEO/AEO",
             "url": "/services/"
           },
           {
-            "label": "PPC Advertising",
+            "label": "Performance Advertising",
             "url": "/services/"
           },
           {
@@ -160,14 +156,6 @@
       {
         "label": "LinkedIn",
         "url": "https://www.linkedin.com"
-      },
-      {
-        "label": "X",
-        "url": "https://twitter.com"
-      },
-      {
-        "label": "Instagram",
-        "url": "https://www.instagram.com"
       },
       {
         "label": "Facebook",
