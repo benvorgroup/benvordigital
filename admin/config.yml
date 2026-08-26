@@ -152,12 +152,20 @@ collections:
             label: Value
             name: value
             widget: number
+        - label: Conversions Panel Label
+          name: conversions_label
+          widget: string
+          default: Conversions
         - label: Conversions
           name: conversions
           widget: string
         - label: Conversion Change
           name: conversion_change
           widget: string
+        - label: Channels Panel Label
+          name: channels_label
+          widget: string
+          default: Top Channels
         - label: Top Channels
           name: channels
           widget: list
@@ -170,6 +178,76 @@ collections:
             widget: number
             min: 0
             max: 100
+      - &id002
+        label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - label: Narrow
+          value: narrow
+        - label: Default
+          value: default
+        - label: Wide
+          value: wide
+        - label: Full Width
+          value: full
+        default: default
+      - &id003
+        label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - &id004
+        label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - &id005
+        label: Section Background
+        name: background
+        widget: select
+        options:
+        - label: Default
+          value: default
+        - label: White
+          value: white
+        - label: Light Grey
+          value: light_grey
+        - label: Navy
+          value: navy
+        - label: Blue
+          value: blue
+        default: default
+      - &id006
+        label: Fix / Sticky Section
+        name: sticky
+        widget: boolean
+        default: false
+      - &id007
+        label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - &id008
+        label: Hide on Tablet / iPad
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - &id009
+        label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
     - label: Trusted Brands + Stats
       name: trust_stats
       widget: object
@@ -199,6 +277,14 @@ collections:
         - label: Label
           name: label
           widget: string
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Services Grid
       name: services_grid
       widget: object
@@ -226,6 +312,14 @@ collections:
         display_fields:
         - title
         multiple: true
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Why Benvor / Feature Columns
       name: why_benvor
       widget: object
@@ -257,6 +351,14 @@ collections:
         - label: Text
           name: text
           widget: text
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Selected Work
       name: selected_work
       widget: object
@@ -292,6 +394,14 @@ collections:
         display_fields:
         - title
         multiple: true
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Portfolio Grid
       name: portfolio_grid
       widget: object
@@ -316,6 +426,14 @@ collections:
         display_fields:
         - title
         multiple: true
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Testimonials Carousel
       name: testimonials
       widget: object
@@ -337,6 +455,14 @@ collections:
         - name
         - company
         multiple: true
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: About Preview
       name: about_preview
       widget: object
@@ -389,6 +515,14 @@ collections:
         - label: Label
           name: label
           widget: string
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Page Hero
       name: page_hero
       widget: object
@@ -405,6 +539,14 @@ collections:
         name: text
         widget: text
         required: false
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Image + Text
       name: image_text
       widget: object
@@ -447,6 +589,14 @@ collections:
           name: url
           widget: string
           required: false
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Stats
       name: stats
       widget: object
@@ -462,6 +612,14 @@ collections:
         - label: Label
           name: label
           widget: string
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Process
       name: process
       widget: object
@@ -487,6 +645,14 @@ collections:
         - label: Text
           name: text
           widget: text
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: FAQ
       name: faq
       widget: object
@@ -509,6 +675,14 @@ collections:
         - label: Answer
           name: answer
           widget: text
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Team
       name: team
       widget: object
@@ -537,6 +711,14 @@ collections:
         - name
         - role
         multiple: true
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Contact Form + Details
       name: contact_split
       widget: object
@@ -602,6 +784,14 @@ collections:
           name: link
           widget: string
           required: false
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Rich Text
       name: rich_text
       widget: object
@@ -618,6 +808,14 @@ collections:
       - label: Body
         name: body
         widget: text
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Gallery
       name: gallery
       widget: object
@@ -638,6 +836,14 @@ collections:
           name: alt
           widget: string
           required: false
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Flexible Cards
       name: flex_cards
       widget: object
@@ -702,6 +908,14 @@ collections:
           name: button_url
           widget: string
           required: false
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: CTA
       name: cta
       widget: object
@@ -724,6 +938,14 @@ collections:
         - label: URL
           name: url
           widget: string
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Divider
       name: divider
       widget: object
@@ -735,6 +957,14 @@ collections:
         options:
         - default
         default: default
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
     - label: Spacer
       name: spacer
       widget: object
@@ -745,6 +975,14 @@ collections:
         min: 0
         max: 240
         default: 40
+      - *id002
+      - *id003
+      - *id004
+      - *id005
+      - *id006
+      - *id007
+      - *id008
+      - *id009
 - name: services
   label: Reusable / Services
   label_singular: Service
@@ -955,14 +1193,8 @@ collections:
       - label: Header Logo — Light
         name: logo_light
         widget: image
-      - label: Header Logo — Dark
-        name: logo_dark
-        widget: image
       - label: Footer Logo — Light
         name: footer_logo_light
-        widget: image
-      - label: Footer Logo — Dark
-        name: footer_logo_dark
         widget: image
       - label: Logo Alt Text
         name: logo_alt
@@ -1003,84 +1235,37 @@ collections:
         name: enabled
         widget: boolean
         default: true
-    - label: Light / Dark Theme
+    - label: Light Theme Design
       name: theme
       widget: object
       fields:
-      - label: Default Visitor Mode
-        name: default_mode
-        widget: select
-        options:
-        - system
-        - light
-        - dark
-        default: system
-      - label: Allow Visitor Toggle
-        name: allow_visitor_toggle
-        widget: boolean
-        default: true
-      - label: Light Theme
-        name: light
-        widget: object
-        fields:
-        - label: Background
-          name: background
-          widget: color
-        - label: Surface
-          name: surface
-          widget: color
-        - label: Card
-          name: card
-          widget: color
-        - label: Heading
-          name: heading
-          widget: color
-        - label: Body
-          name: body
-          widget: color
-        - label: Muted
-          name: muted
-          widget: color
-        - label: Border
-          name: border
-          widget: color
-        - label: Primary Blue
-          name: primary
-          widget: color
-        - label: Navy
-          name: navy
-          widget: color
-      - label: Dark Theme
-        name: dark
-        widget: object
-        fields:
-        - label: Background
-          name: background
-          widget: color
-        - label: Surface
-          name: surface
-          widget: color
-        - label: Card
-          name: card
-          widget: color
-        - label: Heading
-          name: heading
-          widget: color
-        - label: Body
-          name: body
-          widget: color
-        - label: Muted
-          name: muted
-          widget: color
-        - label: Border
-          name: border
-          widget: color
-        - label: Primary Blue
-          name: primary
-          widget: color
-        - label: Navy
-          name: navy
-          widget: color
+      - label: Background
+        name: background
+        widget: color
+      - label: Surface
+        name: surface
+        widget: color
+      - label: Card
+        name: card
+        widget: color
+      - label: Heading
+        name: heading
+        widget: color
+      - label: Body
+        name: body
+        widget: color
+      - label: Muted
+        name: muted
+        widget: color
+      - label: Border
+        name: border
+        widget: color
+      - label: Primary Blue
+        name: primary
+        widget: color
+      - label: Navy
+        name: navy
+        widget: color
       - label: Border Radius
         name: radius
         widget: number
@@ -1146,6 +1331,10 @@ collections:
       - label: Copyright
         name: copyright
         widget: string
+      - label: Social / Connect Heading
+        name: connect_heading
+        widget: string
+        default: Let's Connect
     - label: SEO Defaults
       name: seo_defaults
       widget: object
@@ -1179,3 +1368,19 @@ collections:
       - label: Success Message
         name: success_message
         widget: text
+    - label: Project Detail Labels
+      name: project_detail_labels
+      widget: object
+      fields:
+      - label: Challenge Label
+        name: challenge
+        widget: string
+        default: Challenge
+      - label: Solution Label
+        name: solution
+        widget: string
+        default: Solution
+      - label: Result Label
+        name: result
+        widget: string
+        default: Result

@@ -14,7 +14,15 @@
       "enabled": true,
       "eyebrow": "Selected Work",
       "heading": "Real growth systems. Real business outcomes.",
-      "text": "Explore websites, campaigns, positioning, and acquisition programs designed to move measurable metrics."
+      "text": "Explore websites, campaigns, positioning, and acquisition programs designed to move measurable metrics.",
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "portfolio_grid",
@@ -28,7 +36,15 @@
         "cloudix",
         "brightline",
         "flowua"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "cta",
@@ -38,7 +54,15 @@
       "button": {
         "label": "Start a Project",
         "url": "/contact/"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     }
   ]
 }

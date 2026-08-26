@@ -14,7 +14,15 @@
       "enabled": true,
       "eyebrow": "About Benvor Digital",
       "heading": "Built for brands that expect marketing to perform.",
-      "text": "We combine strategy, creative, technology, and analytics to build growth systems designed around measurable business outcomes."
+      "text": "We combine strategy, creative, technology, and analytics to build growth systems designed around measurable business outcomes.",
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "image_text",
@@ -28,7 +36,15 @@
       "button": {
         "label": "Talk to Our Team",
         "url": "/contact/"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "stats",
@@ -50,7 +66,15 @@
           "value": "Global",
           "label": "Client Base"
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "why_benvor",
@@ -72,7 +96,15 @@
           "title": "One Connected Team",
           "text": "Strategy, creative, media, and measurement work together instead of in silos."
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "team",
@@ -84,7 +116,15 @@
         "alex-morgan",
         "rina-lee",
         "omar-rahman"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "cta",
@@ -94,7 +134,15 @@
       "button": {
         "label": "Start a Conversation",
         "url": "/contact/"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     }
   ]
 }

@@ -14,7 +14,15 @@
       "enabled": true,
       "eyebrow": "Let's Talk",
       "heading": "Tell us what you want to grow.",
-      "text": "Share your goals, challenges, and current marketing setup. We'll respond with the next best step."
+      "text": "Share your goals, challenges, and current marketing setup. We'll respond with the next best step.",
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "contact_split",
@@ -88,7 +96,15 @@
           "value": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
           "link": ""
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "trust_stats",
@@ -117,7 +133,15 @@
           "value": "150+",
           "label": "Projects Delivered"
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "cta",
@@ -127,7 +151,15 @@
       "button": {
         "label": "Get a Free Consultation",
         "url": "mailto:info@benvordigital.com"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     }
   ]
 }

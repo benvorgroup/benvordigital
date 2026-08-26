@@ -14,7 +14,15 @@
       "enabled": true,
       "eyebrow": "Our Services",
       "heading": "End-to-end digital growth, built as one connected system.",
-      "text": "Choose a focused engagement or bring the full growth engine together. Every service is designed to connect strategy, execution, and measurement."
+      "text": "Choose a focused engagement or bring the full growth engine together. Every service is designed to connect strategy, execution, and measurement.",
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "services_grid",
@@ -28,7 +36,15 @@
         "email",
         "web",
         "analytics"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "process",
@@ -56,7 +72,15 @@
           "title": "Optimize",
           "text": "We test, learn, report, and compound what works."
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "why_benvor",
@@ -78,7 +102,15 @@
           "title": "Continuous Optimization",
           "text": "Insights move quickly from reporting into the next test."
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "faq",
@@ -102,7 +134,15 @@
           "question": "Do you work with in-house teams?",
           "answer": "Yes. We often operate as an extension of internal marketing, product, creative, or sales teams."
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     },
     {
       "type": "cta",
@@ -112,7 +152,15 @@
       "button": {
         "label": "Get a Free Consultation",
         "url": "/contact/"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
     }
   ]
 }

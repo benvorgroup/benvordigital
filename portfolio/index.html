@@ -484,13 +484,22 @@ iframe,video,canvas,svg{max-width:100%}
 @media(max-width:600px){
   .brand-logo{min-width:145px;min-height:22px}
 }
+
+/* LIGHT MODE HARD FIX */
+:root,html,body{color-scheme:light!important}.theme-toggle{display:none!important}
+.cms-section-control{width:100%;background:var(--cms-bg,transparent)}
+.cms-section-control>.section,.cms-section-control>.hero,.cms-section-control>.page-hero{padding-top:var(--cms-pt,92px)!important;padding-bottom:var(--cms-pb,92px)!important}
+.cms-section-control .wrap{max-width:var(--cms-section-width,var(--container))!important}.cms-sticky-section{position:sticky;top:74px;z-index:35}.cms-hide-mobile,.cms-hide-tablet,.cms-hide-desktop{display:block}
+@media(max-width:600px){.cms-hide-mobile{display:none!important}}@media(min-width:601px) and (max-width:1024px){.cms-hide-tablet{display:none!important}}@media(min-width:1025px){.cms-hide-desktop{display:none!important}}
+.icon-line{display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;color:#2563EB!important;line-height:0!important}.icon-line svg{display:block!important;width:100%!important;height:100%!important;overflow:visible!important;fill:none!important;stroke:currentColor!important}.icon-line svg path,.icon-line svg circle,.icon-line svg rect,.icon-line svg ellipse,.icon-line svg line,.icon-line svg polyline,.icon-line svg polygon{stroke:currentColor!important}.service-icon-fallback{position:relative;display:inline-flex;width:38px;height:38px}.service-icon-fallback>.icon-line{position:absolute;inset:0}.service-icon-fallback>img.custom-service-icon{position:absolute!important;inset:0!important;width:38px!important;height:38px!important;object-fit:contain!important;background:var(--card)}.site-footer{background:#0A1F33!important}
+@media(prefers-color-scheme:dark){:root{--bg:#FFFFFF!important;--surface:#F5F7FA!important;--card:#FFFFFF!important;--heading:#0A1F33!important;--body:#405266!important;--muted:#718096!important;--border:#E4E8EE!important;--primary:#2563EB!important;--navy:#0A1F33!important;color-scheme:light!important}}
 </style>
-<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC3ElEQVR4nO3WS2yMURTA8f/9vm9mKkGHFlGqbaqpoKohHhOMUlo14lEELULEK0I8I0GCCFGkEo8NEY1VEVIiHqEiYlGLIt7D1KCtaseMvmYmnfnmWrBhQhOR1OI7y5t77/nlnJObK6SUkk4MpTOTGwADYAAMwH8B0H5dGGafTZ/evUhLHcC6ZQtZsGoLveLjWTgrjxdOF+6aOi6dOUrhmm1YrbEAnDiwg5lL17Nk3gweVj3lwrXbaIrgdMleZCTChp3FWLt3ZVFBPisXz/spX1QFvM1N5GbbePrCSaPXR6g9TNFcB6NHZNDa5ufWvUpu3n1AU0srtpGZVFY9weX+SP1nD3X1DZRfr6Di4mk2rV7K9n0lOKvfk5zYl/mzcik+fiaqAlEARah8+uwhvqeViB5BUQWvXW78gSAxFjNFc6ax+9AJPjV4mDx+DGlJSWzcVUxutg1VVUlJ6k9yYgJzpk/G52tG1yO8evOOwydLOXlwZ8cAr+8r8XFWnr16S/WHGvyBIHE9Ymn0+HC63OTnjGeibRTO6lqssd2ZkTeRu5WPcUy1MzNvEo+evWT7vhIKlm8kxz6GGIuZ4UPTybWP5fK1Ox3PwJE9W/F+baH02H4yh6QTCAZpam5DApvXLidlQAI5E8aSmtIfAMcUO8faQ2QOScdiNnPr/CnOll2hwDGF9SsKcbrcJCUmMHRQGmXl16MA4l/9ByQg/uJcVAXCYR0ECASKohAKhzlXESSsK2QkqwghqPHotAUFWakqb+t0nPWCvCyVN7UhbINNPH/fTvYwCyZNRcoIUoKiCHQ9gqapfwb8ukFRVEyaimO0heNX/cSYYGCCRkayyv3nIbJSNRRF0sUMN6r0H3VQMJvUH4mV394NHbRASpBScrQ8gFkT9IsTSAnNfomnRUUVYewZJrytkppGnW5dY6htCPClJcK4wSZysizfk/yhN/9sBv42Ov0pNgAGwAAYAAPwDZV/DbU3pdz9AAAAAElFTkSuQmCC">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC3ElEQVR4nO3WS2yMURTA8f/9vm9mKkGHFlGqbaqpoKohHhOMUlo14lEELULEK0I8I0GCCFGkEo8NEY1VEVIiHqEiYlGLIt7D1KCtaseMvmYmnfnmWrBhQhOR1OI7y5t77/nlnJObK6SUkk4MpTOTGwADYAAMwH8B0H5dGGafTZ/evUhLHcC6ZQtZsGoLveLjWTgrjxdOF+6aOi6dOUrhmm1YrbEAnDiwg5lL17Nk3gweVj3lwrXbaIrgdMleZCTChp3FWLt3ZVFBPisXz/spX1QFvM1N5GbbePrCSaPXR6g9TNFcB6NHZNDa5ufWvUpu3n1AU0srtpGZVFY9weX+SP1nD3X1DZRfr6Di4mk2rV7K9n0lOKvfk5zYl/mzcik+fiaqAlEARah8+uwhvqeViB5BUQWvXW78gSAxFjNFc6ax+9AJPjV4mDx+DGlJSWzcVUxutg1VVUlJ6k9yYgJzpk/G52tG1yO8evOOwydLOXlwZ8cAr+8r8XFWnr16S/WHGvyBIHE9Ymn0+HC63OTnjGeibRTO6lqssd2ZkTeRu5WPcUy1MzNvEo+evWT7vhIKlm8kxz6GGIuZ4UPTybWP5fK1Ox3PwJE9W/F+baH02H4yh6QTCAZpam5DApvXLidlQAI5E8aSmtIfAMcUO8faQ2QOScdiNnPr/CnOll2hwDGF9SsKcbrcJCUmMHRQGmXl16MA4l/9ByQg/uJcVAXCYR0ECASKohAKhzlXESSsK2QkqwghqPHotAUFWakqb+t0nPWCvCyVN7UhbINNPH/fTvYwCyZNRcoIUoKiCHQ9gqapfwb8ukFRVEyaimO0heNX/cSYYGCCRkayyv3nIbJSNRRF0sUMN6r0H3VQMJvUH4mV394NHbRASpBScrQ8gFkT9IsTSAnNfomnRUUVYewZJrytkppGnW5dY6htCPClJcK4wSZysizfk/yhN/9sBv42Ov0pNgAGwAAYAAPwDZV/DbU3pdz9AAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0A1F33">
+<meta name="color-scheme" content="light">
 </head>
 <body data-page="portfolio">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -561,77 +570,29 @@ iframe,video,canvas,svg{max-width:100%}
 
   function initials(name=''){ return name.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase(); }
 
-  function applyTheme(settings, mode){
-    const t=settings.theme?.[mode]||settings.theme?.light||{};
-    const root=document.documentElement;
-    root.dataset.theme=mode;
-    const vars={
-      '--bg':t.background,'--surface':t.surface,'--card':t.card,'--heading':t.heading,'--body':t.body,
-      '--muted':t.muted,'--border':t.border,'--primary':t.primary,'--navy':t.navy,
-      '--radius':`${settings.theme?.radius||14}px`,'--container':`${settings.theme?.container_width||1240}px`
-    };
+  function applyTheme(settings){
+    const t=settings.theme||{}; const root=document.documentElement; root.dataset.theme='light'; root.style.colorScheme='light';
+    const vars={'--bg':t.background,'--surface':t.surface,'--card':t.card,'--heading':t.heading,'--body':t.body,'--muted':t.muted,'--border':t.border,'--primary':t.primary,'--navy':t.navy,'--radius':`${t.radius||14}px`,'--container':`${t.container_width||1240}px`};
     Object.entries(vars).forEach(([k,v])=>v&&root.style.setProperty(k,v));
   }
-  function resolveMode(settings){
-    const stored=localStorage.getItem('benvor-theme');
-    if(stored==='light'||stored==='dark') return stored;
-    const def=settings.theme?.default_mode||'system';
-    if(def==='light'||def==='dark') return def;
-    return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-  }
+  function resolveMode(){return 'light';}
 
   function renderHeader(settings, mode, page){
-    const configuredLogo=mode==='dark'?settings.brand.logo_dark:settings.brand.logo_light;
-    const defaultLogoPath=mode==='dark'?'/assets/branding/benvor-horizontal-dark.png':'/assets/branding/benvor-horizontal-light.png';
-    const logo=(!configuredLogo || configuredLogo===defaultLogoPath)
-      ? (mode==='dark'?EMBEDDED_LOGOS.headerDark:EMBEDDED_LOGOS.headerLight)
-      : configuredLogo;
-    const nav=(settings.navigation||[]).filter(x=>x.enabled!==false).map(x=>{
-      const active=(page==='home'&&x.url==='/')||x.url===`/${page}/`;
-      return `<a class="${active?'active':''}" href="${esc(safeUrl(x.url))}">${esc(x.label)}</a>`;
-    }).join('');
-    const toggle=settings.theme?.allow_visitor_toggle===false?'':`<button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">${mode==='dark'
-      ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
-      :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.5A8 8 0 118.5 4 6.5 6.5 0 0020 15.5z"/></svg>'
-    }</button>`;
-    const c=settings.header_cta||{};
-    $('#site-header').className='site-header';
-    $('#site-header').innerHTML=`<div class="nav-wrap">
-      <a class="brand-logo" href="/"><img id="benvor-header-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"></a>
-      <nav class="desktop-nav">${nav}</nav>
-      <div class="nav-actions">${toggle}${c.enabled!==false?`<a class="btn btn-primary desktop-cta" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}
-      <button id="menu-btn" class="menu-btn" aria-label="Open menu">☰</button></div>
-      <nav id="mobile-menu" class="mobile-menu">${nav}${c.enabled!==false?`<a class="btn btn-primary" style="margin-top:14px" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}</nav>
-    </div>`;
-    const headerLogo=$('#benvor-header-logo');
-    if(headerLogo){
-      headerLogo.addEventListener('error',()=>{
-        headerLogo.src=mode==='dark'?EMBEDDED_LOGOS.headerDark:EMBEDDED_LOGOS.headerLight;
-      },{once:true});
-    }
+    const configuredLogo=settings.brand.logo_light; const defaultLogoPath='/assets/branding/benvor-horizontal-light.png';
+    const logo=(!configuredLogo||configuredLogo===defaultLogoPath)?EMBEDDED_LOGOS.headerLight:configuredLogo;
+    const nav=(settings.navigation||[]).filter(x=>x.enabled!==false).map(x=>{const active=(page==='home'&&x.url==='/')||x.url===`/${page}/`;return `<a class="${active?'active':''}" href="${esc(safeUrl(x.url))}">${esc(x.label)}</a>`}).join('');
+    const c=settings.header_cta||{}; $('#site-header').className='site-header';
+    $('#site-header').innerHTML=`<div class="nav-wrap"><a class="brand-logo" href="/"><img id="benvor-header-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"></a><nav class="desktop-nav">${nav}</nav><div class="nav-actions">${c.enabled!==false?`<a class="btn btn-primary desktop-cta" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}<button id="menu-btn" class="menu-btn" aria-label="Open menu">☰</button></div><nav id="mobile-menu" class="mobile-menu">${nav}${c.enabled!==false?`<a class="btn btn-primary" style="margin-top:14px" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}</nav></div>`;
+    const headerLogo=$('#benvor-header-logo'); if(headerLogo){headerLogo.addEventListener('error',()=>{headerLogo.src=EMBEDDED_LOGOS.headerLight;},{once:true});}
   }
 
   function renderFooter(settings, mode){
-    const f=settings.footer||{};
-    const configuredFooterLogo=mode==='dark'?settings.brand.footer_logo_dark:settings.brand.footer_logo_light;
-    const defaultFooterPath=mode==='dark'?'/assets/branding/benvor-stacked-dark.png':'/assets/branding/benvor-stacked-light.png';
-    const logo=(!configuredFooterLogo || configuredFooterLogo===defaultFooterPath)
-      ? (mode==='dark'?EMBEDDED_LOGOS.footerDark:EMBEDDED_LOGOS.footerLight)
-      : configuredFooterLogo;
-    const groups=(f.groups||[]).map(g=>`<div class="footer-col"><h5>${esc(g.heading)}</h5>${(g.links||[]).map(l=>`<a href="${esc(safeUrl(l.url))}">${esc(l.label)}</a>`).join('')}</div>`).join('');
-    const social=(f.social||[]).map(s=>`<a class="social" href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener">${esc(s.label.slice(0,2))}</a>`).join('');
-    $('#site-footer').className='site-footer';
-    $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid">
-      <div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>
-      ${groups}
-      <div class="footer-col"><h5>Let's Connect</h5><div class="socials">${social}</div><div class="footer-email">${esc(f.email||'')}</div></div>
-    </div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
-    const footerLogo=$('#benvor-footer-logo');
-    if(footerLogo){
-      footerLogo.addEventListener('error',()=>{
-        footerLogo.src=mode==='dark'?EMBEDDED_LOGOS.footerDark:EMBEDDED_LOGOS.footerLight;
-      },{once:true});
-    }
+    const f=settings.footer||{}; const configuredFooterLogo=settings.brand.footer_logo_light; const defaultFooterPath='/assets/branding/benvor-stacked-light.png';
+    const logo=(!configuredFooterLogo||configuredFooterLogo===defaultFooterPath)?EMBEDDED_LOGOS.footerLight:configuredFooterLogo;
+    const groups=(f.groups||[]).map(g=>`<div class="footer-col"><h5>${esc(g.heading||'')}</h5>${(g.links||[]).map(x=>`<a href="${esc(safeUrl(x.url))}">${esc(x.label||'')}</a>`).join('')}</div>`).join('');
+    const socials=(f.social||[]).map(x=>`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener">${esc((x.label||'').slice(0,2))}</a>`).join('');
+    $('#site-footer').className='site-footer'; $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid"><div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>${groups}<div class="footer-col"><h5>${esc(f.connect_heading||"Let's Connect")}</h5><div class="socials">${socials}</div><div class="footer-email">${esc(f.email||'')}</div></div></div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
+    const footerLogo=$('#benvor-footer-logo'); if(footerLogo){footerLogo.addEventListener('error',()=>{footerLogo.src=EMBEDDED_LOGOS.footerLight;},{once:true});}
   }
 
   function renderHero(s){
@@ -651,8 +612,8 @@ iframe,video,canvas,svg{max-width:100%}
           <small class="muted">${esc(d.metric_label||'Revenue')}</small><div class="dash-kpi"><strong>${esc(d.metric_value||'')}</strong><span class="change">${esc(d.metric_change||'')}</span></div>
           <div class="chart-wrap"><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><g stroke="var(--border)" stroke-width="1">${[45,90,135,180].map(y=>`<line x1="0" y1="${y}" x2="${w}" y2="${y}"/>`).join('')}</g><polyline class="chart-line" points="${pts}"/></svg></div>
         </div>
-        <div class="mini-card conversion-card"><small>Conversions</small><strong>${esc(d.conversions||'')}</strong><span class="change">${esc(d.conversion_change||'')}</span><div class="mini-bars">${bars.map(v=>`<i style="height:${v}%"></i>`).join('')}</div></div>
-        <div class="mini-card channel-card"><small>Top Channels</small><div class="donut-row"><div style="position:relative"><div class="donut"></div><span class="donut-label">${esc((channels[0]?.value||72)+'%')}</span></div><div class="channel-list">${channels.map(c=>`<span><b>${esc(c.label)}</b><em>${esc(c.value)}%</em></span>`).join('')}</div></div></div>
+        <div class="mini-card conversion-card"><small>${esc(d.conversions_label||'Conversions')}</small><strong>${esc(d.conversions||'')}</strong><span class="change">${esc(d.conversion_change||'')}</span><div class="mini-bars">${bars.map(v=>`<i style="height:${v}%"></i>`).join('')}</div></div>
+        <div class="mini-card channel-card"><small>${esc(d.channels_label||'Top Channels')}</small><div class="donut-row"><div style="position:relative"><div class="donut"></div><span class="donut-label">${esc((channels[0]?.value||72)+'%')}</span></div><div class="channel-list">${channels.map(c=>`<span><b>${esc(c.label)}</b><em>${esc(c.value)}%</em></span>`).join('')}</div></div></div>
       </div>
     </div></section>`;
   }
@@ -664,7 +625,7 @@ iframe,video,canvas,svg{max-width:100%}
   }
   async function renderServices(s){
     const items=await relation('services',s.services);
-    return `<section class="section reveal"><div class="wrap"><div class="section-head center">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}<h2>${esc(s.heading||'Our Services')}</h2><p class="lead">${esc(s.text||'')}</p></div><div class="services-grid">${items.map(x=>`<a class="service-card" href="${esc(safeUrl(x.link||'/services/'))}">${x.custom_icon?`<img class="icon-line" src="${esc(safeUrl(x.custom_icon))}" alt="">`:icon(x.icon)}<h3>${esc(x.title)}</h3><p>${esc(x.description)}</p></a>`).join('')}</div></div></section>`;
+    return `<section class="section reveal"><div class="wrap"><div class="section-head center">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}<h2>${esc(s.heading||'Our Services')}</h2><p class="lead">${esc(s.text||'')}</p></div><div class="services-grid">${items.map(x=>`<a class="service-card" href="${esc(safeUrl(x.link||'/services/'))}">${x.custom_icon?`<span class="service-icon-fallback">${icon(x.icon)}<img class="icon-line custom-service-icon" src="${esc(safeUrl(x.custom_icon))}" alt="" onerror="this.style.display='none'"></span>`:icon(x.icon)}<h3>${esc(x.title)}</h3><p>${esc(x.description)}</p></a>`).join('')}</div></div></section>`;
   }
   function renderWhy(s){
     return `<section class="section reveal"><div class="wrap"><div class="section-head center"><h2>${esc(s.heading||'Why Benvor Digital?')}</h2></div><div class="why-grid">${(s.items||[]).map(x=>`<div class="why-item">${icon(x.icon)}<div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div></div>`).join('')}</div></div></section>`;
@@ -736,7 +697,7 @@ iframe,video,canvas,svg{max-width:100%}
     return `<section class="section reveal"><div class="wrap"><div class="section-head">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}${s.heading?`<h2>${esc(s.heading)}</h2>`:''}<p class="lead">${esc(s.text||'')}</p></div><div class="flex-cards" style="--cols:${cols}">${(s.items||[]).map(x=>`<article class="flex-card">${x.image?`<img src="${esc(safeUrl(x.image))}" alt="${esc(x.image_alt||'')}">`:''}${x.icon?icon(x.icon):''}<h3>${esc(x.title||'')}</h3><p class="muted" style="font-size:.76rem;margin-top:8px">${esc(x.text||'')}</p>${x.button_label?`<a class="text-link" style="display:inline-block;margin-top:12px" href="${esc(safeUrl(x.button_url||'#'))}">${esc(x.button_label)} →</a>`:''}</article>`).join('')}</div></div></section>`;
   }
 
-  async function renderSection(s, settings){
+  async function renderSectionRaw(s, settings){
     if(!s || s.enabled===false) return '';
     switch(s.type){
       case 'hero_dashboard': return renderHero(s);
@@ -764,17 +725,16 @@ iframe,video,canvas,svg{max-width:100%}
     }
   }
 
+  function sectionControlClass(s){const c=[];if(s.sticky)c.push('cms-sticky-section');if(s.hide_mobile)c.push('cms-hide-mobile');if(s.hide_tablet)c.push('cms-hide-tablet');if(s.hide_desktop)c.push('cms-hide-desktop');return c.join(' ');}
+  function sectionControlStyle(s){const z=[];const widths={narrow:'860px',default:'var(--container)',wide:'1440px',full:'100%'};if(s.container_width&&widths[s.container_width])z.push(`--cms-section-width:${widths[s.container_width]}`);const spaces={none:'0px',small:'36px',default:'92px',large:'132px'};if(s.padding_top&&spaces[s.padding_top])z.push(`--cms-pt:${spaces[s.padding_top]}`);if(s.padding_bottom&&spaces[s.padding_bottom])z.push(`--cms-pb:${spaces[s.padding_bottom]}`);const bg={default:'',white:'#FFFFFF',light_grey:'#F5F7FA',navy:'#0A1F33',blue:'#2563EB'};if(s.background&&bg[s.background])z.push(`--cms-bg:${bg[s.background]}`);return z.join(';');}
+  function applySectionControls(html,s){if(!html)return html;return `<div class="cms-section-control ${sectionControlClass(s)}" style="${sectionControlStyle(s)}">${html}</div>`;}
+
+  async function renderSection(s, settings){const html=await renderSectionRaw(s,settings);return applySectionControls(html,s);}
+
   function bindInteractions(settings){
     const menu=$('#menu-btn'), panel=$('#mobile-menu'), overlay=$('#mobile-overlay');
     if(menu&&panel){menu.onclick=()=>{panel.classList.toggle('open');overlay.classList.toggle('open')}}
     if(overlay){overlay.onclick=()=>{panel?.classList.remove('open');overlay.classList.remove('open')}}
-    const toggle=$('#theme-toggle');
-    if(toggle) toggle.onclick=()=>{
-      const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
-      localStorage.setItem('benvor-theme',next); applyTheme(settings,next);
-      const page=document.body.dataset.page==='custom'?(new URLSearchParams(location.search).get('slug')||'home'):document.body.dataset.page;
-      renderHeader(settings,next,page); renderFooter(settings,next); bindInteractions(settings);
-    };
     $$('.faq-q').forEach(q=>q.onclick=()=>{const item=q.closest('.faq-item'),a=$('.faq-a',item);const open=item.classList.toggle('open');a.style.maxHeight=open?a.scrollHeight+'px':'0'});
     $$('.filter').forEach(b=>b.onclick=()=>{$$('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.project-card').forEach(c=>c.style.display=b.dataset.filter==='All'||c.dataset.category===b.dataset.filter?'':'none')});
     $$('.contact-form').forEach(form=>form.onsubmit=e=>{
@@ -820,7 +780,7 @@ iframe,video,canvas,svg{max-width:100%}
     const p=await getJSON(`/content/projects/${encodeURIComponent(slug||'')}.json`);
     renderHeader(settings,mode,'portfolio');renderFooter(settings,mode);
     $('#main').innerHTML=`<section class="project-hero reveal"><div class="wrap project-hero-grid"><div><span class="eyebrow">${esc(p.category)}</span><h1>${esc(p.title)}</h1><p class="lead">${esc(p.description)}</p><div class="project-metrics-large">${(p.metrics||[]).map(m=>`<div class="big-metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></div>`).join('')}</div></div><img src="${esc(safeUrl(p.image))}" alt="${esc(p.image_alt||p.title)}"></div></section>
-      <section class="section"><div class="wrap case-grid"><div class="case-block"><h3>Challenge</h3><p>${esc(p.challenge||'')}</p></div><div class="case-block"><h3>Solution</h3><p>${esc(p.solution||'')}</p></div><div class="case-block"><h3>Result</h3><p>${esc(p.result||'')}</p></div></div></section>
+      <section class="section"><div class="wrap case-grid"><div class="case-block"><h3>${esc(settings.project_detail_labels?.challenge||'Challenge')}</h3><p>${esc(p.challenge||'')}</p></div><div class="case-block"><h3>${esc(settings.project_detail_labels?.solution||'Solution')}</h3><p>${esc(p.solution||'')}</p></div><div class="case-block"><h3>${esc(settings.project_detail_labels?.result||'Result')}</h3><p>${esc(p.result||'')}</p></div></div></section>
       ${renderCTA({heading:'Ready to build the next result?',text:'Let’s talk about the growth opportunity in front of your business.',button:{label:'Start a Project',url:'/contact/'}})}`;
     document.title=`${p.title} | Benvor Digital`; bindInteractions(settings);
   }
@@ -828,7 +788,7 @@ iframe,video,canvas,svg{max-width:100%}
   async function init(){
     try{
       const settings=await getJSON('/content/settings.json');
-      const mode=resolveMode(settings);applyTheme(settings,mode);
+      const mode='light';applyTheme(settings);
       const bodyPage=document.body.dataset.page||'home';
       if(bodyPage==='project'){await renderProject(settings,mode);return}
       let slug=bodyPage;

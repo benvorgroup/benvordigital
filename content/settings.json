@@ -2,9 +2,7 @@
   "brand": {
     "company_name": "Benvor Digital",
     "logo_light": "/assets/branding/benvor-horizontal-light.png",
-    "logo_dark": "/assets/branding/benvor-horizontal-dark.png",
     "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
-    "footer_logo_dark": "/assets/branding/benvor-stacked-dark.png",
     "logo_alt": "Benvor Digital",
     "favicon": "/assets/favicon/favicon.ico",
     "apple_touch_icon": "/assets/favicon/apple-touch-icon.png"
@@ -42,30 +40,15 @@
     "enabled": true
   },
   "theme": {
-    "default_mode": "system",
-    "allow_visitor_toggle": true,
-    "light": {
-      "background": "#FFFFFF",
-      "surface": "#F5F7FA",
-      "card": "#FFFFFF",
-      "heading": "#0A1F33",
-      "body": "#405266",
-      "muted": "#718096",
-      "border": "#E4E8EE",
-      "primary": "#2563EB",
-      "navy": "#0A1F33"
-    },
-    "dark": {
-      "background": "#071625",
-      "surface": "#0A1F33",
-      "card": "#102A42",
-      "heading": "#FFFFFF",
-      "body": "#D6E0E8",
-      "muted": "#AAB8C5",
-      "border": "#254158",
-      "primary": "#4D83F7",
-      "navy": "#061421"
-    },
+    "background": "#FFFFFF",
+    "surface": "#F5F7FA",
+    "card": "#FFFFFF",
+    "heading": "#0A1F33",
+    "body": "#405266",
+    "muted": "#718096",
+    "border": "#E4E8EE",
+    "primary": "#2563EB",
+    "navy": "#0A1F33",
     "radius": 14,
     "container_width": 1240,
     "heading_font": "Manrope",
@@ -175,7 +158,8 @@
       }
     ],
     "copyright": "© 2026 Benvor Digital. All rights reserved.",
-    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
+    "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
+    "connect_heading": "Let's Connect"
   },
   "seo_defaults": {
     "title_suffix": " | Benvor Digital",
@@ -190,5 +174,10 @@
   "business": {
     "email": "info@benvordigital.com",
     "office_address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022"
+  },
+  "project_detail_labels": {
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result"
   }
 }
