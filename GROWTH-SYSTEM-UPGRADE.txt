@@ -1,0 +1,37 @@
+BENVOR DIGITAL — GROWTH SYSTEM UPGRADE
+
+Added without removing the existing ULTIMATE HARDFIX:
+
+1. Reusable service-detail pages
+   /service/?slug=seo
+   /service/?slug=ppc
+   etc.
+
+2. Stronger case-study CMS
+   Optional result metrics, client logo, gallery, testimonial, project URL, SEO.
+
+3. Insights / Blog CMS
+   /blog/
+   /insight/?slug=ARTICLE-SLUG
+
+4. Landing-page builder
+   /landing/?slug=LANDING-SLUG
+   Uses the same page-builder section blocks as normal pages.
+
+5. Advanced SEO
+   Canonical URL, OG fields, noindex, schema type, robots.txt, sitemap.xml.
+
+6. Measurement controls
+   GA4 and GTM IDs are editable under Website Settings.
+
+7. Business structured data
+   Benvor Sydney address and info@benvordigital.com are used for ProfessionalService schema.
+
+8. Accessibility and performance
+   Focus states, reduced-motion support, semantic content, responsive layouts.
+
+9. Existing hard fixes preserved
+   Light mode only, embedded logo/favicons, inline icons, 10+ years, SEO and AEO.
+
+DEPLOYMENT
+Upload EVERYTHING inside this package to the root of benvorgroup/benvordigital, replacing the old website files. Do not merge only selected files.

@@ -5,5 +5,55 @@
   "icon": "cursor",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "Performance Marketing",
+  "eyebrow": "Paid Growth",
+  "hero_heading": "Paid media managed around revenue, not vanity metrics.",
+  "hero_text": "Google, Meta, LinkedIn, and conversion tracking brought together in one measurable acquisition system.",
+  "problems": [
+    "Rising acquisition costs",
+    "Weak conversion tracking",
+    "Campaigns optimized to platform metrics instead of business outcomes"
+  ],
+  "deliverables": [
+    "Account and tracking audit",
+    "Campaign architecture",
+    "Creative and offer testing",
+    "Landing-page recommendations",
+    "Budget and bid optimization",
+    "Weekly performance reporting"
+  ],
+  "process": [
+    {
+      "title": "Measure",
+      "text": "Validate conversion tracking and commercial targets."
+    },
+    {
+      "title": "Structure",
+      "text": "Build campaigns around audience intent and economics."
+    },
+    {
+      "title": "Launch",
+      "text": "Deploy creative, offers, audiences, and landing paths."
+    },
+    {
+      "title": "Optimize",
+      "text": "Shift budget toward profitable segments and tests."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Which platforms do you manage?",
+      "answer": "The service can cover Google Ads, Meta Ads, LinkedIn Ads, and other relevant paid channels based on the audience and funnel."
+    }
+  ],
+  "seo": {
+    "title": "Pay-Per-Click Advertising | Benvor Digital",
+    "description": "Target the right audience and maximize ROI."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

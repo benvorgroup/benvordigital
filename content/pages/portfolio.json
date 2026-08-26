@@ -6,7 +6,13 @@
   "show_footer": true,
   "seo": {
     "title": "Selected Work | Benvor Digital",
-    "description": "See digital growth work across SaaS, ecommerce, fintech, and service businesses."
+    "description": "See digital growth work across SaaS, ecommerce, fintech, and service businesses.",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "noindex": false,
+    "schema_type": "WebPage"
   },
   "sections": [
     {

@@ -6,7 +6,13 @@
   "show_footer": true,
   "seo": {
     "title": "Contact Benvor Digital",
-    "description": "Tell Benvor Digital what you want to grow and we'll help identify the next best move."
+    "description": "Tell Benvor Digital what you want to grow and we'll help identify the next best move.",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "noindex": false,
+    "schema_type": "WebPage"
   },
   "sections": [
     {

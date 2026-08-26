@@ -5,5 +5,50 @@
   "icon": "chart",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "Analytics & Tracking",
+  "eyebrow": "Measurement",
+  "hero_heading": "Know what is working, what is not, and what to do next.",
+  "hero_text": "GA4, GTM, conversion tracking, dashboards, and reporting aligned to the metrics that matter commercially.",
+  "problems": [
+    "Missing or duplicated conversions",
+    "Different platforms report different answers",
+    "Marketing reports are disconnected from decisions"
+  ],
+  "deliverables": [
+    "Measurement plan",
+    "GA4 configuration",
+    "GTM implementation",
+    "Ad-platform conversion tracking",
+    "Dashboard and reporting framework",
+    "Data-quality QA"
+  ],
+  "process": [
+    {
+      "title": "Define",
+      "text": "Agree on events, conversions, and business KPIs."
+    },
+    {
+      "title": "Implement",
+      "text": "Configure tags, events, and platform integrations."
+    },
+    {
+      "title": "Validate",
+      "text": "Test data quality across devices and journeys."
+    },
+    {
+      "title": "Report",
+      "text": "Turn measurement into clear actions."
+    }
+  ],
+  "faq": [],
+  "seo": {
+    "title": "Analytics & Reporting | Benvor Digital",
+    "description": "Data-driven insights for smarter decisions."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

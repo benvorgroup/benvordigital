@@ -5,5 +5,50 @@
   "icon": "window",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "Web Design",
+  "eyebrow": "Digital Experience",
+  "hero_heading": "Websites designed to explain, persuade, and convert.",
+  "hero_text": "Fast, responsive digital experiences that connect positioning, UX, content, and measurement.",
+  "problems": [
+    "Outdated user experience",
+    "Slow or difficult mobile experience",
+    "Traffic arrives but does not convert"
+  ],
+  "deliverables": [
+    "UX and information architecture",
+    "Responsive UI design",
+    "Conversion-focused copy structure",
+    "Development and QA",
+    "Analytics implementation",
+    "CMS handover"
+  ],
+  "process": [
+    {
+      "title": "Discover",
+      "text": "Clarify audiences, offers, journeys, and goals."
+    },
+    {
+      "title": "Structure",
+      "text": "Map pages and conversion paths."
+    },
+    {
+      "title": "Design",
+      "text": "Build the visual and interaction system."
+    },
+    {
+      "title": "Launch",
+      "text": "Develop, test, measure, and improve."
+    }
+  ],
+  "faq": [],
+  "seo": {
+    "title": "Website Design & Development | Benvor Digital",
+    "description": "Modern, fast, and conversion-focused websites."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

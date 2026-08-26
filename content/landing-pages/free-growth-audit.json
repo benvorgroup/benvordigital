@@ -1,0 +1,79 @@
+{
+  "slug": "free-growth-audit",
+  "title": "Free Growth Audit",
+  "published": true,
+  "seo": {
+    "title": "Free Digital Growth Audit | Benvor Digital",
+    "description": "Get a focused review of the highest-leverage opportunities in your digital growth system."
+  },
+  "sections": [
+    {
+      "type": "page_hero",
+      "enabled": true,
+      "eyebrow": "Free Growth Audit",
+      "heading": "Find the highest-leverage opportunities in your growth system.",
+      "text": "We will review your website, acquisition channels, measurement, and conversion journey and identify the next most valuable actions.",
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "min_height": "auto",
+      "vertical_align": "start",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
+    },
+    {
+      "type": "flex_cards",
+      "enabled": true,
+      "heading": "What we review",
+      "text": "A focused assessment built around commercial impact.",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Acquisition",
+          "text": "Paid and organic visibility, targeting, offers, and channel fit."
+        },
+        {
+          "title": "Conversion",
+          "text": "Landing experience, messaging, friction, and calls to action."
+        },
+        {
+          "title": "Measurement",
+          "text": "GA4, GTM, conversions, attribution, and reporting quality."
+        }
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "min_height": "auto",
+      "vertical_align": "start",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
+    },
+    {
+      "type": "cta",
+      "enabled": true,
+      "heading": "Ready for a clearer growth roadmap?",
+      "text": "Tell us where you want to grow and we will identify the strongest first move.",
+      "button": {
+        "label": "Request Your Audit",
+        "url": "/contact/"
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "min_height": "auto",
+      "vertical_align": "start",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false
+    }
+  ]
+}

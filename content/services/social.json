@@ -5,5 +5,50 @@
   "icon": "chat",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "Social Media",
+  "eyebrow": "Brand Demand",
+  "hero_heading": "Social content built to earn attention and support growth.",
+  "hero_text": "A strategic social system connecting content, community, paid amplification, and measurable business goals.",
+  "problems": [
+    "Inconsistent publishing",
+    "Low engagement with target buyers",
+    "Content disconnected from campaigns"
+  ],
+  "deliverables": [
+    "Channel strategy",
+    "Content pillars",
+    "Creative production plan",
+    "Publishing calendar",
+    "Community workflows",
+    "Performance reporting"
+  ],
+  "process": [
+    {
+      "title": "Position",
+      "text": "Define audiences, voice, and content territories."
+    },
+    {
+      "title": "Plan",
+      "text": "Build repeatable formats and campaign moments."
+    },
+    {
+      "title": "Publish",
+      "text": "Create and distribute content consistently."
+    },
+    {
+      "title": "Learn",
+      "text": "Use performance signals to sharpen the next cycle."
+    }
+  ],
+  "faq": [],
+  "seo": {
+    "title": "Social Media Marketing | Benvor Digital",
+    "description": "Build brand awareness and engage your audience."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

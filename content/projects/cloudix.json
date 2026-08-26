@@ -21,5 +21,14 @@
   ],
   "challenge": "The product was powerful but difficult to explain quickly.",
   "solution": "We simplified the positioning, visual system, and product storytelling.",
-  "result": "More visitors progressed from product exploration to trial."
+  "result": "More visitors progressed from product exploration to trial.",
+  "client_logo": "",
+  "gallery": [],
+  "testimonial": "",
+  "project_url": "",
+  "seo": {
+    "title": "Cloudix Platform | Benvor Digital",
+    "description": "A cleaner product story and launch website for an infrastructure platform."
+  },
+  "show_metrics": true
 }

@@ -6,7 +6,13 @@
   "show_footer": true,
   "seo": {
     "title": "About Benvor Digital",
-    "description": "Meet the strategy, creative, and analytics team behind Benvor Digital."
+    "description": "Meet the strategy, creative, and analytics team behind Benvor Digital.",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "noindex": false,
+    "schema_type": "WebPage"
   },
   "sections": [
     {

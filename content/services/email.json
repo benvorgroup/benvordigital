@@ -5,5 +5,50 @@
   "icon": "mail",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "Email Automation",
+  "eyebrow": "Lifecycle Growth",
+  "hero_heading": "Turn more leads and customers into repeat revenue.",
+  "hero_text": "Lifecycle email journeys designed around segmentation, behavior, conversion, and retention.",
+  "problems": [
+    "Leads go cold after acquisition",
+    "One-size-fits-all newsletters",
+    "No lifecycle automation"
+  ],
+  "deliverables": [
+    "Lifecycle strategy",
+    "Segmentation plan",
+    "Automated journeys",
+    "Campaign templates",
+    "Copy and testing framework",
+    "Performance reporting"
+  ],
+  "process": [
+    {
+      "title": "Map",
+      "text": "Identify the highest-value lifecycle moments."
+    },
+    {
+      "title": "Segment",
+      "text": "Group audiences around behavior and intent."
+    },
+    {
+      "title": "Automate",
+      "text": "Build journeys that move people to the next action."
+    },
+    {
+      "title": "Improve",
+      "text": "Test messaging, timing, and offers continuously."
+    }
+  ],
+  "faq": [],
+  "seo": {
+    "title": "Email Marketing Automation | Benvor Digital",
+    "description": "Nurture leads and drive repeat business."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

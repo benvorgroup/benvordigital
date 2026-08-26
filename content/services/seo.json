@@ -5,5 +5,59 @@
   "icon": "search",
   "custom_icon": "",
   "link": "/services/",
-  "enabled": true
+  "enabled": true,
+  "short_title": "SEO & AEO",
+  "eyebrow": "Organic Growth",
+  "hero_heading": "SEO and AEO built for discoverability wherever customers search.",
+  "hero_text": "Build durable organic visibility across traditional search engines and answer-driven discovery experiences with a strategy grounded in technical quality, content authority, and conversion intent.",
+  "problems": [
+    "Low visibility for high-intent searches",
+    "Content that attracts traffic but not pipeline",
+    "Technical issues limiting crawlability and performance"
+  ],
+  "deliverables": [
+    "Technical SEO audit and roadmap",
+    "Keyword and intent architecture",
+    "AEO-ready content structure",
+    "On-page optimization",
+    "Content briefs and authority planning",
+    "GA4/Search Console reporting"
+  ],
+  "process": [
+    {
+      "title": "Audit",
+      "text": "Identify technical, content, authority, and conversion gaps."
+    },
+    {
+      "title": "Map",
+      "text": "Prioritize topics and search journeys by business value."
+    },
+    {
+      "title": "Build",
+      "text": "Improve pages, content, schema, and internal linking."
+    },
+    {
+      "title": "Compound",
+      "text": "Measure performance and expand what earns visibility."
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is AEO?",
+      "answer": "Answer Engine Optimization structures useful, authoritative content so it can be understood and surfaced in answer-driven search experiences as well as traditional search."
+    },
+    {
+      "question": "How long does SEO take?",
+      "answer": "Timelines vary by competition and starting point, but the program is designed around measurable leading indicators before rankings and pipeline compound."
+    }
+  ],
+  "seo": {
+    "title": "SEO and AEO | Benvor Digital",
+    "description": "Rank higher, improve answer-engine visibility, get found, and grow qualified organic traffic."
+  },
+  "cta": {
+    "label": "Get a Free Consultation",
+    "url": "/contact/"
+  },
+  "detail_enabled": true
 }

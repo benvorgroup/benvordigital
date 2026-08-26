@@ -54,6 +54,35 @@ collections:
       name: description
       widget: text
       required: false
+    - label: Canonical URL
+      name: canonical_url
+      widget: string
+      required: false
+    - label: Open Graph Title
+      name: og_title
+      widget: string
+      required: false
+    - label: Open Graph Description
+      name: og_description
+      widget: text
+      required: false
+    - label: Open Graph Image
+      name: og_image
+      widget: image
+      required: false
+    - label: Noindex / Hide from Search
+      name: noindex
+      widget: boolean
+      default: false
+    - label: Schema Type
+      name: schema_type
+      widget: select
+      options:
+      - WebPage
+      - AboutPage
+      - ContactPage
+      - CollectionPage
+      default: WebPage
   - label: Page Sections
     name: sections
     widget: list
@@ -1056,6 +1085,781 @@ collections:
       - *id009
       - *id010
       - *id011
+    - label: Hero + Lead Form
+      name: hero_lead_form
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Primary Button
+        name: primary_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Secondary Button
+        name: secondary_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Form Heading
+        name: form_heading
+        widget: string
+      - label: Form Text
+        name: form_text
+        widget: text
+      - label: Form Fields
+        name: form_fields
+        widget: list
+        fields:
+        - label: Type
+          name: type
+          widget: select
+          options:
+          - text
+          - email
+          - url
+          - select
+        - label: Name
+          name: name
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+        - label: Placeholder
+          name: placeholder
+          widget: string
+          required: false
+        - label: Required
+          name: required
+          widget: boolean
+          default: false
+        - label: Options
+          name: options
+          widget: list
+          required: false
+          field:
+            label: Option
+            name: option
+            widget: string
+      - label: Submit Label
+        name: submit_label
+        widget: string
+      - label: Trust Note
+        name: trust_note
+        widget: string
+        required: false
+      - label: Stats
+        name: stats
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          options:
+          - trend
+          - users
+          - globe
+          - chart
+          - target
+          - shield
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Problem-Based Navigation
+      name: problem_nav
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Problems
+        name: items
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          options:
+          - users
+          - trend
+          - search
+          - chart
+          - window
+          - target
+          - database
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+        - label: Button Label
+          name: button_label
+          widget: string
+        - label: Button URL
+          name: button_url
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Agency Comparison
+      name: comparison
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Left Heading
+        name: left_heading
+        widget: string
+      - label: Right Heading
+        name: right_heading
+        widget: string
+      - label: Rows
+        name: rows
+        widget: list
+        fields:
+        - label: Traditional / Left
+          name: left
+          widget: string
+        - label: Benvor / Right
+          name: right
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Interactive Growth Score
+      name: growth_score
+      widget: object
+      fields:
+      - label: Section ID
+        name: section_id
+        widget: string
+        default: growth-audit
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Questions
+        name: questions
+        widget: list
+        fields:
+        - label: Type
+          name: type
+          widget: select
+          options:
+          - select
+          - checkboxes
+          - url
+          - email
+          - text
+        - label: Name
+          name: name
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+        - label: Placeholder
+          name: placeholder
+          widget: string
+          required: false
+        - label: Required
+          name: required
+          widget: boolean
+          default: false
+        - label: Options
+          name: options
+          widget: list
+          required: false
+          field:
+            label: Option
+            name: option
+            widget: string
+      - label: Submit Label
+        name: submit_label
+        widget: string
+      - label: Success Heading
+        name: success_heading
+        widget: string
+      - label: Success Text
+        name: success_text
+        widget: text
+      - label: Booking Heading
+        name: booking_heading
+        widget: string
+      - label: Booking Text
+        name: booking_text
+        widget: text
+      - label: Booking Button
+        name: booking_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Local Credibility
+      name: local_credibility
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Address
+        name: address
+        widget: text
+      - label: Email
+        name: email
+        widget: string
+      - label: Button
+        name: button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Dual Lead CTA
+      name: dual_cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Primary / High Intent
+        name: primary
+        widget: object
+        fields:
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+        - label: Button Label
+          name: button_label
+          widget: string
+        - label: Button URL
+          name: button_url
+          widget: string
+      - label: Secondary / Medium Intent
+        name: secondary
+        widget: object
+        fields:
+        - label: Eyebrow
+          name: eyebrow
+          widget: string
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+        - label: Button Label
+          name: button_label
+          widget: string
+        - label: Button URL
+          name: button_url
+          widget: string
+      - label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - narrow
+        - default
+        - wide
+        - full
+        default: default
+      - label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - label: Minimum Height
+        name: min_height
+        widget: select
+        options:
+        - auto
+        - small
+        - medium
+        - large
+        - screen
+        default: auto
+      - label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - label: Background
+        name: background
+        widget: select
+        options:
+        - default
+        - white
+        - light_grey
+        - navy
+        - blue
+        default: default
+      - label: Sticky / Fixed
+        name: sticky
+        widget: boolean
+        default: false
+      - label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - label: Hide on Tablet
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
 - name: services
   label: Reusable / Services
   label_singular: Service
@@ -1106,6 +1910,86 @@ collections:
     name: link
     widget: string
     required: false
+  - label: Service Detail Page Enabled
+    name: detail_enabled
+    widget: boolean
+    default: true
+  - label: Short Display Title
+    name: short_title
+    widget: string
+    required: false
+  - label: Page Eyebrow
+    name: eyebrow
+    widget: string
+    required: false
+  - label: Detail Page Hero Heading
+    name: hero_heading
+    widget: string
+    required: false
+  - label: Detail Page Hero Text
+    name: hero_text
+    widget: text
+    required: false
+  - label: Problems This Solves
+    name: problems
+    widget: list
+    required: false
+    field:
+      label: Problem
+      name: problem
+      widget: string
+  - label: Deliverables
+    name: deliverables
+    widget: list
+    required: false
+    field:
+      label: Deliverable
+      name: deliverable
+      widget: string
+  - label: Process
+    name: process
+    widget: list
+    required: false
+    fields:
+    - label: Title
+      name: title
+      widget: string
+    - label: Text
+      name: text
+      widget: text
+  - label: FAQs
+    name: faq
+    widget: list
+    required: false
+    fields:
+    - label: Question
+      name: question
+      widget: string
+    - label: Answer
+      name: answer
+      widget: text
+  - label: Service SEO
+    name: seo
+    widget: object
+    fields:
+    - label: SEO Title
+      name: title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: description
+      widget: text
+      required: false
+  - label: Detail Page CTA
+    name: cta
+    widget: object
+    fields:
+    - label: Label
+      name: label
+      widget: string
+    - label: URL
+      name: url
+      widget: string
 - name: projects
   label: Reusable / Portfolio Projects
   label_singular: Project
@@ -1173,6 +2057,42 @@ collections:
     name: result
     widget: text
     required: false
+  - label: Client Logo
+    name: client_logo
+    widget: image
+    required: false
+  - label: Show Result Metrics
+    name: show_metrics
+    widget: boolean
+    default: true
+  - label: Project Gallery
+    name: gallery
+    widget: list
+    required: false
+    field:
+      label: Image
+      name: image
+      widget: image
+  - label: Client Testimonial
+    name: testimonial
+    widget: text
+    required: false
+  - label: Project / Live URL
+    name: project_url
+    widget: string
+    required: false
+  - label: Case Study SEO
+    name: seo
+    widget: object
+    fields:
+    - label: SEO Title
+      name: title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: description
+      widget: text
+      required: false
 - name: testimonials
   label: Reusable / Testimonials
   label_singular: Testimonial
@@ -1486,3 +2406,1279 @@ collections:
       - label: Carousel Next Label
         name: carousel_next
         widget: string
+    - label: Analytics & Tracking
+      name: tracking
+      widget: object
+      fields:
+      - label: GA4 Measurement ID
+        name: ga4_measurement_id
+        widget: string
+        required: false
+      - label: Google Tag Manager Container ID
+        name: gtm_container_id
+        widget: string
+        required: false
+      - label: Meta Pixel ID
+        name: meta_pixel_id
+        widget: string
+        required: false
+    - label: Business Schema
+      name: schema
+      widget: object
+      fields:
+      - label: Business Name
+        name: business_name
+        widget: string
+      - label: Schema Business Type
+        name: business_type
+        widget: string
+      - label: Website
+        name: website
+        widget: string
+      - label: Email
+        name: email
+        widget: string
+      - label: Full Address
+        name: address
+        widget: text
+      - label: Locality
+        name: locality
+        widget: string
+      - label: Region
+        name: region
+        widget: string
+      - label: Postal Code
+        name: postal_code
+        widget: string
+      - label: Country
+        name: country
+        widget: string
+    - label: Safe Design Controls
+      name: design
+      widget: object
+      fields:
+      - label: Button Radius
+        name: button_radius
+        widget: number
+        min: 0
+        max: 30
+      - label: Card Radius
+        name: card_radius
+        widget: number
+        min: 0
+        max: 40
+      - label: Default Section Spacing
+        name: section_spacing
+        widget: number
+        min: 40
+        max: 160
+      - label: Max Content Width
+        name: max_content_width
+        widget: number
+        min: 900
+        max: 1500
+      - label: Motion
+        name: motion
+        widget: select
+        options:
+        - none
+        - subtle
+        default: subtle
+    - label: Global Interface Labels
+      name: labels
+      widget: object
+      fields:
+      - label: Challenge Label
+        name: challenge
+        widget: string
+      - label: Solution Label
+        name: solution
+        widget: string
+      - label: Result Label
+        name: result
+        widget: string
+      - label: Case Study Link
+        name: read_case_study
+        widget: string
+      - label: Article Link
+        name: read_article
+        widget: string
+      - label: Back to Blog
+        name: back_to_blog
+        widget: string
+    - label: Lead Generation Settings
+      name: lead_generation
+      widget: object
+      fields:
+      - label: Sticky CTA Enabled
+        name: sticky_cta_enabled
+        widget: boolean
+        default: true
+      - label: Sticky CTA Label
+        name: sticky_cta_label
+        widget: string
+      - label: Sticky CTA URL
+        name: sticky_cta_url
+        widget: string
+      - label: Booking Enabled
+        name: booking_enabled
+        widget: boolean
+        default: true
+      - label: Booking Provider
+        name: booking_provider
+        widget: select
+        options:
+        - external
+        - contact_page
+        default: external
+      - label: Booking URL
+        name: booking_url
+        widget: string
+        required: false
+        hint: Paste Calendly, Cal.com or another booking URL. Leave blank to use Contact page.
+      - label: Booking Label
+        name: booking_label
+        widget: string
+      - label: Quick Lead Form Endpoint
+        name: lead_form_action
+        widget: string
+        required: false
+      - label: Growth Audit Form Endpoint
+        name: growth_audit_action
+        widget: string
+        required: false
+      - label: Success Message
+        name: success_message
+        widget: text
+- name: insights
+  label: Insights / Blog
+  label_singular: Article
+  folder: content/insights
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  fields:
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Published
+    name: published
+    widget: boolean
+    default: true
+  - label: Title
+    name: title
+    widget: string
+  - label: Date
+    name: date
+    widget: datetime
+    date_format: YYYY-MM-DD
+    time_format: false
+  - label: Author
+    name: author
+    widget: string
+    default: Benvor Digital
+  - label: Category
+    name: category
+    widget: string
+  - label: Excerpt
+    name: excerpt
+    widget: text
+  - label: Featured Image
+    name: featured_image
+    widget: image
+    required: false
+  - label: Image Alt
+    name: featured_image_alt
+    widget: string
+    required: false
+  - label: Article Body
+    name: body
+    widget: markdown
+  - label: SEO
+    name: seo
+    widget: object
+    fields:
+    - label: SEO Title
+      name: title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: description
+      widget: text
+      required: false
+- name: landing_pages
+  label: Landing Pages
+  label_singular: Landing Page
+  folder: content/landing-pages
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  preview_path: landing/?slug={{slug}}
+  fields:
+  - label: Title
+    name: title
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Published
+    name: published
+    widget: boolean
+    default: true
+  - label: Show Header
+    name: show_header
+    widget: boolean
+    default: true
+  - label: Show Footer
+    name: show_footer
+    widget: boolean
+    default: true
+  - label: SEO
+    name: seo
+    widget: object
+    fields:
+    - label: SEO Title
+      name: title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: description
+      widget: text
+      required: false
+    - label: Canonical URL
+      name: canonical_url
+      widget: string
+      required: false
+    - label: Open Graph Title
+      name: og_title
+      widget: string
+      required: false
+    - label: Open Graph Description
+      name: og_description
+      widget: text
+      required: false
+    - label: Open Graph Image
+      name: og_image
+      widget: image
+      required: false
+    - label: Noindex / Hide from Search
+      name: noindex
+      widget: boolean
+      default: false
+    - label: Schema Type
+      name: schema_type
+      widget: select
+      options:
+      - WebPage
+      - AboutPage
+      - ContactPage
+      - CollectionPage
+      default: WebPage
+  - label: Page Sections
+    name: sections
+    widget: list
+    collapsed: true
+    summary: '{{fields.type}} — {{fields.heading}}'
+    types:
+    - label: Hero + Analytics Dashboard
+      name: hero_dashboard
+      widget: object
+      fields:
+      - &id012
+        label: Enabled
+        name: enabled
+        widget: boolean
+        default: true
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Blue Highlight Text
+        name: highlight
+        widget: string
+        required: false
+      - label: Supporting Text
+        name: text
+        widget: text
+      - label: Primary Button
+        name: primary_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Secondary Button
+        name: secondary_button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Hero Stats
+        name: stats
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          options:
+          - trend
+          - users
+          - trophy
+          - target
+          - database
+          - shield
+          - globe
+          - chart
+          - spark
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+      - label: Analytics Dashboard
+        name: dashboard
+        widget: object
+        fields:
+        - label: Panel Label
+          name: label
+          widget: string
+        - label: Period
+          name: period
+          widget: string
+        - label: Metric Label
+          name: metric_label
+          widget: string
+        - label: Metric Value
+          name: metric_value
+          widget: string
+        - label: Metric Change
+          name: metric_change
+          widget: string
+        - label: Chart Values
+          name: chart_values
+          widget: list
+          field:
+            label: Value
+            name: value
+            widget: number
+        - label: Conversions Panel Label
+          name: conversions_label
+          widget: string
+          default: Conversions
+        - label: Conversions
+          name: conversions
+          widget: string
+        - label: Conversion Change
+          name: conversion_change
+          widget: string
+        - label: Channels Panel Label
+          name: channels_label
+          widget: string
+          default: Top Channels
+        - label: Top Channels
+          name: channels
+          widget: list
+          fields:
+          - label: Channel
+            name: label
+            widget: string
+          - label: Percentage
+            name: value
+            widget: number
+            min: 0
+            max: 100
+      - &id013
+        label: Container Width
+        name: container_width
+        widget: select
+        options:
+        - label: Narrow
+          value: narrow
+        - label: Default
+          value: default
+        - label: Wide
+          value: wide
+        - label: Full Width
+          value: full
+        default: default
+      - &id014
+        label: Top Spacing
+        name: padding_top
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - &id015
+        label: Bottom Spacing
+        name: padding_bottom
+        widget: select
+        options:
+        - none
+        - small
+        - default
+        - large
+        default: default
+      - &id016
+        label: Minimum Section Height
+        name: min_height
+        widget: select
+        options:
+        - label: Auto
+          value: auto
+        - label: Compact 320px
+          value: compact
+        - label: Medium 480px
+          value: medium
+        - label: Tall 640px
+          value: tall
+        - label: Full Screen
+          value: screen
+        default: auto
+      - &id017
+        label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - &id018
+        label: Section Background
+        name: background
+        widget: select
+        options:
+        - label: Default
+          value: default
+        - label: White
+          value: white
+        - label: Light Grey
+          value: light_grey
+        - label: Navy
+          value: navy
+        - label: Blue
+          value: blue
+        default: default
+      - &id019
+        label: Fix / Sticky Section
+        name: sticky
+        widget: boolean
+        default: false
+      - &id020
+        label: Hide on Mobile
+        name: hide_mobile
+        widget: boolean
+        default: false
+      - &id021
+        label: Hide on Tablet / iPad
+        name: hide_tablet
+        widget: boolean
+        default: false
+      - &id022
+        label: Hide on Desktop
+        name: hide_desktop
+        widget: boolean
+        default: false
+    - label: Trusted Brands + Stats
+      name: trust_stats
+      widget: object
+      fields:
+      - *id012
+      - label: Label
+        name: label
+        widget: string
+      - label: Brands
+        name: brands
+        widget: list
+        fields:
+        - label: Name
+          name: name
+          widget: string
+        - label: Logo
+          name: image
+          widget: image
+          required: false
+      - label: Right-side Metrics
+        name: metrics
+        widget: list
+        fields:
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Services Grid
+      name: services_grid
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Services to Show
+        name: services
+        widget: relation
+        collection: services
+        search_fields:
+        - title
+        - description
+        value_field: '{{slug}}'
+        display_fields:
+        - title
+        multiple: true
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Why Benvor / Feature Columns
+      name: why_benvor
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Feature Items
+        name: items
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          options:
+          - target
+          - database
+          - users
+          - trend
+          - window
+          - chart
+          - shield
+          - globe
+          - spark
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Selected Work
+      name: selected_work
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: string
+        required: false
+      - label: Button
+        name: button
+        widget: object
+        required: false
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Projects
+        name: projects
+        widget: relation
+        collection: projects
+        search_fields:
+        - title
+        - client
+        - category
+        value_field: '{{slug}}'
+        display_fields:
+        - title
+        multiple: true
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Portfolio Grid
+      name: portfolio_grid
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: All Filter Label
+        name: filter_all_label
+        widget: string
+        default: All
+      - label: Projects
+        name: projects
+        widget: relation
+        collection: projects
+        search_fields:
+        - title
+        - client
+        - category
+        value_field: '{{slug}}'
+        display_fields:
+        - title
+        multiple: true
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Testimonials Carousel
+      name: testimonials
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Testimonials
+        name: testimonials
+        widget: relation
+        collection: testimonials
+        search_fields:
+        - name
+        - company
+        - quote
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        - company
+        multiple: true
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: About Preview
+      name: about_preview
+      widget: object
+      fields:
+      - *id012
+      - label: Image
+        name: image
+        widget: image
+      - label: Image Alt
+        name: image_alt
+        widget: string
+        required: false
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button
+        name: button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - label: Stats
+        name: stats
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          options:
+          - shield
+          - users
+          - globe
+          - trend
+          - target
+          - chart
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Page Hero
+      name: page_hero
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Image + Text
+      name: image_text
+      widget: object
+      fields:
+      - *id012
+      - label: Image
+        name: image
+        widget: image
+      - label: Image Alt
+        name: image_alt
+        widget: string
+        required: false
+      - label: Image Position
+        name: image_position
+        widget: select
+        options:
+        - left
+        - right
+        default: left
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button
+        name: button
+        widget: object
+        required: false
+        fields:
+        - label: Label
+          name: label
+          widget: string
+          required: false
+        - label: URL
+          name: url
+          widget: string
+          required: false
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Stats
+      name: stats
+      widget: object
+      fields:
+      - *id012
+      - label: Stats
+        name: items
+        widget: list
+        fields:
+        - label: Value
+          name: value
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Process
+      name: process
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Steps
+        name: items
+        widget: list
+        fields:
+        - label: Number
+          name: number
+          widget: string
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: FAQ
+      name: faq
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Questions
+        name: items
+        widget: list
+        fields:
+        - label: Question
+          name: question
+          widget: string
+        - label: Answer
+          name: answer
+          widget: text
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Team
+      name: team
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Team Members
+        name: team
+        widget: relation
+        collection: team
+        search_fields:
+        - name
+        - role
+        value_field: '{{slug}}'
+        display_fields:
+        - name
+        - role
+        multiple: true
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Contact Form + Details
+      name: contact_split
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Select Placeholder
+        name: select_placeholder
+        widget: string
+        default: Select one
+      - label: Form Fields
+        name: fields
+        widget: list
+        fields:
+        - label: Type
+          name: type
+          widget: select
+          options:
+          - text
+          - email
+          - tel
+          - number
+          - url
+          - textarea
+          - select
+        - label: Field Name
+          name: name
+          widget: string
+        - label: Label
+          name: label
+          widget: string
+        - label: Placeholder
+          name: placeholder
+          widget: string
+          required: false
+        - label: Required
+          name: required
+          widget: boolean
+          default: false
+        - label: Select Options
+          name: options
+          widget: list
+          required: false
+          field:
+            label: Option
+            name: option
+            widget: string
+      - label: Submit Button Label
+        name: submit_label
+        widget: string
+      - label: Contact Detail Cards
+        name: contact_cards
+        widget: list
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: Value
+          name: value
+          widget: string
+        - label: Link
+          name: link
+          widget: string
+          required: false
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Rich Text
+      name: rich_text
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Body
+        name: body
+        widget: text
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Gallery
+      name: gallery
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Images
+        name: images
+        widget: list
+        fields:
+        - label: Image
+          name: image
+          widget: image
+        - label: Alt Text
+          name: alt
+          widget: string
+          required: false
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Flexible Cards
+      name: flex_cards
+      widget: object
+      fields:
+      - *id012
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Heading
+        name: heading
+        widget: string
+        required: false
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Columns
+        name: columns
+        widget: number
+        min: 1
+        max: 4
+        default: 3
+      - label: Cards
+        name: items
+        widget: list
+        fields:
+        - label: Icon
+          name: icon
+          widget: select
+          required: false
+          options:
+          - target
+          - database
+          - users
+          - trend
+          - window
+          - chart
+          - shield
+          - globe
+          - spark
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt
+          name: image_alt
+          widget: string
+          required: false
+        - label: Title
+          name: title
+          widget: string
+        - label: Text
+          name: text
+          widget: text
+          required: false
+        - label: Button Label
+          name: button_label
+          widget: string
+          required: false
+        - label: Button URL
+          name: button_url
+          widget: string
+          required: false
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: CTA
+      name: cta
+      widget: object
+      fields:
+      - *id012
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Button
+        name: button
+        widget: object
+        fields:
+        - label: Label
+          name: label
+          widget: string
+        - label: URL
+          name: url
+          widget: string
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Divider
+      name: divider
+      widget: object
+      fields:
+      - *id012
+      - label: Style
+        name: style
+        widget: select
+        options:
+        - default
+        default: default
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022
+    - label: Spacer
+      name: spacer
+      widget: object
+      fields:
+      - label: Height
+        name: height
+        widget: number
+        min: 0
+        max: 240
+        default: 40
+      - *id013
+      - *id014
+      - *id015
+      - *id016
+      - *id017
+      - *id018
+      - *id019
+      - *id020
+      - *id021
+      - *id022

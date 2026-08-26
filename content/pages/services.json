@@ -6,7 +6,13 @@
   "show_footer": true,
   "seo": {
     "title": "Digital Marketing Services | Benvor Digital",
-    "description": "SEO, paid media, social, email, web design, and analytics services designed to work together."
+    "description": "SEO, paid media, social, email, web design, and analytics services designed to work together.",
+    "canonical_url": "",
+    "og_title": "",
+    "og_description": "",
+    "og_image": "",
+    "noindex": false,
+    "schema_type": "WebPage"
   },
   "sections": [
     {

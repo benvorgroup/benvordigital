@@ -1,0 +1,22 @@
+BENVOR DIGITAL — LEAD GENERATION REBUILD
+
+Added:
+- hero lead form
+- free growth audit
+- sticky CTA
+- booking handoff
+- problem-based navigation
+- stronger service hierarchy
+- case studies higher on homepage
+- comparison table
+- Audit → Strategy → Execute → Scale
+- interactive growth-score qualifier
+- testimonials
+- Sydney local credibility
+- objection FAQ
+- high-intent and medium-intent CTAs
+
+Set a real Calendly/Cal.com URL in Website Settings → Lead Generation Settings → Booking URL.
+Set real form endpoints in Quick Lead Form Endpoint and Growth Audit Form Endpoint. Until then forms remain demo-only.
+
+Deploy by replacing the entire repository contents with everything inside this package.

@@ -21,5 +21,14 @@
   ],
   "challenge": "Their previous site could not support new offers or campaign landing pages quickly.",
   "solution": "We created a flexible component system and simplified the lead-generation journey.",
-  "result": "The team can now launch new campaign experiences quickly with stronger conversion."
+  "result": "The team can now launch new campaign experiences quickly with stronger conversion.",
+  "client_logo": "",
+  "gallery": [],
+  "testimonial": "",
+  "project_url": "",
+  "seo": {
+    "title": "Flowua Digital | Benvor Digital",
+    "description": "A modular website system for a scaling professional-services team."
+  },
+  "show_metrics": true
 }
