@@ -22,7 +22,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "portfolio_grid",
@@ -44,7 +46,10 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start",
+      "filter_all_label": "All"
     },
     {
       "type": "cta",
@@ -62,7 +67,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     }
   ]
 }

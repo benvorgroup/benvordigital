@@ -1,0 +1,14 @@
+Cloudflare Pages settings for this package:
+
+Framework preset: None
+Build command: leave blank
+Build output directory: /
+Root directory: leave blank
+
+The ZIP contents must be at the GitHub repository root.
+Do NOT put the whole extracted folder inside another folder in the repository.
+
+Quick test after deployment:
+1. https://benvordigital.com/ should show the full homepage even before JavaScript runs.
+2. https://benvordigital.com/content/pages/home.json should display JSON.
+3. https://benvordigital.com/admin/ should open Decap CMS.

@@ -4,7 +4,7 @@
     "logo_light": "/assets/branding/benvor-horizontal-light.png",
     "footer_logo_light": "/assets/branding/benvor-stacked-light.png",
     "logo_alt": "Benvor Digital",
-    "favicon": "/assets/favicon/favicon.ico",
+    "favicon": "/favicon.ico",
     "apple_touch_icon": "/assets/favicon/apple-touch-icon.png"
   },
   "navigation": [
@@ -179,5 +179,16 @@
     "challenge": "Challenge",
     "solution": "Solution",
     "result": "Result"
+  },
+  "project_detail_cta": {
+    "heading": "Ready to build the next result?",
+    "text": "Let’s talk about the growth opportunity in front of your business.",
+    "button_label": "Start a Project",
+    "button_url": "/contact/"
+  },
+  "ui_labels": {
+    "mobile_menu": "Open menu",
+    "carousel_previous": "Previous",
+    "carousel_next": "Next"
   }
 }

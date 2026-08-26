@@ -22,7 +22,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "services_grid",
@@ -44,7 +46,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "process",
@@ -80,7 +84,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "why_benvor",
@@ -110,7 +116,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "faq",
@@ -142,7 +150,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "cta",
@@ -160,7 +170,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     }
   ]
 }

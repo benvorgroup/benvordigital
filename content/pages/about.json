@@ -22,7 +22,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "image_text",
@@ -44,7 +46,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "stats",
@@ -74,7 +78,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "why_benvor",
@@ -104,7 +110,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "team",
@@ -124,7 +132,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "cta",
@@ -142,7 +152,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     }
   ]
 }

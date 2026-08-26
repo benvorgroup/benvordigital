@@ -213,6 +213,31 @@ collections:
         - large
         default: default
       - &id005
+        label: Minimum Section Height
+        name: min_height
+        widget: select
+        options:
+        - label: Auto
+          value: auto
+        - label: Compact 320px
+          value: compact
+        - label: Medium 480px
+          value: medium
+        - label: Tall 640px
+          value: tall
+        - label: Full Screen
+          value: screen
+        default: auto
+      - &id006
+        label: Vertical Alignment
+        name: vertical_align
+        widget: select
+        options:
+        - start
+        - center
+        - end
+        default: start
+      - &id007
         label: Section Background
         name: background
         widget: select
@@ -228,22 +253,22 @@ collections:
         - label: Blue
           value: blue
         default: default
-      - &id006
+      - &id008
         label: Fix / Sticky Section
         name: sticky
         widget: boolean
         default: false
-      - &id007
+      - &id009
         label: Hide on Mobile
         name: hide_mobile
         widget: boolean
         default: false
-      - &id008
+      - &id010
         label: Hide on Tablet / iPad
         name: hide_tablet
         widget: boolean
         default: false
-      - &id009
+      - &id011
         label: Hide on Desktop
         name: hide_desktop
         widget: boolean
@@ -285,6 +310,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Services Grid
       name: services_grid
       widget: object
@@ -320,6 +347,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Why Benvor / Feature Columns
       name: why_benvor
       widget: object
@@ -359,6 +388,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Selected Work
       name: selected_work
       widget: object
@@ -402,6 +433,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Portfolio Grid
       name: portfolio_grid
       widget: object
@@ -414,6 +447,10 @@ collections:
         name: text
         widget: text
         required: false
+      - label: All Filter Label
+        name: filter_all_label
+        widget: string
+        default: All
       - label: Projects
         name: projects
         widget: relation
@@ -434,6 +471,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Testimonials Carousel
       name: testimonials
       widget: object
@@ -463,6 +502,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: About Preview
       name: about_preview
       widget: object
@@ -523,6 +564,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Page Hero
       name: page_hero
       widget: object
@@ -547,6 +590,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Image + Text
       name: image_text
       widget: object
@@ -597,6 +642,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Stats
       name: stats
       widget: object
@@ -620,6 +667,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Process
       name: process
       widget: object
@@ -653,6 +702,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: FAQ
       name: faq
       widget: object
@@ -683,6 +734,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Team
       name: team
       widget: object
@@ -719,6 +772,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Contact Form + Details
       name: contact_split
       widget: object
@@ -730,6 +785,10 @@ collections:
       - label: Text
         name: text
         widget: text
+      - label: Select Placeholder
+        name: select_placeholder
+        widget: string
+        default: Select one
       - label: Form Fields
         name: fields
         widget: list
@@ -792,6 +851,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Rich Text
       name: rich_text
       widget: object
@@ -816,6 +877,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Gallery
       name: gallery
       widget: object
@@ -844,6 +907,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Flexible Cards
       name: flex_cards
       widget: object
@@ -916,6 +981,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: CTA
       name: cta
       widget: object
@@ -946,6 +1013,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Divider
       name: divider
       widget: object
@@ -965,6 +1034,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
     - label: Spacer
       name: spacer
       widget: object
@@ -983,6 +1054,8 @@ collections:
       - *id007
       - *id008
       - *id009
+      - *id010
+      - *id011
 - name: services
   label: Reusable / Services
   label_singular: Service
@@ -1384,3 +1457,32 @@ collections:
         name: result
         widget: string
         default: Result
+    - label: Project Detail CTA
+      name: project_detail_cta
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      - label: Button Label
+        name: button_label
+        widget: string
+      - label: Button URL
+        name: button_url
+        widget: string
+    - label: Interface Labels
+      name: ui_labels
+      widget: object
+      fields:
+      - label: Mobile Menu Label
+        name: mobile_menu
+        widget: string
+      - label: Carousel Previous Label
+        name: carousel_previous
+        widget: string
+      - label: Carousel Next Label
+        name: carousel_next
+        widget: string

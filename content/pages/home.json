@@ -10,53 +10,16 @@
   },
   "sections": [
     {
+      "type": "hero_dashboard",
       "enabled": true,
-      "heading": "We drive digital growth that delivers",
       "eyebrow": "Digital Growth Agency",
+      "heading": "We drive digital growth that delivers",
+      "highlight": "real results.",
       "text": "Benvor Digital is a data-driven growth agency helping ambitious brands attract more customers, increase conversions, and scale with confidence.",
       "primary_button": {
         "label": "Get a Free Consultation",
         "url": "/contact/"
       },
-      "highlight": "real results.",
-      "dashboard": {
-        "period": "Last 6 Months",
-        "metric_value": "$2.45M",
-        "chart_values": [
-          22,
-          28,
-          26,
-          39,
-          45,
-          40,
-          51,
-          66,
-          65,
-          78,
-          82,
-          96
-        ],
-        "metric_label": "Revenue",
-        "channels": [
-          {
-            "label": "Organic Search",
-            "value": 72
-          },
-          {
-            "label": "Paid Search",
-            "value": 18
-          },
-          {
-            "label": "Social Media",
-            "value": 10
-          }
-        ],
-        "label": "Growth Overview",
-        "conversion_change": "+35.4%",
-        "conversions": "12,875",
-        "metric_change": "+28.6%"
-      },
-      "type": "hero_dashboard",
       "secondary_button": {
         "label": "Explore Our Services",
         "url": "/services/"
@@ -74,10 +37,106 @@
         },
         {
           "icon": "trophy",
-          "value": "5+",
+          "value": "10+",
           "label": "Years of Growth"
         }
-      ]
+      ],
+      "dashboard": {
+        "period": "Last 6 Months",
+        "label": "Growth Overview",
+        "metric_label": "Revenue",
+        "metric_value": "$2.45M",
+        "metric_change": "+28.6%",
+        "chart_values": [
+          22,
+          28,
+          26,
+          39,
+          45,
+          40,
+          51,
+          66,
+          65,
+          78,
+          82,
+          96
+        ],
+        "conversions": "12,875",
+        "conversion_change": "+35.4%",
+        "channels": [
+          {
+            "label": "Organic Search",
+            "value": 72
+          },
+          {
+            "label": "Paid Search",
+            "value": 18
+          },
+          {
+            "label": "Social Media",
+            "value": 10
+          }
+        ],
+        "conversions_label": "Conversions",
+        "channels_label": "Top Channels"
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
+    },
+    {
+      "type": "trust_stats",
+      "enabled": true,
+      "label": "Trusted by growing brands worldwide",
+      "brands": [
+        {
+          "name": "NEXORA",
+          "image": ""
+        },
+        {
+          "name": "LevelUp",
+          "image": ""
+        },
+        {
+          "name": "purely.",
+          "image": ""
+        },
+        {
+          "name": "Cloudix",
+          "image": ""
+        },
+        {
+          "name": "Brightline",
+          "image": ""
+        }
+      ],
+      "metrics": [
+        {
+          "value": "250M+",
+          "label": "Revenue Generated"
+        },
+        {
+          "value": "10M+",
+          "label": "Leads Driven"
+        }
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "services_grid",
@@ -92,7 +151,17 @@
         "email",
         "web",
         "analytics"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "why_benvor",
@@ -114,7 +183,17 @@
           "title": "Transparent Partnership",
           "text": "Clear communication, honest reporting, and a true partner invested in your long-term success."
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "selected_work",
@@ -130,7 +209,17 @@
         "nexora-saas",
         "purely-skincare",
         "levelup-financial"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "testimonials",
@@ -141,20 +230,30 @@
         "david-chen",
         "james-carter",
         "maya-patel"
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
+      "type": "about_preview",
       "enabled": true,
-      "heading": "We're a team of strategists, creatives, and analysts who love solving problems.",
+      "image": "/assets/images/site/office.svg",
       "image_alt": "Benvor Digital office and team environment",
       "eyebrow": "About Benvor Digital",
+      "heading": "We're a team of strategists, creatives, and analysts who love solving problems.",
       "text": "We partner with forward-thinking businesses to build powerful digital experiences and growth engines that scale.",
       "button": {
         "label": "Learn More About Us",
         "url": "/about/"
       },
-      "type": "about_preview",
-      "image": "/assets/images/uploads/benvor-digital-logo-1.png",
       "stats": [
         {
           "icon": "shield",
@@ -171,7 +270,17 @@
           "value": "Global",
           "label": "Client Base"
         }
-      ]
+      ],
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "cta",
@@ -181,7 +290,17 @@
       "button": {
         "label": "Get a Free Consultation",
         "url": "/contact/"
-      }
+      },
+      "container_width": "default",
+      "padding_top": "default",
+      "padding_bottom": "default",
+      "background": "default",
+      "sticky": false,
+      "hide_mobile": false,
+      "hide_tablet": false,
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     }
   ]
 }

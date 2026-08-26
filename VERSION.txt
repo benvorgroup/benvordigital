@@ -1,0 +1,14 @@
+Benvor Digital Decap CMS
+Revision: responsive-logo-fixed
+Fixes: logo sizing/visibility, mobile, tablet/iPad, laptop, desktop, large-PC responsiveness
+
+Contact update:
+Email: info@benvordigital.com
+Office: Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022
+
+Revision: icons-favicon-fixed
+Fixes: built-in SVG icon sizing/rendering + favicon set + Apple touch icon + web manifest
+
+Revision: logo-hardfix
+Default header/footer logos are embedded and cannot 404.
+CMS custom-logo URLs automatically fall back to the embedded Benvor logo.

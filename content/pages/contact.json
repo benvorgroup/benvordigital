@@ -22,7 +22,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "contact_split",
@@ -104,7 +106,10 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start",
+      "select_placeholder": "Select one"
     },
     {
       "type": "trust_stats",
@@ -141,7 +146,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     },
     {
       "type": "cta",
@@ -159,7 +166,9 @@
       "sticky": false,
       "hide_mobile": false,
       "hide_tablet": false,
-      "hide_desktop": false
+      "hide_desktop": false,
+      "min_height": "auto",
+      "vertical_align": "start"
     }
   ]
 }

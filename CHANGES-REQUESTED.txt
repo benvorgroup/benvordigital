@@ -1,0 +1,8 @@
+BENVOR DIGITAL REQUESTED CHANGES
+
+1. All page wording is editable in Decap page blocks or reusable collections.
+2. Every page section has width, top/bottom spacing, background, sticky/fix, and device visibility controls. Sections remain reorderable/deletable.
+3. 5+ years changed to 10+ years.
+4. Search Engine Optimization changed to SEO and AEO.
+5. Dark mode removed; light mode hard-fixed.
+6. Built-in icons are inline SVG with CSS hard-fix; custom service icons fall back to built-in icons; favicon is embedded in every page head and packaged favicon files remain included.

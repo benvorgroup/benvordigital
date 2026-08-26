@@ -1,0 +1,10 @@
+LOGO HARD FIX
+
+The default Benvor logos are embedded directly in the site renderer.
+They no longer depend on an /assets/branding URL after JavaScript loads.
+
+Default header logo: embedded horizontal Benvor Digital logo.
+Default footer logo: embedded stacked Benvor Digital logo.
+
+Custom logos can still be selected from Decap CMS.
+If a custom logo path fails to load, the built-in Benvor logo is restored automatically.

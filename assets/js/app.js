@@ -60,7 +60,7 @@
     const logo=(!configuredLogo||configuredLogo===defaultLogoPath)?EMBEDDED_LOGOS.headerLight:configuredLogo;
     const nav=(settings.navigation||[]).filter(x=>x.enabled!==false).map(x=>{const active=(page==='home'&&x.url==='/')||x.url===`/${page}/`;return `<a class="${active?'active':''}" href="${esc(safeUrl(x.url))}">${esc(x.label)}</a>`}).join('');
     const c=settings.header_cta||{}; $('#site-header').className='site-header';
-    $('#site-header').innerHTML=`<div class="nav-wrap"><a class="brand-logo" href="/"><img id="benvor-header-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"></a><nav class="desktop-nav">${nav}</nav><div class="nav-actions">${c.enabled!==false?`<a class="btn btn-primary desktop-cta" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}<button id="menu-btn" class="menu-btn" aria-label="Open menu">☰</button></div><nav id="mobile-menu" class="mobile-menu">${nav}${c.enabled!==false?`<a class="btn btn-primary" style="margin-top:14px" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}</nav></div>`;
+    $('#site-header').innerHTML=`<div class="nav-wrap"><a class="brand-logo" href="/"><img id="benvor-header-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"></a><nav class="desktop-nav">${nav}</nav><div class="nav-actions">${c.enabled!==false?`<a class="btn btn-primary desktop-cta" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}<button id="menu-btn" class="menu-btn" aria-label="${esc(settings.ui_labels?.mobile_menu||'Open menu')}">☰</button></div><nav id="mobile-menu" class="mobile-menu">${nav}${c.enabled!==false?`<a class="btn btn-primary" style="margin-top:14px" href="${esc(safeUrl(c.url))}">${esc(c.label)}</a>`:''}</nav></div>`;
     const headerLogo=$('#benvor-header-logo'); if(headerLogo){headerLogo.addEventListener('error',()=>{headerLogo.src=EMBEDDED_LOGOS.headerLight;},{once:true});}
   }
 
@@ -69,7 +69,7 @@
     const logo=(!configuredFooterLogo||configuredFooterLogo===defaultFooterPath)?EMBEDDED_LOGOS.footerLight:configuredFooterLogo;
     const groups=(f.groups||[]).map(g=>`<div class="footer-col"><h5>${esc(g.heading||'')}</h5>${(g.links||[]).map(x=>`<a href="${esc(safeUrl(x.url))}">${esc(x.label||'')}</a>`).join('')}</div>`).join('');
     const socials=(f.social||[]).map(x=>`<a class="social" href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener">${esc((x.label||'').slice(0,2))}</a>`).join('');
-    $('#site-footer').className='site-footer'; $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid"><div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>${groups}<div class="footer-col"><h5>${esc(f.connect_heading||"Let's Connect")}</h5><div class="socials">${socials}</div><div class="footer-email">${esc(f.email||'')}</div></div></div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
+    $('#site-footer').className='site-footer'; $('#site-footer').innerHTML=`<div class="wrap"><div class="footer-grid"><div class="footer-brand"><img id="benvor-footer-logo" src="${esc(logo)}" alt="${esc(settings.brand.logo_alt)}"><p>${esc(f.description||'')}</p></div>${groups}<div class="footer-col"><h5>${esc(f.connect_heading||"Let's Connect")}</h5><div class="socials">${socials}</div><div class="footer-email">${esc(f.email||'')}</div><div class="footer-address">${esc(f.address||settings.business?.office_address||'')}</div></div></div><div class="footer-bottom">${esc(f.copyright||'')}</div></div>`;
     const footerLogo=$('#benvor-footer-logo'); if(footerLogo){footerLogo.addEventListener('error',()=>{footerLogo.src=EMBEDDED_LOGOS.footerLight;},{once:true});}
   }
 
@@ -111,8 +111,8 @@
   async function renderSelectedWork(s, full=false){
     const items=await relation('projects',s.projects);
     if(full){
-      const cats=['All',...new Set(items.map(x=>x.category).filter(Boolean))];
-      return `<section class="section reveal"><div class="wrap"><div class="section-head"><h2>${esc(s.heading||'Case Studies')}</h2><p class="lead">${esc(s.text||'')}</p></div><div class="filter-row">${cats.map((c,i)=>`<button class="filter ${i===0?'active':''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('')}</div><div class="portfolio-grid">${items.map(projectCardFull).join('')}</div></div></section>`;
+      const allLabel=s.filter_all_label||'All'; const cats=[allLabel,...new Set(items.map(x=>x.category).filter(Boolean))];
+      return `<section class="section reveal"><div class="wrap"><div class="section-head"><h2>${esc(s.heading||'Case Studies')}</h2><p class="lead">${esc(s.text||'')}</p></div><div class="filter-row" data-all-label="${esc(allLabel)}">${cats.map((c,i)=>`<button class="filter ${i===0?'active':''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('')}</div><div class="portfolio-grid">${items.map(projectCardFull).join('')}</div></div></section>`;
     }
     return `<section class="section soft reveal"><div class="wrap"><div class="work-head"><div><h2>${esc(s.heading||'Selected Work')}</h2><p class="muted">${esc(s.text||'')}</p></div>${s.button?`<a class="text-link" href="${esc(safeUrl(s.button.url))}">${esc(s.button.label)} →</a>`:''}</div><div class="work-grid">${items.map(projectCard).join('')}</div></div></section>`;
   }
@@ -124,7 +124,7 @@
   }
   async function renderTestimonials(s){
     const items=await relation('testimonials',s.testimonials);
-    return `<section class="section reveal"><div class="wrap"><div class="carousel-head"><h2>${esc(s.heading||'What Our Clients Say')}</h2><div class="carousel-controls"><button class="round-btn testimonial-prev" aria-label="Previous">‹</button><button class="round-btn testimonial-next" aria-label="Next">›</button></div></div><div class="testimonial-window"><div class="testimonial-track">${items.map(t=>`<article class="testimonial-card"><div class="quote-mark">“</div><blockquote>${esc(t.quote)}</blockquote><div class="person">${t.image?`<img class="avatar" src="${esc(safeUrl(t.image))}" alt="${esc(t.name)}">`:`<span class="avatar">${esc(initials(t.name))}</span>`}<div><strong>${esc(t.name)}</strong><span>${esc(t.role)}, ${esc(t.company)}</span></div></div></article>`).join('')}</div></div><div class="dots"></div></div></section>`;
+    return `<section class="section reveal"><div class="wrap"><div class="carousel-head"><h2>${esc(s.heading||'What Our Clients Say')}</h2><div class="carousel-controls"><button class="round-btn testimonial-prev" aria-label="${esc(settings.ui_labels?.carousel_previous||'Previous')}">‹</button><button class="round-btn testimonial-next" aria-label="${esc(settings.ui_labels?.carousel_next||'Next')}">›</button></div></div><div class="testimonial-window"><div class="testimonial-track">${items.map(t=>`<article class="testimonial-card"><div class="quote-mark">“</div><blockquote>${esc(t.quote)}</blockquote><div class="person">${t.image?`<img class="avatar" src="${esc(safeUrl(t.image))}" alt="${esc(t.name)}">`:`<span class="avatar">${esc(initials(t.name))}</span>`}<div><strong>${esc(t.name)}</strong><span>${esc(t.role)}, ${esc(t.company)}</span></div></div></article>`).join('')}</div></div><div class="dots"></div></div></section>`;
   }
   function renderAboutPreview(s){
     return `<section class="section reveal"><div class="wrap"><div class="about-panel"><div class="about-panel-image"><img src="${esc(safeUrl(s.image))}" alt="${esc(s.image_alt||'')}"></div><div class="about-panel-copy">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}<h2>${esc(s.heading)}</h2><p>${esc(s.text)}</p>${s.button?`<a class="btn btn-primary" style="margin-top:18px" href="${esc(safeUrl(s.button.url))}">${esc(s.button.label)} →</a>`:''}</div><div class="about-stats">${(s.stats||[]).map(x=>`<div class="about-stat">${icon(x.icon)}<strong>${esc(x.value)}</strong><span>${esc(x.label)}</span></div>`).join('')}</div></div></div></section>`;
@@ -152,16 +152,16 @@
     const items=await relation('team',s.team);
     return `<section class="section soft reveal"><div class="wrap"><div class="section-head">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}<h2>${esc(s.heading)}</h2><p class="lead">${esc(s.text||'')}</p></div><div class="team-grid">${items.map(t=>`<article class="team-card">${t.image?`<img class="avatar" src="${esc(safeUrl(t.image))}" alt="${esc(t.name)}">`:`<span class="avatar">${esc(initials(t.name))}</span>`}<h3>${esc(t.name)}</h3><small>${esc(t.role)}</small><p>${esc(t.bio)}</p></article>`).join('')}</div></div></section>`;
   }
-  function fieldMarkup(f){
+  function fieldMarkup(f,selectPlaceholder){
     const req=f.required?' required':'', full=f.type==='textarea'||f.type==='select'?' full':'';
     if(f.type==='textarea') return `<div class="field${full}"><label>${esc(f.label)}</label><textarea name="${esc(f.name)}" placeholder="${esc(f.placeholder||'')}"${req}></textarea></div>`;
-    if(f.type==='select') return `<div class="field${full}"><label>${esc(f.label)}</label><select name="${esc(f.name)}"${req}><option value="">Select one</option>${(f.options||[]).map(o=>`<option>${esc(o)}</option>`).join('')}</select></div>`;
+    if(f.type==='select') return `<div class="field${full}"><label>${esc(f.label)}</label><select name="${esc(f.name)}"${req}><option value="">${esc(selectPlaceholder||'Select one')}</option>${(f.options||[]).map(o=>`<option>${esc(o)}</option>`).join('')}</select></div>`;
     const type=['email','tel','number','url'].includes(f.type)?f.type:'text';
     return `<div class="field${full}"><label>${esc(f.label)}</label><input type="${type}" name="${esc(f.name)}" placeholder="${esc(f.placeholder||'')}"${req}></div>`;
   }
   function renderContact(s, settings){
     const action=safeUrl(settings.contact_form?.action||''), method=settings.contact_form?.method||'POST';
-    return `<section class="section reveal"><div class="wrap contact-layout"><div class="form-card"><h2>${esc(s.heading)}</h2><p class="muted" style="font-size:.8rem;margin:8px 0 22px">${esc(s.text||'')}</p><form class="contact-form" ${action&&action!=='#'?`action="${esc(action)}" method="${esc(method)}"`:''}><div class="fields">${(s.fields||[]).map(fieldMarkup).join('')}</div><button class="btn btn-primary" type="submit" style="margin-top:18px">${esc(s.submit_label||'Submit')} →</button><div class="form-message">${esc(settings.contact_form?.success_message||'Thanks.')}</div></form></div><aside class="contact-side">${(s.contact_cards||[]).map(c=>`<div class="contact-card"><small>${esc(c.label)}</small>${c.link?`<a href="${esc(safeUrl(c.link))}"><strong>${esc(c.value)}</strong></a>`:`<strong>${esc(c.value)}</strong>`}</div>`).join('')}</aside></div></section>`;
+    return `<section class="section reveal"><div class="wrap contact-layout"><div class="form-card"><h2>${esc(s.heading)}</h2><p class="muted" style="font-size:.8rem;margin:8px 0 22px">${esc(s.text||'')}</p><form class="contact-form" ${action&&action!=='#'?`action="${esc(action)}" method="${esc(method)}"`:''}><div class="fields">${(s.fields||[]).map(f=>fieldMarkup(f,s.select_placeholder)).join('')}</div><button class="btn btn-primary" type="submit" style="margin-top:18px">${esc(s.submit_label||'Submit')} →</button><div class="form-message">${esc(settings.contact_form?.success_message||'Thanks.')}</div></form></div><aside class="contact-side">${(s.contact_cards||[]).map(c=>`<div class="contact-card"><small>${esc(c.label)}</small>${c.link?`<a href="${esc(safeUrl(c.link))}"><strong>${esc(c.value)}</strong></a>`:`<strong>${esc(c.value)}</strong>`}</div>`).join('')}</aside></div></section>`;
   }
   function renderRichText(s){
     const paragraphs=String(s.body||'').split(/\n{2,}/).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
@@ -203,8 +203,8 @@
     }
   }
 
-  function sectionControlClass(s){const c=[];if(s.sticky)c.push('cms-sticky-section');if(s.hide_mobile)c.push('cms-hide-mobile');if(s.hide_tablet)c.push('cms-hide-tablet');if(s.hide_desktop)c.push('cms-hide-desktop');return c.join(' ');}
-  function sectionControlStyle(s){const z=[];const widths={narrow:'860px',default:'var(--container)',wide:'1440px',full:'100%'};if(s.container_width&&widths[s.container_width])z.push(`--cms-section-width:${widths[s.container_width]}`);const spaces={none:'0px',small:'36px',default:'92px',large:'132px'};if(s.padding_top&&spaces[s.padding_top])z.push(`--cms-pt:${spaces[s.padding_top]}`);if(s.padding_bottom&&spaces[s.padding_bottom])z.push(`--cms-pb:${spaces[s.padding_bottom]}`);const bg={default:'',white:'#FFFFFF',light_grey:'#F5F7FA',navy:'#0A1F33',blue:'#2563EB'};if(s.background&&bg[s.background])z.push(`--cms-bg:${bg[s.background]}`);return z.join(';');}
+  function sectionControlClass(s){const c=[];if(s.sticky)c.push('cms-sticky-section');if(s.hide_mobile)c.push('cms-hide-mobile');if(s.hide_tablet)c.push('cms-hide-tablet');if(s.hide_desktop)c.push('cms-hide-desktop');c.push('cms-align-'+(s.vertical_align||'start'));return c.join(' ');}
+  function sectionControlStyle(s){const z=[];const widths={narrow:'860px',default:'var(--container)',wide:'1440px',full:'100%'};if(widths[s.container_width||'default'])z.push(`--cms-section-width:${widths[s.container_width||'default']}`);const spaces={none:'0px',small:'36px',default:'92px',large:'132px'};z.push(`--cms-pt:${spaces[s.padding_top||'default']}`);z.push(`--cms-pb:${spaces[s.padding_bottom||'default']}`);const heights={auto:'auto',compact:'320px',medium:'480px',tall:'640px',screen:'calc(100vh - 74px)'};z.push(`--cms-min-height:${heights[s.min_height||'auto']}`);const bg={default:'transparent',white:'#FFFFFF',light_grey:'#F5F7FA',navy:'#0A1F33',blue:'#2563EB'};z.push(`--cms-bg:${bg[s.background||'default']}`);return z.join(';');}
   function applySectionControls(html,s){if(!html)return html;return `<div class="cms-section-control ${sectionControlClass(s)}" style="${sectionControlStyle(s)}">${html}</div>`;}
 
   async function renderSection(s, settings){const html=await renderSectionRaw(s,settings);return applySectionControls(html,s);}
@@ -214,7 +214,7 @@
     if(menu&&panel){menu.onclick=()=>{panel.classList.toggle('open');overlay.classList.toggle('open')}}
     if(overlay){overlay.onclick=()=>{panel?.classList.remove('open');overlay.classList.remove('open')}}
     $$('.faq-q').forEach(q=>q.onclick=()=>{const item=q.closest('.faq-item'),a=$('.faq-a',item);const open=item.classList.toggle('open');a.style.maxHeight=open?a.scrollHeight+'px':'0'});
-    $$('.filter').forEach(b=>b.onclick=()=>{$$('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.project-card').forEach(c=>c.style.display=b.dataset.filter==='All'||c.dataset.category===b.dataset.filter?'':'none')});
+    $$('.filter').forEach(b=>b.onclick=()=>{$$('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');$$('.project-card').forEach(c=>c.style.display=b.dataset.filter===(b.closest('.filter-row')?.dataset.allLabel||'All')||c.dataset.category===b.dataset.filter?'':'none')});
     $$('.contact-form').forEach(form=>form.onsubmit=e=>{
       if(!form.getAttribute('action')){e.preventDefault();const msg=$('.form-message',form);msg.classList.add('show');form.reset();}
     });
@@ -259,7 +259,7 @@
     renderHeader(settings,mode,'portfolio');renderFooter(settings,mode);
     $('#main').innerHTML=`<section class="project-hero reveal"><div class="wrap project-hero-grid"><div><span class="eyebrow">${esc(p.category)}</span><h1>${esc(p.title)}</h1><p class="lead">${esc(p.description)}</p><div class="project-metrics-large">${(p.metrics||[]).map(m=>`<div class="big-metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></div>`).join('')}</div></div><img src="${esc(safeUrl(p.image))}" alt="${esc(p.image_alt||p.title)}"></div></section>
       <section class="section"><div class="wrap case-grid"><div class="case-block"><h3>${esc(settings.project_detail_labels?.challenge||'Challenge')}</h3><p>${esc(p.challenge||'')}</p></div><div class="case-block"><h3>${esc(settings.project_detail_labels?.solution||'Solution')}</h3><p>${esc(p.solution||'')}</p></div><div class="case-block"><h3>${esc(settings.project_detail_labels?.result||'Result')}</h3><p>${esc(p.result||'')}</p></div></div></section>
-      ${renderCTA({heading:'Ready to build the next result?',text:'Let’s talk about the growth opportunity in front of your business.',button:{label:'Start a Project',url:'/contact/'}})}`;
+      ${renderCTA({heading:settings.project_detail_cta?.heading||'',text:settings.project_detail_cta?.text||'',button:{label:settings.project_detail_cta?.button_label||'',url:settings.project_detail_cta?.button_url||'/contact/'}})}`;
     document.title=`${p.title} | Benvor Digital`; bindInteractions(settings);
   }
 
