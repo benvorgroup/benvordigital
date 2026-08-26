@@ -1,0 +1,24 @@
+BENVOR DIGITAL — HOME HERO TRUE VIEWPORT HARDFIX
+
+ROOT CAUSE FIXED
+The previous desktop viewport fix targeted the newer lead-form hero.
+The fail-safe homepage still contains the original analytics-dashboard .hero,
+which could remain taller than the visible screen.
+
+THIS VERSION HARD-FIXES BOTH HERO TYPES:
+1. Original / fail-safe analytics dashboard hero
+2. New lead-form hero generated from Decap CMS
+
+DESKTOP / LAPTOP
+- Hero height is locked to visible viewport minus sticky header.
+- Heading, copy, buttons, stats and dashboard compress responsively.
+- 1366x768, 1440x800, 1792x857 and other shorter screens get height-specific compact rules.
+- Dashboard cards are resized so the bottom channel card remains visible.
+
+TABLET / MOBILE
+- Viewport-height lock is intentionally disabled.
+- Hero uses natural content height so forms/content are never clipped.
+
+FAIL-SAFE
+The same CSS and JavaScript are embedded into all page HTML files,
+so the homepage hero remains fixed even if JSON enhancement fails.

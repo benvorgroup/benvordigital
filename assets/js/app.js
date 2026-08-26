@@ -236,7 +236,16 @@
   function ensureStickyCTA(settings){const cfg=settings.lead_generation||{};let bar=document.getElementById('sticky-lead-cta');if(!cfg.sticky_cta_enabled){bar?.remove();return}if(!bar){bar=document.createElement('a');bar.id='sticky-lead-cta';bar.className='sticky-lead-cta';document.body.appendChild(bar)}bar.textContent=cfg.sticky_cta_label||'Get Free Growth Audit';bar.href=safeUrl(cfg.sticky_cta_url||'#growth-audit')}
   function bindLeadGeneration(settings){ensureStickyCTA(settings);$$('.lead-form').forEach(form=>form.onsubmit=e=>{const action=settings.lead_generation?.lead_form_action||'';if(!action){e.preventDefault();$('.form-message',form)?.classList.add('show')}});$$('.growth-score-form').forEach(form=>form.onsubmit=e=>{e.preventDefault();const fd=new FormData(form);let score=55;const budget=fd.get('budget')||'',challenge=fd.get('challenge')||'';if(budget.includes('20k'))score+=18;else if(budget.includes('5k'))score+=12;else if(budget.includes('2k'))score+=6;if(challenge)score+=8;score+=Math.min(15,fd.getAll('channels').length*3);score=Math.max(0,Math.min(100,score));const card=form.closest('.growth-score-card'),result=$('.growth-score-result',card);form.hidden=true;result.hidden=false;$('.score-number',result).textContent=score+'/100';const link=$('.booking-link',result);if(link)link.href=resolveBookingUrl(settings);result.scrollIntoView({behavior:'smooth',block:'nearest'})});$$('.booking-link,[href="#booking"]').forEach(a=>a.onclick=e=>{const url=resolveBookingUrl(settings);e.preventDefault();if(url!=='/contact/')window.open(url,'_blank','noopener');else location.href='/contact/'})}
 
+
+  function setHomeHeroViewport(){
+    const header=document.getElementById('site-header');
+    const headerH=header ? Math.round(header.getBoundingClientRect().height) : 74;
+    document.documentElement.style.setProperty('--benvor-header-height',`${headerH}px`);
+    document.documentElement.style.setProperty('--benvor-vh',`${window.innerHeight}px`);
+  }
+
   function bindInteractions(settings){
+    setHomeHeroViewport();
     const menu=$('#menu-btn'), panel=$('#mobile-menu'), overlay=$('#mobile-overlay');
     if(menu&&panel){menu.onclick=()=>{panel.classList.toggle('open');overlay.classList.toggle('open')}}
     if(overlay){overlay.onclick=()=>{panel?.classList.remove('open');overlay.classList.remove('open')}}
@@ -377,3 +386,5 @@
   }
   document.addEventListener('DOMContentLoaded',init);
 })();
+
+window.addEventListener('resize',setHomeHeroViewport,{passive:true});
