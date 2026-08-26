@@ -1,0 +1,33 @@
+{
+  "title": "Contact / Consultation",
+  "slug": "contact",
+  "enabled": true,
+  "recipient": "info@benvordigital.com",
+  "success_message": "Thanks. Your message has been received and our team will be in touch shortly.",
+  "thank_you_url": "",
+  "spam_protection": true,
+  "booking_handoff": false,
+  "booking_url": "",
+  "conversion_event": "contact_form_submit",
+  "crm_endpoint": "",
+  "fields": [
+    {
+      "label": "Name",
+      "name": "name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "label": "Email",
+      "name": "email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "label": "Message",
+      "name": "message",
+      "type": "textarea",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Service Page",
+  "slug": "service-page",
+  "template_type": "Service Page",
+  "description": "Service Page starter recipe for the Benvor page builder.",
+  "section_types": [
+    "page_hero",
+    "image_text",
+    "services_grid",
+    "process",
+    "faq",
+    "cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

@@ -1,85 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="benvor-admin-build" content="custom-cms-1">
-  <title>Benvor Digital Custom CMS</title>
-  <link rel="stylesheet" href="/admin/custom-cms.css">
+  <title>Benvor Builder | Benvor Digital</title>
+  <style>body{margin:0} </style>
+<link rel="stylesheet" href="/admin/builder-admin.css">
+<meta name="robots" content="noindex,nofollow">
+<meta name="benvor-admin-build" content="clean-professional-builder-1">
 </head>
 <body>
-<div class="cms-shell" id="cms-shell">
-  <header class="topbar">
-    <div class="brand">
-      <img src="/assets/branding/benvor-horizontal-dark.png" alt="Benvor Digital">
-      <div><strong>Custom CMS</strong><small>GitHub-powered visual builder</small></div>
-    </div>
-    <div class="top-divider"></div>
-    <div class="page-state"><strong id="current-page-name">Home</strong><div class="save-state" id="save-state"><span class="save-dot"></span><span class="save-text">Ready</span></div></div>
-    <div class="device-switch" aria-label="Responsive preview">
-      <button class="device-btn active" data-device="desktop" title="Desktop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M9 21h6M12 17v4"/></svg></button>
-      <button class="device-btn" data-device="laptop" title="Laptop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg></button>
-      <button class="device-btn" data-device="tablet" title="Tablet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/></svg></button>
-      <button class="device-btn" data-device="mobile" title="Mobile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="2" width="8" height="20" rx="2"/><path d="M11 19h2"/></svg></button>
-    </div>
-    <div class="top-actions">
-      <button class="btn hide-mid" id="save-draft-btn">Save Draft</button>
-      <button class="btn hide-mid" id="preview-btn">Preview</button>
-      <button class="btn primary" id="publish-btn">Publish</button>
-      <button class="btn danger hide-mid" id="unpublish-btn">Unpublish</button>
-      <button class="btn icon hide-mid" id="history-btn" title="Version history">↶</button>
-      <button class="btn icon" id="live-btn" title="View live site">↗</button>
-    </div>
-  </header>
+<script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
+<script defer src="/admin/preview.js"></script>
 
-  <aside class="leftbar">
-    <div class="left-section">
-      <div class="left-title"><span>Pages</span><button id="new-page-btn" title="New page">+</button></div>
-      <div id="page-nav"></div>
-    </div>
-    <div class="left-section left-bottom">
-      <div class="left-title"><span>Management</span></div>
-      <button class="nav-row manage-nav" data-mode="globals"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span>Global Components</span></button>
-      <button class="nav-row manage-nav" data-mode="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 0 18h1.2a1.8 1.8 0 0 0 0-3.6H12a2 2 0 0 1 0-4h4a5 5 0 0 0 5-5C21 5.4 17 3 12 3Z"/></svg><span>Brand System</span></button>
-      <button class="nav-row manage-nav" data-mode="media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m5 18 5-5 3 3 2-2 4 4"/></svg><span>Media</span></button>
-      <button class="nav-row manage-nav" data-mode="seo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>SEO &amp; AEO</span></button>
-      <button class="nav-row manage-nav" data-mode="forms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Forms &amp; Leads</span></button>
-      <button class="nav-row manage-nav" data-mode="templates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg><span>Templates</span></button>
-      <button class="nav-row manage-nav" data-mode="integrations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v5M16 3v5M6 8h12v2a6 6 0 0 1-6 6v5M9 21h6"/></svg><span>Integrations</span></button>
-      <button class="nav-row manage-nav" data-mode="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5V4M12 8v5l3 2"/></svg><span>Version History</span></button>
-      <button class="nav-row manage-nav" data-mode="roles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M17 14c2.7.3 4 2.3 4 6"/></svg><span>Users &amp; Roles</span></button>
-    </div>
-    <div class="connection-pill" id="connection"><strong>GitHub not connected</strong><span>Connect to publish</span></div>
-    <button class="nav-row" id="logout-btn" style="margin-top:5px"><span>Disconnect GitHub</span></button>
-    <a class="nav-row" href="/admin/safe.html" style="text-decoration:none;margin-top:3px"><span>Open Safe Editor</span></a>
-  </aside>
-
-  <main class="workspace" id="workspace"></main>
-  <aside class="rightbar" id="rightbar"></aside>
-  <button class="collapse-handle" id="collapse-handle" title="Collapse settings">›</button>
-</div>
-
-<div class="login-screen" id="login-screen">
-  <div class="login-card">
-    <img src="/assets/branding/benvor-horizontal-dark.png" alt="Benvor Digital">
-    <h1>Open Benvor Custom CMS</h1>
-    <p>Connect your GitHub account to edit and publish <strong>benvorgroup/benvordigital</strong>. Drafts autosave locally and only go live when you publish.</p>
-    <div class="login-actions">
-      <button class="btn primary" id="connect-btn">Connect with GitHub OAuth</button>
-      <a class="btn" href="/admin/safe.html">Use Emergency Safe Editor</a>
-    </div>
-    <details>
-      <summary>Connection fallback</summary>
-      <p>If the existing OAuth worker does not return a token to the custom CMS, use a GitHub token with repository access for this browser session.</p>
-      <div class="token-row"><input id="token-input" type="password" placeholder="GitHub token"><button class="btn soft" id="token-connect">Connect</button></div>
-    </details>
-    <div class="login-foot">Token fallback is stored in sessionStorage only and is cleared when you disconnect or the browser session ends.</div>
-  </div>
-</div>
-
-<div class="modal-backdrop hidden" id="modal-backdrop"></div>
-<div class="toast-stack" id="toast-stack"></div>
-<script src="/admin/custom-cms.js"></script>
+<script defer src="/admin/builder-admin.js"></script>
 </body>
 </html>

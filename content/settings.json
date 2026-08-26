@@ -141,14 +141,14 @@
     ],
     "social": [
       {
-        "label": "LinkedIn",
-        "url": "",
-        "disabled": true
-      },
-      {
         "label": "Facebook",
         "url": "https://www.facebook.com/BenvorDigital",
-        "disabled": false
+        "enabled": true
+      },
+      {
+        "label": "LinkedIn",
+        "url": "",
+        "enabled": true
       }
     ],
     "copyright": "© 2026 Benvor Digital. All rights reserved.",
@@ -188,7 +188,11 @@
   "tracking": {
     "ga4_measurement_id": "",
     "gtm_container_id": "",
-    "meta_pixel_id": ""
+    "meta_pixel_id": "",
+    "google_ads_conversion_id": "",
+    "google_ads_conversion_label": "",
+    "linkedin_partner_id": "",
+    "search_console_verification": ""
   },
   "schema": {
     "business_name": "Benvor Digital",
@@ -227,5 +231,14 @@
     "lead_form_action": "",
     "growth_audit_action": "",
     "success_message": "Thanks. We’ll review your information and get back to you within one business day."
+  },
+  "integrations": {
+    "booking_url": "",
+    "crm_webhook": "",
+    "email_automation_endpoint": "",
+    "form_endpoint": "",
+    "default_utm_source": "",
+    "default_utm_medium": "",
+    "custom_head_reference": ""
   }
 }

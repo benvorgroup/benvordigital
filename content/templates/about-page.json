@@ -1,0 +1,15 @@
+{
+  "title": "About Page",
+  "slug": "about-page",
+  "template_type": "About Page",
+  "description": "About Page starter recipe for the Benvor page builder.",
+  "section_types": [
+    "page_hero",
+    "image_text",
+    "stats",
+    "why_benvor",
+    "team",
+    "cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

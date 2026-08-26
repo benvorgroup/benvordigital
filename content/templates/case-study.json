@@ -1,0 +1,13 @@
+{
+  "title": "Case Study",
+  "slug": "case-study",
+  "template_type": "Case Study",
+  "description": "Case Study starter recipe for the Benvor page builder.",
+  "section_types": [
+    "page_hero",
+    "image_text",
+    "stats",
+    "cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

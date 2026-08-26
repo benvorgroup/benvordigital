@@ -1,0 +1,16 @@
+{
+  "title": "Lead Generation Page",
+  "slug": "lead-generation-page",
+  "template_type": "Lead Generation Page",
+  "description": "Lead Generation Page starter recipe for the Benvor page builder.",
+  "section_types": [
+    "hero_lead_form",
+    "problem_nav",
+    "services_grid",
+    "selected_work",
+    "growth_score",
+    "faq",
+    "dual_cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

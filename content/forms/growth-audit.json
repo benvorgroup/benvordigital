@@ -1,0 +1,49 @@
+{
+  "title": "Free Growth Audit",
+  "slug": "growth-audit",
+  "enabled": true,
+  "recipient": "info@benvordigital.com",
+  "success_message": "Thanks. We’ll review your information and get back to you within one business day.",
+  "thank_you_url": "",
+  "spam_protection": true,
+  "booking_handoff": true,
+  "booking_url": "",
+  "conversion_event": "growth_audit_submit",
+  "crm_endpoint": "",
+  "fields": [
+    {
+      "label": "Name",
+      "name": "name",
+      "type": "text",
+      "required": true,
+      "placeholder": "Your name"
+    },
+    {
+      "label": "Email",
+      "name": "email",
+      "type": "email",
+      "required": true,
+      "placeholder": "you@company.com"
+    },
+    {
+      "label": "Website",
+      "name": "website",
+      "type": "text",
+      "required": false,
+      "placeholder": "https://"
+    },
+    {
+      "label": "Primary Goal",
+      "name": "goal",
+      "type": "select",
+      "required": true,
+      "options": [
+        "More qualified leads",
+        "More sales",
+        "Improve SEO / AEO",
+        "Improve paid advertising",
+        "Improve conversion rate"
+      ]
+    }
+  ]
+}

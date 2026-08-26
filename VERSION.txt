@@ -1,5 +1,6 @@
-Benvor Digital Custom CMS 1.0
-Build: 2026-08-26
-Main editor: /admin/
+Benvor Digital — Clean Professional Builder 1.0
+2026-08-27
+Base: ADMIN-UNRESPONSIVE-HARDFIX
+Primary admin: /admin/
 Safe fallback: /admin/safe.html
-Publishing: GitHub API -> benvorgroup/benvordigital -> main
+Decap CMS pinned: 3.8.3

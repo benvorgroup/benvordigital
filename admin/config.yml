@@ -11,7 +11,7 @@ media_folder: assets/images/uploads
 public_folder: /assets/images/uploads
 collections:
 - name: pages
-  label: Pages — Visual Builder
+  label: Pages
   label_singular: Page
   folder: content/pages
   create: true
@@ -32,14 +32,6 @@ collections:
     hint: 'Existing main pages: home, about, services, portfolio, contact. New pages can be viewed at /page/?slug=YOUR-SLUG'
   - label: Published
     name: published
-    widget: boolean
-    default: true
-  - label: Show Header
-    name: show_header
-    widget: boolean
-    default: true
-  - label: Show Footer
-    name: show_footer
     widget: boolean
     default: true
   - label: SEO
@@ -83,7 +75,46 @@ collections:
       - ContactPage
       - CollectionPage
       default: WebPage
-  - label: ADVANCED VISUAL PAGE BUILDER
+    - label: Search Preview / SERP Title Override
+      name: search_title
+      widget: string
+      required: false
+      hint: Optional. Leave blank to use the SEO title.
+    - label: Breadcrumb Label
+      name: breadcrumb_label
+      widget: string
+      required: false
+    - label: Robots Directive
+      name: robots
+      widget: select
+      required: false
+      options:
+      - index,follow
+      - noindex,follow
+      - index,nofollow
+      - noindex,nofollow
+      default: index,follow
+    - label: AEO Answer Summary
+      name: aeo_answer
+      widget: text
+      required: false
+      hint: A concise, direct answer suitable for AI/search answer extraction.
+    - label: Primary Entity / Topic
+      name: primary_entity
+      widget: string
+      required: false
+    - label: Key Takeaway
+      name: key_takeaway
+      widget: text
+      required: false
+    - label: FAQ Schema Enabled
+      name: faq_schema_enabled
+      widget: boolean
+      default: false
+      required: false
+    collapsed: true
+    summary: Search, social sharing, schema and AEO settings
+  - label: Page Sections
     name: sections
     widget: list
     collapsed: true
@@ -152,6 +183,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Secondary Button
           name: secondary_button
           widget: object
@@ -162,6 +194,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Hero Stats
           name: stats
           widget: list
@@ -185,6 +218,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
         - label: Analytics Dashboard
           name: dashboard
           widget: object
@@ -237,6 +271,7 @@ collections:
               widget: number
               min: 0
               max: 100
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -594,6 +629,7 @@ collections:
             name: image
             widget: image
             required: false
+          collapsed: true
         - label: Right-side Metrics
           name: metrics
           widget: list
@@ -604,6 +640,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -1338,6 +1375,7 @@ collections:
           - label: Text
             name: text
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -1699,6 +1737,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Projects
           name: projects
           widget: relation
@@ -2806,6 +2845,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Stats
           name: stats
           widget: list
@@ -2826,6 +2866,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -3560,6 +3601,7 @@ collections:
             name: url
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -3913,6 +3955,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -4276,6 +4319,7 @@ collections:
           - label: Text
             name: text
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -4636,6 +4680,7 @@ collections:
           - label: Answer
             name: answer
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -5392,6 +5437,7 @@ collections:
               label: Option
               name: option
               widget: string
+          collapsed: true
         - label: Submit Button Label
           name: submit_label
           widget: string
@@ -5409,6 +5455,7 @@ collections:
             name: link
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -6121,6 +6168,7 @@ collections:
             name: alt
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -6523,6 +6571,7 @@ collections:
             name: button_url
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -6883,6 +6932,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -7944,6 +7994,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Secondary Button
           name: secondary_button
           widget: object
@@ -7954,6 +8005,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Form Heading
           name: form_heading
           widget: string
@@ -7994,6 +8046,7 @@ collections:
               label: Option
               name: option
               widget: string
+          collapsed: true
         - label: Submit Label
           name: submit_label
           widget: string
@@ -8021,6 +8074,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -8401,6 +8455,7 @@ collections:
           - label: Button URL
             name: button_url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -8767,6 +8822,7 @@ collections:
           - label: Benvor / Right
             name: right
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -9159,6 +9215,7 @@ collections:
               label: Option
               name: option
               widget: string
+          collapsed: true
         - label: Submit Label
           name: submit_label
           widget: string
@@ -9184,6 +9241,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -9553,6 +9611,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -9921,6 +9980,7 @@ collections:
           - label: Button URL
             name: button_url
             widget: string
+          collapsed: true
         - label: Secondary / Medium Intent
           name: secondary
           widget: object
@@ -9940,6 +10000,7 @@ collections:
           - label: Button URL
             name: button_url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -10366,6 +10427,58 @@ collections:
       name: description
       widget: text
       required: false
+    - label: Search Preview / SERP Title Override
+      name: search_title
+      widget: string
+      required: false
+      hint: Optional. Leave blank to use the SEO title.
+    - label: Breadcrumb Label
+      name: breadcrumb_label
+      widget: string
+      required: false
+    - label: Robots Directive
+      name: robots
+      widget: select
+      required: false
+      options:
+      - index,follow
+      - noindex,follow
+      - index,nofollow
+      - noindex,nofollow
+      default: index,follow
+    - label: AEO Answer Summary
+      name: aeo_answer
+      widget: text
+      required: false
+      hint: A concise, direct answer suitable for AI/search answer extraction.
+    - label: Primary Entity / Topic
+      name: primary_entity
+      widget: string
+      required: false
+    - label: Key Takeaway
+      name: key_takeaway
+      widget: text
+      required: false
+    - label: FAQ Schema Enabled
+      name: faq_schema_enabled
+      widget: boolean
+      default: false
+      required: false
+    - label: Schema Type
+      name: schema_type
+      widget: select
+      required: false
+      options:
+      - WebPage
+      - AboutPage
+      - ContactPage
+      - CollectionPage
+      - Service
+      - Article
+      - FAQPage
+      default: WebPage
+    collapsed: true
+    summary: Search, social sharing, schema and AEO settings
   - label: Detail Page CTA
     name: cta
     widget: object
@@ -10376,6 +10489,7 @@ collections:
     - label: URL
       name: url
       widget: string
+    collapsed: true
 - name: projects
   label: Case Studies / Portfolio
   label_singular: Project
@@ -10479,6 +10593,58 @@ collections:
       name: description
       widget: text
       required: false
+    - label: Search Preview / SERP Title Override
+      name: search_title
+      widget: string
+      required: false
+      hint: Optional. Leave blank to use the SEO title.
+    - label: Breadcrumb Label
+      name: breadcrumb_label
+      widget: string
+      required: false
+    - label: Robots Directive
+      name: robots
+      widget: select
+      required: false
+      options:
+      - index,follow
+      - noindex,follow
+      - index,nofollow
+      - noindex,nofollow
+      default: index,follow
+    - label: AEO Answer Summary
+      name: aeo_answer
+      widget: text
+      required: false
+      hint: A concise, direct answer suitable for AI/search answer extraction.
+    - label: Primary Entity / Topic
+      name: primary_entity
+      widget: string
+      required: false
+    - label: Key Takeaway
+      name: key_takeaway
+      widget: text
+      required: false
+    - label: FAQ Schema Enabled
+      name: faq_schema_enabled
+      widget: boolean
+      default: false
+      required: false
+    - label: Schema Type
+      name: schema_type
+      widget: select
+      required: false
+      options:
+      - WebPage
+      - AboutPage
+      - ContactPage
+      - CollectionPage
+      - Service
+      - Article
+      - FAQPage
+      default: WebPage
+    collapsed: true
+    summary: Search, social sharing, schema and AEO settings
 - name: testimonials
   label: Testimonials
   label_singular: Testimonial
@@ -10545,9 +10711,9 @@ collections:
     widget: image
     required: false
 - name: website
-  label: Website Settings
+  label: Global Components & Brand System
   files:
-  - label: Brand, Navigation, Theme, Footer & SEO
+  - label: Global Components, Brand, SEO & Integrations
     name: settings
     file: content/settings.json
     format: json
@@ -10562,6 +10728,7 @@ collections:
       - label: Office Address
         name: office_address
         widget: text
+      collapsed: true
     - label: Branding
       name: brand
       widget: object
@@ -10586,6 +10753,7 @@ collections:
         name: apple_touch_icon
         widget: image
         required: false
+      collapsed: true
     - label: Navigation
       name: navigation
       widget: list
@@ -10614,6 +10782,7 @@ collections:
         name: enabled
         widget: boolean
         default: true
+      collapsed: true
     - label: Light Theme Design
       name: theme
       widget: object
@@ -10667,6 +10836,7 @@ collections:
         options:
         - Inter
         default: Inter
+      collapsed: true
     - label: Footer
       name: footer
       widget: object
@@ -10697,7 +10867,7 @@ collections:
           - label: URL
             name: url
             widget: string
-      - label: Social Links
+      - label: Social Links (Facebook + LinkedIn only)
         name: social
         widget: list
         fields:
@@ -10707,6 +10877,12 @@ collections:
         - label: URL
           name: url
           widget: string
+        - label: Enabled
+          name: enabled
+          widget: boolean
+          default: true
+        hint: Facebook is live. Keep LinkedIn URL blank until the final profile URL is available. Instagram and X are intentionally
+          removed.
       - label: Copyright
         name: copyright
         widget: string
@@ -10714,6 +10890,7 @@ collections:
         name: connect_heading
         widget: string
         default: Let's Connect
+      collapsed: true
     - label: SEO Defaults
       name: seo_defaults
       widget: object
@@ -10728,6 +10905,7 @@ collections:
         name: social_image
         widget: image
         required: false
+      collapsed: true
     - label: Contact Form Processing
       name: contact_form
       widget: object
@@ -10747,6 +10925,7 @@ collections:
       - label: Success Message
         name: success_message
         widget: text
+      collapsed: true
     - label: Project Detail Labels
       name: project_detail_labels
       widget: object
@@ -10763,6 +10942,7 @@ collections:
         name: result
         widget: string
         default: Result
+      collapsed: true
     - label: Project Detail CTA
       name: project_detail_cta
       widget: object
@@ -10779,6 +10959,7 @@ collections:
       - label: Button URL
         name: button_url
         widget: string
+      collapsed: true
     - label: Interface Labels
       name: ui_labels
       widget: object
@@ -10792,7 +10973,8 @@ collections:
       - label: Carousel Next Label
         name: carousel_next
         widget: string
-    - label: Analytics & Tracking
+      collapsed: true
+    - label: Analytics & Advertising Tracking
       name: tracking
       widget: object
       fields:
@@ -10808,6 +10990,23 @@ collections:
         name: meta_pixel_id
         widget: string
         required: false
+      - label: Google Ads Conversion ID
+        name: google_ads_conversion_id
+        widget: string
+        required: false
+      - label: Google Ads Conversion Label
+        name: google_ads_conversion_label
+        widget: string
+        required: false
+      - label: LinkedIn Partner ID
+        name: linkedin_partner_id
+        widget: string
+        required: false
+      - label: Google Search Console Verification
+        name: search_console_verification
+        widget: string
+        required: false
+      collapsed: true
     - label: Business Schema
       name: schema
       widget: object
@@ -10839,6 +11038,7 @@ collections:
       - label: Country
         name: country
         widget: string
+      collapsed: true
     - label: Safe Design Controls
       name: design
       widget: object
@@ -10870,6 +11070,7 @@ collections:
         - none
         - subtle
         default: subtle
+      collapsed: true
     - label: Global Interface Labels
       name: labels
       widget: object
@@ -10892,6 +11093,7 @@ collections:
       - label: Back to Blog
         name: back_to_blog
         widget: string
+      collapsed: true
     - label: Lead Generation Settings
       name: lead_generation
       widget: object
@@ -10936,6 +11138,41 @@ collections:
       - label: Success Message
         name: success_message
         widget: text
+      collapsed: true
+    - label: Integrations Hub
+      name: integrations
+      widget: object
+      collapsed: true
+      fields:
+      - label: Booking URL (Calendly / Cal.com)
+        name: booking_url
+        widget: string
+        required: false
+      - label: CRM Webhook / Endpoint
+        name: crm_webhook
+        widget: string
+        required: false
+      - label: Email Automation Endpoint
+        name: email_automation_endpoint
+        widget: string
+        required: false
+      - label: Form Processing Endpoint
+        name: form_endpoint
+        widget: string
+        required: false
+      - label: Default UTM Source
+        name: default_utm_source
+        widget: string
+        required: false
+      - label: Default UTM Medium
+        name: default_utm_medium
+        widget: string
+        required: false
+      - label: Custom Head Script Reference
+        name: custom_head_reference
+        widget: text
+        required: false
+        hint: Reference/notes only in stability-first mode. Scripts are not injected automatically.
 - name: insights
   label: Insights / Blog
   label_singular: Article
@@ -10995,8 +11232,60 @@ collections:
       name: description
       widget: text
       required: false
+    - label: Search Preview / SERP Title Override
+      name: search_title
+      widget: string
+      required: false
+      hint: Optional. Leave blank to use the SEO title.
+    - label: Breadcrumb Label
+      name: breadcrumb_label
+      widget: string
+      required: false
+    - label: Robots Directive
+      name: robots
+      widget: select
+      required: false
+      options:
+      - index,follow
+      - noindex,follow
+      - index,nofollow
+      - noindex,nofollow
+      default: index,follow
+    - label: AEO Answer Summary
+      name: aeo_answer
+      widget: text
+      required: false
+      hint: A concise, direct answer suitable for AI/search answer extraction.
+    - label: Primary Entity / Topic
+      name: primary_entity
+      widget: string
+      required: false
+    - label: Key Takeaway
+      name: key_takeaway
+      widget: text
+      required: false
+    - label: FAQ Schema Enabled
+      name: faq_schema_enabled
+      widget: boolean
+      default: false
+      required: false
+    - label: Schema Type
+      name: schema_type
+      widget: select
+      required: false
+      options:
+      - WebPage
+      - AboutPage
+      - ContactPage
+      - CollectionPage
+      - Service
+      - Article
+      - FAQPage
+      default: WebPage
+    collapsed: true
+    summary: Search, social sharing, schema and AEO settings
 - name: landing_pages
-  label: Landing Pages — Campaign Builder
+  label: Landing Pages
   label_singular: Landing Page
   folder: content/landing-pages
   create: true
@@ -11015,14 +11304,6 @@ collections:
     widget: string
   - label: Published
     name: published
-    widget: boolean
-    default: true
-  - label: Show Header
-    name: show_header
-    widget: boolean
-    default: true
-  - label: Show Footer
-    name: show_footer
     widget: boolean
     default: true
   - label: SEO
@@ -11066,7 +11347,46 @@ collections:
       - ContactPage
       - CollectionPage
       default: WebPage
-  - label: ADVANCED VISUAL PAGE BUILDER
+    - label: Search Preview / SERP Title Override
+      name: search_title
+      widget: string
+      required: false
+      hint: Optional. Leave blank to use the SEO title.
+    - label: Breadcrumb Label
+      name: breadcrumb_label
+      widget: string
+      required: false
+    - label: Robots Directive
+      name: robots
+      widget: select
+      required: false
+      options:
+      - index,follow
+      - noindex,follow
+      - index,nofollow
+      - noindex,nofollow
+      default: index,follow
+    - label: AEO Answer Summary
+      name: aeo_answer
+      widget: text
+      required: false
+      hint: A concise, direct answer suitable for AI/search answer extraction.
+    - label: Primary Entity / Topic
+      name: primary_entity
+      widget: string
+      required: false
+    - label: Key Takeaway
+      name: key_takeaway
+      widget: text
+      required: false
+    - label: FAQ Schema Enabled
+      name: faq_schema_enabled
+      widget: boolean
+      default: false
+      required: false
+    collapsed: true
+    summary: Search, social sharing, schema and AEO settings
+  - label: Page Sections
     name: sections
     widget: list
     collapsed: true
@@ -11135,6 +11455,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Secondary Button
           name: secondary_button
           widget: object
@@ -11145,6 +11466,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Hero Stats
           name: stats
           widget: list
@@ -11168,6 +11490,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
         - label: Analytics Dashboard
           name: dashboard
           widget: object
@@ -11220,6 +11543,7 @@ collections:
               widget: number
               min: 0
               max: 100
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -11577,6 +11901,7 @@ collections:
             name: image
             widget: image
             required: false
+          collapsed: true
         - label: Right-side Metrics
           name: metrics
           widget: list
@@ -11587,6 +11912,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -12321,6 +12647,7 @@ collections:
           - label: Text
             name: text
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -12682,6 +13009,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Projects
           name: projects
           widget: relation
@@ -13789,6 +14117,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
         - label: Stats
           name: stats
           widget: list
@@ -13809,6 +14138,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -14543,6 +14873,7 @@ collections:
             name: url
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -14896,6 +15227,7 @@ collections:
           - label: Label
             name: label
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -15259,6 +15591,7 @@ collections:
           - label: Text
             name: text
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -15619,6 +15952,7 @@ collections:
           - label: Answer
             name: answer
             widget: text
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -16375,6 +16709,7 @@ collections:
               label: Option
               name: option
               widget: string
+          collapsed: true
         - label: Submit Button Label
           name: submit_label
           widget: string
@@ -16392,6 +16727,7 @@ collections:
             name: link
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -17104,6 +17440,7 @@ collections:
             name: alt
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -17506,6 +17843,7 @@ collections:
             name: button_url
             widget: string
             required: false
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -17866,6 +18204,7 @@ collections:
           - label: URL
             name: url
             widget: string
+          collapsed: true
       - label: LAYOUT
         name: layout
         widget: object
@@ -18870,3 +19209,227 @@ collections:
           hint: Optional. Use only for advanced custom styling.
     label_singular: Page Section
     minimize_collapsed: true
+- name: forms
+  label: Forms & Lead Manager
+  label_singular: Form
+  folder: content/forms
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  summary: '{{title}}'
+  fields:
+  - label: Form Name
+    name: title
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Enabled
+    name: enabled
+    widget: boolean
+    default: true
+  - label: Recipient Email
+    name: recipient
+    widget: string
+    required: false
+  - label: Success Message
+    name: success_message
+    widget: text
+    required: false
+  - label: Thank-you Page URL
+    name: thank_you_url
+    widget: string
+    required: false
+  - label: Spam Protection
+    name: spam_protection
+    widget: boolean
+    default: true
+  - label: Booking Handoff Enabled
+    name: booking_handoff
+    widget: boolean
+    default: false
+  - label: Booking URL
+    name: booking_url
+    widget: string
+    required: false
+  - label: GA4 / GTM Conversion Event
+    name: conversion_event
+    widget: string
+    required: false
+  - label: CRM / Automation Endpoint
+    name: crm_endpoint
+    widget: string
+    required: false
+  - label: Form Fields
+    name: fields
+    widget: list
+    collapsed: true
+    summary: '{{fields.label}}'
+    fields:
+    - label: Label
+      name: label
+      widget: string
+    - label: Field Name
+      name: name
+      widget: string
+    - label: Type
+      name: type
+      widget: select
+      options:
+      - text
+      - email
+      - tel
+      - textarea
+      - select
+      - checkbox
+      - radio
+      - hidden
+      default: text
+    - label: Required
+      name: required
+      widget: boolean
+      default: false
+    - label: Placeholder
+      name: placeholder
+      widget: string
+      required: false
+    - label: Options (one per line)
+      name: options
+      widget: list
+      required: false
+      field:
+        label: Option
+        name: option
+        widget: string
+    - label: Conditional Field Name
+      name: conditional_on
+      widget: string
+      required: false
+    - label: Conditional Value
+      name: conditional_value
+      widget: string
+      required: false
+    - label: Hidden / Default Value
+      name: default_value
+      widget: string
+      required: false
+- name: media_assets
+  label: Media Asset Manager
+  label_singular: Media Asset
+  folder: content/media-assets
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  summary: '{{title}}'
+  fields:
+  - label: Asset Name
+    name: title
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Desktop Asset
+    name: desktop_asset
+    widget: image
+  - label: Mobile Asset
+    name: mobile_asset
+    widget: image
+    required: false
+  - label: Alt Text
+    name: alt_text
+    widget: string
+  - label: Caption
+    name: caption
+    widget: text
+    required: false
+  - label: Category
+    name: category
+    widget: select
+    options:
+    - Brand
+    - Website
+    - Portfolio
+    - Blog
+    - Social
+    - Other
+    default: Website
+  - label: Focal Position
+    name: focal_position
+    widget: select
+    options:
+    - center
+    - top
+    - bottom
+    - left
+    - right
+    default: center
+  - label: Aspect Ratio
+    name: aspect_ratio
+    widget: select
+    options:
+    - auto
+    - '1:1'
+    - '4:3'
+    - '3:2'
+    - '16:9'
+    - '21:9'
+    default: auto
+  - label: Usage Notes
+    name: usage_notes
+    widget: text
+    required: false
+- name: templates
+  label: Template & Component Library
+  label_singular: Template
+  folder: content/templates
+  create: true
+  delete: true
+  extension: json
+  format: json
+  slug: '{{fields.slug}}'
+  identifier_field: title
+  summary: '{{title}}'
+  fields:
+  - label: Template Name
+    name: title
+    widget: string
+  - label: Slug
+    name: slug
+    widget: string
+  - label: Template Type
+    name: template_type
+    widget: select
+    options:
+    - Service Page
+    - Landing Page
+    - Case Study
+    - About Page
+    - Contact Page
+    - Lead Generation Page
+    - Blank Page
+    - Reusable Section
+    - CTA Block
+    - Form Block
+    - Card Style
+  - label: Description
+    name: description
+    widget: text
+    required: false
+  - label: Recommended Section Types
+    name: section_types
+    widget: list
+    collapsed: true
+    field:
+      label: Section Type
+      name: section_type
+      widget: string
+  - label: Design Notes
+    name: design_notes
+    widget: text
+    required: false

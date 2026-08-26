@@ -1,0 +1,8 @@
+{
+  "title": "Blank Page",
+  "slug": "blank-page",
+  "template_type": "Blank Page",
+  "description": "Blank Page starter recipe for the Benvor page builder.",
+  "section_types": [],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

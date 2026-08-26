@@ -1,0 +1,15 @@
+{
+  "title": "Landing Page",
+  "slug": "landing-page",
+  "template_type": "Landing Page",
+  "description": "Landing Page starter recipe for the Benvor page builder.",
+  "section_types": [
+    "hero_lead_form",
+    "trust_stats",
+    "comparison",
+    "selected_work",
+    "faq",
+    "dual_cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}

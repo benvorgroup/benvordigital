@@ -1,0 +1,13 @@
+{
+  "title": "Contact Page",
+  "slug": "contact-page",
+  "template_type": "Contact Page",
+  "description": "Contact Page starter recipe for the Benvor page builder.",
+  "section_types": [
+    "page_hero",
+    "contact_split",
+    "trust_stats",
+    "cta"
+  ],
+  "design_notes": "Use the visual block library to add these sections in the suggested order, then customize Content, Layout, Design, Responsive and Advanced settings."
+}
