@@ -131,7 +131,7 @@
   function projectCardFull(p){
     return `<a class="portfolio-card project-card" data-category="${esc(p.category||'')}" href="/project/?slug=${encodeURIComponent(p.slug)}"><div class="work-image"><img src="${esc(safeUrl(p.image))}" alt="${esc(p.image_alt||p.title)}"><span class="work-tag">${esc(p.category||'')}</span></div><div class="work-body"><h3>${esc(p.title)}</h3><div class="work-meta">${esc(p.services||'')}</div><p style="font-size:.76rem;color:var(--muted);margin-top:8px">${esc(p.description||'')}</p><div class="metric-grid">${(p.metrics||[]).slice(0,2).map(m=>`<div class="project-metric"><strong>${esc(m.value)}</strong><span>${esc(m.label)}</span></div>`).join('')}</div></div></a>`;
   }
-  async function renderTestimonials(s){
+  async function renderTestimonials(s,settings){
     const items=await relation('testimonials',s.testimonials);
     return `<section class="section reveal"><div class="wrap"><div class="carousel-head"><h2>${esc(s.heading||'What Our Clients Say')}</h2><div class="carousel-controls"><button class="round-btn testimonial-prev" aria-label="${esc(settings.ui_labels?.carousel_previous||'Previous')}">‹</button><button class="round-btn testimonial-next" aria-label="${esc(settings.ui_labels?.carousel_next||'Next')}">›</button></div></div><div class="testimonial-window"><div class="testimonial-track">${items.map(t=>`<article class="testimonial-card"><div class="quote-mark">“</div><blockquote>${esc(t.quote)}</blockquote><div class="person">${t.image?`<img class="avatar" src="${esc(safeUrl(t.image))}" alt="${esc(t.name)}">`:`<span class="avatar">${esc(initials(t.name))}</span>`}<div><strong>${esc(t.name)}</strong><span>${esc(t.role)}, ${esc(t.company)}</span></div></div></article>`).join('')}</div></div><div class="dots"></div></div></section>`;
   }
@@ -207,7 +207,7 @@
       case 'why_benvor': return renderWhy(s);
       case 'selected_work': return renderSelectedWork(s,false);
       case 'portfolio_grid': return renderSelectedWork(s,true);
-      case 'testimonials': return renderTestimonials(s);
+      case 'testimonials': return renderTestimonials(s,settings);
       case 'about_preview': return renderAboutPreview(s);
       case 'cta': return renderCTA(s);
       case 'page_hero': return renderPageHero(s);
@@ -224,6 +224,13 @@
       case 'divider': return `<div class="wrap"><div class="divider"></div></div>`;
       default:return '';
     }
+  }
+
+
+  async function renderSection(raw, settings){
+    const normalized=normalizeSection(raw);
+    const html=await renderSectionRaw(normalized,settings);
+    return applySectionControls(html,raw);
   }
 
 
@@ -344,6 +351,15 @@
       s.aria_label?`aria-label="${esc(s.aria_label)}"`:''
     ].filter(Boolean).join(' ');
     return `<div class="${cls}" style="${st}" ${attrs}>${html}</div>`;
+  }
+
+
+  function setHomeHeroViewport(){
+    document.documentElement.style.setProperty('--benvor-vh', `${window.innerHeight}px`);
+  }
+  function bindLeadGeneration(settings){
+    $$('.quick-lead-form').forEach(form=>{if(form.dataset.benvorBound)return;form.dataset.benvorBound='1';form.addEventListener('submit',e=>{e.preventDefault();const msg=$('.form-message',form);if(msg){msg.classList.add('show');msg.textContent=settings.lead_generation?.success_message||'Thanks. Your request has been received.';}form.reset();});});
+    $$('.growth-score-form').forEach(form=>{if(form.dataset.benvorBound)return;form.dataset.benvorBound='1';form.addEventListener('submit',e=>{e.preventDefault();const fields=Array.from(form.querySelectorAll('input:not([type=checkbox]),select'));const answered=fields.filter(el=>String(el.value||'').trim()).length;const checked=form.querySelectorAll('input[type=checkbox]:checked').length;const total=Math.max(1,fields.length+1);const score=Math.min(95,Math.max(55,Math.round(55+40*((answered+(checked?1:0))/total))));const card=form.closest('.growth-score-card');const result=card&&$('.growth-score-result',card);const n=result&&$('.score-number',result);if(n)n.textContent=score+'/100';if(result){result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'nearest'});}form.hidden=true;});});
   }
 
   function bindInteractions(settings){
@@ -475,7 +491,8 @@
       if(slug==='custom') slug=new URLSearchParams(location.search).get('slug')||'home';
       const page=await getJSON(`/content/pages/${encodeURIComponent(slug)}.json`);
       if(page.published===false) throw new Error('Page is unpublished');
-      if(page.show_header!==false) renderHeader(settings,mode,slug); else $('#site-header').style.display='none';
+      const activeNav=({'ecommerce-marketing':'services','b2b-saas-marketing':'services','case-studies':'portfolio','our-process':'about','why-benvor':'about','growth-audit':'contact','book-strategy-call':'contact'}[slug]||slug);
+      if(page.show_header!==false) renderHeader(settings,mode,activeNav); else $('#site-header').style.display='none';
       if(page.show_footer!==false) renderFooter(settings,mode); else $('#site-footer').style.display='none';
       updateSEO(page,settings);
       const out=[];for(const s of(page.sections||[])) out.push(await renderSection(s,settings));
@@ -486,7 +503,21 @@
       document.documentElement.classList.add('cms-fallback-active');
     }
   }
-  document.addEventListener('DOMContentLoaded',init);
+  async function renderDraft(page, settings, slug='home'){
+    const mode='light';
+    applyTheme(settings||{});
+    const activeNav=({'ecommerce-marketing':'services','b2b-saas-marketing':'services','case-studies':'portfolio','our-process':'about','why-benvor':'about','growth-audit':'contact','book-strategy-call':'contact'}[slug]||slug);
+    const header=$('#site-header'),footer=$('#site-footer'),main=$('#main');
+    if(header){header.style.display='';if(page.show_header!==false)renderHeader(settings,mode,activeNav);else header.style.display='none'}
+    if(footer){footer.style.display='';if(page.show_footer!==false)renderFooter(settings,mode);else footer.style.display='none'}
+    if(main){const out=[];for(const section of(page.sections||[]))out.push(await renderSection(section,settings));main.innerHTML=out.join('')}
+    setHomeHeroViewport();
+    return true;
+  }
+  window.BenvorRenderer={renderDraft,renderSection,normalizeSection,applySectionControls};
+  document.addEventListener('DOMContentLoaded',()=>{
+    if(document.body && document.body.dataset.benvorBuilderPreview==='true') return;
+    init();
+  });
 })();
 
-window.addEventListener('resize',setHomeHeroViewport,{passive:true});

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
-<rect width="1200" height="760" fill="#071625"/>
-<g fill="#102A42"><rect x="80" y="85" width="1040" height="590" rx="28"/></g>
-<g fill="#153D64"><rect x="120" y="130" width="330" height="210" rx="20"/><rect x="480" y="130" width="600" height="210" rx="20"/><rect x="120" y="375" width="960" height="250" rx="20"/></g>
-<g fill="#2563EB"><rect x="550" y="220" width="42" height="75" rx="6"/><rect x="620" y="185" width="42" height="110" rx="6"/><rect x="690" y="145" width="42" height="150" rx="6"/><rect x="760" y="205" width="42" height="90" rx="6"/></g>
-<path d="M170 560 C300 515 380 570 475 480 S660 500 760 420 S930 385 1040 300" fill="none" stroke="#4d8dff" stroke-width="8"/>
-<text x="125" y="205" fill="#fff" font-family="Arial" font-weight="700" font-size="65">LevelUp</text>
-<text x="125" y="260" fill="#96abd0" font-family="Arial" font-size="26">Financial growth platform</text>
-</svg>
