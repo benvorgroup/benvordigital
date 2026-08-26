@@ -154,11 +154,11 @@
         "url": "/about/"
       },
       "type": "about_preview",
-      "image": "/assets/images/site/office.svg",
+      "image": "/assets/images/uploads/benvor-digital-logo-1.png",
       "stats": [
         {
           "icon": "shield",
-          "value": "5+",
+          "value": "10+",
           "label": "Years in Business"
         },
         {
