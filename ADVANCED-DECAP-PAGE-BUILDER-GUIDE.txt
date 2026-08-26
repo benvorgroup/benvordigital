@@ -1,0 +1,58 @@
+BENVOR DIGITAL — ADVANCED DECAP PAGE BUILDER
+
+EDITOR ORGANIZATION
+Every page section is organized as:
+1. CONTENT
+2. LAYOUT
+3. DESIGN
+4. RESPONSIVE
+5. ADVANCED
+
+CONTENT
+Block-specific text, images, links, buttons, stats, cards, FAQs, forms, etc.
+
+LAYOUT
+Visual preset, content width, minimum height, vertical alignment, text alignment,
+top/bottom spacing, element gap, responsive grid columns, card padding, image ratio.
+
+DESIGN
+Background color, background image, image position, overlay, text tone,
+border, radius and shadow.
+
+RESPONSIVE
+Hide by device and reverse main columns on mobile.
+
+ADVANCED
+Anchor ID, sticky section, GTM tracking name, ARIA label, z-index,
+animation control and optional CSS class.
+
+BUILDER TOOLBAR
+A fixed toolbar is added at the bottom of Decap:
+- + Page
+- + Landing
+- Open Live Page
+- Copy Live URL
+- CONTENT / LAYOUT / DESIGN / RESPONSIVE / ADVANCED jump tabs
+- Desktop / Tablet / Mobile preview widths
+
+KEYBOARD SHORTCUTS
+Alt+1 Content
+Alt+2 Layout
+Alt+3 Design
+Alt+4 Responsive
+Alt+5 Advanced
+Alt+D Desktop preview
+Alt+T Tablet preview
+Alt+M Mobile preview
+Alt+L Open live page
+
+VISUAL PRESETS
+Standard, Compact, Narrow, Wide, Full Bleed, Feature and Full Screen.
+
+IMPORTANT
+Decap remains a structured page builder rather than a freeform Webflow canvas.
+Drag/reorder, add/delete, visual controls and live preview are supported.
+Arbitrary drag-anywhere positioning and mouse resize handles are intentionally not faked.
+
+DEPLOYMENT
+Replace all current repository website files with everything inside this package.

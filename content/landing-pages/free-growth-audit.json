@@ -10,70 +10,169 @@
     {
       "type": "page_hero",
       "enabled": true,
-      "eyebrow": "Free Growth Audit",
-      "heading": "Find the highest-leverage opportunities in your growth system.",
-      "text": "We will review your website, acquisition channels, measurement, and conversion journey and identify the next most valuable actions.",
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false
+      "section_name": "Find the highest-leverage opportunities in your growth system.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Free Growth Audit",
+        "heading": "Find the highest-leverage opportunities in your growth system.",
+        "text": "We will review your website, acquisition channels, measurement, and conversion journey and identify the next most valuable actions."
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "flex_cards",
       "enabled": true,
-      "heading": "What we review",
-      "text": "A focused assessment built around commercial impact.",
-      "columns": 3,
-      "items": [
-        {
-          "title": "Acquisition",
-          "text": "Paid and organic visibility, targeting, offers, and channel fit."
-        },
-        {
-          "title": "Conversion",
-          "text": "Landing experience, messaging, friction, and calls to action."
-        },
-        {
-          "title": "Measurement",
-          "text": "GA4, GTM, conversions, attribution, and reporting quality."
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false
+      "section_name": "What we review",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "What we review",
+        "text": "A focused assessment built around commercial impact.",
+        "columns": 3,
+        "items": [
+          {
+            "title": "Acquisition",
+            "text": "Paid and organic visibility, targeting, offers, and channel fit."
+          },
+          {
+            "title": "Conversion",
+            "text": "Landing experience, messaging, friction, and calls to action."
+          },
+          {
+            "title": "Measurement",
+            "text": "GA4, GTM, conversions, attribution, and reporting quality."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "cta",
       "enabled": true,
-      "heading": "Ready for a clearer growth roadmap?",
-      "text": "Tell us where you want to grow and we will identify the strongest first move.",
-      "button": {
-        "label": "Request Your Audit",
-        "url": "/contact/"
+      "section_name": "Ready for a clearer growth roadmap?",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Ready for a clearer growth roadmap?",
+        "text": "Tell us where you want to grow and we will identify the strongest first move.",
+        "button": {
+          "label": "Request Your Audit",
+          "url": "/contact/"
+        }
       },
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     }
   ]
 }

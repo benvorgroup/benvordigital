@@ -1,31 +1,75 @@
-
-CMS.registerPreviewStyle("/admin/preview.css");
+/* Benvor Digital — Advanced Visual Builder Preview */
 (function(){
-  if(!window.createClass || !window.h) return;
-  const h=window.h, createClass=window.createClass;
-  const section=(s,i)=>{
-    const t=s.get('type'), soft=['services_grid','selected_work','team','process'].includes(t);
-    const cls='p-section'+(soft?' soft':'');
-    const heading=s.get('heading')||'';
-    if(t==='hero_dashboard') return h('div',{className:cls,key:i},h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'30px',alignItems:'center'}},
-      h('div',{},h('div',{style:{color:'#2563EB',fontSize:'11px',fontWeight:'700'}},s.get('eyebrow')||''),h('h1',{},s.get('heading')||'', ' ',h('span',{className:'blue'},s.get('highlight')||'')),h('p',{},s.get('text')||'')),
-      h('div',{className:'p-dashboard'})
+  if(!window.CMS || !window.React) return;
+  const h=window.React.createElement;
+
+  function toJS(v){return v&&typeof v.toJS==='function'?v.toJS():v}
+  function n(raw){const s=raw||{},c=s.content||{};return {...s,...c,layout:s.layout||{},design:s.design||{},responsive:s.responsive||{},advanced:s.advanced||{}}}
+  function cls(s){return `pv-section pv-${s.type||'generic'} pv-align-${s.layout?.text_align||'left'}`}
+  function sectionStyle(s){
+    const l=s.layout||{},d=s.design||{};
+    const widths={narrow:'820px',default:'1180px',wide:'1380px',full:'100%'};
+    const spaces={none:0,xs:18,small:36,default:70,large:100,xl:130,inherit:70};
+    const bgs={default:'#fff',white:'#fff',light_grey:'#f5f7fa',navy:'#0A1F33',blue:'#2563EB'};
+    return {
+      '--pv-width':widths[l.container_width]||'1180px',
+      '--pv-pt':`${spaces[l.padding_top]??70}px`,
+      '--pv-pb':`${spaces[l.padding_bottom]??70}px`,
+      background:bgs[d.background]||'#fff',
+      color:['navy','blue'].includes(d.background)?'#fff':'#405266'
+    };
+  }
+  function cards(items){
+    return h('div',{className:'pv-grid'},...(items||[]).slice(0,6).map((x,i)=>
+      h('article',{className:'pv-card',key:i},
+        h('strong',null,x.title||x.label||x.question||x.name||`Item ${i+1}`),
+        (x.text||x.answer||x.value)?h('p',null,x.text||x.answer||x.value):null
+      )
     ));
-    if(t==='trust_stats') return h('div',{className:cls,key:i},h('b',{},s.get('label')||'Trusted brands'));
-    if(t==='services_grid') return h('div',{className:cls,key:i},h('h2',{},heading||'Our Services'),h('div',{className:'p-grid'},...[1,2,3,4,5,6].map(x=>h('div',{className:'p-card'},h('b',{},'Service card'),h('p',{},'Editable service content')))));
-    if(t==='why_benvor') return h('div',{className:cls,key:i},h('h2',{},heading),h('div',{className:'p-grid'},...[1,2,3].map(x=>h('div',{className:'p-card'},h('b',{},'Benefit'),h('p',{},'Editable text')))));
-    if(t==='selected_work'||t==='portfolio_grid') return h('div',{className:cls,key:i},h('h2',{},heading||'Selected Work'),h('div',{className:'p-grid'},...[1,2,3].map(x=>h('div',{className:'p-card'},h('b',{},'Case study'),h('p',{},'Image + metrics')))));
-    if(t==='testimonials') return h('div',{className:cls,key:i},h('h2',{},heading),h('div',{className:'p-grid'},...[1,2,3].map(x=>h('div',{className:'p-card'},h('b',{},'“ Testimonial”')))));
-    if(t==='about_preview'||t==='image_text') return h('div',{className:cls,key:i},h('h2',{},heading),h('p',{},s.get('text')||'Editable image + copy section'));
-    if(t==='page_hero') return h('div',{className:cls,key:i},h('h1',{},heading),h('p',{},s.get('text')||''));
-    if(t==='cta') return h('div',{className:cls,key:i,style:{textAlign:'center'}},h('h2',{},heading),h('p',{},s.get('text')||''));
-    if(t==='process'||t==='team'||t==='faq'||t==='contact_split'||t==='flex_cards'||t==='stats') return h('div',{className:cls,key:i},h('h2',{},heading||t.replace('_',' ')),h('p',{},'Editable '+t.replace('_',' ')+' section'));
-    return h('div',{className:cls,key:i},h('h2',{},heading||t||'Section'));
-  };
-  const Preview=createClass({render:function(){
-    const data=this.props.entry.get('data');
-    const sections=data.get('sections')||[];
-    return h('div',{className:'preview'},h('div',{className:'p-header'},h('div',{className:'p-logo'},'BENVOR ',h('span',{},'DIGITAL')),h('div',{className:'p-nav'},h('span',{},'Home'),h('span',{},'About'),h('span',{},'Services'),h('span',{},'Portfolio'),h('span',{},'Contact')),h('span',{className:'p-btn'},'Get a Free Consultation')),...sections.map(section));
-  }});
+  }
+  function block(s){
+    s=n(s);const children=[];
+    if(s.eyebrow)children.push(h('span',{className:'pv-eyebrow',key:'e'},s.eyebrow));
+    if(s.heading)children.push(h('h2',{key:'h'},s.heading));
+    else if(s.title)children.push(h('h2',{key:'h'},s.title));
+    if(s.text)children.push(h('p',{className:'pv-lead',key:'p'},s.text));
+
+    if(s.type==='hero'||s.type==='hero_lead_form'){
+      children.push(h('div',{className:'pv-hero-demo',key:'demo'},
+        h('div',{className:'pv-dashboard'},h('strong',null,'Growth Overview'),h('div',{className:'pv-chart'})),
+        s.form_heading?h('div',{className:'pv-form-card'},h('strong',null,s.form_heading),h('div',{className:'pv-field'}),h('div',{className:'pv-field'}),h('button',null,s.submit_label||'Submit')):null
+      ));
+    } else if(s.type==='comparison'){
+      children.push(h('div',{className:'pv-comparison',key:'cmp'},...(s.rows||[]).map((x,i)=>h('div',{key:i},h('span',null,x.left),h('strong',null,x.right)))));
+    } else if(s.type==='faq'){
+      children.push(h('div',{className:'pv-faq',key:'faq'},...(s.items||[]).slice(0,5).map((x,i)=>h('div',{key:i},h('strong',null,x.question),h('span',null,'+')))));
+    } else if(s.type==='cta'||s.type==='dual_cta'){
+      children.push(h('button',{className:'pv-button',key:'btn'},s.button?.label||s.primary?.button_label||'Call to Action'));
+    } else if(Array.isArray(s.items)){
+      children.push(cards(s.items));
+    } else if(Array.isArray(s.stats)){
+      children.push(cards(s.stats));
+    } else if(Array.isArray(s.brands)){
+      children.push(h('div',{className:'pv-brands',key:'brands'},...s.brands.map((x,i)=>h('span',{key:i},x.name||x))));
+    } else if(Array.isArray(s.services)){
+      children.push(cards(s.services.map(x=>({title:String(x).replaceAll('-',' '),text:'Reusable service'}))));
+    } else if(Array.isArray(s.projects)){
+      children.push(cards(s.projects.map(x=>({title:String(x).replaceAll('-',' '),text:'Case study'}))));
+    }
+
+    return h('section',{className:cls(s),style:sectionStyle(s),'data-name':s.section_name||s.type},
+      h('span',{className:'pv-badge'},s.section_name||String(s.type||'Section').replaceAll('_',' ')),
+      h('div',{className:'pv-wrap'},...children)
+    );
+  }
+  function Preview({entry}){
+    const data=toJS(entry.getIn(['data']))||{};
+    return h('div',{className:'pv-root'},
+      h('header',{className:'pv-header'},h('strong',null,'BENVOR DIGITAL'),h('span',null,'Advanced CMS Preview')),
+      ...(data.sections||[]).filter(x=>x.enabled!==false).map((s,i)=>h(window.React.Fragment,{key:i},block(s)))
+    );
+  }
   CMS.registerPreviewTemplate('pages',Preview);
+  CMS.registerPreviewTemplate('landing_pages',Preview);
+  CMS.registerPreviewStyle('/admin/preview.css');
 })();

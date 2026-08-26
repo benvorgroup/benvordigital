@@ -1,0 +1,40 @@
+BENVOR DIGITAL — VISUAL CMS BUILDER
+
+AVAILABLE PER SECTION
+- Drag/reorder through Decap's section list
+- Add/delete page blocks
+- Edit headings, subtitles, paragraphs, buttons, links, stats, cards, FAQs and images
+- Narrow / Standard / Wide / Full width
+- Auto / Small / Medium / Large / Full-screen minimum height
+- Top/Center/Bottom vertical alignment
+- Left/Center/Right text alignment
+- Top/bottom spacing
+- Element gap
+- Desktop/Tablet/Mobile grid column counts
+- Card padding
+- Image ratio
+- Background color
+- Background image + position
+- Border
+- Corner radius
+- Shadow
+- Sticky/fixed section
+- Device visibility
+- Optional advanced CSS class
+
+LIVE PREVIEW
+The Pages collection now has a structured visual preview that shows section order,
+labels, headings, text, representative cards and stats while editing.
+
+IMPORTANT
+Decap is a structured visual block editor, not Webflow.
+It supports drag-reorder, add and delete sections, but it does not provide reliable freeform
+mouse resize handles or arbitrary drag-anywhere positioning.
+
+DUPLICATION
+Decap's typed list blocks do not provide a dependable native one-click Duplicate action.
+Use Add Section and choose the same block type. This package avoids brittle DOM-based duplication
+because it can corrupt content.
+
+DEPLOYMENT
+Replace the existing repository files with everything inside this package.

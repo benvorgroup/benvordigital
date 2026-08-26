@@ -18,149 +18,347 @@
     {
       "type": "page_hero",
       "enabled": true,
-      "eyebrow": "About Benvor Digital",
-      "heading": "Built for brands that expect marketing to perform.",
-      "text": "We combine strategy, creative, technology, and analytics to build growth systems designed around measurable business outcomes.",
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Built for brands that expect marketing to perform.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "About Benvor Digital",
+        "heading": "Built for brands that expect marketing to perform.",
+        "text": "We combine strategy, creative, technology, and analytics to build growth systems designed around measurable business outcomes."
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "image_text",
       "enabled": true,
-      "image": "/assets/images/site/office.svg",
-      "image_alt": "Benvor Digital workspace",
-      "eyebrow": "Our Story",
-      "heading": "A growth agency designed to connect the whole customer journey.",
-      "text": "Benvor Digital was built around a simple belief: marketing works better when strategy, creative, media, technology, and measurement operate as one system. We bring those disciplines together so clients can move faster, learn faster, and scale what works.",
-      "image_position": "left",
-      "button": {
-        "label": "Talk to Our Team",
-        "url": "/contact/"
+      "section_name": "A growth agency designed to connect the whole customer journey.",
+      "visual_preset": "standard",
+      "content": {
+        "image": "/assets/images/site/office.svg",
+        "image_alt": "Benvor Digital workspace",
+        "eyebrow": "Our Story",
+        "heading": "A growth agency designed to connect the whole customer journey.",
+        "text": "Benvor Digital was built around a simple belief: marketing works better when strategy, creative, media, technology, and measurement operate as one system. We bring those disciplines together so clients can move faster, learn faster, and scale what works.",
+        "image_position": "left",
+        "button": {
+          "label": "Talk to Our Team",
+          "url": "/contact/"
+        }
       },
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "stats",
       "enabled": true,
-      "items": [
-        {
-          "value": "150+",
-          "label": "Projects Delivered"
-        },
-        {
-          "value": "98%",
-          "label": "Client Satisfaction"
-        },
-        {
-          "value": "30+",
-          "label": "Specialists"
-        },
-        {
-          "value": "Global",
-          "label": "Client Base"
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "stats",
+      "visual_preset": "standard",
+      "content": {
+        "items": [
+          {
+            "value": "150+",
+            "label": "Projects Delivered"
+          },
+          {
+            "value": "98%",
+            "label": "Client Satisfaction"
+          },
+          {
+            "value": "30+",
+            "label": "Specialists"
+          },
+          {
+            "value": "Global",
+            "label": "Client Base"
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "why_benvor",
       "enabled": true,
-      "heading": "What guides our work",
-      "items": [
-        {
-          "icon": "target",
-          "title": "Outcome First",
-          "text": "Every engagement starts with a commercial goal and a way to measure progress."
-        },
-        {
-          "icon": "spark",
-          "title": "Clarity Over Complexity",
-          "text": "We make sophisticated growth programs easier to understand, manage, and improve."
-        },
-        {
-          "icon": "users",
-          "title": "One Connected Team",
-          "text": "Strategy, creative, media, and measurement work together instead of in silos."
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "What guides our work",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "What guides our work",
+        "items": [
+          {
+            "icon": "target",
+            "title": "Outcome First",
+            "text": "Every engagement starts with a commercial goal and a way to measure progress."
+          },
+          {
+            "icon": "spark",
+            "title": "Clarity Over Complexity",
+            "text": "We make sophisticated growth programs easier to understand, manage, and improve."
+          },
+          {
+            "icon": "users",
+            "title": "One Connected Team",
+            "text": "Strategy, creative, media, and measurement work together instead of in silos."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "team",
       "enabled": true,
-      "eyebrow": "Our Team",
-      "heading": "Specialists who think beyond their channel.",
-      "text": "A multidisciplinary team built to solve growth problems together.",
-      "team": [
-        "alex-morgan",
-        "rina-lee",
-        "omar-rahman"
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Specialists who think beyond their channel.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Our Team",
+        "heading": "Specialists who think beyond their channel.",
+        "text": "A multidisciplinary team built to solve growth problems together.",
+        "team": [
+          "alex-morgan",
+          "rina-lee",
+          "omar-rahman"
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "cta",
       "enabled": true,
-      "heading": "Let's solve the next growth problem together.",
-      "text": "Tell us where you want to go. We'll help map the fastest route.",
-      "button": {
-        "label": "Start a Conversation",
-        "url": "/contact/"
+      "section_name": "Let's solve the next growth problem together.",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Let's solve the next growth problem together.",
+        "text": "Tell us where you want to go. We'll help map the fastest route.",
+        "button": {
+          "label": "Start a Conversation",
+          "url": "/contact/"
+        }
       },
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     }
   ]
 }

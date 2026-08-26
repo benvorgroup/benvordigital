@@ -226,22 +226,124 @@
     }
   }
 
-  function sectionControlClass(s){const c=[];if(s.sticky)c.push('cms-sticky-section');if(s.hide_mobile)c.push('cms-hide-mobile');if(s.hide_tablet)c.push('cms-hide-tablet');if(s.hide_desktop)c.push('cms-hide-desktop');c.push('cms-align-'+(s.vertical_align||'start'));return c.join(' ');}
-  function sectionControlStyle(s){const z=[];const widths={narrow:'860px',default:'var(--container)',wide:'1440px',full:'100%'};if(widths[s.container_width||'default'])z.push(`--cms-section-width:${widths[s.container_width||'default']}`);const spaces={none:'0px',small:'36px',default:'92px',large:'132px'};z.push(`--cms-pt:${spaces[s.padding_top||'default']}`);z.push(`--cms-pb:${spaces[s.padding_bottom||'default']}`);const heights={auto:'auto',compact:'320px',medium:'480px',tall:'640px',screen:'calc(100vh - 74px)'};z.push(`--cms-min-height:${heights[s.min_height||'auto']}`);const bg={default:'transparent',white:'#FFFFFF',light_grey:'#F5F7FA',navy:'#0A1F33',blue:'#2563EB'};z.push(`--cms-bg:${bg[s.background||'default']}`);return z.join(';');}
-  function applySectionControls(html,s){if(!html)return html;return `<div class="cms-section-control ${sectionControlClass(s)}" style="${sectionControlStyle(s)}">${html}</div>`;}
 
-  async function renderSection(s, settings){const html=await renderSectionRaw(s,settings);return applySectionControls(html,s);}
+  function normalizeSection(raw){
+    const source=raw||{};
+    const content=(source.content && typeof source.content==='object')?source.content:{};
+    const layout=(source.layout && typeof source.layout==='object')?source.layout:{};
+    const design=(source.design && typeof source.design==='object')?source.design:{};
+    const responsive=(source.responsive && typeof source.responsive==='object')?source.responsive:{};
+    const advanced=(source.advanced && typeof source.advanced==='object')?source.advanced:{};
+    return {
+      ...source,
+      ...content,
+      layout,design,responsive,advanced,
+      container_width:layout.container_width ?? source.container_width,
+      padding_top:layout.padding_top ?? source.padding_top,
+      padding_bottom:layout.padding_bottom ?? source.padding_bottom,
+      min_height:layout.min_height ?? source.min_height,
+      vertical_align:layout.vertical_align ?? source.vertical_align,
+      text_align:layout.text_align ?? source.text_align,
+      columns_desktop:layout.columns_desktop ?? source.columns_desktop,
+      columns_tablet:layout.columns_tablet ?? source.columns_tablet,
+      columns_mobile:layout.columns_mobile ?? source.columns_mobile,
+      gap:layout.gap ?? source.gap,
+      card_padding:layout.card_padding ?? source.card_padding,
+      image_ratio:layout.image_ratio ?? source.image_ratio,
+      background:design.background ?? source.background,
+      background_image:design.background_image ?? source.background_image,
+      background_position:design.background_position ?? source.background_position,
+      border_style:design.border_style ?? source.border_style,
+      border_radius:design.border_radius ?? source.border_radius,
+      shadow:design.shadow ?? source.shadow,
+      text_tone:design.text_tone ?? source.text_tone,
+      overlay:design.overlay ?? source.overlay,
+      hide_mobile:responsive.hide_mobile ?? source.hide_mobile,
+      hide_tablet:responsive.hide_tablet ?? source.hide_tablet,
+      hide_desktop:responsive.hide_desktop ?? source.hide_desktop,
+      reverse_mobile:responsive.reverse_mobile ?? source.reverse_mobile,
+      sticky:advanced.sticky ?? source.sticky,
+      anchor_id:advanced.anchor_id ?? source.anchor_id,
+      custom_class:advanced.custom_class ?? source.custom_class,
+      tracking_name:advanced.tracking_name ?? source.tracking_name,
+      aria_label:advanced.aria_label ?? source.aria_label,
+      z_index:advanced.z_index ?? source.z_index,
+      disable_animation:advanced.disable_animation ?? source.disable_animation
+    };
+  }
 
-  function resolveBookingUrl(settings){const cfg=settings.lead_generation||{};return cfg.booking_url&&cfg.booking_url!=='#'?cfg.booking_url:'/contact/'}
-  function ensureStickyCTA(settings){const cfg=settings.lead_generation||{};let bar=document.getElementById('sticky-lead-cta');if(!cfg.sticky_cta_enabled){bar?.remove();return}if(!bar){bar=document.createElement('a');bar.id='sticky-lead-cta';bar.className='sticky-lead-cta';document.body.appendChild(bar)}bar.textContent=cfg.sticky_cta_label||'Get Free Growth Audit';bar.href=safeUrl(cfg.sticky_cta_url||'#growth-audit')}
-  function bindLeadGeneration(settings){ensureStickyCTA(settings);$$('.lead-form').forEach(form=>form.onsubmit=e=>{const action=settings.lead_generation?.lead_form_action||'';if(!action){e.preventDefault();$('.form-message',form)?.classList.add('show')}});$$('.growth-score-form').forEach(form=>form.onsubmit=e=>{e.preventDefault();const fd=new FormData(form);let score=55;const budget=fd.get('budget')||'',challenge=fd.get('challenge')||'';if(budget.includes('20k'))score+=18;else if(budget.includes('5k'))score+=12;else if(budget.includes('2k'))score+=6;if(challenge)score+=8;score+=Math.min(15,fd.getAll('channels').length*3);score=Math.max(0,Math.min(100,score));const card=form.closest('.growth-score-card'),result=$('.growth-score-result',card);form.hidden=true;result.hidden=false;$('.score-number',result).textContent=score+'/100';const link=$('.booking-link',result);if(link)link.href=resolveBookingUrl(settings);result.scrollIntoView({behavior:'smooth',block:'nearest'})});$$('.booking-link,[href="#booking"]').forEach(a=>a.onclick=e=>{const url=resolveBookingUrl(settings);e.preventDefault();if(url!=='/contact/')window.open(url,'_blank','noopener');else location.href='/contact/'})}
-
-
-  function setHomeHeroViewport(){
-    const header=document.getElementById('site-header');
-    const headerH=header ? Math.round(header.getBoundingClientRect().height) : 74;
-    document.documentElement.style.setProperty('--benvor-header-height',`${headerH}px`);
-    document.documentElement.style.setProperty('--benvor-vh',`${window.innerHeight}px`);
+  function sectionPreset(s){
+    const presets={
+      standard:{width:'default',pt:'default',pb:'default',height:'auto',v:'start'},
+      compact:{width:'default',pt:'small',pb:'small',height:'auto',v:'start'},
+      narrow:{width:'narrow',pt:'default',pb:'default',height:'auto',v:'start'},
+      wide:{width:'wide',pt:'default',pb:'default',height:'auto',v:'start'},
+      full_bleed:{width:'full',pt:'default',pb:'default',height:'auto',v:'start'},
+      feature:{width:'default',pt:'large',pb:'large',height:'medium',v:'center'},
+      full_screen:{width:'default',pt:'small',pb:'small',height:'screen',v:'center'}
+    };
+    return presets[s.visual_preset]||presets.standard;
+  }
+  function sectionControlClass(raw){
+    const s=normalizeSection(raw), classes=['visual-section'];
+    if(s.sticky) classes.push('cms-sticky-section');
+    if(s.hide_mobile) classes.push('cms-hide-mobile');
+    if(s.hide_tablet) classes.push('cms-hide-tablet');
+    if(s.hide_desktop) classes.push('cms-hide-desktop');
+    if(s.reverse_mobile) classes.push('cms-reverse-mobile');
+    if(s.text_align) classes.push(`cms-text-${s.text_align}`);
+    if(s.vertical_align) classes.push(`cms-v-${s.vertical_align}`);
+    if(s.border_style && s.border_style!=='none') classes.push(`cms-border-${s.border_style}`);
+    if(s.shadow && s.shadow!=='none') classes.push(`cms-shadow-${s.shadow}`);
+    if(s.border_radius) classes.push(`cms-radius-${s.border_radius}`);
+    if(s.text_tone && s.text_tone!=='auto') classes.push(`cms-tone-${s.text_tone}`);
+    if(s.overlay && s.overlay!=='none') classes.push(`cms-overlay-${s.overlay}`);
+    if(s.disable_animation) classes.push('cms-no-animation');
+    if(s.custom_class) classes.push(...String(s.custom_class).split(/\s+/).filter(Boolean));
+    return classes.join(' ');
+  }
+  function sectionControlStyle(raw){
+    const s=normalizeSection(raw), preset=sectionPreset(s), styles=[];
+    const widths={narrow:'820px',default:'var(--container)',wide:'1440px',full:'100%'};
+    const spaces={none:'0px',xs:'18px',small:'36px',default:'88px',large:'124px',xl:'160px'};
+    const heights={auto:'auto',small:'360px',medium:'520px',large:'680px',screen:'calc(100dvh - var(--benvor-header-height,74px))'};
+    const gaps={none:'0px',small:'12px',default:'20px',large:'32px',xl:'48px'};
+    const pads={small:'14px',default:'22px',large:'30px',xl:'40px'};
+    const ratios={auto:'auto','1:1':'1 / 1','4:3':'4 / 3','3:2':'3 / 2','16:9':'16 / 9','21:9':'21 / 9'};
+    const bgs={default:'',white:'#FFFFFF',light_grey:'#F5F7FA',navy:'#0A1F33',blue:'#2563EB'};
+    const choose=(value,fallback)=>value && value!=='inherit'?value:fallback;
+    const width=choose(s.container_width,preset.width);
+    const pt=choose(s.padding_top,preset.pt);
+    const pb=choose(s.padding_bottom,preset.pb);
+    const height=choose(s.min_height,preset.height);
+    const valign=choose(s.vertical_align,preset.v);
+    if(widths[width]) styles.push(`--cms-section-width:${widths[width]}`);
+    if(spaces[pt]) styles.push(`--cms-pt:${spaces[pt]}`);
+    if(spaces[pb]) styles.push(`--cms-pb:${spaces[pb]}`);
+    if(heights[height]) styles.push(`--cms-min-height:${heights[height]}`);
+    if(gaps[s.gap]) styles.push(`--cms-gap:${gaps[s.gap]}`);
+    if(pads[s.card_padding]) styles.push(`--cms-card-pad:${pads[s.card_padding]}`);
+    if(ratios[s.image_ratio]) styles.push(`--cms-image-ratio:${ratios[s.image_ratio]}`);
+    if(bgs[s.background]) styles.push(`--cms-bg:${bgs[s.background]}`);
+    if(s.background_image) styles.push(`--cms-bg-image:url('${safeUrl(s.background_image)}')`);
+    if(s.background_position) styles.push(`--cms-bg-pos:${s.background_position}`);
+    if(s.columns_desktop && s.columns_desktop!=='auto') styles.push(`--cms-cols-desktop:${Number(s.columns_desktop)||1}`);
+    if(s.columns_tablet && s.columns_tablet!=='auto') styles.push(`--cms-cols-tablet:${Number(s.columns_tablet)||1}`);
+    if(s.columns_mobile && s.columns_mobile!=='auto') styles.push(`--cms-cols-mobile:${Number(s.columns_mobile)||1}`);
+    if(s.z_index && s.z_index!=='auto') styles.push(`z-index:${Number(s.z_index)||1}`);
+    if(valign) styles.push(`--cms-valign:${valign}`);
+    return styles.join(';');
+  }
+  function applySectionControls(html,raw){
+    if(!html) return html;
+    const s=normalizeSection(raw), cls=sectionControlClass(s), st=sectionControlStyle(s);
+    const attrs=[
+      s.section_name?`data-section-name="${esc(s.section_name)}"`:'',
+      s.anchor_id?`id="${esc(s.anchor_id)}"`:'',
+      s.tracking_name?`data-section-track="${esc(s.tracking_name)}"`:'',
+      s.aria_label?`aria-label="${esc(s.aria_label)}"`:''
+    ].filter(Boolean).join(' ');
+    return `<div class="${cls}" style="${st}" ${attrs}>${html}</div>`;
   }
 
   function bindInteractions(settings){

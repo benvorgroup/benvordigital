@@ -16,533 +16,929 @@
   },
   "sections": [
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "white",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "hero_lead_form",
       "enabled": true,
-      "eyebrow": "Sydney Digital Growth Agency",
-      "heading": "Performance Marketing, SEO & AEO, and Lead Generation Built for Growth.",
-      "text": "Benvor Digital helps growth-focused businesses acquire customers through paid media, SEO & AEO, B2B lead generation, conversion optimisation, analytics and measurable digital experiences.",
-      "primary_button": {
-        "label": "Get Your Free Growth Audit",
-        "url": "#growth-audit"
+      "section_name": "Performance Marketing, SEO & AEO, and Lead Generation Built for Growth.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Sydney Digital Growth Agency",
+        "heading": "Performance Marketing, SEO & AEO, and Lead Generation Built for Growth.",
+        "text": "Benvor Digital helps growth-focused businesses acquire customers through paid media, SEO & AEO, B2B lead generation, conversion optimisation, analytics and measurable digital experiences.",
+        "primary_button": {
+          "label": "Get Your Free Growth Audit",
+          "url": "#growth-audit"
+        },
+        "secondary_button": {
+          "label": "View Case Studies",
+          "url": "/portfolio/"
+        },
+        "trust_note": "No obligation. We typically respond within one business day.",
+        "form_heading": "Get Your Free 15-Minute Growth Audit",
+        "form_text": "Tell us where you want to grow. We’ll identify the highest-leverage opportunities.",
+        "form_fields": [
+          {
+            "type": "text",
+            "name": "name",
+            "label": "Name",
+            "placeholder": "Your name",
+            "required": true
+          },
+          {
+            "type": "email",
+            "name": "email",
+            "label": "Business Email",
+            "placeholder": "you@company.com",
+            "required": true
+          },
+          {
+            "type": "url",
+            "name": "website",
+            "label": "Website URL",
+            "placeholder": "https://yourwebsite.com",
+            "required": false
+          },
+          {
+            "type": "select",
+            "name": "need",
+            "label": "What do you need help with?",
+            "required": true,
+            "options": [
+              "More leads",
+              "More sales",
+              "SEO & AEO visibility",
+              "Paid media performance",
+              "B2B lead generation",
+              "E-commerce growth",
+              "Tracking & analytics",
+              "Website conversion",
+              "Not sure yet"
+            ]
+          }
+        ],
+        "submit_label": "Get My Free Audit",
+        "stats": [
+          {
+            "icon": "trend",
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "icon": "users",
+            "value": "B2B + B2C",
+            "label": "Cross-Market Experience"
+          },
+          {
+            "icon": "globe",
+            "value": "Australia + Global",
+            "label": "Client Reach"
+          }
+        ]
       },
-      "secondary_button": {
-        "label": "View Case Studies",
-        "url": "/portfolio/"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
       },
-      "trust_note": "No obligation. We typically respond within one business day.",
-      "form_heading": "Get Your Free 15-Minute Growth Audit",
-      "form_text": "Tell us where you want to grow. We’ll identify the highest-leverage opportunities.",
-      "form_fields": [
-        {
-          "type": "text",
-          "name": "name",
-          "label": "Name",
-          "placeholder": "Your name",
-          "required": true
-        },
-        {
-          "type": "email",
-          "name": "email",
-          "label": "Business Email",
-          "placeholder": "you@company.com",
-          "required": true
-        },
-        {
-          "type": "url",
-          "name": "website",
-          "label": "Website URL",
-          "placeholder": "https://yourwebsite.com",
-          "required": false
-        },
-        {
-          "type": "select",
-          "name": "need",
-          "label": "What do you need help with?",
-          "required": true,
-          "options": [
-            "More leads",
-            "More sales",
-            "SEO & AEO visibility",
-            "Paid media performance",
-            "B2B lead generation",
-            "E-commerce growth",
-            "Tracking & analytics",
-            "Website conversion",
-            "Not sure yet"
-          ]
-        }
-      ],
-      "submit_label": "Get My Free Audit",
-      "stats": [
-        {
-          "icon": "trend",
-          "value": "10+",
-          "label": "Years Experience"
-        },
-        {
-          "icon": "users",
-          "value": "B2B + B2C",
-          "label": "Cross-Market Experience"
-        },
-        {
-          "icon": "globe",
-          "value": "Australia + Global",
-          "label": "Client Reach"
-        }
-      ]
+      "design": {
+        "background": "white",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "small",
-      "padding_bottom": "small",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "trust_stats",
       "enabled": true,
-      "label": "Experience across the platforms and systems growth teams rely on",
-      "brands": [
-        {
-          "name": "Google Ads",
-          "image": ""
-        },
-        {
-          "name": "Meta Ads",
-          "image": ""
-        },
-        {
-          "name": "LinkedIn Ads",
-          "image": ""
-        },
-        {
-          "name": "GA4",
-          "image": ""
-        },
-        {
-          "name": "GTM",
-          "image": ""
-        },
-        {
-          "name": "WooCommerce",
-          "image": ""
-        },
-        {
-          "name": "Magento",
-          "image": ""
-        }
-      ],
-      "metrics": [
-        {
-          "value": "10+",
-          "label": "Years Experience"
-        },
-        {
-          "value": "Sydney",
-          "label": "Bondi Junction Office"
-        }
-      ]
+      "section_name": "trust_stats",
+      "visual_preset": "standard",
+      "content": {
+        "label": "Experience across the platforms and systems growth teams rely on",
+        "brands": [
+          {
+            "name": "Google Ads",
+            "image": ""
+          },
+          {
+            "name": "Meta Ads",
+            "image": ""
+          },
+          {
+            "name": "LinkedIn Ads",
+            "image": ""
+          },
+          {
+            "name": "GA4",
+            "image": ""
+          },
+          {
+            "name": "GTM",
+            "image": ""
+          },
+          {
+            "name": "WooCommerce",
+            "image": ""
+          },
+          {
+            "name": "Magento",
+            "image": ""
+          }
+        ],
+        "metrics": [
+          {
+            "value": "10+",
+            "label": "Years Experience"
+          },
+          {
+            "value": "Sydney",
+            "label": "Bondi Junction Office"
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "small",
+        "padding_bottom": "small",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "light_grey",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "problem_nav",
       "enabled": true,
-      "eyebrow": "Start With the Outcome",
-      "heading": "What do you need help with?",
-      "text": "Choose the problem you want to solve first. We’ll connect it to the right growth system.",
-      "items": [
-        {
-          "icon": "users",
-          "title": "I need more leads",
-          "text": "Google Ads, Meta Ads, LinkedIn and lead-generation campaigns.",
-          "button_label": "Let’s Fix This",
-          "button_url": "/service/?slug=ppc"
-        },
-        {
-          "icon": "trend",
-          "title": "I need more sales",
-          "text": "E-commerce growth, CRO and performance marketing.",
-          "button_label": "Let’s Fix This",
-          "button_url": "/service/?slug=web"
-        },
-        {
-          "icon": "search",
-          "title": "I need more organic visibility",
-          "text": "SEO, AEO, technical optimisation and content.",
-          "button_label": "Let’s Fix This",
-          "button_url": "/service/?slug=seo"
-        },
-        {
-          "icon": "chart",
-          "title": "My tracking isn’t working",
-          "text": "GA4, GTM, conversion tracking and reporting.",
-          "button_label": "Let’s Fix This",
-          "button_url": "/service/?slug=analytics"
-        },
-        {
-          "icon": "window",
-          "title": "I need a better website",
-          "text": "Conversion-focused websites and landing pages.",
-          "button_label": "Let’s Fix This",
-          "button_url": "/service/?slug=web"
-        }
-      ]
+      "section_name": "What do you need help with?",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Start With the Outcome",
+        "heading": "What do you need help with?",
+        "text": "Choose the problem you want to solve first. We’ll connect it to the right growth system.",
+        "items": [
+          {
+            "icon": "users",
+            "title": "I need more leads",
+            "text": "Google Ads, Meta Ads, LinkedIn and lead-generation campaigns.",
+            "button_label": "Let’s Fix This",
+            "button_url": "/service/?slug=ppc"
+          },
+          {
+            "icon": "trend",
+            "title": "I need more sales",
+            "text": "E-commerce growth, CRO and performance marketing.",
+            "button_label": "Let’s Fix This",
+            "button_url": "/service/?slug=web"
+          },
+          {
+            "icon": "search",
+            "title": "I need more organic visibility",
+            "text": "SEO, AEO, technical optimisation and content.",
+            "button_label": "Let’s Fix This",
+            "button_url": "/service/?slug=seo"
+          },
+          {
+            "icon": "chart",
+            "title": "My tracking isn’t working",
+            "text": "GA4, GTM, conversion tracking and reporting.",
+            "button_label": "Let’s Fix This",
+            "button_url": "/service/?slug=analytics"
+          },
+          {
+            "icon": "window",
+            "title": "I need a better website",
+            "text": "Conversion-focused websites and landing pages.",
+            "button_label": "Let’s Fix This",
+            "button_url": "/service/?slug=web"
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "light_grey",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "services_grid",
       "enabled": true,
-      "eyebrow": "Core Growth Services",
-      "heading": "Six commercial offers built around measurable growth.",
-      "text": "Start with one priority or connect multiple services into one growth system.",
-      "services": [
-        "ppc",
-        "seo",
-        "social",
-        "web",
-        "analytics",
-        "email"
-      ]
+      "section_name": "Six commercial offers built around measurable growth.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Core Growth Services",
+        "heading": "Six commercial offers built around measurable growth.",
+        "text": "Start with one priority or connect multiple services into one growth system.",
+        "services": [
+          "ppc",
+          "seo",
+          "social",
+          "web",
+          "analytics",
+          "email"
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "light_grey",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "selected_work",
       "enabled": true,
-      "eyebrow": "Proof Before Promises",
-      "heading": "Selected Work & Results",
-      "text": "Case studies should show real outcomes, not just attractive screenshots.",
-      "button": {
-        "label": "View All Case Studies",
-        "url": "/portfolio/"
+      "section_name": "Selected Work & Results",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Proof Before Promises",
+        "heading": "Selected Work & Results",
+        "text": "Case studies should show real outcomes, not just attractive screenshots.",
+        "button": {
+          "label": "View All Case Studies",
+          "url": "/portfolio/"
+        },
+        "projects": [
+          "nexora-saas",
+          "purely-skincare",
+          "levelup-financial"
+        ]
       },
-      "projects": [
-        "nexora-saas",
-        "purely-skincare",
-        "levelup-financial"
-      ]
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "light_grey",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "comparison",
       "enabled": true,
-      "eyebrow": "Why Benvor",
-      "heading": "Marketing shouldn’t feel like a black box.",
-      "left_heading": "Traditional agency",
-      "right_heading": "Benvor Digital",
-      "rows": [
-        {
-          "left": "Vanity metrics",
-          "right": "Business KPIs"
-        },
-        {
-          "left": "Channel silos",
-          "right": "Connected growth strategy"
-        },
-        {
-          "left": "Monthly surprises",
-          "right": "Transparent reporting"
-        },
-        {
-          "left": "Generic packages",
-          "right": "Strategy based on your goals"
-        },
-        {
-          "left": "Traffic focused",
-          "right": "Lead and revenue focused"
-        }
-      ]
+      "section_name": "Marketing shouldn’t feel like a black box.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Why Benvor",
+        "heading": "Marketing shouldn’t feel like a black box.",
+        "left_heading": "Traditional agency",
+        "right_heading": "Benvor Digital",
+        "rows": [
+          {
+            "left": "Vanity metrics",
+            "right": "Business KPIs"
+          },
+          {
+            "left": "Channel silos",
+            "right": "Connected growth strategy"
+          },
+          {
+            "left": "Monthly surprises",
+            "right": "Transparent reporting"
+          },
+          {
+            "left": "Generic packages",
+            "right": "Strategy based on your goals"
+          },
+          {
+            "left": "Traffic focused",
+            "right": "Lead and revenue focused"
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "light_grey",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "process",
       "enabled": true,
-      "eyebrow": "How We Work",
-      "heading": "Audit → Strategy → Execute → Scale",
-      "items": [
-        {
-          "number": "01",
-          "title": "Audit",
-          "text": "Review your funnel, channels, tracking, website and growth constraints."
-        },
-        {
-          "number": "02",
-          "title": "Strategy",
-          "text": "Prioritise the highest-leverage opportunities and define success metrics."
-        },
-        {
-          "number": "03",
-          "title": "Execute",
-          "text": "Launch campaigns, content, landing experiences and measurement systems."
-        },
-        {
-          "number": "04",
-          "title": "Scale",
-          "text": "Shift budget and effort toward what creates qualified demand and revenue."
-        }
-      ]
+      "section_name": "Audit → Strategy → Execute → Scale",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "How We Work",
+        "heading": "Audit → Strategy → Execute → Scale",
+        "items": [
+          {
+            "number": "01",
+            "title": "Audit",
+            "text": "Review your funnel, channels, tracking, website and growth constraints."
+          },
+          {
+            "number": "02",
+            "title": "Strategy",
+            "text": "Prioritise the highest-leverage opportunities and define success metrics."
+          },
+          {
+            "number": "03",
+            "title": "Execute",
+            "text": "Launch campaigns, content, landing experiences and measurement systems."
+          },
+          {
+            "number": "04",
+            "title": "Scale",
+            "text": "Shift budget and effort toward what creates qualified demand and revenue."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "light_grey",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "white",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "growth_score",
       "enabled": true,
-      "section_id": "growth-audit",
-      "eyebrow": "Free Growth Audit",
-      "heading": "How healthy is your digital growth system?",
-      "text": "Answer five quick questions and send us the context we need to identify your strongest next move.",
-      "questions": [
-        {
-          "type": "select",
-          "name": "budget",
-          "label": "What is your monthly marketing budget?",
-          "required": true,
-          "options": [
-            "Under $2k",
-            "$2k–$5k",
-            "$5k–$20k",
-            "$20k+"
-          ]
-        },
-        {
-          "type": "select",
-          "name": "challenge",
-          "label": "What’s your biggest challenge?",
-          "required": true,
-          "options": [
-            "Not enough leads",
-            "Leads are expensive",
-            "Low website conversion",
-            "Poor organic visibility",
-            "Tracking problems"
-          ]
-        },
-        {
-          "type": "checkboxes",
-          "name": "channels",
-          "label": "What channels are you currently using?",
-          "required": false,
-          "options": [
-            "Google Ads",
-            "Meta Ads",
-            "LinkedIn Ads",
-            "SEO",
-            "Email",
-            "None"
-          ]
-        },
-        {
-          "type": "url",
-          "name": "website",
-          "label": "Your website",
-          "placeholder": "https://yourwebsite.com",
-          "required": false
-        },
-        {
-          "type": "email",
-          "name": "email",
-          "label": "Business email",
-          "placeholder": "you@company.com",
-          "required": true
+      "section_name": "How healthy is your digital growth system?",
+      "visual_preset": "standard",
+      "content": {
+        "section_id": "growth-audit",
+        "eyebrow": "Free Growth Audit",
+        "heading": "How healthy is your digital growth system?",
+        "text": "Answer five quick questions and send us the context we need to identify your strongest next move.",
+        "questions": [
+          {
+            "type": "select",
+            "name": "budget",
+            "label": "What is your monthly marketing budget?",
+            "required": true,
+            "options": [
+              "Under $2k",
+              "$2k–$5k",
+              "$5k–$20k",
+              "$20k+"
+            ]
+          },
+          {
+            "type": "select",
+            "name": "challenge",
+            "label": "What’s your biggest challenge?",
+            "required": true,
+            "options": [
+              "Not enough leads",
+              "Leads are expensive",
+              "Low website conversion",
+              "Poor organic visibility",
+              "Tracking problems"
+            ]
+          },
+          {
+            "type": "checkboxes",
+            "name": "channels",
+            "label": "What channels are you currently using?",
+            "required": false,
+            "options": [
+              "Google Ads",
+              "Meta Ads",
+              "LinkedIn Ads",
+              "SEO",
+              "Email",
+              "None"
+            ]
+          },
+          {
+            "type": "url",
+            "name": "website",
+            "label": "Your website",
+            "placeholder": "https://yourwebsite.com",
+            "required": false
+          },
+          {
+            "type": "email",
+            "name": "email",
+            "label": "Business email",
+            "placeholder": "you@company.com",
+            "required": true
+          }
+        ],
+        "submit_label": "Get My Growth Score",
+        "success_heading": "Thanks. Your audit request is ready.",
+        "success_text": "We’ll review your answers and identify the strongest opportunities across acquisition, conversion and measurement.",
+        "booking_heading": "Ready to move faster?",
+        "booking_text": "Book a 15-minute strategy call now.",
+        "booking_button": {
+          "label": "Book a Strategy Call",
+          "url": "#booking"
         }
-      ],
-      "submit_label": "Get My Growth Score",
-      "success_heading": "Thanks. Your audit request is ready.",
-      "success_text": "We’ll review your answers and identify the strongest opportunities across acquisition, conversion and measurement.",
-      "booking_heading": "Ready to move faster?",
-      "booking_text": "Book a 15-minute strategy call now.",
-      "booking_button": {
-        "label": "Book a Strategy Call",
-        "url": "#booking"
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "white",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
       }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
       "type": "testimonials",
       "enabled": true,
-      "heading": "What Our Clients Say",
-      "testimonials": [
-        "sarah-thompson",
-        "david-chen",
-        "james-carter",
-        "maya-patel"
-      ]
-    },
-    {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "light_grey",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "type": "local_credibility",
-      "enabled": true,
-      "eyebrow": "Sydney-Based, Globally Experienced",
-      "heading": "Digital growth strategy from Bondi Junction.",
-      "text": "Benvor Digital works with businesses in Australia and internationally, combining local accountability with cross-market digital experience.",
-      "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
-      "email": "info@benvordigital.com",
-      "button": {
-        "label": "Contact Benvor Digital",
-        "url": "/contact/"
+      "section_name": "What Our Clients Say",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "What Our Clients Say",
+        "testimonials": [
+          "sarah-thompson",
+          "david-chen",
+          "james-carter",
+          "maya-patel"
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
       }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "type": "faq",
+      "type": "local_credibility",
       "enabled": true,
-      "eyebrow": "Before You Get Started",
-      "heading": "Questions that often hold businesses back from taking the next step.",
-      "items": [
-        {
-          "question": "How much does it cost?",
-          "answer": "Pricing depends on scope, channels and the level of execution required. We recommend a focused first step after reviewing your current growth system."
-        },
-        {
-          "question": "Do you work with small businesses?",
-          "answer": "Yes, when there is a clear commercial goal, realistic budget and enough demand to build a measurable growth plan."
-        },
-        {
-          "question": "Do you offer one-off projects?",
-          "answer": "Yes. Audits, tracking implementations, landing pages, websites and focused strategy projects can be scoped independently."
-        },
-        {
-          "question": "Do I need a long-term contract?",
-          "answer": "Not always. The right engagement model depends on the work."
-        },
-        {
-          "question": "Can you manage our existing Google or Meta accounts?",
-          "answer": "Yes. We can audit and improve existing accounts rather than rebuilding everything unnecessarily."
-        },
-        {
-          "question": "Can you fix GA4 and GTM tracking?",
-          "answer": "Yes. Analytics and conversion tracking are core parts of the growth system."
-        },
-        {
-          "question": "Do you only work with Australian businesses?",
-          "answer": "No. Benvor Digital works with businesses in Australia and internationally."
-        },
-        {
-          "question": "How quickly can we start?",
-          "answer": "After access, scope and priorities are confirmed, focused audits and implementation work can usually begin quickly."
+      "section_name": "Digital growth strategy from Bondi Junction.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Sydney-Based, Globally Experienced",
+        "heading": "Digital growth strategy from Bondi Junction.",
+        "text": "Benvor Digital works with businesses in Australia and internationally, combining local accountability with cross-market digital experience.",
+        "address": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
+        "email": "info@benvordigital.com",
+        "button": {
+          "label": "Contact Benvor Digital",
+          "url": "/contact/"
         }
-      ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "light_grey",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "min_height": "auto",
-      "vertical_align": "start",
-      "background": "light_grey",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
+      "type": "faq",
+      "enabled": true,
+      "section_name": "Questions that often hold businesses back from taking the next step.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Before You Get Started",
+        "heading": "Questions that often hold businesses back from taking the next step.",
+        "items": [
+          {
+            "question": "How much does it cost?",
+            "answer": "Pricing depends on scope, channels and the level of execution required. We recommend a focused first step after reviewing your current growth system."
+          },
+          {
+            "question": "Do you work with small businesses?",
+            "answer": "Yes, when there is a clear commercial goal, realistic budget and enough demand to build a measurable growth plan."
+          },
+          {
+            "question": "Do you offer one-off projects?",
+            "answer": "Yes. Audits, tracking implementations, landing pages, websites and focused strategy projects can be scoped independently."
+          },
+          {
+            "question": "Do I need a long-term contract?",
+            "answer": "Not always. The right engagement model depends on the work."
+          },
+          {
+            "question": "Can you manage our existing Google or Meta accounts?",
+            "answer": "Yes. We can audit and improve existing accounts rather than rebuilding everything unnecessarily."
+          },
+          {
+            "question": "Can you fix GA4 and GTM tracking?",
+            "answer": "Yes. Analytics and conversion tracking are core parts of the growth system."
+          },
+          {
+            "question": "Do you only work with Australian businesses?",
+            "answer": "No. Benvor Digital works with businesses in Australia and internationally."
+          },
+          {
+            "question": "How quickly can we start?",
+            "answer": "After access, scope and priorities are confirmed, focused audits and implementation work can usually begin quickly."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
+    },
+    {
       "type": "dual_cta",
       "enabled": true,
-      "heading": "Choose the next step that fits your intent.",
-      "text": "Ready to talk now, or want a lower-commitment audit first?",
-      "primary": {
-        "eyebrow": "High Intent",
-        "title": "Book a Strategy Call",
-        "text": "For businesses ready to discuss scope, priorities and next steps.",
-        "button_label": "Book a Strategy Call",
-        "button_url": "#booking"
+      "section_name": "Choose the next step that fits your intent.",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Choose the next step that fits your intent.",
+        "text": "Ready to talk now, or want a lower-commitment audit first?",
+        "primary": {
+          "eyebrow": "High Intent",
+          "title": "Book a Strategy Call",
+          "text": "For businesses ready to discuss scope, priorities and next steps.",
+          "button_label": "Book a Strategy Call",
+          "button_url": "#booking"
+        },
+        "secondary": {
+          "eyebrow": "Medium Intent",
+          "title": "Get a Free Growth Audit",
+          "text": "For businesses that want a clearer view of the highest-leverage opportunities first.",
+          "button_label": "Get My Free Audit",
+          "button_url": "#growth-audit"
+        }
       },
-      "secondary": {
-        "eyebrow": "Medium Intent",
-        "title": "Get a Free Growth Audit",
-        "text": "For businesses that want a clearer view of the highest-leverage opportunities first.",
-        "button_label": "Get My Free Audit",
-        "button_url": "#growth-audit"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "light_grey",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
       }
     }
   ]

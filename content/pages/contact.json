@@ -18,163 +18,295 @@
     {
       "type": "page_hero",
       "enabled": true,
-      "eyebrow": "Let's Talk",
-      "heading": "Tell us what you want to grow.",
-      "text": "Share your goals, challenges, and current marketing setup. We'll respond with the next best step.",
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Tell us what you want to grow.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Let's Talk",
+        "heading": "Tell us what you want to grow.",
+        "text": "Share your goals, challenges, and current marketing setup. We'll respond with the next best step."
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "contact_split",
       "enabled": true,
-      "heading": "Get a Free Consultation",
-      "text": "Tell us a little about your business. We typically respond within one business day.",
-      "fields": [
-        {
-          "type": "text",
-          "name": "name",
-          "label": "Name",
-          "placeholder": "Your name",
-          "required": true
-        },
-        {
-          "type": "email",
-          "name": "email",
-          "label": "Work Email",
-          "placeholder": "you@company.com",
-          "required": true
-        },
-        {
-          "type": "text",
-          "name": "company",
-          "label": "Company",
-          "placeholder": "Company name",
-          "required": false
-        },
-        {
-          "type": "select",
-          "name": "service",
-          "label": "What can we help with?",
-          "required": true,
-          "options": [
-            "SEO",
-            "Paid Advertising",
-            "Social Media",
-            "Email Marketing",
-            "Website Design & Development",
-            "Analytics & Reporting",
-            "Not sure yet"
-          ]
-        },
-        {
-          "type": "textarea",
-          "name": "message",
-          "label": "Tell us about your goals",
-          "placeholder": "What would you like to improve?",
-          "required": true
-        }
-      ],
-      "submit_label": "Send Inquiry",
-      "contact_cards": [
-        {
-          "label": "Email",
-          "value": "info@benvordigital.com",
-          "link": "mailto:info@benvordigital.com"
-        },
-        {
-          "label": "Typical response",
-          "value": "Within one business day",
-          "link": ""
-        },
-        {
-          "label": "Working model",
-          "value": "Remote-first, global client base",
-          "link": ""
-        },
-        {
-          "label": "Office",
-          "value": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
-          "link": ""
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start",
-      "select_placeholder": "Select one"
+      "section_name": "Get a Free Consultation",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Get a Free Consultation",
+        "text": "Tell us a little about your business. We typically respond within one business day.",
+        "fields": [
+          {
+            "type": "text",
+            "name": "name",
+            "label": "Name",
+            "placeholder": "Your name",
+            "required": true
+          },
+          {
+            "type": "email",
+            "name": "email",
+            "label": "Work Email",
+            "placeholder": "you@company.com",
+            "required": true
+          },
+          {
+            "type": "text",
+            "name": "company",
+            "label": "Company",
+            "placeholder": "Company name",
+            "required": false
+          },
+          {
+            "type": "select",
+            "name": "service",
+            "label": "What can we help with?",
+            "required": true,
+            "options": [
+              "SEO",
+              "Paid Advertising",
+              "Social Media",
+              "Email Marketing",
+              "Website Design & Development",
+              "Analytics & Reporting",
+              "Not sure yet"
+            ]
+          },
+          {
+            "type": "textarea",
+            "name": "message",
+            "label": "Tell us about your goals",
+            "placeholder": "What would you like to improve?",
+            "required": true
+          }
+        ],
+        "submit_label": "Send Inquiry",
+        "contact_cards": [
+          {
+            "label": "Email",
+            "value": "info@benvordigital.com",
+            "link": "mailto:info@benvordigital.com"
+          },
+          {
+            "label": "Typical response",
+            "value": "Within one business day",
+            "link": ""
+          },
+          {
+            "label": "Working model",
+            "value": "Remote-first, global client base",
+            "link": ""
+          },
+          {
+            "label": "Office",
+            "value": "Level 1, 9-13 Bronte Road, Bondi Junction, Sydney, NSW, Australia, 2022",
+            "link": ""
+          }
+        ],
+        "select_placeholder": "Select one"
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "trust_stats",
       "enabled": true,
-      "label": "A partner for ambitious growth teams",
-      "brands": [
-        {
-          "name": "NEXORA"
-        },
-        {
-          "name": "LevelUp"
-        },
-        {
-          "name": "purely."
-        },
-        {
-          "name": "Cloudix"
-        }
-      ],
-      "metrics": [
-        {
-          "value": "98%",
-          "label": "Client Satisfaction"
-        },
-        {
-          "value": "150+",
-          "label": "Projects Delivered"
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "trust_stats",
+      "visual_preset": "standard",
+      "content": {
+        "label": "A partner for ambitious growth teams",
+        "brands": [
+          {
+            "name": "NEXORA"
+          },
+          {
+            "name": "LevelUp"
+          },
+          {
+            "name": "purely."
+          },
+          {
+            "name": "Cloudix"
+          }
+        ],
+        "metrics": [
+          {
+            "value": "98%",
+            "label": "Client Satisfaction"
+          },
+          {
+            "value": "150+",
+            "label": "Projects Delivered"
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "cta",
       "enabled": true,
-      "heading": "Prefer a direct conversation?",
-      "text": "Book a consultation and we'll walk through your priorities together.",
-      "button": {
-        "label": "Get a Free Consultation",
-        "url": "mailto:info@benvordigital.com"
+      "section_name": "Prefer a direct conversation?",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Prefer a direct conversation?",
+        "text": "Book a consultation and we'll walk through your priorities together.",
+        "button": {
+          "label": "Get a Free Consultation",
+          "url": "mailto:info@benvordigital.com"
+        }
       },
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     }
   ]
 }

@@ -18,167 +18,365 @@
     {
       "type": "page_hero",
       "enabled": true,
-      "eyebrow": "Our Services",
-      "heading": "End-to-end digital growth, built as one connected system.",
-      "text": "Choose a focused engagement or bring the full growth engine together. Every service is designed to connect strategy, execution, and measurement.",
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "End-to-end digital growth, built as one connected system.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "Our Services",
+        "heading": "End-to-end digital growth, built as one connected system.",
+        "text": "Choose a focused engagement or bring the full growth engine together. Every service is designed to connect strategy, execution, and measurement."
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "services_grid",
       "enabled": true,
-      "heading": "Capabilities built to work together",
-      "text": "From discovery to conversion and retention, we connect the channels that drive sustainable growth.",
-      "services": [
-        "seo",
-        "ppc",
-        "social",
-        "email",
-        "web",
-        "analytics"
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Capabilities built to work together",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Capabilities built to work together",
+        "text": "From discovery to conversion and retention, we connect the channels that drive sustainable growth.",
+        "services": [
+          "seo",
+          "ppc",
+          "social",
+          "email",
+          "web",
+          "analytics"
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "process",
       "enabled": true,
-      "eyebrow": "How We Work",
-      "heading": "A clear process from opportunity to growth.",
-      "items": [
-        {
-          "number": "01",
-          "title": "Discover",
-          "text": "We audit your market, funnel, data, and current performance."
-        },
-        {
-          "number": "02",
-          "title": "Prioritize",
-          "text": "We identify the highest-value opportunities and build the roadmap."
-        },
-        {
-          "number": "03",
-          "title": "Launch",
-          "text": "Strategy, creative, tracking, and campaigns move into market quickly."
-        },
-        {
-          "number": "04",
-          "title": "Optimize",
-          "text": "We test, learn, report, and compound what works."
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "A clear process from opportunity to growth.",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "How We Work",
+        "heading": "A clear process from opportunity to growth.",
+        "items": [
+          {
+            "number": "01",
+            "title": "Discover",
+            "text": "We audit your market, funnel, data, and current performance."
+          },
+          {
+            "number": "02",
+            "title": "Prioritize",
+            "text": "We identify the highest-value opportunities and build the roadmap."
+          },
+          {
+            "number": "03",
+            "title": "Launch",
+            "text": "Strategy, creative, tracking, and campaigns move into market quickly."
+          },
+          {
+            "number": "04",
+            "title": "Optimize",
+            "text": "We test, learn, report, and compound what works."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "why_benvor",
       "enabled": true,
-      "heading": "Built differently from a channel-only agency",
-      "items": [
-        {
-          "icon": "database",
-          "title": "One Measurement Layer",
-          "text": "Every channel reports against the same business outcomes."
-        },
-        {
-          "icon": "window",
-          "title": "Connected Experiences",
-          "text": "Campaigns and landing experiences are designed together."
-        },
-        {
-          "icon": "trend",
-          "title": "Continuous Optimization",
-          "text": "Insights move quickly from reporting into the next test."
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Built differently from a channel-only agency",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Built differently from a channel-only agency",
+        "items": [
+          {
+            "icon": "database",
+            "title": "One Measurement Layer",
+            "text": "Every channel reports against the same business outcomes."
+          },
+          {
+            "icon": "window",
+            "title": "Connected Experiences",
+            "text": "Campaigns and landing experiences are designed together."
+          },
+          {
+            "icon": "trend",
+            "title": "Continuous Optimization",
+            "text": "Insights move quickly from reporting into the next test."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "faq",
       "enabled": true,
-      "eyebrow": "FAQ",
-      "heading": "Common questions",
-      "items": [
-        {
-          "question": "Can we start with one service?",
-          "answer": "Yes. Many clients begin with a focused engagement and expand as the growth roadmap becomes clearer."
-        },
-        {
-          "question": "How quickly can you launch?",
-          "answer": "Most focused campaigns or optimization programs can begin within a few weeks, depending on scope and access."
-        },
-        {
-          "question": "How do you report results?",
-          "answer": "We focus reporting on business outcomes first, supported by channel-level metrics and clear next actions."
-        },
-        {
-          "question": "Do you work with in-house teams?",
-          "answer": "Yes. We often operate as an extension of internal marketing, product, creative, or sales teams."
-        }
-      ],
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "section_name": "Common questions",
+      "visual_preset": "standard",
+      "content": {
+        "eyebrow": "FAQ",
+        "heading": "Common questions",
+        "items": [
+          {
+            "question": "Can we start with one service?",
+            "answer": "Yes. Many clients begin with a focused engagement and expand as the growth roadmap becomes clearer."
+          },
+          {
+            "question": "How quickly can you launch?",
+            "answer": "Most focused campaigns or optimization programs can begin within a few weeks, depending on scope and access."
+          },
+          {
+            "question": "How do you report results?",
+            "answer": "We focus reporting on business outcomes first, supported by channel-level metrics and clear next actions."
+          },
+          {
+            "question": "Do you work with in-house teams?",
+            "answer": "Yes. We often operate as an extension of internal marketing, product, creative, or sales teams."
+          }
+        ]
+      },
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     },
     {
       "type": "cta",
       "enabled": true,
-      "heading": "Not sure where to start?",
-      "text": "We'll identify the highest-leverage opportunities and recommend a focused first step.",
-      "button": {
-        "label": "Get a Free Consultation",
-        "url": "/contact/"
+      "section_name": "Not sure where to start?",
+      "visual_preset": "standard",
+      "content": {
+        "heading": "Not sure where to start?",
+        "text": "We'll identify the highest-leverage opportunities and recommend a focused first step.",
+        "button": {
+          "label": "Get a Free Consultation",
+          "url": "/contact/"
+        }
       },
-      "container_width": "default",
-      "padding_top": "default",
-      "padding_bottom": "default",
-      "background": "default",
-      "sticky": false,
-      "hide_mobile": false,
-      "hide_tablet": false,
-      "hide_desktop": false,
-      "min_height": "auto",
-      "vertical_align": "start"
+      "layout": {
+        "container_width": "default",
+        "padding_top": "default",
+        "padding_bottom": "default",
+        "min_height": "auto",
+        "vertical_align": "start",
+        "text_align": "left",
+        "columns_desktop": "auto",
+        "columns_tablet": "auto",
+        "columns_mobile": "1",
+        "gap": "default",
+        "card_padding": "default",
+        "image_ratio": "auto"
+      },
+      "design": {
+        "background": "default",
+        "background_image": "",
+        "background_position": "center",
+        "border_style": "none",
+        "border_radius": "default",
+        "shadow": "none",
+        "text_tone": "auto",
+        "overlay": "none"
+      },
+      "responsive": {
+        "hide_mobile": false,
+        "hide_tablet": false,
+        "hide_desktop": false,
+        "reverse_mobile": false
+      },
+      "advanced": {
+        "sticky": false,
+        "custom_class": "",
+        "anchor_id": "",
+        "tracking_name": "",
+        "aria_label": "",
+        "z_index": "auto",
+        "disable_animation": false
+      }
     }
   ]
 }
