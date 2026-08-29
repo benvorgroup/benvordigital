@@ -5,62 +5,113 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="color-scheme" content="light">
-  <title>Benvor Sites Builder | Benvor Digital</title>
+  <title>Benvor Sites Builder</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/admin/sites-builder.css">
 </head>
 <body>
   <div id="bv-app" class="bv-app" aria-busy="true">
     <header class="bv-topbar">
-      <div class="bv-brand-zone">
-        <a class="bv-brand" href="/" target="_blank" rel="noopener" aria-label="Open Benvor Digital website">
-          <img src="/assets/branding/benvor-horizontal-dark.png" alt="Benvor Digital">
+      <div class="bv-site-identity">
+        <button id="bv-pages-toggle" class="bv-icon-button bv-mobile-only" type="button" title="Pages" aria-label="Toggle pages panel">
+          <span class="bv-icon" data-icon="pages"></span>
+        </button>
+        <a class="bv-site-icon" href="/" target="_blank" rel="noopener" aria-label="Open Benvor Digital website">
+          <img src="/favicon.ico" alt="">
         </a>
-        <div class="bv-doc-title">
-          <input id="bv-page-title" type="text" value="Loading…" aria-label="Page title">
-          <div class="bv-save-line"><span id="bv-save-dot"></span><span id="bv-save-status">Loading page…</span></div>
+        <div class="bv-site-title-wrap">
+          <input id="bv-site-title" class="bv-site-title" type="text" value="Benvor Digital" aria-label="Site title">
+          <div class="bv-current-page-line">
+            <span id="bv-current-page-name">Home</span>
+            <span class="bv-dot-separator">•</span>
+            <span id="bv-save-status" class="bv-save-status" data-tone="working">Loading…</span>
+          </div>
         </div>
       </div>
 
-      <div class="bv-toolbar" aria-label="Builder toolbar">
-        <button class="bv-icon-btn" id="bv-undo" title="Undo" aria-label="Undo" disabled>↶</button>
-        <button class="bv-icon-btn" id="bv-redo" title="Redo" aria-label="Redo" disabled>↷</button>
-        <span class="bv-toolbar-sep"></span>
-        <div class="bv-device-switcher" aria-label="Preview device">
-          <button data-device="desktop" class="active" title="Desktop">▱</button>
-          <button data-device="laptop" title="Laptop">▭</button>
-          <button data-device="tablet" title="Tablet">▯</button>
-          <button data-device="mobile" title="Mobile">▯</button>
-        </div>
-        <button class="bv-text-btn" id="bv-preview">Preview</button>
-        <button class="bv-publish-btn" id="bv-publish">Publish</button>
-        <button class="bv-avatar-btn" id="bv-account" title="GitHub account" aria-label="GitHub account">G</button>
-        <button class="bv-icon-btn" id="bv-more" title="More" aria-label="More options">⋮</button>
-      </div>
+      <nav class="bv-top-actions" aria-label="Site builder actions">
+        <button id="bv-undo" class="bv-icon-button" type="button" title="Undo" aria-label="Undo" disabled><span class="bv-icon" data-icon="undo"></span></button>
+        <button id="bv-redo" class="bv-icon-button" type="button" title="Redo" aria-label="Redo" disabled><span class="bv-icon" data-icon="redo"></span></button>
+        <span class="bv-toolbar-divider" aria-hidden="true"></span>
+        <button id="bv-preview" class="bv-icon-button" type="button" title="Preview" aria-label="Preview"><span class="bv-icon" data-icon="preview"></span></button>
+        <button id="bv-share" class="bv-icon-button" type="button" title="Share" aria-label="Share"><span class="bv-icon" data-icon="share"></span></button>
+        <button id="bv-settings" class="bv-icon-button" type="button" title="Settings" aria-label="Site settings"><span class="bv-icon" data-icon="settings"></span></button>
+        <div id="bv-published-state" class="bv-published-state" title="Publish status">Draft</div>
+        <button id="bv-publish" class="bv-publish-button" type="button">Publish</button>
+        <button id="bv-more" class="bv-icon-button" type="button" title="More" aria-label="More options"><span class="bv-icon" data-icon="more"></span></button>
+        <button id="bv-account" class="bv-avatar-button" type="button" title="GitHub account" aria-label="GitHub account">G</button>
+      </nav>
     </header>
 
     <main class="bv-workspace">
-      <section class="bv-canvas-area" aria-label="Page canvas">
-        <div id="bv-canvas-shell" class="bv-canvas-shell desktop">
-          <iframe id="bv-preview-frame" title="Benvor page preview"></iframe>
+      <aside id="bv-pages-panel" class="bv-pages-panel" aria-label="Pages panel">
+        <div class="bv-panel-heading">
+          <div>
+            <h2>Pages</h2>
+            <p>Manage your site pages</p>
+          </div>
+          <button id="bv-pages-close" class="bv-icon-button bv-mobile-only" type="button" title="Close pages"><span class="bv-icon" data-icon="close"></span></button>
         </div>
-        <button id="bv-add-section-floating" class="bv-add-section-floating">＋ Add section</button>
+        <button id="bv-new-page" class="bv-new-page-button" type="button"><span class="bv-icon" data-icon="plus"></span> New page</button>
+        <div id="bv-page-tree" class="bv-page-tree" role="tree"></div>
+      </aside>
+
+      <section class="bv-editor-area" aria-label="Editor workspace">
+        <div id="bv-canvas-scroll" class="bv-canvas-scroll">
+          <div id="bv-canvas-shell" class="bv-canvas-shell desktop">
+            <iframe id="bv-preview-frame" title="Benvor Digital page preview"></iframe>
+          </div>
+        </div>
+        <button id="bv-add-section-floating" class="bv-add-section-floating" type="button"><span class="bv-icon" data-icon="plus"></span> Add section</button>
       </section>
 
-      <aside class="bv-sidepanel" id="bv-sidepanel">
-        <div class="bv-side-tabs" id="bv-main-tabs">
-          <button data-panel="insert" class="active">INSERT</button>
-          <button data-panel="pages">PAGES</button>
-          <button data-panel="themes">THEMES</button>
+      <aside id="bv-sidepanel" class="bv-sidepanel" aria-label="Insert and theme panel">
+        <div id="bv-main-tabs" class="bv-side-tabs" role="tablist">
+          <button type="button" data-panel="insert" class="active" role="tab" aria-selected="true">Insert</button>
+          <button type="button" data-panel="pages" role="tab" aria-selected="false">Pages</button>
+          <button type="button" data-panel="themes" role="tab" aria-selected="false">Themes</button>
         </div>
         <div id="bv-side-content" class="bv-side-content"></div>
       </aside>
     </main>
   </div>
 
-  <div id="bv-toast" class="bv-toast" role="status" aria-live="polite"></div>
+  <div id="bv-settings-backdrop" class="bv-drawer-backdrop" hidden></div>
+  <aside id="bv-settings-drawer" class="bv-settings-drawer" aria-label="Site settings" aria-hidden="true">
+    <div class="bv-settings-header">
+      <div>
+        <span class="bv-kicker">SITE SETTINGS</span>
+        <h2>Settings</h2>
+      </div>
+      <button id="bv-settings-close" class="bv-icon-button" type="button" title="Close settings"><span class="bv-icon" data-icon="close"></span></button>
+    </div>
+    <div id="bv-settings-tabs" class="bv-settings-tabs" role="tablist">
+      <button type="button" data-settings-tab="navigation" class="active">Navigation</button>
+      <button type="button" data-settings-tab="brand">Brand Images</button>
+      <button type="button" data-settings-tab="viewer">Viewer Tools</button>
+      <button type="button" data-settings-tab="options">Site Options</button>
+    </div>
+    <div id="bv-settings-content" class="bv-settings-content"></div>
+  </aside>
+
+  <div id="bv-preview-overlay" class="bv-preview-overlay" hidden>
+    <div class="bv-preview-toolbar">
+      <div class="bv-device-switcher" role="group" aria-label="Preview device">
+        <button type="button" data-device="desktop" class="active" title="Desktop"><span class="bv-icon" data-icon="desktop"></span></button>
+        <button type="button" data-device="tablet" title="Tablet"><span class="bv-icon" data-icon="tablet"></span></button>
+        <button type="button" data-device="mobile" title="Mobile"><span class="bv-icon" data-icon="mobile"></span></button>
+      </div>
+      <span id="bv-preview-page-label">Home</span>
+      <button id="bv-exit-preview" class="bv-preview-close" type="button"><span class="bv-icon" data-icon="close"></span> Exit preview</button>
+    </div>
+    <div class="bv-preview-stage">
+      <div id="bv-preview-shell" class="bv-preview-shell desktop"></div>
+    </div>
+  </div>
+
   <div id="bv-modal-root"></div>
-  <button id="bv-exit-preview" class="bv-exit-preview" hidden>Exit preview</button>
+  <div id="bv-menu-root"></div>
+  <div id="bv-toast" class="bv-toast" role="status" aria-live="polite"></div>
 
   <script defer src="/admin/sites-builder.js"></script>
 </body>

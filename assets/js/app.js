@@ -172,12 +172,71 @@
     const action=safeUrl(settings.contact_form?.action||''), method=settings.contact_form?.method||'POST';
     return `<section class="section reveal"><div class="wrap contact-layout"><div class="form-card"><h2>${esc(s.heading)}</h2><p class="muted" style="font-size:.8rem;margin:8px 0 22px">${esc(s.text||'')}</p><form class="contact-form" ${action&&action!=='#'?`action="${esc(action)}" method="${esc(method)}"`:''}><div class="fields">${(s.fields||[]).map(f=>fieldMarkup(f,s.select_placeholder)).join('')}</div><button class="btn btn-primary" type="submit" style="margin-top:18px">${esc(s.submit_label||'Submit')} →</button><div class="form-message">${esc(settings.contact_form?.success_message||'Thanks.')}</div></form></div><aside class="contact-side">${(s.contact_cards||[]).map(c=>`<div class="contact-card"><small>${esc(c.label)}</small>${c.link?`<a href="${esc(safeUrl(c.link))}"><strong>${esc(c.value)}</strong></a>`:`<strong>${esc(c.value)}</strong>`}</div>`).join('')}</aside></div></section>`;
   }
+  function parseCmsEmbed(body){
+    const m=String(body||'').trim().match(/^\[\[(youtube|map|drive|chart):([\s\S]*)\]\]$/i);
+    return m?{kind:m[1].toLowerCase(),url:m[2].trim()}:null;
+  }
+  function httpUrl(raw){
+    try{const u=new URL(String(raw||'').trim(),location.origin);return /^https?:$/.test(u.protocol)?u:null}catch(_){return null}
+  }
+  function youtubeEmbedUrl(raw){
+    const u=httpUrl(raw);if(!u)return '';
+    let id='';
+    if(/(^|\.)youtu\.be$/i.test(u.hostname)) id=u.pathname.split('/').filter(Boolean)[0]||'';
+    else if(/(^|\.)youtube\.com$/i.test(u.hostname)||/(^|\.)youtube-nocookie\.com$/i.test(u.hostname)){
+      if(u.pathname==='/watch') id=u.searchParams.get('v')||'';
+      else {const parts=u.pathname.split('/').filter(Boolean);const i=parts.findIndex(x=>['embed','shorts','live'].includes(x));if(i>=0)id=parts[i+1]||''}
+    }
+    return /^[A-Za-z0-9_-]{6,20}$/.test(id)?`https://www.youtube-nocookie.com/embed/${id}`:'';
+  }
+  function driveEmbedUrl(raw){
+    const u=httpUrl(raw);if(!u)return '';
+    const host=u.hostname.toLowerCase();
+    if(host==='drive.google.com'||host.endsWith('.drive.google.com')){
+      const m=u.pathname.match(/\/file\/d\/([^/]+)/);if(m)return `https://drive.google.com/file/d/${encodeURIComponent(m[1])}/preview`;
+    }
+    if(host==='docs.google.com'||host.endsWith('.docs.google.com')){
+      const m=u.pathname.match(/^\/(document|spreadsheets|presentation)\/d\/([^/]+)/);if(m)return `https://docs.google.com/${m[1]}/d/${encodeURIComponent(m[2])}/preview`;
+    }
+    return '';
+  }
+  function genericEmbedUrl(kind,raw){
+    if(kind==='youtube')return youtubeEmbedUrl(raw);
+    if(kind==='drive')return driveEmbedUrl(raw);
+    const u=httpUrl(raw);if(!u)return '';
+    if(kind==='map'){
+      const host=u.hostname.toLowerCase();
+      const googleMapsHost=/(^|\.)google\.[a-z.]+$/i.test(host)||/(^|\.)googleapis\.com$/i.test(host);
+      if(!googleMapsHost)return '';
+      return u.href;
+    }
+    return kind==='chart'?u.href:'';
+  }
+  function embedPlaceholder(kind,message){
+    if(document.body?.dataset.benvorBuilderPreview!=='true')return '';
+    return `<section class="section reveal"><div class="wrap"><div style="min-height:260px;border:1px dashed #AFC2D8;border-radius:12px;background:#F8FAFC;display:grid;place-items:center;padding:36px;text-align:center;color:#607182"><div><strong style="display:block;color:#0A1F33;font-size:20px;margin-bottom:8px">${esc(kind)}</strong><span>${esc(message)}</span></div></div></div></section>`;
+  }
+  function renderCmsEmbed(embed,s){
+    const label={youtube:'YouTube',map:'Google Maps',drive:'Google Drive',chart:'Chart'}[embed.kind]||'Embed';
+    if(!embed.url)return embedPlaceholder(label,'Select this block and add an embed or share URL.');
+    const src=genericEmbedUrl(embed.kind,embed.url);if(!src)return embedPlaceholder(label,'This URL cannot be embedded. Use a supported public HTTPS or Google embed URL.');
+    const allow=embed.kind==='youtube'?'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share':'';
+    return `<section class="section reveal"><div class="wrap">${s.heading?`<div class="section-head"><h2>${esc(s.heading)}</h2></div>`:''}<div style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius);background:#F5F7FA"><iframe src="${esc(src)}" title="${esc(label)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation" ${allow?`allow="${allow}"`:''} allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div></div></section>`;
+  }
   function renderRichText(s){
+    const embed=parseCmsEmbed(s.body);if(embed)return renderCmsEmbed(embed,s);
     const paragraphs=String(s.body||'').split(/\n{2,}/).map(p=>`<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
     return `<section class="section reveal"><div class="wrap rich-text">${s.eyebrow?`<span class="eyebrow">${esc(s.eyebrow)}</span>`:''}${s.heading?`<h2>${esc(s.heading)}</h2>`:''}${paragraphs}</div></section>`;
   }
   function renderGallery(s){
-    return `<section class="section reveal"><div class="wrap"><div class="section-head">${s.heading?`<h2>${esc(s.heading)}</h2>`:''}</div><div class="gallery">${(s.images||[]).map(x=>`<img src="${esc(safeUrl(x.image||x.url))}" alt="${esc(x.alt||'')}">`).join('')}</div></div></section>`;
+    const images=(s.images||[]).filter(x=>x&&(x.image||x.url));
+    const isCarousel=/carousel/i.test(String(s.section_name||''));
+    if(!isCarousel)return `<section class="section reveal"><div class="wrap"><div class="section-head">${s.heading?`<h2>${esc(s.heading)}</h2>`:''}</div><div class="gallery">${images.map(x=>`<img src="${esc(safeUrl(x.image||x.url))}" alt="${esc(x.alt||'')}">`).join('')}</div></div></section>`;
+    const slides=images.length?images.map(x=>`<div style="flex:0 0 100%;scroll-snap-align:start;min-width:0"><img src="${esc(safeUrl(x.image||x.url))}" alt="${esc(x.alt||'')}" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius)"></div>`).join(''):`<div style="flex:0 0 100%;min-height:260px;display:grid;place-items:center;background:#F5F7FA;border-radius:var(--radius);color:#607182">Add carousel images</div>`;
+    return `<section class="section reveal"><div class="wrap"><div class="section-head">${s.heading?`<h2>${esc(s.heading)}</h2>`:''}</div><div data-benvor-gallery-carousel style="position:relative"><div data-carousel-track style="display:flex;overflow:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px;scrollbar-width:none">${slides}</div><button type="button" data-carousel-prev aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid rgba(10,31,51,.12);border-radius:50%;background:#fff;color:#0A1F33;box-shadow:0 4px 18px rgba(10,31,51,.12);cursor:pointer">‹</button><button type="button" data-carousel-next aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid rgba(10,31,51,.12);border-radius:50%;background:#fff;color:#0A1F33;box-shadow:0 4px 18px rgba(10,31,51,.12);cursor:pointer">›</button></div></div></section>`;
+  }
+  function bindGalleryCarousels(){
+    $$('[data-benvor-gallery-carousel]').forEach(root=>{if(root.dataset.bound==='1')return;root.dataset.bound='1';const track=$('[data-carousel-track]',root),prev=$('[data-carousel-prev]',root),next=$('[data-carousel-next]',root);if(!track)return;const move=dir=>track.scrollBy({left:dir*Math.max(280,track.clientWidth),behavior:'smooth'});if(prev)prev.onclick=()=>move(-1);if(next)next.onclick=()=>move(1)});
   }
   function renderFlex(s){
     const cols=Math.max(1,Math.min(4,Number(s.columns)||3));
@@ -373,6 +432,7 @@
       if(!form.getAttribute('action')){e.preventDefault();const msg=$('.form-message',form);msg.classList.add('show');form.reset();}
     });
     initCarousel();
+    bindGalleryCarousels();
     initReveal();
     countUp();
     bindLeadGeneration(settings);
@@ -505,12 +565,27 @@
   }
   async function renderDraft(page, settings, slug='home'){
     const mode='light';
-    applyTheme(settings||{});
+    page=page||{};settings=settings||{};
+    applyTheme(settings);
     const activeNav=({'ecommerce-marketing':'services','b2b-saas-marketing':'services','case-studies':'portfolio','our-process':'about','why-benvor':'about','growth-audit':'contact','book-strategy-call':'contact'}[slug]||slug);
     const header=$('#site-header'),footer=$('#site-footer'),main=$('#main');
     if(header){header.style.display='';if(page.show_header!==false)renderHeader(settings,mode,activeNav);else header.style.display='none'}
     if(footer){footer.style.display='';if(page.show_footer!==false)renderFooter(settings,mode);else footer.style.display='none'}
-    if(main){const out=[];for(const section of(page.sections||[]))out.push(await renderSection(section,settings));main.innerHTML=out.join('')}
+    if(main){
+      const out=[];
+      for(const section of(page.sections||[])){
+        let html='';
+        try{html=await renderSection(section,settings)}catch(e){console.error('Builder preview section failed',section?.type,e)}
+        if(!html){
+          const label=section?.section_name||section?.type||'Section';
+          const reason=section?.enabled===false?'This section is disabled. Enable it in Advanced settings to show it on the live page.':'This section cannot be rendered by the visual preview. You can still edit or remove it.';
+          html=`<div class="visual-section" data-section-name="${esc(label)}"><section class="section"><div class="wrap"><div style="min-height:160px;border:1px dashed #AFC2D8;border-radius:12px;background:#F8FAFC;display:grid;place-items:center;padding:28px;text-align:center;color:#607182"><div><strong style="display:block;color:#0A1F33;font-size:18px;margin-bottom:7px">${esc(label)}</strong><span>${esc(reason)}</span></div></div></div></section></div>`;
+        }
+        out.push(html);
+      }
+      main.innerHTML=out.join('')
+    }
+    bindGalleryCarousels();
     setHomeHeroViewport();
     return true;
   }
